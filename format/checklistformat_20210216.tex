@@ -1,0 +1,453 @@
+%-----------------------------------------------------------------
+% PACKAGES
+%-----------------------------------------------------------------
+\usepackage[utf8]{inputenc} % more charecter inpus (ü,ö,ä)
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[yyyymmdd]{datetime} % change date format
+\renewcommand{\dateseparator}{} % select date separator character
+\usepackage[shortlabels]{enumitem} % pause/resume lists
+\usepackage{multicol} % multi column format
+\usepackage{graphicx} % used for figures
+\graphicspath{{images/}} % put figures inside folder 'images'  in same folder as .tex
+\usepackage[dvipsnames]{xcolor} %colors, dvips -> extra premade colors
+\usepackage[explicit]{titlesec} % formating of titles
+\usepackage{siunitx} % SI units
+\usepackage{amsmath}  % math stuff
+\usepackage{amsfonts} % more math stuff
+\usepackage{mathtools} % even more math stuff
+\usepackage{breqn} % honestly I don't even remember
+\usepackage{empheq} % Fancy boxed equations
+\usepackage{tikz} % shapes, figures
+\usepackage{tikzpagenodes} % points for tikz
+\usetikzlibrary{calc} % used for hyperlinked nodes
+\usepackage[hidelinks]{hyperref} % used for hyperlinked nodes
+\usepackage{lipsum} % lorem ipsum 
+\usepackage[document]{ragged2e} % left ragged text
+\usepackage{atbegshi}  % special commands that apply tikz to all pages
+\usepackage{fancyhdr} % custom header/footer
+\usepackage{etoolbox} % Boolean and if/else
+\usepackage{calc} % math inside other commands
+\usepackage{booktabs} % fancy tables
+\usepackage{multirow} % more fancy tables
+
+%-----------------------------------------------------------------
+% BOOLEANS
+%-----------------------------------------------------------------
+% creates a boolean for if this is print version
+% if print will add corner rounding and tabs
+\newtoggle{print}
+\togglefalse{print}
+%\toggletrue{print}
+
+% PAPER SIZE -> ONLY SET ONE TRUE!
+\newtoggle{a5}
+\togglefalse{a5}
+%\toggletrue{a5}
+
+\newtoggle{a5print}
+\togglefalse{a5print}
+\toggletrue{a5print}
+
+\newtoggle{a4}
+\togglefalse{a4}
+%\toggletrue{a4}
+
+\newtoggle{a4print}
+\togglefalse{a4print}
+%\toggletrue{a4print}
+
+%-----------------------------------------------------------------
+% GEOMETRY
+%-----------------------------------------------------------------
+\newlength{\paperh}
+\newlength{\paperw}
+% margins, input here as variable for ROUNDING
+\newlength{\inmar}
+\newlength{\outmar}
+\newlength{\topmar}
+\newlength{\botmar}
+\setlength\topmar{1.2cm}
+\setlength\botmar{0.8cm}
+% indendtation for chevrons on front page
+\newlength{\chevin} 
+
+
+\iftoggle{a5}{
+	\setlength\paperh{21cm}
+	\setlength\paperw{14.8cm}
+	%	\setlength\inmar{1.6cm}
+	%	\setlength\outmar{0.4cm}
+	\setlength\inmar{1cm}
+	\setlength\outmar{1cm}
+	\setlength{\chevin}{\outmar-3.3cm} 
+}{}
+
+\iftoggle{a5print}{ % a5 paper with 8mm extra for tabs
+	\setlength\paperh{21cm}
+	\setlength\paperw{15.6cm}
+	\setlength\inmar{1.6cm}
+	\setlength\outmar{1.2cm}
+	\setlength\chevin{\outmar-3.5cm}
+	\toggletrue{print}
+}{}
+
+\iftoggle{a4}{
+	\setlength\paperh{29.7cm}
+	\setlength\paperw{21cm}
+	\setlength\inmar{1.4cm}
+	\setlength\outmar{1.4cm}
+	\setlength{\chevin}{\outmar-3.1cm} 
+}{}
+
+\iftoggle{a4print}{
+	\setlength\paperh{29.7cm}
+	\setlength\paperw{21cm}
+	\setlength\inmar{1.6cm}
+	\setlength\outmar{1.2cm}
+	\setlength{\chevin}{\outmar-2.9cm} 
+	\toggletrue{print}
+}{}
+
+%\usepackage[paperheight=9in, paperwidth=6in,
+%\usepackage[paperheight=23cm, paperwidth=15cm,
+\usepackage[
+paperheight=\paperh,
+paperwidth=\paperw,
+margin=0.1cm, 
+top=\topmar, 
+bottom=\botmar, 
+headsep=0.5cm, 
+headheight=0.5cm,
+footskip=0.5cm,
+inner=\inmar,
+outer=\outmar,
+centering
+]{geometry}
+
+%-----------------------------------------------------------------
+% HEADER/FOOT FORMATTING
+%-----------------------------------------------------------------
+% remove header and foot
+\pagestyle{empty}
+%fancy header with section title in hatching
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{\colorbox{color1}{
+	% code formatting section titles in header
+	\textcolor{white}{\Large\textbf{#1}}
+}}{}}
+\fancypagestyle{plain}{
+	% clear defaults
+	\fancyhf{}
+	% page number in footer
+	\fancyfoot[C]{\textbf{--- \thepage \ ---}}% LE,RO
+	% date in top right
+	\fancyhead[RE,RO]{\colorbox{color1}{
+			\textcolor{white}{\Large\textbf{REV: \today}}
+	}}
+	% extra thing in middle
+	\fancyhead[C]{\colorbox{color1}{
+			\textcolor{white}{\Large\textbf{F-14A/B}}
+	}}
+	\fancyhead[LE,LO]{\textbf{\leftmark}}
+	\renewcommand{\headrulewidth}{0pt} % and the line
+}
+\pagestyle{plain}
+%-----------------------------------------------------------------
+% OTHER FORMATTING
+%-----------------------------------------------------------------
+%indent for paragraph
+\setlength{\parindent}{0pt}
+%space between paragraphs
+\setlength{\parskip}{0.3em}
+
+%space between columns
+\setlength{\columnsep}{0.2cm}
+% create lines between columns and define color of columns
+\setlength{\columnseprule}{0pt} %set thickness default 1pt
+\def\columnseprulecolor{\color{black}}
+
+%-----------------------------------------------------------------
+% COLORS
+%-----------------------------------------------------------------
+%Defines 2 colors throughout rest of formatting
+\colorlet{color1}{black} % Red, RedOrange
+\colorlet{color2}{ProcessBlue} % CornflowerBlue, Cerulean, ProcessBlue
+\definecolor{color3}{RGB}{255, 255, 0}
+
+%-----------------------------------------------------------------
+% COMMANDS
+%-----------------------------------------------------------------
+% command to create blue, bold mini-titles
+\newcommand{\blue}[1]{\textbf{\textcolor{color2}{#1}}}
+
+%-----------------------------------------------------------------
+% TITLE FORMATTING
+%-----------------------------------------------------------------
+%formatting of section
+\titleformat{\section}
+{\color{black}\normalfont\large\bfseries}
+{\color{black}\thesection}{1em}{#1}[{\titlerule[1pt]}]
+% 1st number is weird, 2nd is spacing before, 3rd is spacing after section title
+\titlespacing{\section}{0pt}{5pt}{2pt}
+
+%formatting of subsection
+\titleformat{\subsection}
+{\color{white}\normalfont\bfseries} % color1
+{\color{color1}\thesubsection}{1em}{\colorbox{color1}{#1}}[]
+% 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
+\titlespacing{\subsection}{0pt}{2pt}{2pt}
+
+%-----------------------------------------------------------------
+% HATCHING
+%-----------------------------------------------------------------
+% individual parallelogram
+\newcommand{\single}[1]{
+	\fill[black]
+	([xshift=#1*2*0.5cm,yshift = 0.2cm]current page text area.north west) --
+	([xshift=#1*2*0.5cm+2cm,yshift=2cm+0.2cm]current page text area.north west) --
+	([xshift=#1*2*0.5cm+2.5cm,yshift=2cm+0.2cm]current page text area.north west) --
+	([xshift=#1*2*0.5cm+0.5cm,yshift=0.2cm]current page text area.north west) --
+	cycle;
+}
+% while loop to make many parallelograms
+\newcommand\Hatch{
+	\begin{tikzpicture}[remember picture,overlay]
+	\newcount\foo
+	\foo=-3
+	\loop
+	\single{\the\foo}
+	\advance \foo +1
+	\ifnum \foo<21
+	\repeat
+	%makes hatched area hyperlink to front page
+	\node[
+		rectangle,
+		hyperlink node=frontpage, 
+		anchor=north,
+		minimum width=\paperwidth,
+		minimum height=1cm
+	]()at ([yshift=\paperheight/2]current page.center) {}; 
+	\end{tikzpicture}
+}
+
+%-----------------------------------------------------------------
+% ROUNDING
+%-----------------------------------------------------------------
+% tab dimensions
+\newlength{\tabwidth}
+\newlength{\tabdepth}
+% must manually tell how many sections in total
+\setlength\tabwidth{\textheight/7}
+\setlength\tabdepth{0.8cm}
+
+%thumbtab for Section page 
+\newcommand{\thumbtab}[2]{
+	\iftoggle{print}{
+		\begin{tikzpicture}[remember picture, overlay]
+		% north west corner
+		\fill[white]
+			([xshift=-\inmar, yshift=\topmar]current page text area.north west) -- 
+			([xshift=-\inmar, yshift=\topmar-1cm]current page text area.north west) 
+			[rounded corners=1cm] -- 
+			([xshift=-\inmar, yshift=\topmar]current page text area.north west) -- 
+			([xshift=-\inmar+1cm, yshift=\topmar]current page text area.north west)
+			[sharp corners] --
+			cycle;
+		% north east corner
+		\fill[white]
+			([xshift=\outmar, yshift=-#2*\tabwidth-0.5cm]current page text area.north east)
+			[rounded corners=0.4cm] --	
+			([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
+			[rounded corners=0.3cm] --
+			([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
+			[rounded corners=1cm] --
+			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --
+			([xshift=\outmar-\tabdepth-1cm, yshift=\topmar]current page text area.north east) 
+			[sharp corners]--
+			([xshift=\outmar, yshift=\topmar]current page text area.north east)--
+			cycle;
+		\draw[black, rounded corners = 1cm,]
+			([xshift=-\inmar, yshift=\topmar]current page text area.north west) -- 
+			([xshift=-\inmar, yshift=-\botmar]current page text area.south west) --
+			([xshift=\outmar, yshift=-\botmar]current page text area.south east)
+			[rounded corners=0.4cm] --	
+			([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
+			[rounded corners=0.3cm] --
+			([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
+			[rounded corners=1cm] --
+			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --
+			cycle;
+		\node[
+			rectangle,
+			anchor=south west,
+			rotate=270,
+			minimum height=\tabdepth,
+			minimum width=\tabwidth
+		]
+		(sectionnode) at ([xshift=1\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east) {
+			\small\textbf{#1}
+		};
+		\end{tikzpicture}
+	}{}
+	% create label for hyperlinks on front page
+	\hypertarget{sec:#2}{}
+	% create node on back of page
+	\AtBeginShipoutNext{\thumbback{#1}{#2}}
+}
+% node with section name without border
+\newcommand{\thumbback}[2]{
+	\iftoggle{print}{
+		\begin{tikzpicture}[remember picture, overlay]
+		\node[
+			rectangle,
+			anchor=south east,
+			rotate=90,
+			minimum height=\tabdepth,
+			minimum width=\tabwidth
+		]
+		(sectionnode) at ([xshift=-1\outmar+\tabdepth, yshift=-#2*\tabwidth]current page text area.north west) {
+			\small\textbf{#1}
+		};
+		\end{tikzpicture}
+	}{}
+}
+% for front page and back page
+\newcommand{\thumbwide}{
+	\iftoggle{print}{
+		\begin{tikzpicture}[remember picture, overlay]
+			% north west corner
+			\fill[white]
+				([xshift=-\inmar, yshift=\topmar]current page text area.north west) -- 
+				([xshift=-\inmar, yshift=\topmar-1cm]current page text area.north west) 
+				[rounded corners=1cm] -- 
+				([xshift=-\inmar, yshift=\topmar]current page text area.north west) -- 
+				([xshift=-\inmar+1cm, yshift=\topmar]current page text area.north west)
+				[sharp corners] --
+				cycle;
+			% north east corner
+			\fill[white]
+				([xshift=\outmar, yshift=\topmar]current page text area.north east) --
+				([xshift=\outmar, yshift=\topmar-1cm]current page text area.north east) 
+				[rounded corners=1cm] --
+				([xshift=\outmar, yshift=\topmar]current page text area.north east) --
+				([xshift=\outmar-1cm, yshift=\topmar]current page text area.north east)
+				[sharp corners] --
+				cycle;
+			% south east corner
+			\fill[white]
+				([xshift=\outmar, yshift=-\botmar]current page text area.south east) -- 
+				([xshift=\outmar, yshift=-\botmar+1cm]current page text area.south east) 
+				[rounded corners=1cm] --
+				([xshift=\outmar, yshift=-\botmar]current page text area.south east) -- 
+				([xshift=\outmar-1cm, yshift=-\botmar]current page text area.south east) 
+				[sharp corners] -- 
+				cycle;
+			% frame
+			\draw[black, rounded corners = 1cm,]
+				([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
+				([xshift=-\inmar, yshift=-\botmar]current page text area.south west) --  
+				([xshift=\outmar, yshift=-\botmar]current page text area.south east) --
+				([xshift=\outmar, yshift=\topmar]current page text area.north east) --  
+				cycle;
+		\end{tikzpicture}
+	}{}
+}
+% for all pages that are not front-, back- or section-page
+\newcommand{\thumbnar}{
+	\iftoggle{print}{
+		\begin{tikzpicture}[remember picture, overlay]
+		% north west corner
+		\fill[white]
+			([xshift=-\inmar, yshift=\topmar]current page text area.north west) -- 
+			([xshift=-\inmar, yshift=\topmar-1cm]current page text area.north west) 
+			[rounded corners=1cm] -- 
+			([xshift=-\inmar, yshift=\topmar]current page text area.north west) -- 
+			([xshift=-\inmar+1cm, yshift=\topmar]current page text area.north west)
+			[sharp corners] --
+			cycle;
+		% north east corner
+		\fill[white]
+			([xshift=\outmar, yshift=\topmar]current page text area.north east) --
+			([xshift=\outmar, yshift=\topmar-1cm]current page text area.north east) --
+			([xshift=\outmar-\tabdepth, yshift=\topmar-1cm]current page text area.north east) 
+			[rounded corners=1cm] --
+			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --
+			([xshift=\outmar-\tabdepth-1cm, yshift=\topmar]current page text area.north east)
+			[sharp corners] --
+			cycle;
+		% frame
+		\draw[black, rounded corners = 1cm,]
+			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
+			([xshift=-\inmar, yshift=-\botmar]current page text area.south west) --  
+			([xshift=\outmar-\tabdepth, yshift=-\botmar]current page text area.south east) --
+			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --  
+			cycle;
+		\end{tikzpicture}
+	}{}
+}
+
+%-----------------------------------------------------------------
+% FRONT PAGE
+%-----------------------------------------------------------------
+%creates node option to create hyperlink
+\tikzset{
+	hyperlink node/.style={
+		alias=sourcenode,
+		append after command={
+			let     \p1 = (sourcenode.north west),
+			\p2=(sourcenode.south east),
+			\n1={\x2-\x1},
+			\n2={\y1-\y2} in
+			node [inner sep=0pt, outer sep=0pt,anchor=north west,at=(\p1)] {\hyperlink{#1}{\XeTeXLinkBox{\phantom{\rule{\n1}{\n2}}}}}
+			%xelatex needs \XeTeXLinkBox, won't create a link unless it
+			%finds text --- rules don't work without \XeTeXLinkBox.
+			%Still builds correctly with pdflatex and lualatex
+		}
+	}
+}
+% titlepage chevron indentation
+
+\newlength{\chevout} % sets for right side of chevron
+\newlength{\chevpoint} % sets point of chevron
+\setlength\chevout{\outmar-1.2cm}
+\setlength\chevpoint{\outmar-0.5cm}
+% chevron height is set by tabwidth so it lines up
+
+% creates hyperlinked white chevron with section name
+\newcommand{\thumbfront}[2]{
+	\begin{tikzpicture}[remember picture,overlay]
+	%white chevrons
+	\fill[white]
+		([xshift=\chevin,
+		yshift=-(#2+0.5)*\tabwidth+(\tabwidth/2-0.25cm)
+		]current page text area.north east) --
+		([xshift=\chevout,
+		yshift=-(#2+0.5)*\tabwidth+(\tabwidth/2-0.25cm)
+		]current page text area.north east) --
+		([xshift=\chevpoint,
+		yshift=-(#2+0.5)*\tabwidth
+		]current page text area.north east) --
+		([xshift=\chevout, 
+		yshift=-(#2+0.5)*\tabwidth-(\tabwidth/2-0.25cm)
+		]current page text area.north east) --
+		([
+		xshift=\chevin, 
+		yshift=-(#2+0.5)*\tabwidth-(\tabwidth/2-0.25cm)
+		]current page text area.north east) --
+		cycle;
+	% hyperlinked node for each section
+	% uses a number (sec:#2) as label
+	\node[
+		rectangle,
+		anchor=west,
+		rotate=0,
+		minimum width=2cm,
+		minimum height=\tabwidth-0.5cm,
+		hyperlink node=sec:#2
+	](Procedure) at ([xshift=\chevin, yshift=-(#2+0.5)*\tabwidth]current page text area.north east) {
+		\textbf{#1}
+	};
+	\end{tikzpicture}
+}

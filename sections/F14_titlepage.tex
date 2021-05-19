@@ -1,0 +1,49 @@
+%-----------------------------------------------------------------
+% TITLE PAGE
+%-----------------------------------------------------------------
+	% deactivate header and footer
+	\pagestyle{empty}
+	\newlength{\centeroffset}
+	\setlength\centeroffset{(\chevin-\outmar-0.5cm)/2}
+	\begin{tikzpicture}[overlay, remember picture]
+	\node[
+	]() at ([xshift=\centeroffset,yshift=8.5cm]current page.center) {
+		\Huge \textbf{Pocket Checklist} 
+	};
+	\node[
+	]() at ([xshift=\centeroffset,yshift=7cm]current page.center) {
+		\resizebox{10cm}{!}{\textbf{\colorbox{black}{\textcolor{white}{F-14A/B AIRCRAFT}}}}
+	};
+	\node[
+	]() at ([xshift=\centeroffset,yshift=5.5cm]current page.center) {
+		\Large \textbf{\colorbox{color1}{\textcolor{white}{REV: \today}}} \blue{}
+	};
+	\node[
+	]() at ([xshift=\centeroffset,yshift=-1cm]current page.center) {
+		\includegraphics[
+			width=0.8\linewidth,
+			page = {1},
+			trim = {3cm, 10.5cm, 6.5cm, 13.5cm},
+			clip
+		]{natops_F14B.pdf}
+	};
+	% Black area for white chevrons
+	\fill[black]
+		([xshift=\outmar, yshift=0.2cm]current page text area.north east) -- 
+		([xshift=\outmar, yshift=-\botmar]current page text area.south east) -- 
+		([xshift=\chevin-0.5cm, yshift=-\botmar]current page text area.south east) -- 
+		([xshift=\chevin-0.5cm, yshift=0.2cm]current page text area.north east) -- 
+		cycle;
+	\end{tikzpicture}
+	% label for hyperrefs back to frontpage
+	\label{frontpage}
+	% make chevrons
+	\thumbfront{Procedures}{0}
+	\thumbfront{Systems}{1}
+	% use tabular for multi line node
+	\thumbfront{\begin{tabular}{c} AWG-9 \\ Radar \end{tabular}}{2}
+	\thumbfront{\begin{tabular}{c} TCS \\ ALQ-100 \end{tabular}}{3}
+	\thumbfront{\begin{tabular}{c} LANTIRN \end{tabular}}{4}
+	\thumbfront{\begin{tabular}{c} A/G \\ Weapons \end{tabular}}{5}
+	\thumbfront{\begin{tabular}{c} A/A \\ Weapons \end{tabular}}{6}
+	\thumbwide
