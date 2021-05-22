@@ -10,6 +10,8 @@
 % all formatting and packages are in this file
 \input{./format/checklistformat_20210301}
 
+\usepackage{nicematrix}
+
 %-----------------------------------------------------------------
 % BEGIN DOCUMENT
 %-----------------------------------------------------------------
@@ -812,6 +814,47 @@
 				\bottomrule
 			\end{longtable}
 		\end{center}
+		
+		\subsection{LANDING - CHECKLIST}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{7cm}}
+				\toprule
+				1. & \blue{Wing Sweep} & \textbf{20 deg AUTO} \\
+				\midrule
+				2. & \blue{Wheels} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Lights} \dotfill \textbf{3 DOWN}
+						\item \textbf{Transition Light} \dotfill \textbf{OUT} 
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				3. & \blue{SAS} & \textbf{ON} \\
+				\midrule
+				4. & \blue{FLAPS} & \textbf{DOWN} \\
+				\midrule
+				5. & \blue{DLC} & \textbf{Checked} \\
+				\midrule
+				6. & \blue{Hook} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{HOOK} \dotfill \textbf{DOWN}
+						\item \textbf{Transition Light} \dotfill \textbf{OUT} 
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				7. & \blue{Harness} & \textbf{Locked} \\
+				\midrule
+				8. & \blue{Speedbrakes} & \textbf{EXT} \\
+				\midrule
+				9. & \blue{Brakes} & \textbf{Check} \\
+				\midrule
+				10. & \blue{Fuel} & \textbf{Check} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
 	
 		\clearpage
 	
@@ -1359,6 +1402,46 @@
 				\bottomrule
 			\end{tabular}
 		\end{center}
+		
+		\subsection{AIRSTART}
+		\begin{center}
+			\begin{tabular}{l p{4cm} | p{7cm}}
+				\toprule
+				\textbullet & \blue{Cross-Bleed Restart} & 
+				\textbf{With one ENG running, if Spooldown fails}
+				\begin{minipage}[t]{\linewidth}
+%					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Non-Running Throttle} \dotfill \textbf{OFF}
+						\item \textbf{FUEL SHUT OFF} \dotfill check
+						\item \textbf{Running throttle} \dotfill 80\%+
+						\item \textbf{BACK UP IGNITION} \dotfill \textbf{ON}
+						\item \textbf{ENG CRANK} \dotfill non-running eng
+						\item \textbf{Non-Running Throttle} \dotfill \textbf{IDLE}
+					\end{enumerate}
+					\textbf{If no start occurs}
+					\begin{enumerate}[label=(\alph*), resume]
+%						\vspace{-7pt}
+						\item \textbf{Non-Running Throttle} \dotfill \textbf{OFF} \\
+						\hfill then IDLE
+					\end{enumerate}
+					\textbf{If still no start}
+					\begin{enumerate}[label=(\alph*), resume]
+%						\vspace{-7pt}
+						\item \textbf{ENG MODE} \dotfill \textbf{SEC}
+						\item \textbf{Non-Running Throttle} \dotfill \textbf{OFF} \\
+						\hfill then IDLE
+					\end{enumerate}
+					\textbf{After successfull airstart}
+					\begin{enumerate}[label=(\alph*), resume]
+%						\vspace{-7pt}
+						\item \textbf{BACK UP IGNITION} \dotfill \textbf{OFF}
+						\item \textbf{ENG MODE} \dotfill \textbf{PRI} if possible
+					\end{enumerate}
+				\end{minipage} \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
 	
 		\cleardoublepage
 		
@@ -1580,10 +1663,330 @@
 			\end{tabular}
 		\end{center}
 		
+	\end{multicols*}
 		\cleardoublepage
 		
 		\section{AWG-9 RADAR}
 		\thumbback{AWG-9}{2}
+%		\begin{center}
+%			\begin{tabular}{c | c | c | c | c}
+%				\toprule
+%				\multirow{6}{*}{\blue{BVR}} & \multirow{2}{*}{\textbf{Pulse}} & \textbf{Pulse Search} & Boresight missiles & 60 \\
+%%				\cmidrule{3-5}
+%				& & \textbf{Pulse-STT} & Gun \& Missiles & 50 \\
+%%				\cmidrule{2-5}
+%				& \multirow{4}{*}{\textbf{Pulse Doppler}} &\textbf{ PD Search} & \multirow{2}{*}{Boresight missiles} & 110 \\
+%				& & RWS & & 90 \\
+%%				\cmidrule{3-5}
+%				& & TWS & Multi AIM-54 & 90 \\
+%%				\cmidrule{3-5}
+%				& & PD-STT & Gun \& all Missiles & 90 \\
+%				\midrule
+%				\multirow{4}{*}{\blue{WVR}} & \multirow{4}{*}{ACM} & PLM & Gun \& all Missiles & 5 \\
+%%				\cmidrule{3-5}
+%				& & VSL & Gun \& all Missiles & 5 \\
+%%				\cmidrule{3-5}
+%				& & PAL & Gun \& all Missiles & 15 \\
+%%				\cmidrule{3-5}
+%				& & MRL & Gun \& all Missiles & 5 \\
+%				\bottomrule
+%			\end{tabular}
+%		\end{center}
+
+		\subsection{MAIN MODES - OVERVIEW}
+		\begin{center}
+			\begin{longtable}{l |p{1.2cm} | p{1.2cm} | p{1.2cm} | p{1cm} | p{1cm} | p{1.5cm}}
+				\toprule
+				& \multicolumn{2}{c |}{\blue{Pulse}} & \multicolumn{4}{c}{\blue{Pulse Doppler}} \\
+				\midrule
+				& \textbf{Pulse Search} & \textbf{P-STT} & \textbf{PD Search} & \textbf{RWS} & \textbf{TWS} & \textbf{PD-STT} \\
+				\midrule
+				\textbf{Range} & 60 nm & 50 nm & 110 nm & 90 nm & 90 nm & 90 nm \\
+				\midrule
+				\textbf{AIM-7} & BRSIT & CW & \multicolumn{2}{c |}{BRSIT} & - & PD \\
+				\midrule
+				\textbf{AIM-54} & BRSIT & ACT & \multicolumn{2}{c |}{BRSIT} & Multi TGT & PD/ACT \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+
+		\subsection{MAIN MODES}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{7cm}}
+				\toprule
+				\textbullet & \blue{Pulse} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Basic Pulse w/o doppler filtering}
+						\begin{itemize}
+							\item Cannot be notched
+							\item Ground Clutter
+							\item Rudimentary Ground mapping
+						\end{itemize}
+						\item \textbf{Pulse Sub-Modes}
+						\begin{itemize}
+							\item \textbf{Pulse Search}
+							\item \textbf{Pulse-STT}
+						\end{itemize} 
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Pulse Doppler} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Doppler filter --> no ground returns}
+						\begin{itemize}
+							\item Susceptible to notching
+							\item No ground clutter
+							\item Greater range
+							\item Advanced sub modes
+							\item AIM-54 Guidance
+						\end{itemize}
+						\item \textbf{Pulse Doppler Sub-Modes}
+						\begin{itemize}
+							\item \textbf{PD Search}
+							\item \textbf{RWS}
+							\item \textbf{TWS}
+							\item \textbf{PD-STT}
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+			\end{longtable}
+		\end{center}
+	
+		\subsection{PULSE MODE - PULSE SEARCH}
+		\begin{center}
+			\resizebox{0.70\linewidth}{!}{
+				\includegraphics{PSEARCH.png}
+			}
+		\end{center}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{7cm}}
+				\toprule
+				\textbullet & \blue{Pulse Search} &  Basic Mode, AWG-9 does not use pulse doppler filtering
+				
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						%						\item Basic Mode, AWG-9 does not use pulse doppler filtering
+						\item \textbf{Advantages}
+						\begin{itemize}
+							\item All aspect target detection
+							\item Cannot be notched
+							\item Rudimentary ground mapping
+						\end{itemize}
+						\item \textbf{Disadvantages}
+						\begin{itemize}
+							\item Cannot discern ground returns and targets
+							\item Lower range
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{DDD} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Range/Azimuth}
+						\item Visual representation of radar and erase sweeps
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{TID} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{No Information from Pulse}
+						\item \textbf{Cannot guide AIM-54}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+		
+		
+		\clearpage
+		
+		\subsection{PULSE MODE - PSTT}
+		\begin{center}
+			\resizebox{0.70\linewidth}{!}{
+				\includegraphics{PSTT.png}
+			}
+		\end{center}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{7cm}}
+				\toprule
+				\textbullet & \blue{Pulse STT} &  Lock Target w/o doppler filtering
+				
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Advantages}
+						\begin{itemize}
+							\item Cannot be notched
+						\end{itemize}
+						\item \textbf{Disadvantages}
+						\begin{itemize}
+							\item Susceptible to ground clutter
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Lock Target} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Conditions}
+						\begin{itemize}
+							\item Pulse Search Mode selected
+							\item RDR HCU Mode selected
+						\end{itemize}
+						\item \textbf{Lock Target}
+						\begin{enumerate}[label=(\alph*)]
+							\item Hold HCU Half-action
+							\item Slew to desired Target
+							\item HCU Full-Action to lock
+						\end{enumerate}
+						\item \textbf{Unlock Target}
+						\begin{enumerate}[label=(\alph*), resume]
+							\item HCU Half-action
+						\end{enumerate}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{DDD} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Track Indications}
+						\begin{itemize}
+							\item ANT TRK light
+							\item RDROT light
+							\item Tracking gates
+							\item Closure rate 
+							\item Attack Symbology
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\clearpage
+		
+		\subsection{PULSE DOPPLER MODE - PULSE DOPPLER SEARCH}
+		\begin{center}
+			\resizebox{0.70\linewidth}{!}{
+				\includegraphics{PDSEARCH.png}
+			}
+		\end{center}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{7cm}}
+				\toprule
+				\textbullet & \blue{Pulse Doppler Search} & \textbf{``Early Warning'' Mode}, Longest Range, cannot display range
+				
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Advantages}
+						\begin{itemize}
+							\item Long Range
+							\item Doppler Filtering
+							\item \textbf{``Look Down Shoot Down''}
+						\end{itemize}
+						\item \textbf{Disadvantages}
+						\begin{itemize}
+							\item Can be notched
+							\item No range information
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{DDD} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Closure Rate/Azimuth}
+						\item Visual representation of radar and erase sweeps
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Doppler Filters} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Main Lobe Clutter (MLC) Filter}
+						\begin{itemize}
+							\item \textbf{Own GS +/- 133 knots}
+							\item Removes main ground return
+							\item Source of notching
+						\end{itemize}
+						\item \textbf{Zero Doppler Filter}
+						\begin{itemize}
+							\item \textbf{Negative own GS +/- 100 knots}
+							\item Removes Radar reflection from ground directly beneath own AC
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{MLC Switch} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{IN:} Enables MLC filter
+						\item \textbf{AUTO:} Enables MLC filter if look-up angle less than 3 deg
+						\item \textbf{OUT:} Disables MLC filter 
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Vc Switch} & Changes closure rate DDD scale
+				
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{X-4:} -800 to 4000 knots
+						\item \textbf{NORM:} -200 to 1000 knots
+						\item \textbf{VID:} -50 to 250 knots
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{ASPECT Switch} & Changes closure rate processing scale
+				
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{NOSE:} -600 to 1800 knots
+						\item \textbf{BEAM:} -1200 to 1200 knots
+						\item \textbf{TAIL:} -1800 to 600 knots
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+		\begin{center}
+			\resizebox{0.40\linewidth}{!}{
+				\includegraphics{PD.png}
+			}
+		\end{center}
+	
+		
+		\subsection{PULSE DOPPLER MODE - RWS}
+		
+		\subsection{PULSE DOPPLER MODE - TWS - MANUAL}
+		
+		\subsection{PULSE DOPPLER MODE - TWS - AUTO}
+		
+		\subsection{PULSE DOPPLER MODE - PDSTT}
+		
+		
+		
+		\cleardoublepage
+		
+	
+	\begin{multicols*}{2}
 		\subsection{TID SYMBOLOGY}
 		\begin{center}
 			\begin{tabular}{p{3.5cm}  | c }
