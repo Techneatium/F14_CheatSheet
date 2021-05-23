@@ -1667,7 +1667,7 @@
 		\cleardoublepage
 		
 		\section{AWG-9 RADAR}
-		\thumbback{AWG-9}{2}
+		\thumbtab{AWG-9}{2}
 %		\begin{center}
 %			\begin{tabular}{c | c | c | c | c}
 %				\toprule
@@ -1893,7 +1893,7 @@
 					\begin{itemize}
 						\item \textbf{Advantages}
 						\begin{itemize}
-							\item Long Range
+							\item Longest Range
 							\item Doppler Filtering
 							\item \textbf{``Look Down Shoot Down''}
 						\end{itemize}
@@ -1971,16 +1971,394 @@
 				\includegraphics{PD.png}
 			}
 		\end{center}
+		\begin{center}
+			\begin{longtable}{l | l | l | l}
+				\toprule
+				& \blue{Look Angle} & \blue{Line of Sight Rate} & \blue{Target Heading} \\
+				\midrule
+				\textbf{1} & 60 deg & 1490 & 180 deg \\
+				\midrule
+				\textbf{2} & 45 deg & 1500 & 120 deg \\
+				\midrule
+				\textbf{3} & 30 deg & 1428 & 100 deg \\
+				\midrule
+				\textbf{4} & 0 deg & 1200 & 90 deg \\
+				\midrule
+				\textbf{5} & 30 deg & 672 & 80 deg \\
+				\midrule
+				\textbf{6} & 45 deg & 210 & 60 deg \\
+				\midrule
+				\textbf{7} & 60 deg & -300 & 0 deg \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\clearpage
 	
 		
 		\subsection{PULSE DOPPLER MODE - RWS}
+		\label{sec:awg9-rws}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{7cm}}
+				\toprule
+				\textbullet & \blue{Range While Search} & \textbf{FM Ranging}, used for getting good A/A picture before selecting TWS
+				
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{FM Ranging}
+						\begin{itemize}
+							\item Pulse Doppler with ranging
+							\item TID shows momentary tracks with ranges
+							\item Processing reduces max range
+						\end{itemize}
+						\item \textbf{Advantages}
+						\begin{itemize}
+							\item Long Range
+							\item Doppler Filtering
+							\item \textbf{``Look Down Shoot Down''}
+							\item Signal Processing 
+						\end{itemize}
+						\item \textbf{Disadvantages}
+						\begin{itemize}
+							\item Can be notched
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{DDD} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Closure Rate/Azimuth}
+						\item Visual representation of radar and erase sweeps
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{TID} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Momentary Tracks}
+						\item Max concurrent tracks: 48
+						\item \textbf{Cannot lock targets from TID}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Filtering} & \textbf{Same as Pulse Doppler Search} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\clearpage
 		
-		\subsection{PULSE DOPPLER MODE - TWS - MANUAL}
-		
-		\subsection{PULSE DOPPLER MODE - TWS - AUTO}
+		\subsection{PULSE DOPPLER MODE - TWS}
+		\label{sec:awg9-tws}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{7cm}}
+				\toprule
+				\textbullet & \blue{Track While Scan} & \textbf{Builds Track Files}, high situational awareness, multi-target AIM-54 launch
+				
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Track Files}
+						\begin{itemize}
+							\item AWG-9 builds Trackfiles for contacts
+							\item Can launch multiple AIM-54 
+							\item Processing reduces max range
+							\item Can lock targets from TID
+						\end{itemize}
+						\item \textbf{FM Ranging}
+						\begin{itemize}
+							\item Pulse Doppler with ranging
+							\item TID shows momentary tracks with ranges
+							\item Processing reduces max range
+						\end{itemize}
+						\item \textbf{Advantages}
+						\begin{itemize}
+							\item Doppler Filtering
+							\item \textbf{Multi-Target AIM-54}
+						\end{itemize}
+						\item \textbf{Disadvantages}
+						\begin{itemize}
+							\item \textbf{Lowest Range}
+							\item Can be notched
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{DDD} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Closure Rate/Azimuth}
+						\item Visual representation of radar and erase sweeps
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{TID} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Tracksfiles}
+						\item Max concurrent tracks: 24
+						\item Max displayed tracks: 18
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Filtering} & \textbf{Same as Pulse Doppler Search} \\
+				\midrule
+				\textbullet & \blue{Scan Volume} & Trackfiles require update every 2.5 s -->
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item 20 deg 4 bar (if selected)
+						\item 40 deg 2 bar (else)
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{TID Mode Selector} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{GND STAB:} Ground Stabilized, True North is up on TID
+						\item \textbf{A/C STAB:} Aircraft Stabilized
+						\item \textbf{ATTAK:} same as A/C STAB with superimposed attack steering symbology
+						\item \textbf{TV:} Displays TCS on TID, dispays LANTIRN on TID if equipped 
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{TID Display Selector Buttons} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{RID DISABLE:} Not simulated
+						\item \textbf{ALT NUM:} Enables display of track altitudes on left side of track symbols
+						\item \textbf{SYM ELEM:} Enables display of all supplementary symbology of tracks and waypoints
+						\item \textbf{DATA LINK:} Enables display of D/L contacts
+						\item \textbf{JAM STROBE:} Enables display of jam strobes
+						\item \textbf{NON-ATTK:} enables/disables display of targets not possible to engage (friendlies)
+						\item \textbf{LAUNCH ZONE:} Enables display of weapon launch zones
+						\item \textbf{VEL VECTOR:} Enables display of velocity vectors
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Track Hold \& Collision Steering} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{TRACK HOLD} 
+						\begin{itemize}
+							\item Normally: Tracks maintained for 14 s after last observation
+							\item Track Hold: maintained for 2 min after last observation
+						\end{itemize}
+						\item \textbf{CLSN Button} 
+						\begin{itemize}
+							\item begins collision steering to currently tracked target
+							\item enables Steering Centroid if in TWS
+							\item LD CLSN presents azimuth steering only
+							\item CLSN presents both azimuth and elevation steering
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{TWS AUTO / MAN} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{TWS MAN:} Manual azimuth/elevation control, target designation by RIO
+						\item \textbf{TWS AUTO:} Automatic prioritization of targets and azimuth elevation control
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\clearpage
+	
+		\subsection{PULSE DOPPLER MODE - TWS MAN}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{7cm}}
+				\toprule
+				\textbullet & \blue{TWS MAN} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Target Selection:} Manual
+						\item \textbf{Scan Azimuth/Elevation:} Manual
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Target Selection} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Conditions}
+						\begin{itemize}
+							\item TWS MAN Radar Mode selected
+							\item TID CURSOR TID Mode selected
+						\end{itemize}
+						\item \textbf{Hook Target}
+						\begin{enumerate}[label=(\alph*)]
+							\item Hold HCU Half-Action
+							\item Slew TID Cursor over desired Tgt
+							\item HCU Full-Action to select Tgt
+						\end{enumerate}
+						\item \textbf{TID Symbology}
+						\begin{itemize}
+							\item Range (\textbf{RA})
+							\item Bearing (\textbf{BR})
+							\item Altitude (\textbf{AL})
+							\item Magnetic course (\textbf{MC})
+						\end{itemize}
+						\item \textbf{Lock Target}
+						\begin{enumerate}[label=(\alph*), resume]
+							\item Press \textbf{PD STT} or \textbf{Pulse STT} buttons
+						\end{enumerate}
+						\item \textbf{Deselect Target}
+						\begin{enumerate}[label=(\alph*), resume]
+							\item press HCU Half-Action
+						\end{enumerate}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{AIM-54 Launch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Automatically selects TWS AUTO}
+						\item \textbf{Prevents selection of TWS MAN}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\clearpage
+	
+		\subsection{PULSE DOPPLER MODE - TWS AUTO}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{7cm}}
+				\toprule
+				\textbullet & \blue{TWS AUTO} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Target Selection:} prioritizes contacts based off range, aspect, closure
+						\item \textbf{Scan Azimuth/Elevation:} Computed geometric center of targets in scan volume
+					\end{itemize}
+				\end{minipage} \\
+				\textbullet & \blue{Centroid / Steering Cues} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Steering Centroid}
+						\begin{itemize}
+							\item facilitates steering cues
+							\item HUD, VDI, TID, DDD
+							\item Appears as \textbf{X} on TID
+							\item Takes Gimbal limits into account
+							\item Weights individual Tracks based on parameters
+						\end{itemize}
+						\item \textbf{Illumination Centroid}
+						\begin{itemize}
+							\item \textbf{Not Visible}
+							\item Controls azimuth and elevation of scan pattern
+							\item Takes scan volume into account
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Pilot Steering Cues} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Conditions}
+						\begin{itemize}
+							\item A-A HUD Mode selected
+							\item Master Arm ON (UP)
+							\item AIM-54 or AIM-7 selected
+							\item TWS-AUTO selected
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\clearpage
 		
 		\subsection{PULSE DOPPLER MODE - PDSTT}
-		
+		\begin{center}
+			\resizebox{0.70\linewidth}{!}{
+				\includegraphics{PDSTT.png}
+			}
+		\end{center}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{7cm}}
+				\toprule
+				\textbullet & \blue{Pulse STT} &  Lock Target w/o doppler filtering
+				
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Advantages}
+						\begin{itemize}
+							\item Ground Clutter filtering
+						\end{itemize}
+						\item \textbf{Disadvantages}
+						\begin{itemize}
+							\item Susceptible to notching
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Lock Target} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Conditions}
+						\begin{itemize}
+							\item Pulse Doppler Mode selected (PD Search, RWS, TWS)
+							\item RDR HCU Mode selected
+						\end{itemize}
+						\item \textbf{Lock Target}
+						\begin{enumerate}[label=(\alph*)]
+							\item Hold HCU Half-action
+							\item Slew to desired Target
+							\item HCU Full-Action to lock
+						\end{enumerate}
+						\item \textbf{Unlock Target}
+						\begin{enumerate}[label=(\alph*), resume]
+							\item HCU Half-action
+						\end{enumerate}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{DDD} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Track Indications}
+						\begin{itemize}
+							\item ANT TRK light
+							\item RDROT light
+							\item Tracking gates
+							\item Closure rate 
+							\item Attack Symbology
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\subsection{ACM MODES - OVERVIEW}
+		\subsection{ACM MODES - PLM}
+		\subsection{ACM MODES - VSL}
+		\subsection{ACM MODES - PAL}
+		\subsection{ACM MODES - MRL}
 		
 		
 		\cleardoublepage
