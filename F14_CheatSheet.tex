@@ -3049,10 +3049,10 @@
 						\item \textbf{Attack Mode} \dotfill \textbf{Pilot Attack}
 						\item \textbf{Deliver Mode} \dotfill \textbf{RPL-SGL}
 						\begin{itemize}
-							\item \textbf{STP (Step)} single bomb per press
-							\item \textbf{RPL (Ripple)} multiple bombs per press
-							\item \textbf{SGL (Single)} single bomb per press
-							\item \textbf{PRS (Pairs)} a pair of bombs per press
+							\item \textbf{STP-SGL} single rocket per press
+							\item \textbf{STP-PRS} single pair per press
+							\item \textbf{RPL-SGL} set number of rocket per press
+							\item \textbf{RPL-PRS} set number of pairs per press
 						\end{itemize}
 						\item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
 						\item \textbf{Electronic Fuze} \dotfill \textbf{INST}
@@ -3102,10 +3102,10 @@
 						\item \textbf{Attack Mode} \dotfill \textbf{Pilot Attack}
 						\item \textbf{Deliver Mode} \dotfill \textbf{STP-PRS}
 						\begin{itemize}
-							\item \textbf{STP (Step)} single bomb per press
-							\item \textbf{RPL (Ripple)} multiple bombs per press
-							\item \textbf{SGL (Single)} single bomb per press
-							\item \textbf{PRS (Pairs)} a pair of bombs per press
+							\item \textbf{STP-SGL} single bomb per press
+							\item \textbf{STP-PRS} single pair per press
+							\item \textbf{RPL-SGL} set number of bomb per press
+							\item \textbf{RPL-PRS} set number of pairs per press
 						\end{itemize}
 						\item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
 						\item \textbf{Electronic Fuze} \dotfill \textbf{INST}
@@ -3155,10 +3155,10 @@
 						\item \textbf{Attack Mode} \dotfill \textbf{Target Attack}
 						\item \textbf{Deliver Mode} \dotfill \textbf{STP-PRS}
 						\begin{itemize}
-							\item \textbf{STP (Step)} single bomb per press
-							\item \textbf{RPL (Ripple)} multiple bombs per press
-							\item \textbf{SGL (Single)} single bomb per press
-							\item \textbf{PRS (Pairs)} a pair of bombs per press
+							\item \textbf{STP-SGL} single bomb per press
+							\item \textbf{STP-PRS} single pair per press
+							\item \textbf{RPL-SGL} set number of bomb per press
+							\item \textbf{RPL-PRS} set number of pairs per press
 						\end{itemize}
 						\item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
 						\item \textbf{Electronic Fuze} \dotfill \textbf{INST}
@@ -3210,7 +3210,7 @@
 		
 		\clearpage 
 		
-		\subsection{GBU-12 PAVEWAY II}
+		\subsection{GBU-10 / 12 / 16 / 24}
 		\begin{center}
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3246,10 +3246,10 @@
 						\item \textbf{Attack Mode} \dotfill \textbf{Manual}
 						\item \textbf{Deliver Mode} \dotfill \textbf{STP-SGL}
 						\begin{itemize}
-							\item \textbf{STP (Step)} single bomb per press
-							\item \textbf{RPL (Ripple)} multiple bombs per press
-							\item \textbf{SGL (Single)} single bomb per press
-							\item \textbf{PRS (Pairs)} a pair of bombs per press
+							\item \textbf{STP-SGL} single bomb per press
+							\item \textbf{STP-PRS} single pair per press
+							\item \textbf{RPL-SGL} set number of bomb per press
+							\item \textbf{RPL-PRS} set number of pairs per press
 						\end{itemize}
 						\item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
 						\item \textbf{Electronic Fuze} \dotfill \textbf{INST}
@@ -3628,11 +3628,16 @@
 							\item \textbf{NOSE QTR} Standard Operation
 							\item \textbf{All Others} Not Simulated
 						\end{itemize}
-						\item \textbf{MSL OPTIONS} \dotfill \textbf{NORM}
+						\item \textbf{MSL OPTIONS} \dotfill \textbf{as desired}
 						\begin{itemize}
-							\item \textbf{SP PD} AIM-7 PD launch
-							\item \textbf{NORM} Normal
-							\item \textbf{PH ACT} AIM-54 active launch
+							\item \textbf{NORM}
+							\begin{itemize}
+								\item WCS uses dedicated CW antenna for AIM-7 guidance
+							\end{itemize}
+							\item \textbf{SP PD}
+							\begin{itemize}
+								\item WCS uses PD from main flood antenna for AIM-7F/M guidance
+							\end{itemize}
 						\end{itemize}
 					\end{enumerate}
 				\end{minipage} \\
@@ -3645,7 +3650,7 @@
 						\begin{itemize}
 							\item \textbf{NORM}
 							\begin{itemize}
-								\item Used for STT engagement
+								\item Used for normal STT engagement
 								\item WCS can use CS or PD
 							\end{itemize}
 							\item \textbf{BRSIT}
@@ -3655,10 +3660,6 @@
 							\end{itemize}
 						\end{itemize}
 						\item \textbf{Radar} \dotfill \textbf{STT}
-						\begin{itemize}
-							\item RIO STT lock
-							\item ACM Modes
-						\end{itemize}
 					\end{enumerate}
 				\end{minipage} \\
 				\midrule
@@ -3676,7 +3677,7 @@
 			\end{tabular}
 		\end{center}
 		
-		\subsection{AIM-54 PHOENIX (SINGLE)}
+		\subsection{AIM-54 PHOENIX - PD-STT}
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3701,16 +3702,23 @@
 							\item \textbf{NOSE QTR} Standard Operation
 							\item \textbf{All Others} Not Simulated
 						\end{itemize}
-						\item \textbf{MSL OPTIONS} \dotfill \textbf{NORM}
+						\item \textbf{MSL OPTIONS} \dotfill \textbf{as desired}
 						\begin{itemize}
-							\item \textbf{SP PD} AIM-7 PD launch
-							\item \textbf{NORM} Normal
-							\item \textbf{PH ACT} AIM-54 active launch
+							\item \textbf{NORM}
+							\begin{itemize}
+								\item AIM-54 uses SARH all the way to the target
+							\end{itemize}
+							\item \textbf{PH ACT}
+							\begin{itemize}
+								\item Must be selected before launch
+								\item WCS commands active at first guidance command
+								\item If no target detected by seeker reverts back to SARH
+							\end{itemize}
 						\end{itemize}
 					\end{enumerate}
 				\end{minipage} \\
 				\midrule
-				3. & \blue{Radar Lock} & 
+				4. & \blue{Radar Lock} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
@@ -3723,19 +3731,16 @@
 							\end{itemize}
 							\item \textbf{BRSIT}
 							\begin{itemize}
-								\item Boresight flood mode
-								\item Tracks strongest return
+								\item AIM-54 active at launch
+								\item Follows ADL
+								\item Does not require any radar data
 							\end{itemize}
 						\end{itemize}
 						\item \textbf{Radar} \dotfill \textbf{STT}
-						\begin{itemize}
-							\item RIO STT lock
-							\item ACM Modes
-						\end{itemize}
 					\end{enumerate}
 				\end{minipage} \\
 				\midrule
-				4. & \blue{Employment} & 
+				5. & \blue{Employment} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
@@ -3744,7 +3749,7 @@
 						\item \textbf{Trigger} \dotfill \textbf{Press and Hold} \\
 						\hfill (3-4 seconds)
 						\begin{itemize}
-							\item \textbf{TID} \dotfill TTI appears
+							\item \textbf{TID} TTI appears
 						\end{itemize}
 						
 						\item \textbf{Radar} \dotfill \textbf{Maintain Lock}
@@ -3754,7 +3759,7 @@
 			\end{tabular}
 		\end{center}
 		
-		\subsection{AIM-54 PHOENIX (MULTI)}
+		\subsection{AIM-54 PHOENIX - TWS / MULTI}
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3779,11 +3784,18 @@
 							\item \textbf{NOSE QTR} Standard Operation
 							\item \textbf{All Others} Not Simulated
 						\end{itemize}
-						\item \textbf{MSL OPTIONS} \dotfill \textbf{NORM}
+						\item \textbf{MSL OPTIONS} \dotfill \textbf{as desired}
 						\begin{itemize}
-							\item \textbf{SP PD} AIM-7 PD launch
-							\item \textbf{NORM} Normal
-							\item \textbf{PH ACT} AIM-54 active launch
+							\item \textbf{NORM}
+							\begin{itemize}
+								\item AIM-54 uses SARH until active
+							\end{itemize}
+							\item \textbf{PH ACT}
+							\begin{itemize}
+								\item Must be selected before launch
+								\item WCS commands active at first guidance command
+								\item If no target detected by seeker reverts back to SARH
+							\end{itemize}
 						\end{itemize}
 						\item \textbf{WCS Mode} \dotfill \textbf{TWS MAN/AUTO}
 					\end{enumerate}
@@ -3794,11 +3806,22 @@
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
 						\item \textbf{MODE/STP} \dotfill \textbf{NORM}
+						\begin{itemize}
+							\item \textbf{NORM}
+							\begin{itemize}
+								\item Used for TWS engagement
+							\end{itemize}
+							\item \textbf{BRSIT}
+							\begin{itemize}
+								\item AIM-54 active at launch
+								\item Follows ADL
+								\item Does not require any radar data
+							\end{itemize}
+						\end{itemize}
 						\item \textbf{Radar} \dotfill \textbf{TWS}
 						\begin{itemize}
 							\item WCS will automatically build trackfiles
 							\item Track priorities to the right of contact symbol
-							\item \textbf{DO NOT STT LOCK}
 						\end{itemize}
 					\end{enumerate}
 				\end{minipage} \\
@@ -3810,14 +3833,10 @@
 						\item \textbf{Trigger} \dotfill \textbf{Press and Hold} \\
 						\hfill (3-4 seconds)
 						\begin{itemize}
-							\item \textbf{TID} \dotfill  TTI appears
-							\item \textbf{WCS MODE} \dotfill switches to \textbf{TWS AUTO}
-						\end{itemize}
-						\item \textbf{Trigger} \dotfill \textbf{Press and Hold} \\
-						\hfill (3-4 seconds)
-						\begin{itemize}
-							\item Fires on next highest priority
-							\item Repeat for remaining targets
+							\item \textbf{TID} TTI appears
+							\item \textbf{WCS MODE} switches to \textbf{TWS AUTO}
+							\item \textbf{Priority} automatically collapses by one
+							\item \textbf{Repeat} for remaining targets
 						\end{itemize}
 						\item \textbf{Radar} \dotfill \textbf{Maintain Track} \\
 						\hfill (until active)
