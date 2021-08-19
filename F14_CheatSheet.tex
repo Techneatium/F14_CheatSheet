@@ -3676,6 +3676,68 @@
 				\bottomrule
 			\end{tabular}
 		\end{center}
+	
+		\subsection{AIM-54 PHOENIX - OVERVIEW}
+		\begin{center}
+			\begin{tabular}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \blue{Missile Preparation} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Weapon Cooling}
+						\begin{itemize}
+							\item AIM-54 requires liquid cooling
+							\item RIO enabled \textbf{LIQUID COOLING} switch
+						\end{itemize}
+						\item \textbf{MSL PREP}
+						\begin{itemize}
+							\item AIM-54 must be tuned to AWG-9
+							\item Either press \textbf{MSL PREP} button
+							\item Or activation of \textbf{ACM}
+						\end{itemize} 
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Launch Modes} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{PDSTT SARH} 
+						\begin{itemize}
+							\item AIM-54 uses SARH all the way to target
+							\item Faster update rate than TWS
+							\item \textbf{Slightly increased effective range} as compared to a TWS launch
+						\end{itemize}
+						\item \textbf{TWS SARH/ARH}
+						\begin{itemize}
+							\item Allows \textbf{6 AIM-54 launches at 6 targets}
+							\item Missile is initially SARH guided
+							\item When within AIM-54 seeker range AWG-9 sends activation command
+							\item \textbf{Not Fire and Forget:} Requires automatic activation command
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{MSL OPTIONS} \dblue{Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{NORM}
+						\begin{itemize}
+							\item Normal guidance (SARH or SARH/ARH)
+						\end{itemize}
+						\item \textbf{PH ACT}
+						\begin{itemize}
+							\item WCS immediately sends AIM-54 activation command on launch
+							\item Reverts to SARH if no target detected
+							\item \textbf{Must be selected before launch}
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
 		
 		\subsection{AIM-54 PHOENIX - PD-STT}
 		\begin{center}
@@ -3718,6 +3780,92 @@
 					\end{enumerate}
 				\end{minipage} \\
 				\midrule
+				3. & \blue{Radar Lock} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{MODE/STP} \dotfill \textbf{NORM}
+						\begin{itemize}
+							\item \textbf{NORM}
+							\begin{itemize}
+								\item Used for STT engagement
+								\item WCS can use CS or PD
+							\end{itemize}
+							\item \textbf{BRSIT}
+							\begin{itemize}
+								\item AIM-54 active at launch
+								\item Follows ADL
+								\item Does not require any radar data
+							\end{itemize}
+						\end{itemize}
+						\item \textbf{Radar} \dotfill \textbf{STT}
+					\end{enumerate}
+				\end{minipage} \\
+				\midrule
+				4. & \blue{Employment} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Target} \dotfill <20 deg from ADL
+						\item \textbf{Steering} \dotfill center T-shaped cue with ASE
+						\item \textbf{Trigger} \dotfill \textbf{Press and Hold} \\
+						\hfill (3-4 seconds)
+						\begin{itemize}
+							\item \textbf{TID} TTI appears
+						\end{itemize}
+						\item \textbf{Radar} \dotfill \textbf{Maintain Lock}
+					\end{enumerate}
+				\end{minipage} \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+	
+		\subsection{AIM-54 PHOENIX - PD-STT}
+		\begin{center}
+			\begin{tabular}{l p{3cm} | p{8cm}}
+				\toprule
+				1. & \blue{Conditions} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
+						\item \textbf{HUD} \dotfill \textbf{A/A}
+						\item \textbf{MSL PREP} \dotfill \textbf{ON}
+						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{PH}
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				2. & \dblue{RIO Conditions} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{LIQUID COOLING} \dotfill \textbf{ON (FWD)}
+						\item \textbf{MSL SPD GATE} \dotfill \textbf{NOSE QTR}
+						\begin{itemize}
+							\item \textbf{NOSE QTR} Standard Operation
+							\item \textbf{All Others} Not Simulated
+						\end{itemize}
+					\end{enumerate}
+				\end{minipage} \\
+				\midrule
+				3. & \dblue{MSL OPTIONS} & \textbf{As Desired}
+				
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{NORM}
+						\begin{itemize}
+							\item AIM-54 uses SARH all the way to the target
+						\end{itemize}
+						\item \textbf{PH ACT}
+						\begin{itemize}
+							\item Must be selected before launch
+							\item WCS commands active at first guidance command
+							\item If no target detected by seeker reverts back to SARH
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
 				4. & \blue{Radar Lock} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
@@ -3751,7 +3899,6 @@
 						\begin{itemize}
 							\item \textbf{TID} TTI appears
 						\end{itemize}
-						
 						\item \textbf{Radar} \dotfill \textbf{Maintain Lock}
 					\end{enumerate}
 				\end{minipage} \\
