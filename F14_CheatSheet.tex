@@ -2239,7 +2239,7 @@
 		
 		\cleardoublepage
 			
-		\subsection{TID SYMBOLOGY}
+		\hypertarget{subsec:tidsymb}{\subsection{TID SYMBOLOGY}}
 		\begin{center}
 			\begin{longtable}{p{3.5cm} | p{1cm} |  p{6cm}}
 				\toprule
@@ -3371,7 +3371,62 @@
 		\section{A/A WEAPONS}
 		\thumbtab{A/A}{5}
 		
-		\subsection{M61 GUN (MANUAL)}
+		\subsection{M61 GUN - OVERVIEW}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \blue{GUN RATE} \hfill\null \blue{Button} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Cycles Gun Rate}
+						\begin{itemize}
+							\item \textbf{HIGH:} 6000 rpm
+							\item \textbf{LOW:} 4000 rpm
+						\end{itemize} 
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{A/A Gun Modes} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{RTGS}
+						\begin{itemize}
+							\item \textbf{Real-Time Gunsight Mode}
+							\item Selected automatically with guns
+							\item \textbf{If No WCS Data Available} displays bullet location at 2000 ft with diamond and 1000 ft with pipper
+							\item \textbf{If WCS Data Available} pipper displays bullet location at targets current range out to 4000 ft
+						\end{itemize}
+						\item \textbf{MANUAL} 
+						\begin{itemize}
+							\item Fixed manual pipper 
+							\item Adjust with \textbf{GUN ELEV} knob
+							\item Press \textbf{CAGE/SEAM} to select
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{CAGE/SEAM}  \hfill\null \blue{Button} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Cycles RTGS / MANUAL Gun Modes}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{ROUNDS Knob} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Allows selection of remaining gun rounds}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+		
+		\subsection{M61 GUN - MANUAL}
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3387,23 +3442,11 @@
 					\end{itemize} 
 				\end{minipage} \\
 				\midrule
-				2. & \blue{Gun Mode} & 
+				2. & \blue{Employment} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
 						\item \textbf{Gun Mode} \dotfill \textbf{MANUAL}
-						\begin{itemize}
-							\item Press \textbf{CAGE/SEAM} to select
-							\item No ranging
-							\item No lead information
-						\end{itemize}
-					\end{enumerate}
-				\end{minipage} \\
-				\midrule
-				3. & \blue{Employment} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
 						\item \textbf{Pipper} \dotfill on target
 						\item \textbf{Trigger} \dotfill \textbf{FIRE}
 					\end{enumerate}
@@ -3412,7 +3455,7 @@
 			\end{tabular}
 		\end{center}
 	
-		\subsection{M61 GUN (RTGS/NO RADAR)}
+		\subsection{M61 GUN - RTGS / NO RADAR}
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3427,25 +3470,11 @@
 					\end{itemize} 
 				\end{minipage} \\
 				\midrule
-				2. & \blue{Gun Mode} & 
+				2. & \blue{Employment} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
 						\item \textbf{Gun Mode} \dotfill \textbf{RTGS}
-						\begin{itemize}
-							\item Real-Time Gunsight Mode
-							\item Selected automatically with guns
-							\item No ranging
-							\item Diamond ranged for 2000 ft
-							\item Pipper ranged for 1000 ft
-						\end{itemize}
-					\end{enumerate}
-				\end{minipage} \\
-				\midrule
-				3. & \blue{Employment} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
 						\item \textbf{Pipper} \dotfill on target
 						\item \textbf{Trigger} \dotfill \textbf{FIRE}
 					\end{enumerate}
@@ -3454,7 +3483,7 @@
 			\end{tabular}
 		\end{center}
 		
-		\subsection{M61 GUN (RTGS/RADAR)}
+		\subsection{M61 GUN - RTGS / RADAR}
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3469,27 +3498,12 @@
 					\end{itemize} 
 				\end{minipage} \\
 				\midrule
-				2. & \blue{Radar Lock} & 
+				2. & \blue{Employment} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
 						\item \textbf{Gun Mode} \dotfill \textbf{RTGS}
-						\begin{itemize}
-							\item Real-Time Gunsight Mode
-							\item Selected automatically with guns
-						\end{itemize}
 						\item \textbf{Radar} \dotfill \textbf{STT}
-						\begin{itemize}
-							\item RIO STT lock
-							\item ACM Modes
-						\end{itemize}
-					\end{enumerate}
-				\end{minipage} \\
-				\midrule
-				3. & \blue{Employment} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
 						\item \textbf{Pipper} \dotfill on target
 						\item \textbf{Trigger} \dotfill \textbf{FIRE}
 					\end{enumerate}
@@ -3498,7 +3512,84 @@
 			\end{tabular}
 		\end{center}
 	
-		\subsection{AIM-9 SIDEWINDER (SIL)}
+		\clearpage
+		
+		\subsection{AIM-9 SIDEWINDER - OVERVIEW}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \blue{Missile Preparation} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{MSL PREP}
+						\begin{itemize}
+							\item AIM-9 seeker must be cooled
+							\item Either press \textbf{SW COOL} button
+							\item Or activation of \textbf{ACM}
+						\end{itemize} 
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Seeker Head Modes} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{SEAM} 
+						\begin{itemize}
+							\item \textbf{Sidewinder Expanded Acquisition Mode}
+							\item \textbf{Double-D search pattern} invisible to pilot
+							\item 4.5 sec search time
+							\item \textbf{Allows AIM-9 to be uncaged and track target}
+							\item 40 deg track limit
+							\item \textbf{Allows WCS to slave AIM-9 to radar track}
+						\end{itemize}
+						\item \textbf{Boresight}
+						\begin{itemize}
+							\item AIM-9 locked to ADL
+							\item 2.5 deg FOV
+							\item Selected if  \textbf{MODE/STP} set to \textbf{BRSIT}
+							\item And \textbf{ACM} not active
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{MODE/STP} \blue{Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{NORM}
+						\begin{itemize}
+							\item Allows \textbf{SEAM} seeker mode
+						\end{itemize}
+						\item \textbf{BRSIT}
+						\begin{itemize}
+							\item Forces Boresight seeker mode
+							\item Overridden if \textbf{ACM} active
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{CAGE/SEAM}  \hfill\null \blue{Button} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Uncages Seeker}
+						\begin{itemize}
+							\item Starts 4.5 second search
+							\item If no IR source found cages again
+						\end{itemize}
+						\item \textbf{Slaves Seeker}
+						\begin{itemize}
+							\item If radar STT locked
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\subsection{AIM-9 SIDEWINDER - SILENT}
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3509,38 +3600,17 @@
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
 						\item \textbf{HUD} \dotfill \textbf{A/A}
 						\item \textbf{SW COOL} \dotfill \textbf{ON}
+						\item \textbf{MODE/STP} \dotfill \textbf{As Desired}
 						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{SW}
 					\end{itemize} 
 				\end{minipage} \\
 				\midrule
-				2. & \blue{IR Lock} & 
+				2. & \blue{Employment} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{MODE/STP} \dotfill as desired
-						\begin{itemize}
-							\item \textbf{NORM}
-							\begin{itemize}
-								\item Uncage seeker with \textbf{CAGE/SEAM}
-								\item 4.5 sec search time
-								\item 40 deg track limit
-							\end{itemize}
-							\item \textbf{BRSIT}
-							\begin{itemize}
-								\item Seeker slaved to ADL
-								\item 2.5 deg FOV
-							\end{itemize}
-						\end{itemize}
-						\item \textbf{CAGE/SEAM} \dotfill press to uncage \\
-						\hfill (if using \textbf{NORM})
-						\item \textbf{Tone} \dotfill high pitched
-					\end{enumerate}
-				\end{minipage} \\
-				\midrule
-				3. & \blue{Employment} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{CAGE/SEAM} \dotfill \textbf{Uncage Seeker}
+						\item \textbf{IR-Lock} \dotfill \textbf{Good Tone}
 						\item \textbf{Trigger} \dotfill \textbf{FIRE}
 					\end{enumerate}
 				\end{minipage} \\
@@ -3548,7 +3618,7 @@
 			\end{tabular}
 		\end{center}
 		
-		\subsection{AIM-9 SIDEWINDER (RADAR)}
+		\subsection{AIM-9 SIDEWINDER - RADAR}
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3559,42 +3629,18 @@
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
 						\item \textbf{HUD} \dotfill \textbf{A/A}
 						\item \textbf{SW COOL} \dotfill \textbf{ON}
-						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{SW}
-					\end{itemize} 
-				\end{minipage} \\
-				\midrule
-				2. & \blue{Radar/IR Lock} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
 						\item \textbf{MODE/STP} \dotfill \textbf{NORM}
-						\begin{itemize}
-							\item \textbf{NORM}
-							\begin{itemize}
-								\item Uncage seeker with \textbf{CAGE/SEAM}
-								\item 4.5 sec search time
-								\item 40 deg track limit
-							\end{itemize}
-							\item \textbf{BRSIT}
-							\begin{itemize}
-								\item Seeker slaved to ADL
-								\item 2.5 deg FOV
-							\end{itemize}
-						\end{itemize}
-						\item \textbf{Radar} \dotfill \textbf{STT}
-						\begin{itemize}
-							\item RIO STT lock
-							\item ACM Modes
-						\end{itemize}
-						\item \textbf{CAGE/SEAM} \dotfill press to slave to radar
-						\item \textbf{Tone} \dotfill high pitched
-					\end{enumerate}
+						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{SW}
+					\end{itemize} 
 				\end{minipage} \\
 				\midrule
-				3. & \blue{Employment} & 
+				2. & \blue{Employment} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Radar} \dotfill \textbf{STT}
+						\item \textbf{CAGE/SEAM} \dotfill \textbf{Slave Seeker}
+						\item \textbf{IR-LOCK} \dotfill \textbf{Good Tone}
 						\item \textbf{Steering} \dotfill center T-shaped cue with ASE
 						\item \textbf{Trigger} \dotfill \textbf{FIRE}
 					\end{enumerate}
@@ -3602,8 +3648,96 @@
 				\bottomrule
 			\end{tabular}
 		\end{center}
+	
+		\clearpage
+	
+		\subsection{AIM-7 SPARROW - OVERVIEW}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \blue{Missile Preparation} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{MSL PREP}
+						\begin{itemize}
+							\item AIM-7 must be tuned to AWG-9
+							\item Either press \textbf{MSL PREP} button
+							\item Or activation of \textbf{ACM}
+						\end{itemize} 
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Launch Modes} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Normal} 
+						\begin{itemize}
+							\item Standard operation, STT target designated before launch
+							\item AIM-7 uses SARH all the way to target
+							\item WCS can use CS or PD for guidance set with \textbf{MSL OPTIONS} Switch
+						\end{itemize}
+						\item \textbf{Boresight}
+						\begin{itemize}
+							\item Uses CS flood antenna of AWG-9
+							\item Missile will \textbf{track strongest return} in Flood area
+							\item Automatically activated if STT broken
+							\item Selected if \textbf{MODE/STP} set to \textbf{BRSIT}
+							\item \textbf{Or if no STT available}
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{MSL SPD GATE} \dblue{Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{NOSE QTR}
+						\begin{itemize}
+							\item Standard setting in DCS
+						\end{itemize}
+						\item \textbf{All Others}
+						\begin{itemize}
+							\item Not simulated
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{MSL OPTIONS} \dblue{Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{NORM}
+						\begin{itemize}
+							\item WCS uses dedicated CW antenna for AIM-7 guidance
+						\end{itemize}
+						\item \textbf{SP PD}
+						\begin{itemize}
+							\item WCS uses PD from main flood antenna for AIM-7F/M guidance
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{MODE/STP} \blue{Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{NORM}
+						\begin{itemize}
+							\item Sets normal launch mode logic
+						\end{itemize}
+						\item \textbf{BRSIT}
+						\begin{itemize}
+							\item Forces Boresight launch mode
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
 		
-		\subsection{AIM-7 SPARROW}
+		\subsection{AIM-7 SPARROW - STT}
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3614,6 +3748,7 @@
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
 						\item \textbf{HUD} \dotfill \textbf{A/A}
 						\item \textbf{MSL PREP} \dotfill \textbf{ON}
+						\item \textbf{MODE/STP} \dotfill \textbf{NORM}
 						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{SP}
 					\end{itemize} 
 				\end{minipage} \\
@@ -3621,65 +3756,38 @@
 				2. & \dblue{RIO Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{LIQUID COOLING} \dotfill \textbf{ON (FWD)}
 						\item \textbf{MSL SPD GATE} \dotfill \textbf{NOSE QTR}
-						\begin{itemize}
-							\item \textbf{NOSE QTR} Standard Operation
-							\item \textbf{All Others} Not Simulated
-						\end{itemize}
-						\item \textbf{MSL OPTIONS} \dotfill \textbf{as desired}
-						\begin{itemize}
-							\item \textbf{NORM}
-							\begin{itemize}
-								\item WCS uses dedicated CW antenna for AIM-7 guidance
-							\end{itemize}
-							\item \textbf{SP PD}
-							\begin{itemize}
-								\item WCS uses PD from main flood antenna for AIM-7F/M guidance
-							\end{itemize}
-						\end{itemize}
-					\end{enumerate}
+						\item \textbf{MSL OPTIONS} \dotfill \textbf{As Desired}
+					\end{itemize}
 				\end{minipage} \\
 				\midrule
-				3. & \blue{Radar Lock} & 
+				3. & \blue{Employment} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{MODE/STP} \dotfill \textbf{NORM}
-						\begin{itemize}
-							\item \textbf{NORM}
-							\begin{itemize}
-								\item Used for normal STT engagement
-								\item WCS can use CS or PD
-							\end{itemize}
-							\item \textbf{BRSIT}
-							\begin{itemize}
-								\item Boresight flood mode
-								\item Tracks strongest return
-							\end{itemize}
-						\end{itemize}
 						\item \textbf{Radar} \dotfill \textbf{STT}
-					\end{enumerate}
-				\end{minipage} \\
-				\midrule
-				4. & \blue{Employment} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{Target} \dotfill <20 deg from ADL
-						\item \textbf{Steering} \dotfill center T-shaped cue with ASE
-						\item \textbf{Trigger} \dotfill \textbf{FIRE}
-						\item \textbf{Radar} \dotfill \textbf{Maintain Lock}
+						\item \textbf{Steering}
+						\begin{itemize}
+							\item \textbf{Target} < 20 deg from ADL
+							\item \textbf{ASE} center T-shaped cue within
+						\end{itemize}
+						\item \textbf{Trigger} \dotfill \textbf{Press and Hold} \\
+						\hfill (until weapon release)
+						\item \textbf{Radar} \dotfill \textbf{Maintain Lock} \\
+						\hfill (until impact)
 					\end{enumerate}
 				\end{minipage} \\
 				\bottomrule
 			\end{tabular}
 		\end{center}
 	
+		\clearpage
+	
 		\subsection{AIM-54 PHOENIX - OVERVIEW}
 		\begin{center}
-			\begin{tabular}{l p{3cm} | p{8cm}}
+			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
 				\textbullet & \blue{Missile Preparation} & 
 				\begin{minipage}[t]{\linewidth}
@@ -3716,6 +3824,27 @@
 							\item When within AIM-54 seeker range AWG-9 sends activation command
 							\item \textbf{Not Fire and Forget:} Requires automatic activation command
 						\end{itemize}
+						\item \textbf{ACM Active}
+						\begin{itemize}
+							\item Activated when \textbf{BRSIT} selected
+							\item Or when \textbf{ACM} active with no radar track
+							\item Missile commanded active \textbf{before launch}
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{MSL SPD GATE} \dblue{Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{NOSE QTR}
+						\begin{itemize}
+							\item Standard setting in DCS
+						\end{itemize}
+						\item \textbf{All Others}
+						\begin{itemize}
+							\item Not simulated
+						\end{itemize}
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
@@ -3735,8 +3864,63 @@
 						\end{itemize}
 					\end{itemize}
 				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{TGTS} \dblue{Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{SMALL:} 6nm activation range
+						\item \textbf{NORM:} 10nm activation range
+						\item \textbf{LARGE:} 13nm activation range
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{MODE/STP} \blue{Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{NORM}
+						\begin{itemize}
+							\item Normal operation
+						\end{itemize}
+						\item \textbf{BRSIT}
+						\begin{itemize}
+							\item Commanded active \textbf{before launch}
+							\item Missile follows ADL and locks strongest return
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{TWS Symbology} & \hyperlink{subsec:tidsymb}{\textbf{Refer to TID Symbology Section}}
+				
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Pre-Launch}
+						\begin{itemize}
+							\item Prioritization numbers assigned to tracks automatically or manually
+							\item Blinking indicates optimal launch parameters
+						\end{itemize}
+						\item \textbf{Post-Launch}
+						\begin{itemize}
+							\item Target prioritization number replaced with TTI
+							\item Other prioritization numbers collapsed by one
+							\item Tracks under missile attack brightened
+							\item \textbf{TTI blinks when missile active}
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Launch To Eject (LTE) Time} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Normal Operation:} 3-4 seconds
+						\item \textbf{When in ACM:} 1 second
+					\end{itemize}
+				\end{minipage} \\
 				\bottomrule
-			\end{tabular}
+			\end{longtable}
 		\end{center}
 		
 		\subsection{AIM-54 PHOENIX - PD-STT}
@@ -3750,6 +3934,7 @@
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
 						\item \textbf{HUD} \dotfill \textbf{A/A}
 						\item \textbf{MSL PREP} \dotfill \textbf{ON}
+						\item \textbf{MODE/STP} \dotfill \textbf{NORM}
 						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{PH}
 					\end{itemize} 
 				\end{minipage} \\
@@ -3757,155 +3942,34 @@
 				2. & \dblue{RIO Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{LIQUID COOLING} \dotfill \textbf{ON (FWD)}
 						\item \textbf{MSL SPD GATE} \dotfill \textbf{NOSE QTR}
-						\begin{itemize}
-							\item \textbf{NOSE QTR} Standard Operation
-							\item \textbf{All Others} Not Simulated
-						\end{itemize}
-						\item \textbf{MSL OPTIONS} \dotfill \textbf{as desired}
-						\begin{itemize}
-							\item \textbf{NORM}
-							\begin{itemize}
-								\item AIM-54 uses SARH all the way to the target
-							\end{itemize}
-							\item \textbf{PH ACT}
-							\begin{itemize}
-								\item Must be selected before launch
-								\item WCS commands active at first guidance command
-								\item If no target detected by seeker reverts back to SARH
-							\end{itemize}
-						\end{itemize}
-					\end{enumerate}
+						\item \textbf{MSL OPTIONS} \dotfill \textbf{As Desired}
+						\item \textbf{TGTS Switch} \dotfill \textbf{As Desired}
+					\end{itemize}
 				\end{minipage} \\
 				\midrule
-				3. & \blue{Radar Lock} & 
+				3. & \blue{Employment} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{MODE/STP} \dotfill \textbf{NORM}
-						\begin{itemize}
-							\item \textbf{NORM}
-							\begin{itemize}
-								\item Used for STT engagement
-								\item WCS can use CS or PD
-							\end{itemize}
-							\item \textbf{BRSIT}
-							\begin{itemize}
-								\item AIM-54 active at launch
-								\item Follows ADL
-								\item Does not require any radar data
-							\end{itemize}
-						\end{itemize}
 						\item \textbf{Radar} \dotfill \textbf{STT}
-					\end{enumerate}
-				\end{minipage} \\
-				\midrule
-				4. & \blue{Employment} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{Target} \dotfill <20 deg from ADL
-						\item \textbf{Steering} \dotfill center T-shaped cue with ASE
-						\item \textbf{Trigger} \dotfill \textbf{Press and Hold} \\
-						\hfill (3-4 seconds)
+						\item \textbf{Steering}
 						\begin{itemize}
-							\item \textbf{TID} TTI appears
+							\item \textbf{Target} < 20 deg from ADL
+							\item \textbf{ASE} center T-shaped cue within
 						\end{itemize}
-						\item \textbf{Radar} \dotfill \textbf{Maintain Lock}
+						\item \textbf{Trigger} \dotfill \textbf{Press and Hold} \\
+						\hfill (until weapon release)
+						\item \textbf{Radar} \dotfill \textbf{Maintain Lock} \\
+						\hfill (until impact)
 					\end{enumerate}
 				\end{minipage} \\
 				\bottomrule
 			\end{tabular}
 		\end{center}
 	
-		\subsection{AIM-54 PHOENIX - PD-STT}
-		\begin{center}
-			\begin{tabular}{l p{3cm} | p{8cm}}
-				\toprule
-				1. & \blue{Conditions} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{itemize}
-						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
-						\item \textbf{HUD} \dotfill \textbf{A/A}
-						\item \textbf{MSL PREP} \dotfill \textbf{ON}
-						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{PH}
-					\end{itemize} 
-				\end{minipage} \\
-				\midrule
-				2. & \dblue{RIO Conditions} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{LIQUID COOLING} \dotfill \textbf{ON (FWD)}
-						\item \textbf{MSL SPD GATE} \dotfill \textbf{NOSE QTR}
-						\begin{itemize}
-							\item \textbf{NOSE QTR} Standard Operation
-							\item \textbf{All Others} Not Simulated
-						\end{itemize}
-					\end{enumerate}
-				\end{minipage} \\
-				\midrule
-				3. & \dblue{MSL OPTIONS} & \textbf{As Desired}
-				
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{itemize}
-						\item \textbf{NORM}
-						\begin{itemize}
-							\item AIM-54 uses SARH all the way to the target
-						\end{itemize}
-						\item \textbf{PH ACT}
-						\begin{itemize}
-							\item Must be selected before launch
-							\item WCS commands active at first guidance command
-							\item If no target detected by seeker reverts back to SARH
-						\end{itemize}
-					\end{itemize}
-				\end{minipage} \\
-				\midrule
-				4. & \blue{Radar Lock} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{MODE/STP} \dotfill \textbf{NORM}
-						\begin{itemize}
-							\item \textbf{NORM}
-							\begin{itemize}
-								\item Used for STT engagement
-								\item WCS can use CS or PD
-							\end{itemize}
-							\item \textbf{BRSIT}
-							\begin{itemize}
-								\item AIM-54 active at launch
-								\item Follows ADL
-								\item Does not require any radar data
-							\end{itemize}
-						\end{itemize}
-						\item \textbf{Radar} \dotfill \textbf{STT}
-					\end{enumerate}
-				\end{minipage} \\
-				\midrule
-				5. & \blue{Employment} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{Target} \dotfill <20 deg from ADL
-						\item \textbf{Steering} \dotfill center T-shaped cue with ASE
-						\item \textbf{Trigger} \dotfill \textbf{Press and Hold} \\
-						\hfill (3-4 seconds)
-						\begin{itemize}
-							\item \textbf{TID} TTI appears
-						\end{itemize}
-						\item \textbf{Radar} \dotfill \textbf{Maintain Lock}
-					\end{enumerate}
-				\end{minipage} \\
-				\bottomrule
-			\end{tabular}
-		\end{center}
-		
 		\subsection{AIM-54 PHOENIX - TWS / MULTI}
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
@@ -3917,6 +3981,7 @@
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
 						\item \textbf{HUD} \dotfill \textbf{A/A}
 						\item \textbf{MSL PREP} \dotfill \textbf{ON}
+						\item \textbf{MODE/STP} \dotfill \textbf{NORM}
 						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{PH}
 					\end{itemize} 
 				\end{minipage} \\
@@ -3924,67 +3989,23 @@
 				2. & \dblue{RIO Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{LIQUID COOLING} \dotfill \textbf{ON (FWD)}
 						\item \textbf{MSL SPD GATE} \dotfill \textbf{NOSE QTR}
-						\begin{itemize}
-							\item \textbf{NOSE QTR} Standard Operation
-							\item \textbf{All Others} Not Simulated
-						\end{itemize}
-						\item \textbf{MSL OPTIONS} \dotfill \textbf{as desired}
-						\begin{itemize}
-							\item \textbf{NORM}
-							\begin{itemize}
-								\item AIM-54 uses SARH until active
-							\end{itemize}
-							\item \textbf{PH ACT}
-							\begin{itemize}
-								\item Must be selected before launch
-								\item WCS commands active at first guidance command
-								\item If no target detected by seeker reverts back to SARH
-							\end{itemize}
-						\end{itemize}
+						\item \textbf{MSL OPTIONS} \dotfill \textbf{As Desired}
+						\item \textbf{TGTS Switch} \dotfill \textbf{As Desired}
 						\item \textbf{WCS Mode} \dotfill \textbf{TWS MAN/AUTO}
-					\end{enumerate}
-				\end{minipage} \\
-				\midrule
-				3. & \blue{Radar Track} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{MODE/STP} \dotfill \textbf{NORM}
-						\begin{itemize}
-							\item \textbf{NORM}
-							\begin{itemize}
-								\item Used for TWS engagement
-							\end{itemize}
-							\item \textbf{BRSIT}
-							\begin{itemize}
-								\item AIM-54 active at launch
-								\item Follows ADL
-								\item Does not require any radar data
-							\end{itemize}
-						\end{itemize}
-						\item \textbf{Radar} \dotfill \textbf{TWS}
-						\begin{itemize}
-							\item WCS will automatically build trackfiles
-							\item Track priorities to the right of contact symbol
-						\end{itemize}
-					\end{enumerate}
+					\end{itemize}
 				\end{minipage} \\
 				\midrule
 				4. & \blue{Employment} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Radar} \dotfill \textbf{TWS}
 						\item \textbf{Trigger} \dotfill \textbf{Press and Hold} \\
-						\hfill (3-4 seconds)
-						\begin{itemize}
-							\item \textbf{TID} TTI appears
-							\item \textbf{WCS MODE} switches to \textbf{TWS AUTO}
-							\item \textbf{Priority} automatically collapses by one
-							\item \textbf{Repeat} for remaining targets
-						\end{itemize}
+						\hfill (until weapon release)
+						\item \textbf{Repeat} \dotfill for remaining targets
 						\item \textbf{Radar} \dotfill \textbf{Maintain Track} \\
 						\hfill (until active)
 					\end{enumerate}
@@ -3992,6 +4013,7 @@
 				\bottomrule
 			\end{tabular}
 		\end{center}
+		
 	
 	    %fills rest of page with blanks
 	    \cleardoublepage
