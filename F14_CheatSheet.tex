@@ -1058,7 +1058,7 @@
 						\begin{itemize}
 							\item Similar to heading hold
 							\item Compensates for wind drift
-							\item Uses INS data instead of magnetic bearing
+							\item Uses INS data instead of mag. bearing
 						\end{itemize}
 						\item \textbf{Limits}
 						\begin{itemize}
@@ -1176,7 +1176,7 @@
 							\item Automatically through CADC
 							\item Manually with emergency wing-sweep handle
 						\end{itemize}
-						\item \textbf{15 deg / s at 1 g loading}
+						\item \textbf{15 deg/s at 1g loading}
 						\item \textbf{Mechanically linked to ensure symmetry}
 					\end{itemize}
 				\end{minipage} \\
@@ -1266,7 +1266,111 @@
 		\subsection{DATALINK / IFF}
 		
 		\clearpage
+		
 		\subsection{ALR-67 RWR - OVERVIEW}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \dblue{PWR Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Set to ON to Operate}
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{VOL Knob} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Sets RIO Audio Level}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{TEST Switch} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Springloaded to Center}
+						\item \textbf{BIT} - Initiates Build In Test
+						\item \textbf{SPL} - Holds BIT status page while held
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{MODE Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Springloaded to Center}
+						\item \textbf{OFST} - Separates overlapping symbols
+						\item \textbf{LMT} - Displays 6 highest threats
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{DISPLAY TYPE} \dblue{Selector} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Changes Priority of Display}
+						\begin{itemize}
+							\item \textbf{NORM} - Normal threat symbology
+							\item \textbf{AI} - Airborne Interceptor prioritized
+							\item \textbf{AAA} - Anti-aircraft artillery prioritized
+							\item \textbf{UNK} - Unknown prioritized
+							\item \textbf{FRIEND} - Friendly threats prioritized
+						\end{itemize}
+						\item \textbf{Indicated by Letter in Display Center}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Display} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Outer Band}
+						\begin{itemize}
+							\item \textbf{Critical Band}
+							\item Imminent threat to own aircraft
+							\item Blinking indicates engaging own aircraft
+						\end{itemize}
+						\item \textbf{Middle Band}
+						\begin{itemize}
+							\item \textbf{Lethal Band}
+							\item Potentially threatening emitters
+							\item Not actively engaging own aircraft
+						\end{itemize}
+						\item \textbf{Inner Band} 
+						\begin{itemize}
+							\item \textbf{Non-Lethal Band}
+							\item Not currently within capability of emitter
+						\end{itemize}
+						\item \textbf{Inner Circle} 
+						\begin{itemize}
+							\item \textbf{N, I, A, U, or F} - Prioritization type
+							\item \textbf{O} - Offset
+							\item \textbf{L} - Limit
+							\item \textbf{B} - BIT Failure
+							\item \textbf{T} - Thermal overload
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Alert Tones} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Short Tone} - New emitter / emitter moved
+						\item \textbf{Slow Warbling} - Threat in critical band
+						\item \textbf{Fast Warbling} - Threat actively engaging own aircraft
+						\item \textbf{4-Tone Sequence} - New threat capable of silently engaging own aircraft 
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\clearpage
+	
 		\subsection{ALR-67 RWR - THREAT SYMBOLOGY}
 		\begin{multicols*}{2}
 		\begin{center}
@@ -1557,12 +1661,11 @@
 		\begin{center}
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
-				\textbullet & \blue{Pulse Search} &  Basic Mode, AWG-9 does not use pulse doppler filtering
+				\textbullet & \blue{Pulse Search} &  \textbf{Basic Mode} - AWG-9 does not use pulse doppler filtering
 				
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						%						\item Basic Mode, AWG-9 does not use pulse doppler filtering
 						\item \textbf{Advantages}
 						\begin{itemize}
 							\item All aspect target detection
@@ -1677,7 +1780,7 @@
 		\begin{center}
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
-				\textbullet & \blue{Pulse Doppler Search} & \textbf{``Early Warning'' Mode}, Longest Range, cannot display range
+				\textbullet & \blue{Pulse Doppler Search} & \textbf{``Early Warning'' Mode} - Longest Range, cannot display range
 				
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
@@ -1723,7 +1826,7 @@
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
-				\textbullet & \blue{MLC Switch} &
+				\textbullet & \dblue{MLC Switch} &
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -1733,7 +1836,7 @@
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
-				\textbullet & \blue{Vc Switch} & Changes closure rate DDD scale
+				\textbullet & \dblue{Vc Switch} & Changes closure rate DDD scale
 				
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
@@ -1910,7 +2013,7 @@
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
-				\textbullet & \blue{TID Mode Selector} & 
+				\textbullet & \dblue{TID Mode} \dblue{Selector} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -1921,7 +2024,7 @@
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
-				\textbullet & \blue{TID Display Selector Buttons} & 
+				\textbullet & \dblue{TID Display} \dblue{Selector} \dblue{Buttons} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -1936,7 +2039,7 @@
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
-				\textbullet & \blue{Track Hold \& Collision Steering} & 
+				\textbullet & \dblue{TRACK HOLD \&} \dblue{CLSN Steering} \dblue{Buttons} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
