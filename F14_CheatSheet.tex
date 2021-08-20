@@ -1266,7 +1266,8 @@
 		\subsection{DATALINK / IFF}
 		
 		\clearpage
-		\subsection{RWR THREAT SYMBOLOGY}
+		\subsection{ALR-67 RWR - OVERVIEW}
+		\subsection{ALR-67 RWR - THREAT SYMBOLOGY}
 		\begin{multicols*}{2}
 		\begin{center}
 			\begin{tabular}{c | p{4cm} }
@@ -1476,6 +1477,8 @@
 		\end{center}
 		\end{multicols*}
 		
+		\subsection{ALE-39 COUNTERMEASURES DISPENSER}
+		\subsection{ALQ-100 / ALQ-126 DECM}
 
 		\cleardoublepage
 		
@@ -1608,6 +1611,7 @@
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
 				\textbullet & \blue{Pulse STT} &  Lock Target w/o doppler filtering \thumbnar
+				
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -2987,18 +2991,194 @@
 	
 		\cleardoublepage
 		
-		\section{TCS/ALQ-100}
+		\section{TCS / ALQ-100}
 		\thumbtab{TCS - LANTIRN}{3}
+		
+		\subsection{OVERVIEW}
 		
 		\cleardoublepage
 		
 		\section{LANTIRN}
+		
+		\subsection{OVERVIEW}
+		\subsection{DISPLAY}
+		\subsection{CONTROL PANEL}
+		\subsection{CONTROLS}
+		\subsection{STARTUP}
+		\subsection{MASTER MODES}
 		
 		\cleardoublepage
 		
 		\section{A/G WEAPONS}
 		\thumbtab{A/G}{4}
 		
+		\subsection{A/G WEAPON SETTINGS - OVERVIEW}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \dblue{WPN TYPE} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Selects Weapon Type}
+						\begin{itemize}
+							\item Configures WCS for selected weapon
+							\item Refer to Kneeboard for list of mounted weapons
+							\item Mk-81 / 82 / 83 have both \textbf{L} and \textbf{H} option refering to high and low drag
+						\end{itemize}
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{DLVY MODE} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{STP-SGL} - Single weapon per press
+						\item \textbf{STP-PRS} - Single pair per press
+						\item \textbf{RPL-SGL} - QTY of weapons per press
+						\item \textbf{RPL-PRS} - QTY of pairs per press
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{DLVY OPTNS} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{INTERVAL} - Interval in ms
+						\item \textbf{QTY} - Number of stores to be released
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{MECH FUZE} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{NOSE} - Arms nose fuze
+						\item \textbf{SAFE} - Inhibits arming of fuzes
+						\item \textbf{NOSE/TAIL} - Arms both fuzes
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{ELEC FUZE} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{SAFE} - Inhibits electrical bomb fuzing
+						\item \textbf{VT} - Sets air-burst mode at preset burst height for compatible stores
+						\item \textbf{INST} - Sets instantaneous burst mode
+						\item \textbf{DLY 1} - Sets preset time delay 1
+						\item \textbf{DLY 2} - Sets preset time delay 2
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{STA SEL} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Selects Stations for Employment/Jettison}
+						\begin{itemize}
+							\item Set to \textbf{SEL} to activate a pylon
+							\item Stations 1 \& 8 should be set to \textbf{B} for selection
+							\item Station 1 \& 8 \textbf{SW} was used for Sidewinder jettison, is now inoperable
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{TANK JETT} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Allows Drop Tank Jettison}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{SEL JETT} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{JETT} - Selective jettison
+						\item \textbf{SAFE} - Inhibits jettison
+						\item \textbf{AUX} - Backup mode
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{JETT OPTIONS} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{MER TER} - Jettisons ejector racks
+						\item \textbf{WPNS} - Jettisons weapons only
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{ATTK MODE} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{CCMPTR TGT}
+						\begin{itemize}
+							\item \textbf{Computer Target} - Similar to CCRP
+						\end{itemize}
+						\item \textbf{CMPTR IP}
+						\begin{itemize}
+							\item \textbf{Computer initial point}
+							\item Extended \textbf{CMPTR TGT} mode using known IP
+							\item For use when target hard to spot visually but close to landmark
+						\end{itemize}
+						\item \textbf{CMPTR PLT}
+						\begin{itemize}
+							\item \textbf{Computer Pilot} - similar to CCIP
+						\end{itemize}
+						\item \textbf{MAN}
+						\begin{itemize}
+							\item \textbf{Manual} - HUD displays pipper
+							\item Backup mode
+						\end{itemize}
+						\item \textbf{D/L BOMB}
+						\begin{itemize}
+							\item \textbf{Data-Link Bomb} - Automatic mode steered by D/L cues
+							\item \textbf{Not Implemented in DCS}
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+		
+	
+		\subsection{SELECTIVE ORNANCE JETTISON}
+		\begin{center}
+			\begin{tabular}{l p{3cm} | p{8cm}}
+				\toprule
+				1. & \blue{Pilot Conditions} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
+					\end{enumerate} 
+				\end{minipage} \\
+				\midrule
+				2. & \dblue{RIO Conditions} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Desired Stations} \dotfill \textbf{Selected}
+						\item \textbf{JETT OPTIONS} \dotfill \textbf{As Desired}
+					\end{enumerate}
+				\end{minipage} \\
+				\midrule
+				3. & \dblue{Jettison} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{SEL JETT Guard} \dotfill \textbf{Flipped}
+						\item \textbf{SEL JETT Switch} \dotfill \textbf{JETT}
+					\end{enumerate}
+				\end{minipage} \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+	
 		\subsection{M61 GUN}
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
@@ -3010,7 +3190,6 @@
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
 						\item \textbf{HUD} \dotfill \textbf{A/G}
 						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{GUNS}
-						\item \textbf{Stations} \dotfill verify selected
 						\item \textbf{Wing Sweep} \dotfill \textbf{BOMB}
 					\end{enumerate} 
 				\end{minipage} \\
@@ -3037,7 +3216,7 @@
 			\end{tabular}
 		\end{center}
 		
-		\subsection{ZUNI ROCKETS}
+		\subsection{FFAR / ZUNI ROCKETS}
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3048,19 +3227,9 @@
 						\item \textbf{WPN TYP} \dotfill \textbf{LAU-10}
 						\item \textbf{Attack Mode} \dotfill \textbf{Pilot Attack}
 						\item \textbf{Deliver Mode} \dotfill \textbf{RPL-SGL}
-						\begin{itemize}
-							\item \textbf{STP-SGL} single rocket per press
-							\item \textbf{STP-PRS} single pair per press
-							\item \textbf{RPL-SGL} set number of rocket per press
-							\item \textbf{RPL-PRS} set number of pairs per press
-						\end{itemize}
 						\item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
 						\item \textbf{Electronic Fuze} \dotfill \textbf{INST}
-						\item \textbf{Delivery Options} \dotfill set 
-						\begin{itemize}
-							\item \textbf{INTERVAL} \dotfill 050 msec
-							\item \textbf{QTY} \dotfill 04
-						\end{itemize}
+						\item \textbf{Delivery Options} \dotfill \textbf{As Desired}
 						\item \textbf{Stations} \dotfill \textbf{Armed}
 					\end{enumerate}
 				\end{minipage} \\
@@ -3098,22 +3267,12 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{WPN TYP} \dotfill \textbf{MK-82}
+						\item \textbf{WPN TYP} \dotfill \textbf{MK-XX}
 						\item \textbf{Attack Mode} \dotfill \textbf{Pilot Attack}
 						\item \textbf{Deliver Mode} \dotfill \textbf{STP-PRS}
-						\begin{itemize}
-							\item \textbf{STP-SGL} single bomb per press
-							\item \textbf{STP-PRS} single pair per press
-							\item \textbf{RPL-SGL} set number of bomb per press
-							\item \textbf{RPL-PRS} set number of pairs per press
-						\end{itemize}
 						\item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
 						\item \textbf{Electronic Fuze} \dotfill \textbf{INST}
-						\item \textbf{Delivery Options} \dotfill set 
-						\begin{itemize}
-							\item \textbf{INTERVAL} \dotfill 010 msec
-							\item \textbf{QTY} \dotfill 01
-						\end{itemize}
+						\item \textbf{Delivery Options} \dotfill \textbf{As Desired}
 						\item \textbf{Stations} \dotfill \textbf{Armed}
 					\end{enumerate}
 				\end{minipage} \\
@@ -3154,19 +3313,9 @@
 						\item \textbf{WPN TYP} \dotfill \textbf{MK-82}
 						\item \textbf{Attack Mode} \dotfill \textbf{Target Attack}
 						\item \textbf{Deliver Mode} \dotfill \textbf{STP-PRS}
-						\begin{itemize}
-							\item \textbf{STP-SGL} single bomb per press
-							\item \textbf{STP-PRS} single pair per press
-							\item \textbf{RPL-SGL} set number of bomb per press
-							\item \textbf{RPL-PRS} set number of pairs per press
-						\end{itemize}
 						\item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
 						\item \textbf{Electronic Fuze} \dotfill \textbf{INST}
-						\item \textbf{Delivery Options} \dotfill set 
-						\begin{itemize}
-							\item \textbf{INTERVAL} \dotfill 010 msec
-							\item \textbf{QTY} \dotfill 01
-						\end{itemize}
+						\item \textbf{Delivery Options} \dotfill \textbf{As Desired}
 						\item \textbf{Stations} \dotfill \textbf{Armed}
 					\end{enumerate}
 				\end{minipage} \\
@@ -3242,19 +3391,12 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{WPN TYP} \dotfill \textbf{GBU-12}
+						\item \textbf{WPN TYP} \dotfill \textbf{GBU-XX}
 						\item \textbf{Attack Mode} \dotfill \textbf{Manual}
 						\item \textbf{Deliver Mode} \dotfill \textbf{STP-SGL}
-						\begin{itemize}
-							\item \textbf{STP-SGL} single bomb per press
-							\item \textbf{STP-PRS} single pair per press
-							\item \textbf{RPL-SGL} set number of bomb per press
-							\item \textbf{RPL-PRS} set number of pairs per press
-						\end{itemize}
 						\item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
 						\item \textbf{Electronic Fuze} \dotfill \textbf{INST}
-						\item \textbf{Delivery Options} \dotfill set \\
-						\hfill (not necessary for STP-SGL)
+						\item \textbf{Delivery Options} \dotfill \textbf{As Desired}
 						\item \textbf{Stations} \dotfill \textbf{Armed}
 					\end{enumerate}
 				\end{minipage} \\
@@ -3327,14 +3469,7 @@
 					\begin{enumerate}[label=(\alph*)]
 						\item \textbf{WPN TYP} \dotfill \textbf{TALD}
 						\item \textbf{Deliver Mode} \dotfill \textbf{STP-SGL}
-						\begin{itemize}
-							\item \textbf{STP (Step)} single bomb per press
-							\item \textbf{RPL (Ripple)} multiple bombs per press
-							\item \textbf{SGL (Single)} single bomb per press
-							\item \textbf{PRS (Pairs)} a pair of bombs per press
-						\end{itemize}
-						\item \textbf{Delivery Options} \dotfill set \\
-						\hfill (not necessary for STP-SGL)
+						\item \textbf{Delivery Options} \dotfill \textbf{As Desired}
 						\item \textbf{Stations} \dotfill \textbf{Armed}
 					\end{enumerate}
 				\end{minipage} \\
@@ -3364,7 +3499,7 @@
 			\end{tabular}
 		\end{center}
 	
-		\subsection{SELECTIVE ORNANCE JETTISON}
+		
 	
 		\cleardoublepage
 		
@@ -3381,8 +3516,8 @@
 					\begin{itemize}
 						\item \textbf{Cycles Gun Rate}
 						\begin{itemize}
-							\item \textbf{HIGH:} 6000 rpm
-							\item \textbf{LOW:} 4000 rpm
+							\item \textbf{HIGH} - 6000 rpm
+							\item \textbf{LOW} - 4000 rpm
 						\end{itemize} 
 					\end{itemize} 
 				\end{minipage} \\
@@ -3455,7 +3590,7 @@
 			\end{tabular}
 		\end{center}
 	
-		\subsection{M61 GUN - RTGS / NO RADAR}
+		\subsection{M61 GUN - RTGS /  NO RADAR}
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3685,6 +3820,7 @@
 							\item Automatically activated if STT broken
 							\item Selected if \textbf{MODE/STP} set to \textbf{BRSIT}
 							\item \textbf{Or if no STT available}
+							\item \textbf{Shown Below}
 						\end{itemize}
 					\end{itemize}
 				\end{minipage} \\
@@ -3736,6 +3872,11 @@
 				\bottomrule
 			\end{longtable}
 		\end{center}
+		\begin{center}
+			\resizebox{0.75\linewidth}{!}{
+				\includegraphics{cwflood.png}
+			}
+		\end{center}
 		
 		\subsection{AIM-7 SPARROW - STT}
 		\begin{center}
@@ -3757,7 +3898,6 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{LIQUID COOLING} \dotfill \textbf{ON (FWD)}
 						\item \textbf{MSL SPD GATE} \dotfill \textbf{NOSE QTR}
 						\item \textbf{MSL OPTIONS} \dotfill \textbf{As Desired}
 					\end{itemize}
@@ -3869,9 +4009,9 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{SMALL:} 6nm activation range
-						\item \textbf{NORM:} 10nm activation range
-						\item \textbf{LARGE:} 13nm activation range
+						\item \textbf{SMALL} - 6nm activation range
+						\item \textbf{NORM} - 10nm activation range
+						\item \textbf{LARGE} - 13nm activation range
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
@@ -3915,8 +4055,8 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{Normal Operation:} 3-4 seconds
-						\item \textbf{When in ACM:} 1 second
+						\item \textbf{Normal Operation} - 3-4 seconds
+						\item \textbf{When in ACM} - 1 second
 					\end{itemize}
 				\end{minipage} \\
 				\bottomrule
