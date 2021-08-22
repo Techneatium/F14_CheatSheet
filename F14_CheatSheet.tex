@@ -953,11 +953,16 @@
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
-				\textbullet & \blue{Control} & 
+				\textbullet & \blue{Controls} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{Three individual channels (Pitch, Roll, Yaw)}
+						\item \textbf{Three individual Switches}
+						\begin{itemize}
+							\item Pitch
+							\item Roll
+							\item Yaw
+						\end{itemize}
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
@@ -967,8 +972,8 @@
 					\begin{itemize}
 						\item \textbf{Paddle on Stick}
 						\begin{itemize}
-							\item \textbf{Disengages Autopilot Modes}
-							\item \textbf{Deactivates Pitch, Roll SAS Channels}
+							\item Disengages Autopilot Modes
+							\item Deactivates Pitch, Roll SAS Channels
 						\end{itemize}
 					\end{itemize}
 				\end{minipage} \\
@@ -1292,8 +1297,8 @@
 					\vspace{-7pt}
 					\begin{itemize}
 						\item \textbf{Springloaded to Center}
-						\item \textbf{BIT} - Initiates Build In Test
-						\item \textbf{SPL} - Holds BIT status page while held
+						\item \textbf{BIT} -- Initiates Build In Test
+						\item \textbf{SPL} -- Holds BIT status page while held
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
@@ -1302,8 +1307,8 @@
 					\vspace{-7pt}
 					\begin{itemize}
 						\item \textbf{Springloaded to Center}
-						\item \textbf{OFST} - Separates overlapping symbols
-						\item \textbf{LMT} - Displays 6 highest threats
+						\item \textbf{OFST} -- Separates overlapping symbols
+						\item \textbf{LMT} -- Displays 6 highest threats
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
@@ -1313,11 +1318,11 @@
 					\begin{itemize}
 						\item \textbf{Changes Priority of Display}
 						\begin{itemize}
-							\item \textbf{NORM} - Normal threat symbology
-							\item \textbf{AI} - Airborne Interceptor prioritized
-							\item \textbf{AAA} - Anti-aircraft artillery prioritized
-							\item \textbf{UNK} - Unknown prioritized
-							\item \textbf{FRIEND} - Friendly threats prioritized
+							\item \textbf{NORM} -- Normal threat symbology
+							\item \textbf{AI} -- Airborne Interceptor prioritized
+							\item \textbf{AAA} -- Anti-aircraft artillery prioritized
+							\item \textbf{UNK} -- Unknown prioritized
+							\item \textbf{FRIEND} -- Friendly threats prioritized
 						\end{itemize}
 						\item \textbf{Indicated by Letter in Display Center}
 					\end{itemize}
@@ -1346,11 +1351,11 @@
 						\end{itemize}
 						\item \textbf{Inner Circle} 
 						\begin{itemize}
-							\item \textbf{N, I, A, U, or F} - Prioritization type
-							\item \textbf{O} - Offset
-							\item \textbf{L} - Limit
-							\item \textbf{B} - BIT Failure
-							\item \textbf{T} - Thermal overload
+							\item \textbf{N, I, A, U, or F} -- Prioritization type
+							\item \textbf{O} -- Offset
+							\item \textbf{L} -- Limit
+							\item \textbf{B} -- BIT Failure
+							\item \textbf{T} -- Thermal overload
 						\end{itemize}
 					\end{itemize}
 				\end{minipage} \\
@@ -1359,10 +1364,10 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{Short Tone} - New emitter / emitter moved
-						\item \textbf{Slow Warbling} - Threat in critical band
-						\item \textbf{Fast Warbling} - Threat actively engaging own aircraft
-						\item \textbf{4-Tone Sequence} - New threat capable of silently engaging own aircraft 
+						\item \textbf{Short Tone} -- New emitter / emitter moved
+						\item \textbf{Slow Warbling} -- Threat in critical band
+						\item \textbf{Fast Warbling} -- Threat actively engaging own aircraft
+						\item \textbf{4-Tone Sequence} -- New threat capable of silently engaging own aircraft 
 					\end{itemize}
 				\end{minipage} \\
 				\bottomrule
@@ -3104,12 +3109,241 @@
 		\section{LANTIRN}
 		
 		\subsection{OVERVIEW}
-		\subsection{DISPLAY}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \dblue{Startup} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Power Switch} \dotfill \textbf{POD}
+					\end{enumerate} 
+					\vspace{7pt}
+					8 min startup sequence, \textbf{MODE Switch} shows \textbf{STBY} when complete
+					\begin{enumerate}[label=(\alph*), resume]
+						\item \textbf{Mode Switch} \dotfill \textbf{Press}
+					\end{enumerate} 
+					30 sec initialization, \textbf{MODE Switch} shows \textbf{OPER} when ready
+					\begin{enumerate}[label=(\alph*), resume]
+						\item \textbf{VIDEO Switch} \dotfill \textbf{FLIR}
+						\item \textbf{TID MODE} \dotfill \textbf{TV}
+					\end{enumerate} 
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
 		\subsection{CONTROL PANEL}
-		\subsection{CONTROLS}
-		\subsection{STARTUP}
-		\subsection{MASTER MODES}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \dblue{Power Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{OFF} -- Disables power to system
+						\item \textbf{IMU} -- Only powers LANTIRN IMU
+						\begin{itemize}
+							\item \textbf{Not Simulated in DCS}
+						\end{itemize}
+						\item \textbf{POD} -- Powers whole system
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{MODE Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{STBY} -- Standby
+						\item \textbf{OPER} -- Operational
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{LASER Switch} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{ARM} -- Arms laser
+						\begin{itemize}
+							\item Indicated by \textbf{LASER ARMED} light
+						\end{itemize}
+						\item \textbf{SAFE} -- Inhibits laser use
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{VIDEO Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{FLIR} -- Displays LANTIRN FLIR on TID
+						\item \textbf{TCS} -- Displays TCS video on TID
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Indicator Lights} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Indicate Error States}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{IBIT Button} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Initiates Build-In-Test}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\subsection{CONTROL STICK}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \dblue{Master Mode} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{A/G Mode} -- \textbf{Side 2-Way FWD}
+						\item \textbf{A/A Mode} -- \textbf{Side 2-Way AFT}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Slew} & \textbf{Center Slew Hat} \\
+				\midrule
+				\textbullet & \dblue{WHOT/BHOT} & \textbf{Center Slew Hat Depress} \\
+				\midrule
+				\textbullet & \dblue{Tracking Mode} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Point Track} -- \textbf{Left 4-Way Up}
+						\item \textbf{Area Track} -- \textbf{Left 4-Way Down}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Zoom Level} & \textbf{FOV Button} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
 		
+		\subsection{DISPLAY}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \blue{Top Left} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Own Aircraft Datablock}
+						\begin{itemize}
+							\item \textbf{Lat} -- deg:min.dec
+							\item \textbf{Long} -- deg:min.dec
+							\item \textbf{ALT} -- Altitude (ft)
+							\item \textbf{KGS} -- Knots Ground Speed
+							\item \textbf{DIVE} -- Dive Angle (deg)
+						\end{itemize}
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Mid Left} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Sensor Mode} -- \textbf{WHOT} / \textbf{BHOT}
+						\item \textbf{Gain Control} -- \textbf{Auto} / \textbf{Manual}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Bottom Left} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Pod Info Datablock}
+						\begin{itemize}
+							\item \textbf{SRA} -- Slant Range
+							\item \textbf{AZ} -- Pod LoS Azimuth L/R
+							\item \textbf{EL} -- Pod LoS Elevation
+							\item \textbf{Time} -- UTC Time
+							\item \textbf{IBIT} -- Codes
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Bottom Center } & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Master Mode} -- \textbf{A/A} / \textbf{A/G}
+						\item \textbf{Track Mode} -- \textbf{AREA} / \textbf{POINT} / \textbf{Q}
+						\item \textbf{Current Weapon}
+						\item \textbf{Laser Code}
+						\item \textbf{L}
+						\begin{itemize}
+							\item \textbf{Steady} -- Laser Armed
+							\item \textbf{Flashing} -- Laser Firing
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Bottom Right} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Q Datablock}
+						\begin{itemize}
+							\item \textbf{TTG} -- Time-To-Go
+							\item \textbf{B/R} -- Bearing and Range
+							\item \textbf{ELEV} -- Elevation (ft) of Q
+							\item \textbf{Lat} -- deg:min:dec
+							\item \textbf{Long} -- deg:min:dec
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Mid Center} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Crosshair}
+						\begin{itemize}
+							\item \textbf{Bounding Box} -- Indicates currently tracked target in point mode
+							\item \textbf{Zoom Boxes} -- Indicates next zoom levels
+							\item \textbf{FLIR Pointing Cue} -- Shows Pod LoS, screen center indicates straight down
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Mid Right} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Bomb Rlease Cue}
+						\begin{itemize}
+							\item Only shown if current Q is \textbf{QDES}, with valid weapon selected
+							\item \textbf{TREL} -- Time to release
+							\item \textbf{TIMP} -- Time to Impact (after release)
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Top Center} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Steering Guidance to Q}
+						\begin{itemize}
+							\item Relative bearing L/R to commanded heading
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
 		\cleardoublepage
 		
 		\section{A/G WEAPONS}
@@ -3136,10 +3370,10 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{STP-SGL} - Single weapon per press
-						\item \textbf{STP-PRS} - Single pair per press
-						\item \textbf{RPL-SGL} - QTY of weapons per press
-						\item \textbf{RPL-PRS} - QTY of pairs per press
+						\item \textbf{STP-SGL} -- Single weapon per press
+						\item \textbf{STP-PRS} Single pair per press
+						\item \textbf{RPL-SGL} -- QTY of weapons per press
+						\item \textbf{RPL-PRS} -- QTY of pairs per press
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
@@ -3147,8 +3381,8 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{INTERVAL} - Interval in ms
-						\item \textbf{QTY} - Number of stores to be released
+						\item \textbf{INTERVAL} -- Interval in ms
+						\item \textbf{QTY} -- Number of stores to be released
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
@@ -3156,9 +3390,9 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{NOSE} - Arms nose fuze
-						\item \textbf{SAFE} - Inhibits arming of fuzes
-						\item \textbf{NOSE/TAIL} - Arms both fuzes
+						\item \textbf{NOSE} -- Arms nose fuze
+						\item \textbf{SAFE} -- Inhibits arming of fuzes
+						\item \textbf{NOSE/TAIL} -- Arms both fuzes
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
@@ -3166,11 +3400,11 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{SAFE} - Inhibits electrical bomb fuzing
-						\item \textbf{VT} - Sets air-burst mode at preset burst height for compatible stores
-						\item \textbf{INST} - Sets instantaneous burst mode
-						\item \textbf{DLY 1} - Sets preset time delay 1
-						\item \textbf{DLY 2} - Sets preset time delay 2
+						\item \textbf{SAFE} -- Inhibits electrical bomb fuzing
+						\item \textbf{VT} -- Sets air-burst mode at preset burst height for compatible stores
+						\item \textbf{INST} -- Sets instantaneous burst mode
+						\item \textbf{DLY 1} -- Sets preset time delay 1
+						\item \textbf{DLY 2} -- Sets preset time delay 2
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
@@ -3199,9 +3433,9 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{JETT} - Selective jettison
-						\item \textbf{SAFE} - Inhibits jettison
-						\item \textbf{AUX} - Backup mode
+						\item \textbf{JETT} -- Selective jettison
+						\item \textbf{SAFE} -- Inhibits jettison
+						\item \textbf{AUX} -- Backup mode
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
@@ -3209,8 +3443,8 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{MER TER} - Jettisons ejector racks
-						\item \textbf{WPNS} - Jettisons weapons only
+						\item \textbf{MER TER} -- Jettisons ejector racks
+						\item \textbf{WPNS} -- Jettisons weapons only
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
@@ -3220,7 +3454,7 @@
 					\begin{itemize}
 						\item \textbf{CCMPTR TGT}
 						\begin{itemize}
-							\item \textbf{Computer Target} - Similar to CCRP
+							\item \textbf{Computer Target} -- Similar to CCRP
 						\end{itemize}
 						\item \textbf{CMPTR IP}
 						\begin{itemize}
@@ -3230,16 +3464,16 @@
 						\end{itemize}
 						\item \textbf{CMPTR PLT}
 						\begin{itemize}
-							\item \textbf{Computer Pilot} - similar to CCIP
+							\item \textbf{Computer Pilot} -- similar to CCIP
 						\end{itemize}
 						\item \textbf{MAN}
 						\begin{itemize}
-							\item \textbf{Manual} - HUD displays pipper
+							\item \textbf{Manual} -- HUD displays pipper
 							\item Backup mode
 						\end{itemize}
 						\item \textbf{D/L BOMB}
 						\begin{itemize}
-							\item \textbf{Data-Link Bomb} - Automatic mode steered by D/L cues
+							\item \textbf{Data-Link Bomb} -- Automatic mode steered by D/L cues
 							\item \textbf{Not Implemented in DCS}
 						\end{itemize}
 					\end{itemize}
@@ -3256,18 +3490,18 @@
 				1. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
-					\end{enumerate} 
+					\end{itemize} 
 				\end{minipage} \\
 				\midrule
 				2. & \dblue{RIO Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{Desired Stations} \dotfill \textbf{Selected}
 						\item \textbf{JETT OPTIONS} \dotfill \textbf{As Desired}
-					\end{enumerate}
+					\end{itemize}
 				\end{minipage} \\
 				\midrule
 				3. & \dblue{Jettison} &
@@ -3289,12 +3523,12 @@
 				1. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
 						\item \textbf{HUD} \dotfill \textbf{A/G}
 						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{GUNS}
 						\item \textbf{Wing Sweep} \dotfill \textbf{BOMB}
-					\end{enumerate} 
+					\end{itemize} 
 				\end{minipage} \\
 				\midrule
 				2. & \blue{Employment} &
@@ -3326,7 +3560,7 @@
 				1. & \dblue{RIO Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{WPN TYP} \dotfill \textbf{LAU-10}
 						\item \textbf{Attack Mode} \dotfill \textbf{Pilot Attack}
 						\item \textbf{Deliver Mode} \dotfill \textbf{RPL-SGL}
@@ -3334,19 +3568,19 @@
 						\item \textbf{Electronic Fuze} \dotfill \textbf{INST}
 						\item \textbf{Delivery Options} \dotfill \textbf{As Desired}
 						\item \textbf{Stations} \dotfill \textbf{Armed}
-					\end{enumerate}
+					\end{itemize}
 				\end{minipage} \\
 				\midrule
 				2. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
 						\item \textbf{HUD} \dotfill \textbf{A/G}
 						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{OFF}
 						\item \textbf{Stations} \dotfill verify selected
 						\item \textbf{Wing Sweep} \dotfill \textbf{BOMB}
-					\end{enumerate} 
+					\end{itemize} 
 				\end{minipage} \\
 				\midrule
 				3. & \blue{Employment} &
@@ -3369,27 +3603,27 @@
 				1. & \dblue{RIO Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{WPN TYP} \dotfill \textbf{MK-XX}
+					\begin{itemize}
+						\item \textbf{WPN TYP} \dotfill \textbf{MK-8X}
 						\item \textbf{Attack Mode} \dotfill \textbf{Pilot Attack}
 						\item \textbf{Deliver Mode} \dotfill \textbf{STP-PRS}
 						\item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
 						\item \textbf{Electronic Fuze} \dotfill \textbf{INST}
 						\item \textbf{Delivery Options} \dotfill \textbf{As Desired}
 						\item \textbf{Stations} \dotfill \textbf{Armed}
-					\end{enumerate}
+					\end{itemize}
 				\end{minipage} \\
 				\midrule
 				2. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
 						\item \textbf{HUD} \dotfill \textbf{A/G}
 						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{OFF}
 						\item \textbf{Stations} \dotfill verify selected
 						\item \textbf{Wing Sweep} \dotfill \textbf{BOMB}
-					\end{enumerate} 
+					\end{itemize} 
 				\end{minipage} \\
 				\midrule
 				3. & \blue{Employment} &
@@ -3412,27 +3646,27 @@
 				1. & \dblue{RIO Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{WPN TYP} \dotfill \textbf{MK-82}
+					\begin{itemize}
+						\item \textbf{WPN TYP} \dotfill \textbf{MK-8X}
 						\item \textbf{Attack Mode} \dotfill \textbf{Target Attack}
 						\item \textbf{Deliver Mode} \dotfill \textbf{STP-PRS}
 						\item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
 						\item \textbf{Electronic Fuze} \dotfill \textbf{INST}
 						\item \textbf{Delivery Options} \dotfill \textbf{As Desired}
 						\item \textbf{Stations} \dotfill \textbf{Armed}
-					\end{enumerate}
+					\end{itemize}
 				\end{minipage} \\
 				\midrule
 				2. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
 						\item \textbf{HUD} \dotfill \textbf{A/G}
 						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{OFF}
 						\item \textbf{Stations} \dotfill verify selected
 						\item \textbf{Wing Sweep} \dotfill \textbf{BOMB}
-					\end{enumerate} 
+					\end{itemize} 
 				\end{minipage} \\
 				\midrule
 				3. & \blue{Designation} &
@@ -3462,7 +3696,7 @@
 		
 		\clearpage 
 		
-		\subsection{GBU-10 / 12 / 16 / 24}
+		\subsection{LASER GUIDED BOMB}
 		\begin{center}
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3493,7 +3727,7 @@
 				2. & \dblue{RIO Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{WPN TYP} \dotfill \textbf{GBU-XX}
 						\item \textbf{Attack Mode} \dotfill \textbf{Manual}
 						\item \textbf{Deliver Mode} \dotfill \textbf{STP-SGL}
@@ -3501,20 +3735,20 @@
 						\item \textbf{Electronic Fuze} \dotfill \textbf{INST}
 						\item \textbf{Delivery Options} \dotfill \textbf{As Desired}
 						\item \textbf{Stations} \dotfill \textbf{Armed}
-					\end{enumerate}
+					\end{itemize}
 				\end{minipage} \\
 				\midrule
 				3. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
 						\item \textbf{HUD} \dotfill \textbf{A/G}
 						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{OFF}
 						\item \textbf{VDI Mode} \dotfill \textbf{TV}
 						\item \textbf{Stations} \dotfill verify selected
 						\item \textbf{Wing Sweep} \dotfill \textbf{BOMB}
-					\end{enumerate} 
+					\end{itemize} 
 				\end{minipage} \\
 				\midrule
 				4. & \dblue{Slew LANTIRN} & 
@@ -3569,24 +3803,24 @@
 				1. & \dblue{RIO Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{WPN TYP} \dotfill \textbf{TALD}
 						\item \textbf{Deliver Mode} \dotfill \textbf{STP-SGL}
 						\item \textbf{Delivery Options} \dotfill \textbf{As Desired}
 						\item \textbf{Stations} \dotfill \textbf{Armed}
-					\end{enumerate}
+					\end{itemize}
 				\end{minipage} \\
 				\midrule
 				2. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
-					\begin{enumerate}[label=(\alph*)]
+					\begin{itemize}
 						\item \textbf{MASTER ARM} \dotfill \textbf{ON}
 						\item \textbf{HUD} \dotfill \textbf{A/G}
 						\item \textbf{WEAPON SELECTOR} \dotfill \textbf{OFF}
 						\item \textbf{HSD Mode} \dotfill \textbf{TID}
 						\item \textbf{Stations} \dotfill verify selected
-					\end{enumerate} 
+					\end{itemize} 
 				\end{minipage} \\
 				\midrule
 				3. & \blue{Employment} &
@@ -3619,8 +3853,8 @@
 					\begin{itemize}
 						\item \textbf{Cycles Gun Rate}
 						\begin{itemize}
-							\item \textbf{HIGH} - 6000 rpm
-							\item \textbf{LOW} - 4000 rpm
+							\item \textbf{HIGH} -- 6000 rpm
+							\item \textbf{LOW} -- 4000 rpm
 						\end{itemize} 
 					\end{itemize} 
 				\end{minipage} \\
@@ -3668,7 +3902,7 @@
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
-				1. & \blue{Conditions} & 
+				1. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -3697,7 +3931,7 @@
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
-				1. & \blue{Conditions} & 
+				1. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -3725,7 +3959,7 @@
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
-				1. & \blue{Conditions} & 
+				1. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -3756,7 +3990,7 @@
 		\begin{center}
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
-				\textbullet & \blue{Missile Preparation} & 
+				\textbullet & \blue{Missile} \hfill \null \blue{Preparation} \thumbnar & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -3831,7 +4065,7 @@
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
-				1. & \blue{Conditions} & 
+				1. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -3860,7 +4094,7 @@
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
-				1. & \blue{Conditions} & 
+				1. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -3893,7 +4127,7 @@
 		\begin{center}
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
-				\textbullet & \blue{Missile Preparation} & 
+				\textbullet & \blue{Missile} \hfill \null \blue{Preparation} \thumbnar & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -3985,7 +4219,7 @@
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
-				1. & \blue{Conditions} & 
+				1. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -4032,7 +4266,7 @@
 		\begin{center}
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
-				\textbullet & \blue{Missile Preparation} & 
+				\textbullet & \blue{Missile} \hfill \null \blue{Preparation} \thumbnar & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -4112,9 +4346,17 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{SMALL} - 6nm activation range
-						\item \textbf{NORM} - 10nm activation range
-						\item \textbf{LARGE} - 13nm activation range
+						\item \textbf{SMALL} -- 6nm activation range
+						\item \textbf{NORM} -- 10nm activation range
+						\item \textbf{LARGE} -- 13nm activation range
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Missile Next} \dblue{Launch Button} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Selects Hooked Track as Next Target for AIM-54 TWS Engagement} 
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
@@ -4158,8 +4400,8 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{Normal Operation} - 3-4 seconds
-						\item \textbf{When in ACM} - 1 second
+						\item \textbf{Normal Operation} -- 3-4 seconds
+						\item \textbf{When in ACM} -- 1 second
 					\end{itemize}
 				\end{minipage} \\
 				\bottomrule
@@ -4170,7 +4412,7 @@
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
-				1. & \blue{Conditions} & 
+				1. & \blue{Pilot Conditions} \thumbnar & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -4217,7 +4459,7 @@
 		\begin{center}
 			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
-				1. & \blue{Conditions} & 
+				1. & \blue{Pilot Conditions} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
