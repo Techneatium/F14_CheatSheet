@@ -2351,7 +2351,8 @@
 		
 		\cleardoublepage
 			
-		\hypertarget{subsec:tidsymb}{\subsection{TID SYMBOLOGY}}
+		\hypertarget{subsec:tidsymb}{}
+		\subsection{TID SYMBOLOGY}
 		\begin{center}
 			\begin{longtable}{p{3.5cm} | p{1cm} |  p{6cm}}
 				\toprule
@@ -3099,7 +3100,7 @@
 	
 		\cleardoublepage
 		
-		\section{TCS / ALQ-100}
+		\section{TCS}
 		\thumbtab{TCS - LANTIRN}{3}
 		
 		\subsection{OVERVIEW}
@@ -3112,30 +3113,268 @@
 		\begin{center}
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
-				\textbullet & \dblue{Startup} & 
+				\textbullet & \blue{LANTIRN} \thumbnar & \textbf{L}ow \textbf{A}ltitude \textbf{N}avigation and \textbf{T}argeting \textbf{I}nfra-\textbf{R}ed for \textbf{N}ight
+				
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Only Targeting Pod} -- Nav pod was deleted
+						\item \textbf{Incomplete Integration} -- Own control panel, supplants TCS feed
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Master Modes} \thumbnar & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{A/G} -- Allows bomb release guidance
+						\item \textbf{A/A} -- Optimized for air targets
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{FOV Levels} \blue{Overview} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Wide}
+						\begin{itemize}
+							\item \textbf{FOV} -- 5.9 deg
+							\item \textbf{Slew} -- 8.5 deg/s
+						\end{itemize}
+						\item \textbf{Narrow}
+						\begin{itemize}
+							\item \textbf{FOV} -- 1.7 deg
+							\item \textbf{Slew} -- 1.8 deg/s
+						\end{itemize}
+						\item \textbf{Expanded}
+						\begin{itemize}
+							\item \textbf{FOV} -- 0.8 deg
+							\item \textbf{Slew} -- 0.7 deg/s
+							\item \textbf{Digital Zoom} -- Degraded quality
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+		
+		\subsection{OVERVIEW - STARTUP}
+		\begin{center}
+			\begin{tabular}{l p{3cm} | p{8cm}}
+				\toprule
+				1. & \dblue{Power Switch} & \textbf{POD} \\
+				\midrule
+				2. & \blue{Pod Startup} \hfill\null \blue{Sequence} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item 8 min startup sequence
+						\item \textbf{MODE Switch} shows \textbf{STBY} when complete
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				3. & \dblue{MODE Switch} & \textbf{Press} \\
+				\midrule
+				4. & \blue{Initialization} \hfill \null \blue{Sequence} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item 30 sec initialization
+						\item \textbf{MODE Switch} shows \textbf{OPER} when ready
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				5. & \dblue{VIDEO Switch} & \textbf{FLIR} \\
+				\midrule
+				6. & \dblue{TID MODE} & \textbf{TV} \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+	
+		\clearpage
+		
+		\subsection{OVERVIEW - POINTING MODES}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+%				\textbullet & \blue{Master Modes} & 
+%				\begin{minipage}[t]{\linewidth}
+%					\vspace{-7pt}
+%					\begin{itemize}
+%						\item \textbf{A/G}
+%						\begin{itemize}
+%							\item Optimized for ground targets
+%							\item \textbf{Allows Bomb Release Guidance}
+%						\end{itemize}
+%						\item \textbf{A/A}
+%						\begin{itemize}
+%							\item Optimized for air targets
+%						\end{itemize}
+%					\end{itemize} 
+%				\end{minipage} \\
+%				\midrule
+%				\textbullet & \blue{FOV Levels} \blue{Overview} & 
+%				\begin{minipage}[t]{\linewidth}
+%					\vspace{-7pt}
+%					\begin{itemize}
+%						\item \textbf{Wide}
+%						\begin{itemize}
+%							\item \textbf{FOV} -- 5.9 deg
+%							\item \textbf{Slew} -- 8.5 deg/s
+%						\end{itemize}
+%						\item \textbf{Narrow}
+%						\begin{itemize}
+%							\item \textbf{FOV} -- 1.7 deg
+%							\item \textbf{Slew} -- 1.8 deg/s
+%						\end{itemize}
+%						\item \textbf{Expanded}
+%						\begin{itemize}
+%							\item \textbf{FOV} -- 0.8 deg
+%							\item \textbf{Slew} -- 0.7 deg/s
+%							\item \textbf{Digital Zoom} -- Degraded quality
+%						\end{itemize}
+%					\end{itemize}
+%				\end{minipage} \\
+%				\midrule
+				\textbullet & \blue{Sensor Modes} \blue{Overview} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Contrast Lock}
+						\begin{itemize}
+							\item \textbf{Area Track}
+							\item \textbf{Point Track}
+						\end{itemize} 
+						\item \textbf{Q Designation}
+						\begin{itemize}
+							\item \textbf{Directional Q} -- QSNO / QADL / QHUD
+							\item \textbf{Location Q} -- QWp / QDES
+						\end{itemize} 
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Directional Q} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Do Not Allow Weapon Guidance}
+						\item \textbf{QSNO}
+						\begin{itemize}
+							\item Pod slaved to \textbf{ground 15 nm in front} along own aircraft heading
+						\end{itemize}
+						\item \textbf{QADL} 
+						\begin{itemize}
+							\item \textbf{Pod slaved to ADL}
+							\item In A/A mode
+						\end{itemize}
+						\item \textbf{QHUD}
+						\begin{itemize}
+							\item \textbf{Pod slaved to HUD}
+							\item In A/G mode
+						\end{itemize}
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Location Q} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Allow Weapon Guidance}
+						\item \textbf{QWp}
+						\begin{itemize}
+							\item Pod slaved to WCS waypoint 
+							\item Cycled with \textbf{QWp+} / \textbf{QWp-}
+						\end{itemize}
+						\item \textbf{QDES}
+						\begin{itemize}
+							\item \textbf{Designate targets for engagement}
+							\item \textbf{LANTIRN Trigger Second Detent} to designate
+							\item Coordinates can be manually added to WCS for navigation
+						\end{itemize}
+					\end{itemize} 
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+		
+		\clearpage
+		
+		\hypertarget{subsec:lantirnlasingdesignation}{}
+		\subsection{OVERVIEW - LASING/DESIGNATION}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \blue{A/G Designation} & \textbf{Trigger Second Detent}
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
-						\item \textbf{Power Switch} \dotfill \textbf{POD}
-					\end{enumerate} 
-					\vspace{7pt}
-					8 min startup sequence, \textbf{MODE Switch} shows \textbf{STBY} when complete
-					\begin{enumerate}[label=(\alph*), resume]
-						\item \textbf{Mode Switch} \dotfill \textbf{Press}
-					\end{enumerate} 
-					30 sec initialization, \textbf{MODE Switch} shows \textbf{OPER} when ready
-					\begin{enumerate}[label=(\alph*), resume]
-						\item \textbf{VIDEO Switch} \dotfill \textbf{FLIR}
-						\item \textbf{TID MODE} \dotfill \textbf{TV}
-					\end{enumerate} 
+						\item \textbf{Designate} \dotfill \textbf{Trigger Full-Action}
+						\begin{itemize}
+							\item Laser Fires
+							\item Slant Range calculated
+							\item Time-to-Go calculated
+						\end{itemize}
+					\end{enumerate}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Steering Cues} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Automatically activated when QDES selected/designated}
+						\item QDES remains even if new Q selected
+						\item Cues still point towards QDES even if pod at another point
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Manual Lase} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Lase} \dotfill \textbf{Trigger Half-Action Hold}
+					\end{enumerate}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Latched Lase} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Effect} -- Lases for 60 sec
+					\end{itemize}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Activate} \dotfill \textbf{Latch Lase Button Press}
+						\item \textbf{Extend} \dotfill \textbf{Latch Lase Button Press}
+						\item \textbf{Deactivate} \dotfill \textbf{Trigger Half-Action}
+					\end{enumerate}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Auto Lase} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Effect} -- Fires from -10 to +4 sec TIMP
+					\end{itemize}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Laser Mode} \dotfill \textbf{Slider AFT Short}
+						\item \textbf{Cycle A/M} \dotfill \textbf{Right 4-Way Depress}
+					\end{enumerate}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Laser Notes} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Always at current Pod location}
+						\item Can point to different location than QDES
+					\end{itemize} 
 				\end{minipage} \\
 				\bottomrule
 			\end{longtable}
 		\end{center}
 	
-		\subsection{CONTROL PANEL}
+		\subsection{CONTROLS - PANEL}
 		\begin{center}
-			\begin{longtable}{l p{3cm} | p{8cm}}
+			\begin{tabular}{l p{3cm} | p{8cm}}
 				\toprule
 				\textbullet & \dblue{Power Switch} & 
 				\begin{minipage}[t]{\linewidth}
@@ -3196,10 +3435,11 @@
 					\end{itemize}
 				\end{minipage} \\
 				\bottomrule
-			\end{longtable}
+			\end{tabular}
 		\end{center}
 	
-		\subsection{CONTROL STICK}
+		\hypertarget{subsec:lantirncontrolsstick}{}
+		\subsection{CONTROLS - STICK}
 		\begin{center}
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
@@ -3216,7 +3456,7 @@
 				\midrule
 				\textbullet & \dblue{WHOT/BHOT} & \textbf{Center Slew Hat Depress} \\
 				\midrule
-				\textbullet & \dblue{Tracking Mode} & 
+				\textbullet & \dblue{Contrast Track} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -3225,10 +3465,61 @@
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
+				\textbullet & \dblue{Q Select} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{QADL/QHUD} -- \textbf{Right 4-Way Up}
+						\item \textbf{QDES} -- \textbf{Right 4-Way Right}
+						\item \textbf{QSNO} -- \textbf{Right 4-Way Down}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Declutter} & \textbf{Right 4-Way Depress} \\
+				\midrule
 				\textbullet & \dblue{Zoom Level} & \textbf{FOV Button} \\
+				\midrule
+				\textbullet & \dblue {Cycle Gain}\dblue{Control Mode} &  \textbf{Slider FWD short} \\
+				\midrule
+				\textbullet & \dblue{Manual Gain} \dblue{Control} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Slider} \dotfill \textbf{FWD long}
+						\item \textbf{Gain} \dotfill \textbf{Right 4-Way Up/Down} \\
+						\textbf{Level} \dotfill \textbf{Right 4-Way Left/Right}
+					\end{enumerate}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Laser Code} &  
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Slider} \dotfill \textbf{AFT short}
+						\item \textbf{Select Digit} \dotfill \textbf{Right 4-Way Left/Right}
+						\item \textbf{Change Digit} \dotfill \textbf{Right 4-Way Up/Down}
+					\end{enumerate}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Focus Control} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Slider} \dotfill \textbf{AFT hold}
+						\item \textbf{Right 4-Way} \dotfill \textbf{Up/Down}
+					\end{enumerate}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Manual Lase} & \textbf{Trigger Half-Action} \\
+				\midrule
+				\textbullet & \dblue{Latched Laser} & \textbf{Latched Laser Fire Button} \\
+				\midrule
+				\textbullet & \dblue{Designate QDES} & \textbf{Trigger Full-Action} \thumbnar\\
 				\bottomrule
 			\end{longtable}
 		\end{center}
+		
+		\clearpage
 		
 		\subsection{DISPLAY}
 		\begin{center}
@@ -3330,7 +3621,7 @@
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
-				\textbullet & \blue{Top Center} &
+				\textbullet & \blue{Top Center} \thumbnar &
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -3751,7 +4042,8 @@
 					\end{itemize} 
 				\end{minipage} \\
 				\midrule
-				4. & \dblue{Slew LANTIRN} & 
+				4. & \dblue{Slew LANTIRN} & \hyperlink{subsec:lantirncontrolsstick}{\textbf{Refer to LANTIRN Control Section}}
+				
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -3762,17 +4054,19 @@
 						\item \textbf{Area Track} \dotfill \textbf{Left-4-Way UP}
 						\item \textbf{Point Track} \dotfill \textbf{Left-4-Way Down}
 						\item \textbf{Undesignate} \dotfill \textbf{LANTIRN Undesignate}
+						
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
-				4. & \dblue{Designate} & 
+				4. & \dblue{Designate} & \hyperlink{subsec:lantirnlasingdesignation}{\textbf{Refer to LANTIRN Designation Section}}
+				
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
 						\item \textbf{Designate} \dotfill \textbf{Trigger Full-Action}
 						\begin{itemize}
-							\item Time-to-Go calculated
 							\item Slant Range calculated
+							\item Time-to-Go calculated
 						\end{itemize}
 					\end{enumerate}
 					\textbf{Once Time-to-Realease (TREL) is 0}
