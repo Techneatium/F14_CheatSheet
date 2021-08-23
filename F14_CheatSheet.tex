@@ -3304,7 +3304,7 @@
 		\begin{center}
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
-				\textbullet & \blue{A/G Designation} & \textbf{Trigger Second Detent}
+				\textbullet & \blue{A/G Designation} \thumbnar &
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{enumerate}[label=(\alph*)]
@@ -3374,17 +3374,15 @@
 	
 		\subsection{CONTROLS - PANEL}
 		\begin{center}
-			\begin{tabular}{l p{3cm} | p{8cm}}
+			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
 				\textbullet & \dblue{Power Switch} & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
 						\item \textbf{OFF} -- Disables power to system
-						\item \textbf{IMU} -- Only powers LANTIRN IMU
-						\begin{itemize}
-							\item \textbf{Not Simulated in DCS}
-						\end{itemize}
+						\item \textbf{IMU} -- Only powers LANTIRN IMU \\
+						\textbf{(Not Simulated in DCS)}
 						\item \textbf{POD} -- Powers whole system
 					\end{itemize} 
 				\end{minipage} \\
@@ -3403,9 +3401,6 @@
 					\vspace{-7pt}
 					\begin{itemize}
 						\item \textbf{ARM} -- Arms laser
-						\begin{itemize}
-							\item Indicated by \textbf{LASER ARMED} light
-						\end{itemize}
 						\item \textbf{SAFE} -- Inhibits laser use
 					\end{itemize}
 				\end{minipage} \\
@@ -3435,7 +3430,7 @@
 					\end{itemize}
 				\end{minipage} \\
 				\bottomrule
-			\end{tabular}
+			\end{longtable}
 		\end{center}
 	
 		\hypertarget{subsec:lantirncontrolsstick}{}
@@ -3514,7 +3509,7 @@
 				\midrule
 				\textbullet & \dblue{Latched Laser} & \textbf{Latched Laser Fire Button} \\
 				\midrule
-				\textbullet & \dblue{Designate QDES} & \textbf{Trigger Full-Action} \thumbnar\\
+				\textbullet & \dblue{Designate QDES} & \textbf{Trigger Full-Action} \\
 				\bottomrule
 			\end{longtable}
 		\end{center}
@@ -3525,7 +3520,7 @@
 		\begin{center}
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
-				\textbullet & \blue{Top Left} & 
+				\textbullet & \blue{Top Left} \thumbnar & 
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -3621,7 +3616,7 @@
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
-				\textbullet & \blue{Top Center} \thumbnar &
+				\textbullet & \blue{Top Center} &
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
@@ -4342,7 +4337,7 @@
 					\begin{itemize}
 						\item \textbf{Uncages Seeker}
 						\begin{itemize}
-							\item Starts 4.5 second search
+							\item Starts 4.5 second double-D search
 							\item If no IR source found cages again
 						\end{itemize}
 						\item \textbf{Slaves Seeker}
