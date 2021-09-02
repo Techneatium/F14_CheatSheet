@@ -846,6 +846,10 @@
 	
 		\clearpage
 		
+		\subsection{AERIAL REFUELING}
+		
+		\clearpage
+		
 		\subsection{AIRSTART}
 		\begin{center}
 			\begin{longtable}{l p{4cm} | p{7cm}}
@@ -1084,7 +1088,7 @@
 				\begin{minipage}[t]{\linewidth}
 					\vspace{-7pt}
 					\begin{itemize}
-						\item \textbf{Datalink Vector / Precision Course Direction} 
+						\item \textbf{Vector / Precision Course Direction} 
 						\begin{itemize}
 							\item Allows Link 4 controller to remotely direct the aircraft
 							\item \textbf{Not Modelled in DCS}
@@ -1153,13 +1157,13 @@
 					\end{itemize}
 				\end{minipage} \\
 				\midrule
-				\textbullet & \blue{Disengage} & 
-				\begin{minipage}[t]{\linewidth}
-					\vspace{-7pt}
-					\begin{itemize}
-						\item \textbf{Cage/Seam Button} 
-					\end{itemize}
-				\end{minipage} \\
+				\textbullet & \blue{Disengage} & \textbf{Cage/Seam Button} \\
+%				\begin{minipage}[t]{\linewidth}
+%					\vspace{-7pt}
+%					\begin{itemize}
+%						\item \textbf{Cage/Seam Button} 
+%					\end{itemize}
+%				\end{minipage} \\
 				\bottomrule
 			\end{tabular}
 		\end{center}
@@ -1265,14 +1269,478 @@
 				\bottomrule
 			\end{tabular}
 		\end{center}
-	
-		\subsection{NAVIGATION}
-		\subsection{COMMUNICATION}
-		\subsection{DATALINK / IFF}
 		
 		\clearpage
 		
-		\subsection{ALR-67 RWR - OVERVIEW}
+		\subsection{NAVIGATION}
+		
+		\cleardoublepage
+		
+		\subsection{COMMS - OVERVIEW}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \blue{ARC-159} \blue{UHF 1} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Air-to-Air \& Air-to-Surface Communication}
+						\item \textbf{Pilot Controlled}
+						\item \textbf{Frequency}
+						\begin{itemize}
+							\item \textbf{Range} -- 225.000 - 399.975 MHz
+							\item \textbf{Steps} -- 25 kHz
+							\item \textbf{Channels} -- 20
+						\end{itemize}
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{ARC-182} \blue{V/UHF 2} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Air-to-Air \& Air-to-Surface Communication}
+						\item \textbf{RIO Controlled}
+						\item \textbf{Frequency}
+						\begin{itemize}
+							\item \textbf{Band 1} -- 30 - 88 MHz
+							\item \textbf{Band 2} -- 108 - 156 MHz
+							\item \textbf{Band 3} -- 156 - 174 MHz
+							\item \textbf{Band 4} -- 225 - 399.975 MHz
+							\item \textbf{Steps} -- 25 kHz
+							\item \textbf{Channels} -- 20
+						\end{itemize}
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{ARA-50} \blue{UHF ADF} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{UHF Automatic Direction Finder}
+						\item \textbf{LoS bearing to UHF Transmitter}
+						\item \textbf{Bearing displayed on BDHI, Pilot HSD}
+						\item \textbf{5 min Warmup}
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{KY-28} \blue{Voice Security Equipment} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Voice Ciphering}
+						\item \textbf{Integrated with UHF 1 and V/UHF 2}
+						\item \textbf{2 min Warmup}
+					\end{itemize} 
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\subsection{COMMS - ARC-159 UHF 1}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \blue{ARC-159} \blue{UHF 1} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Air-to-Air \& Air-to-Surface Communication}
+						\item \textbf{Pilot Controlled}
+						\item \textbf{Frequency}
+						\begin{itemize}
+							\item \textbf{Range} -- 225.000 - 399.975 MHz
+							\item \textbf{Steps} -- 25 kHz
+							\item \textbf{Channels} -- 20
+						\end{itemize}
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{VOL Knob} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Controls Pilot UHF 1 Audio Level}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{BRT/TEST Knob} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Controls Radio FREQ Display}
+						\item Turn past max to display \textbf{888.888}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{SQL Switch} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Toggles radio squelch (noise attenuation)}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{READ Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Displays Frequency of Selected Preset Channel}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{LOAD Button} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Saves Displayed Frequency to Selected Preset Channel}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{TONE Button} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Steady 1.020 kHz Test Tone}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Mode Selector} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Frequency Selection Method}
+						\begin{itemize}
+							\item \textbf{GUARD} -- 243.000 MHz
+							\item \textbf{MANUAL} -- Manual tuning
+							\item \textbf{PRESET} -- Preset channels
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Function Selector} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Selects Transceivers to Energize}
+						\begin{itemize}
+							\item \textbf{ADF} -- Not simulated
+							\item \textbf{BOTH} --  Main \& Guard
+							\item \textbf{MAIN} -- Main
+							\item \textbf{OFF} -- Secures UHF 1 radio
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{CHAN SEL} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Selects from 20 preset Channels}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\subsection{COMMS - ARC-182 V/UHF 2}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \blue{ARC-182} \blue{V/UHF 2} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Air-to-Air \& Air-to-Surface Communication}
+						\item \textbf{RIO Controlled}
+						\item \textbf{Frequency}
+						\begin{itemize}
+							\item \textbf{Band 1} -- 30 - 88 MHz
+							\item \textbf{Band 2} -- 108 - 156 MHz
+							\item \textbf{Band 3} -- 156 - 174 MHz
+							\item \textbf{Band 4} -- 225 - 399.975 MHz
+							\item \textbf{Steps} -- 25 kHz
+							\item \textbf{Channels} -- 20
+						\end{itemize}
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{VOL Knob} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Controls RIO UHF 2 Audio Level}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{BRT/TEST Knob} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Controls Radio FREQ Display}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{SQL Switch} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Toggles radio squelch (noise attenuation)}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Mode Selector} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Transceiver Settings}
+						\begin{itemize}
+							\item \textbf{OFF} -- Secures V/UHF radio unless frequency mode set to \textbf{243}
+							\item \textbf{T/R} -- Energizes transmitter and main receiver
+							\item \textbf{T/R \& G} -- Energizes transmitter, main, and guard receiver
+							\item \textbf{DF} -- Automatic direction finding from 108 - 399.975 MHz
+							\item \textbf{TEST} -- BIT
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{CHAN SEL} \dblue{Outer Dial} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Selects Frequency Tuning Mode}
+						\begin{itemize}
+							\item \textbf{243} -- Selects UHF Guard
+							\item \textbf{MAN} -- Manual Select frequency
+							\item \textbf{G} -- Tunes Tranceiver to guard frequecy in last selected band
+							\item \textbf{PRESET} -- Allows selection between 40 preset channels
+							(31-40 are Have Quck and not simulated)
+							\item \textbf{READ} -- Displays frequency of selected preset channel
+							\item \textbf{LOAD} --  Saves displayed frequency to selected preset channel
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{CHAN SEL} \dblue{Inner Dial} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Selects one of 40 Preset Channels}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\subsection{COMMS - KY-28 VOICE SECURITY EQUIPMENT}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \blue{KY-28} \blue{Voice Security Equipment} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Voice Ciphering}
+						\item \textbf{Integrated with UHF 1 and V/UHF 2}
+						\item \textbf{2 min Warmup}
+					\end{itemize} 
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{ZEROIZE Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Lift Guard to Erase Preloaded Codes}
+						\item Codes loaded via ground crew
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Power-Mode} \dblue{Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Selects Mode}
+						\begin{itemize}
+							\item \textbf{P/OFF} -- Removes power from system
+							\item \textbf{C} -- Transmit / Receive in secure mode
+							\item \textbf{DELAY} -- Between PTT and trans.
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Radio-Select} \dblue{Switch} &
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Selects Radio Mode}
+						\begin{itemize}
+							\item \textbf{RELAY} -- Acts as relay for other stations (not simulated)
+							\item \textbf{RAD-2} -- Secure voice for V/UHF 2
+							\item \textbf{RAD-1} -- Secure voice for UHF 1 
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+	
+		\clearpage
+		
+		\subsection{LINK 4 DATALINK - OVERVIEW}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \blue{Link 4} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Modes} -- Mutually exclusive
+						\begin{itemize}
+							\item \textbf{Link 4A} -- AWACS / Surface Ship
+							\item \textbf{Link 4C} -- Fighter to Fighter
+						\end{itemize}
+						\item \textbf{Data Speed} -- up to 5000 bit/s!
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Link 4A} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Network} -- AWACS / Surface Ship
+						\item Additionally used for ACLS
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Link 4C} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Network} -- Fighter to Fighter
+						\begin{itemize}
+							\item Up to four F-14s
+							\item Unique to F-14
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \blue{Basic Operation} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{enumerate}[label=(\alph*)]
+						\item \textbf{Power Switch} \dotfill As Desired
+						\begin{itemize}
+							\item \textbf{Link 4A} \dotfill \textbf{ON}
+							\item \textbf{Link 4C} \dotfill \textbf{AUX}
+						\end{itemize}
+						\item \textbf{Mode Switch} \dotfill \textbf{TAC}
+						\item \textbf{Frequency} \dotfill \textbf{Set}
+					\end{enumerate}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+		
+		\subsection{LINK 4 DATALINK - CONTROL PANEL}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \dblue{Test Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Controls Test / Anti-Jam Modes}
+						\begin{itemize}
+							\item \textbf{TEST} -- Initiates BIT
+							\item \textbf{NORM} -- Normal Operation
+							\item \textbf{A-J} -- Anti-Jam (not simulated)
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Frequency} \dblue{Thumbwheels}& 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Selects Datalink Frequency}
+						\begin{itemize}
+							\item \textbf{First Digit} -- \textbf{Fixed as 3}
+							\item\textbf{Allowable Range} -- 300.0 - 324.9 MHz
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Power Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Controls System Power}
+						\begin{itemize}
+							\item \textbf{ON} -- Enables Link 4A
+							\item \textbf{OFF} -- Disables system
+							\item \textbf{AUX} -- Enables Link 4C
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+		
+		\subsection{LINK 4 DATALINK - REPLY/ANTENNA PANEL}
+		\begin{center}
+			\begin{longtable}{l p{3cm} | p{8cm}}
+				\toprule
+				\textbullet & \dblue{ANTENNA} \dblue{Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Selects Antenna}
+						\begin{itemize}
+							\item \textbf{Shared with UHF 1} -- Mutually exclusive
+							\item \textbf{UHF 1 LWR / DL UPR}
+							\item \textbf{UHF 1 UPR / DL LWR}
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{REPLY Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Sets Reply Mode}
+						\begin{itemize}
+							\item \textbf{NORM} -- Own Aircraft replies to datalink messages
+							\item\textbf{CANC} -- Receive only
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{MODE Switch} & 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Controls Overall Mode}
+						\begin{itemize}
+							\item \textbf{TAC} -- Normal airborne mode
+							\item \textbf{CAINS/WAYPT} -- Enables CV align
+						\end{itemize}
+					\end{itemize}
+				\end{minipage} \\
+				\midrule
+				\textbullet & \dblue{Address} \dblue{Thumbwheels}& 
+				\begin{minipage}[t]{\linewidth}
+					\vspace{-7pt}
+					\begin{itemize}
+						\item \textbf{Sets Two Least Significant Bits of Aircraft D/L Address}
+					\end{itemize}
+				\end{minipage} \\
+				\bottomrule
+			\end{longtable}
+		\end{center}
+		
+		\clearpage
+		
+		\subsection{ALR-67 RWR - CONTROLS / OVERVIEW}
 		\begin{center}
 			\begin{longtable}{l p{3cm} | p{8cm}}
 				\toprule
@@ -1351,7 +1819,7 @@
 						\end{itemize}
 						\item \textbf{Inner Circle} 
 						\begin{itemize}
-							\item \textbf{N, I, A, U, or F} -- Prioritization type
+							\item \textbf{N, I, A, U, F} -- Prioritization type
 							\item \textbf{O} -- Offset
 							\item \textbf{L} -- Limit
 							\item \textbf{B} -- BIT Failure
@@ -2343,10 +2811,7 @@
 			\end{longtable}
 		\end{center}
 	
-%		\subsection{ACM MODES - PLM}
-%		\subsection{ACM MODES - VSL}
-%		\subsection{ACM MODES - PAL}
-%		\subsection{ACM MODES - MRL}
+		\subsection{APX-76 IFF}
 		
 		
 		\cleardoublepage
