@@ -67,6 +67,10 @@
 \togglefalse{a4print}
 %\toggletrue{a4print}
 
+\newtoggle{4x3print}
+\togglefalse{4x3print}
+% \toggletrue{4x3print}
+
 %-----------------------------------------------------------------
 % GEOMETRY
 %-----------------------------------------------------------------
@@ -97,6 +101,15 @@
 	\setlength\paperh{21cm}
 	\setlength\paperw{15.6cm}
 	\setlength\inmar{1.6cm}
+	\setlength\outmar{1.2cm}
+	\setlength\chevin{\outmar-3.5cm}
+	\toggletrue{print}
+}{}
+
+\iftoggle{4x3print}{ % a5 paper with 8mm extra for tabs
+	\setlength\paperh{21cm}
+	\setlength\paperw{15.75cm}
+	\setlength\inmar{1.75cm}
 	\setlength\outmar{1.2cm}
 	\setlength\chevin{\outmar-3.5cm}
 	\toggletrue{print}
