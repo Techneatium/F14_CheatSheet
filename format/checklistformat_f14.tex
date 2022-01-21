@@ -85,16 +85,25 @@
 \setlength\botmar{0.8cm}
 % indendtation for chevrons on front page
 \newlength{\chevin}
+% tab dimensions
+\newlength{\tabwidth}
+\newlength{\tabdepth}
+% Number of sections
+\newcounter{tabnumber}
+\setcounter{tabnumber}{6}
+
+% must manually tell how many sections in total
+\setlength\tabwidth{\textheight/\thetabnumber}
+
 
 
 \iftoggle{a5}{
 	\setlength\paperh{21cm}
 	\setlength\paperw{14.8cm}
-	%	\setlength\inmar{1.6cm}
-	%	\setlength\outmar{0.4cm}
 	\setlength\inmar{1cm}
 	\setlength\outmar{1cm}
 	\setlength{\chevin}{\outmar-3.3cm}
+	\setlength\tabdepth{0.8cm}
 }{}
 
 \iftoggle{a5print}{ % a5 paper with 8mm extra for tabs
@@ -103,15 +112,17 @@
 	\setlength\inmar{1.6cm}
 	\setlength\outmar{1.2cm}
 	\setlength\chevin{\outmar-3.5cm}
+	\setlength\tabdepth{0.8cm}
 	\toggletrue{print}
 }{}
 
-\iftoggle{4x3print}{ % a5 paper with 8mm extra for tabs
+\iftoggle{4x3print}{ % a5 paper height with 9.5mm extra for 4x3 aspect
 	\setlength\paperh{21cm}
 	\setlength\paperw{15.75cm}
-	\setlength\inmar{1.75cm}
-	\setlength\outmar{1.2cm}
+	\setlength\inmar{1.6cm}
+	\setlength\outmar{1.35cm}
 	\setlength\chevin{\outmar-3.5cm}
+	\setlength\tabdepth{0.8cm}
 	\toggletrue{print}
 }{}
 
@@ -121,6 +132,7 @@
 	\setlength\inmar{1.4cm}
 	\setlength\outmar{1.4cm}
 	\setlength{\chevin}{\outmar-3.1cm}
+	\setlength\tabdepth{0.8cm}
 }{}
 
 \iftoggle{a4print}{
@@ -129,23 +141,22 @@
 	\setlength\inmar{1.6cm}
 	\setlength\outmar{1.2cm}
 	\setlength{\chevin}{\outmar-2.9cm}
+	\setlength\tabdepth{0.8cm}
 	\toggletrue{print}
 }{}
 
-%\usepackage[paperheight=9in, paperwidth=6in,
-%\usepackage[paperheight=23cm, paperwidth=15cm,
 \usepackage[
-paperheight=\paperh,
-paperwidth=\paperw,
-margin=0.1cm,
-top=\topmar,
-bottom=\botmar,
-headsep=0.5cm,
-headheight=0.5cm,
-footskip=0.5cm,
-inner=\inmar,
-outer=\outmar,
-centering
+	paperheight=\paperh,
+	paperwidth=\paperw,
+	margin=0.1cm,
+	top=\topmar,
+	bottom=\botmar,
+	headsep=0.5cm,
+	headheight=0.5cm,
+	footskip=0.5cm,
+	inner=\inmar,
+	outer=\outmar,
+	centering
 ]{geometry}
 
 %-----------------------------------------------------------------
@@ -193,9 +204,9 @@ centering
 \def\columnseprulecolor{\color{black}}
 
 % spacing within lists
-\setlist[enumerate, 1]{itemsep=1pt, parsep=0pt}
+\setlist[enumerate, 1]{itemsep=1pt, parsep=0pt, label=(\alph*)}
 \setlist[enumerate, 2]{itemsep=1pt, parsep=0pt}
-\setlist[itemize, 1]{itemsep=1pt, parsep=0pt}
+\setlist[itemize, 1]{itemsep=1pt, parsep=0pt, label=\textbf{\textbullet}}
 \setlist[itemize, 2]{itemsep=1pt, parsep=0pt}
 
 %-----------------------------------------------------------------
@@ -298,13 +309,6 @@ centering
 %-----------------------------------------------------------------
 % ROUNDING
 %-----------------------------------------------------------------
-% tab dimensions
-\newlength{\tabwidth}
-\newlength{\tabdepth}
-% must manually tell how many sections in total
-\setlength\tabwidth{\textheight/6}
-\setlength\tabdepth{0.8cm}
-
 % thumbtab for Section page
 \newcommand{\thumbtab}[2]{
 	\iftoggle{print}{
