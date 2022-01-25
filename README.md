@@ -1,12 +1,23 @@
 ***
-### Changelog - 2022.01.21
+### Changelog - 2022.01.25
 
 - Renamed format file to `checklistformat_f14`
 - Moved `tabwidth` and `tabdepth` to top of format
 - Removed outdated troubleshooting reference
-- Glabel definitions with `enumitem`
+- Global definitions with `enumitem`
   - Defined `label=(\alph*)` for enumerate
   - Defined `label=\textbf{\textbullet}` for itemize
+- Updated `4x3print` option to increase `tabdepth` to 9.5mm
+  - As well as increasing `outermar` by 1.5mm
+  - Need to figure out what all is necessary here to keep same page area as a5
+- Added formatting for using `Spartan` font (closer to Futura-DemiBold)
+  - `Spartan` slightly taller -> Requires `Scale=0.85` to keep sizing
+  - Requires `tocloft` package to fix table of contents spacing
+    - Increased `sftsubsecnumwidth` from `1.55em` to `3.10em`
+- Consolidated black color variable into `color1`
+  - still needs control of titlepage `tikz`
+  - Need variable for textcolor?
+  - Move Color variables to top of formating?
 
 ***
 ### Changelog - 2022.01.16

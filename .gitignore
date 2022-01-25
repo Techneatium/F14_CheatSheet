@@ -6,3 +6,5 @@
 *.DS_Store
 *.fls
 *.fdb_latexmk
+*.cb
+*.cb2
