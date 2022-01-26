@@ -18,6 +18,10 @@
   - still needs control of titlepage `tikz`
   - Need variable for textcolor?
   - Move Color variables to top of formating?
+- **Considering moving to having `\chapter` in place of `\section`**
+  - Maybe have first page of chapter be blank
+  - Maybe individual table of content for chapter
+  - Would require moving from `article` to `report` or `book`
 
 ***
 ### Changelog - 2022.01.16
