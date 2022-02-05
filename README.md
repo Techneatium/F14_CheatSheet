@@ -1,4 +1,22 @@
 ***
+### Changelog - 2022.02.05
+
+- Changed to `\chapter` organization
+  - Changed base class from `article` to `report`
+  - Renamed many sections and subsections
+- Added `minitoc` package
+  - Allows TOC for chapter
+  - Each chapter begins with `minitoc`, `cleardoublepage`
+- Changed to `Montserrat` font
+  - No longer requires scaling
+  - Does not require `tocloft` to fix TOC spacing
+  - Changed to `LetterSpace=3.0` from 2.5
+- Maybe change header `\leftmark` formatting to use chapter and section information?
+- Maybe add seperate font families for the allcaps titles and normal bold (i.e for `\blue`)
+  - use command `\MakeUppercase{}` to force uppercase
+
+
+***
 ### Changelog - 2022.01.25
 
 - Renamed format file to `checklistformat_f14`

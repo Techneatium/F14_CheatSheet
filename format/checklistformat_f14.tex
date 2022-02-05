@@ -10,17 +10,27 @@
 % 	BoldFont=*-Bold,
 % 	BoldFeatures={LetterSpace=2.5}
 % ]{Jost}
+% \newfontfamily\tightfont{Jost}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+
+% \setmainfont[
+% 	Ligatures=TeX,
+% 	Scale=0.85,
+% 	UprightFont=*-Medium,
+% 	ItalicFont=Jost-Italic,
+% 	ItalicFeatures={Scale=1.0},
+% 	BoldFont=*-Bold,
+% 	BoldFeatures={LetterSpace=2.5}
+% ]{Spartan}
+% \newfontfamily\tightfont{Spartan}[Ligatures=TeX, Scale=0.85, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 
 \setmainfont[
 	Ligatures=TeX,
-	Scale=0.85,
-	UprightFont=*-Medium,
-	ItalicFont=Jost-Italic,
-	ItalicFeatures={Scale=1.0},
-	BoldFont=*-Bold,
-	BoldFeatures={LetterSpace=2.5}
-]{Spartan}
-\newfontfamily\tightSpartan{Spartan}[Ligatures=TeX, Scale=0.85, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+	UprightFont=*-Regular,
+	ItalicFont=*-Italic,
+	BoldFont=*-SemiBold,
+	BoldFeatures={LetterSpace=3.0}
+]{Montserrat}
+\newfontfamily\tightfont{Montserrat}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 
 %\usepackage[T1]{fontenc}
 %\usepackage{helvet}
@@ -53,6 +63,7 @@
 \usepackage{multirow} % more fancy tables
 \usepackage{longtable} % multi page tables
 \usepackage{tocloft} % TOC formatting
+\usepackage{minitoc}
 
 %-----------------------------------------------------------------
 % BOOLEANS
@@ -180,7 +191,7 @@
 \pagestyle{empty}
 % fancy header with section title in hatching
 \pagestyle{fancy}
-\renewcommand{\sectionmark}[1]{\markboth{\colorbox{color1}{
+\renewcommand{\chaptermark}[1]{\markboth{\colorbox{color1}{
 	% code formatting section titles in header
 	\textcolor{white}{\Large\textbf{#1}}
 }}{}}
@@ -189,7 +200,7 @@
 	\fancyhf{}
 	% page number in footer
 	% \fancyfoot[C]{\textbf{--- \thepage \ ---}}% LE,RO
-	\fancyfoot[C]{{\tightSpartan \textbf{--- \thepage \ ---}}}% LE,RO
+	\fancyfoot[C]{{\tightfont \textbf{--- \thepage \ ---}}}% LE,RO
 	% date in top right
 	\fancyhead[RE,RO]{\colorbox{color1}{
 			\textcolor{white}{\Large\textbf{REV: \today}}
@@ -254,10 +265,11 @@
 % relevant package: tocloft
 % change distance between section number and title
 % default: 1.55em
-% required for Spartan font: 3.1em for subsec 2.20
-\setlength{\cftsecnumwidth}{1.55em}
-\setlength{\cftsubsecnumwidth}{3.10em}
-\tocloftpagestyle{empty}
+% required for Spartan font: 3.1em w/o chapters
+% required for Spartan font: 3.3em w/ chapters
+% \setlength{\cftsecnumwidth}{2.325em}
+% \setlength{\cftsubsecnumwidth}{3.50em}
+% \tocloftpagestyle{empty}
 %-----------------------------------------------------------------
 % TITLE FORMATTING
 %-----------------------------------------------------------------

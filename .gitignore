@@ -8,3 +8,5 @@
 *.fdb_latexmk
 *.cb
 *.cb2
+*.maf
+*.mtc*

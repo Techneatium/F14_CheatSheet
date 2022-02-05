@@ -1,4 +1,4 @@
-\documentclass[8pt,usenames,dvipsnames,twoside]{article}
+\documentclass[10pt,usenames,dvipsnames,twoside]{report}
 %-----------------------------------------------------------------
 % FORMATTING
 %-----------------------------------------------------------------
@@ -16,6 +16,7 @@
 	\cleardoublepage
 
 	\thumbnar
+	\dominitoc
 	\tableofcontents
 	\cleardoublepage
 
@@ -24,9 +25,13 @@
 	% reactivate header and footer
 	\pagestyle{plain}
 
-	\section{PROCEDURES}
+	\chapter{PROCEDURES}
 	\thumbtab{Procedures}{0}
+	\minitoc
+	\cleardoublepage
 
+	\section{START-UP}
+	\thumbnar
 	\subsection{PILOT - PRE-START}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -588,6 +593,7 @@
 		\end{longtable}
 	\end{center}
 
+	\section{TAKEOFF \& LANDING}
 	\subsection{TAKEOFF - SHORE}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -840,6 +846,7 @@
 
 	\clearpage
 
+	\section{IN-FLIGHT}
 	\subsection{AERIAL REFUELING}
 
 	\clearpage
@@ -933,8 +940,12 @@
 
 	\cleardoublepage
 
-	\section{SYSTEMS}
+	\chapter{SYSTEMS}
 	\thumbtab{Systems}{1}
+	\minitoc
+	\cleardoublepage
+
+	\section{FLIGHT CONTROL}
 
 	\subsection{AFCS - SAS}
 	\begin{center}
@@ -1267,7 +1278,8 @@
 
 	\clearpage
 
-	\subsection{NAVIGATION - OVERVIEW}
+	\section{NAVIGATION}
+	\subsection{NAV - OVERVIEW}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -1351,7 +1363,7 @@
 		\end{longtable}
 	\end{center}
 
-	\subsection{NAVIGATION - INS}
+	\subsection{NAV - INS}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -1398,7 +1410,7 @@
 		\end{longtable}
 	\end{center}
 
-	\subsection{NAVIGATION - ALIGNMENT}
+	\subsection{NAV - ALIGNMENT}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -1422,7 +1434,7 @@
 		\end{longtable}
 	\end{center}
 
-	\subsection{NAVIGATION - WAYPOINT}
+	\subsection{NAV - WAYPOINT}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -1443,13 +1455,14 @@
 		\end{longtable}
 	\end{center}
 
-	\subsection{NAVIGATION - TACAN}
-	\subsection{NAVIGATION - VOR/ADF}
+	\subsection{NAV - TACAN}
+	\subsection{NAV - VOR/ADF}
 
 
 
 	\cleardoublepage
 
+	\section{COMMUNICATION}
 	\subsection{COMMS - OVERVIEW}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -1915,7 +1928,7 @@
 	\end{center}
 
 	\clearpage
-
+	\section{DEFENSIVE SYSTEMS}
 	\subsection{ALR-67 RWR - CONTROLS / OVERVIEW}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -2297,8 +2310,12 @@
 
 	\cleardoublepage
 
-	\section{AWG-9 RADAR}
+	\chapter{AWG-9 RADAR}
 	\thumbtab{AWG-9}{2}
+	\minitoc
+	\cleardoublepage
+
+	\section{OVERVIEW}
 	\subsection{MAIN MODES - OVERVIEW}
 	\begin{center}
 		\begin{longtable}{l | p{1.2cm} | p{1.2cm} | p{1.2cm} | p{1cm} | p{1cm} | p{1.5cm}}
@@ -2363,7 +2380,9 @@
 		\end{longtable}
 	\end{center}
 
-	\subsection{PULSE MODE - PULSE SEARCH}
+	\section{PULSE MODES}
+
+	\subsection{PULSE - PULSE SEARCH}
 	\begin{center}
 		\resizebox{0.70\linewidth}{!}{
 			\includegraphics{PSEARCH.png}
@@ -2415,7 +2434,7 @@
 
 	\clearpage
 
-	\subsection{PULSE MODE - PSTT}
+	\subsection{PULSE - PSTT}
 	\begin{center}
 		\resizebox{0.70\linewidth}{!}{
 			\includegraphics{PSTT.png}
@@ -2482,7 +2501,8 @@
 
 	\clearpage
 
-	\subsection{PULSE DOPPLER MODE - PULSE DOPPLER SEARCH}
+	\section{PULSE DOPPLER MODES}
+	\subsection{PD - PULSE DOPPLER SEARCH}
 	\begin{center}
 		\resizebox{0.70\linewidth}{!}{
 			\includegraphics{PDSEARCH.png}
@@ -2601,7 +2621,7 @@
 	\clearpage
 
 
-	\subsection{PULSE DOPPLER MODE - RWS}
+	\subsection{PD - RWS}
 	\label{sec:awg9-rws}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -2657,7 +2677,7 @@
 
 	\clearpage
 
-	\subsection{PULSE DOPPLER MODE - TWS}
+	\subsection{PD - TWS}
 	\label{sec:awg9-tws}
 	\thumbnar
 	\begin{center}
@@ -2783,7 +2803,7 @@
 
 	\clearpage
 
-	\subsection{PULSE DOPPLER MODE - TWS MAN}
+	\subsection{PD - TWS MAN}
 	\thumbnar
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -2844,7 +2864,7 @@
 
 	\clearpage
 
-	\subsection{PULSE DOPPLER MODE - TWS AUTO}
+	\subsection{PD - TWS AUTO}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -2897,7 +2917,7 @@
 
 	\clearpage
 
-	\subsection{PULSE DOPPLER MODE - PDSTT}
+	\subsection{PD - PDSTT}
 	\begin{center}
 		\resizebox{0.70\linewidth}{!}{
 			\includegraphics{PDSTT.png}
@@ -2961,6 +2981,7 @@
 		\end{longtable}
 	\end{center}
 
+	\section{ACM}
 	\subsection{ACM MODES - OVERVIEW}
 	\begin{center}
 		\begin{tabular}{p{3cm} | p{2cm}  | p{2cm} | p{2cm} | p{2cm}}
@@ -3053,6 +3074,8 @@
 
 
 	\cleardoublepage
+
+	\section{TACTICAL INFORMATION DISPLAY}
 
 	\hypertarget{subsec:tidsymb}{}
 	\subsection{TID SYMBOLOGY}
@@ -3803,8 +3826,13 @@
 
 	\cleardoublepage
 
-	\section{TCS}
+	\chapter{TCS - LANTIRN}
 	\thumbtab{TCS - LANTIRN}{3}
+	\minitoc
+	\cleardoublepage
+
+	\section{TCS}
+
 
 	\subsection{OVERVIEW}
 
@@ -4335,9 +4363,12 @@
 
 	\cleardoublepage
 
-	\section{A/G WEAPONS}
+	\chapter{A/G WEAPONS}
 	\thumbtab{A/G}{4}
+	\minitoc
+	\cleardoublepage
 
+	\section{SETTINGS}
 	\subsection{A/G WEAPON SETTINGS - OVERVIEW}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -4505,6 +4536,7 @@
 		\end{tabular}
 	\end{center}
 
+	\section{UNGUIDED}
 	\subsection{M61 GUN}
 	\begin{center}
 		\begin{tabular}{l p{3cm} | p{8cm}}
@@ -4685,6 +4717,7 @@
 
 	\clearpage
 
+	\section{GUIDED}
 	\subsection{LASER GUIDED BOMB}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -4833,9 +4866,12 @@
 
 	\cleardoublepage
 
-	\section{A/A WEAPONS}
+	\chapter{A/A WEAPONS}
 	\thumbtab{A/A}{5}
+	\minitoc
+	\cleardoublepage
 
+	\section{M61 GUN}
 	\subsection{M61 GUN - OVERVIEW}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -4978,8 +5014,8 @@
 	\end{center}
 
 	\clearpage
-
-	\subsection{AIM-9 SIDEWINDER - OVERVIEW}
+	\section{AIM-9 SIDEWINDER}
+	\subsection{AIM-9 - OVERVIEW}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -5054,7 +5090,7 @@
 		\end{longtable}
 	\end{center}
 
-	\subsection{AIM-9 SIDEWINDER - SILENT}
+	\subsection{AIM-9 - SILENT}
 	\begin{center}
 		\begin{tabular}{l p{3cm} | p{8cm}}
 			\toprule
@@ -5083,7 +5119,7 @@
 		\end{tabular}
 	\end{center}
 
-	\subsection{AIM-9 SIDEWINDER - RADAR}
+	\subsection{AIM-9 - RADAR}
 	\begin{center}
 		\begin{tabular}{l p{3cm} | p{8cm}}
 			\toprule
@@ -5116,7 +5152,8 @@
 
 	\clearpage
 
-	\subsection{AIM-7 SPARROW - OVERVIEW}
+	\section{AIM-7 SPARROW}
+	\subsection{AIM-7 - OVERVIEW}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -5208,7 +5245,7 @@
 		}
 	\end{center}
 
-	\subsection{AIM-7 SPARROW - STT}
+	\subsection{AIM-7 - STT}
 	\begin{center}
 		\begin{tabular}{l p{3cm} | p{8cm}}
 			\toprule
@@ -5255,7 +5292,8 @@
 
 	\clearpage
 
-	\subsection{AIM-54 PHOENIX - OVERVIEW}
+	\section{AIM-54 PHOENIX}
+	\subsection{AIM-54 - OVERVIEW}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -5401,7 +5439,7 @@
 		\end{longtable}
 	\end{center}
 
-	\subsection{AIM-54 PHOENIX - PD-STT}
+	\subsection{AIM-54 - PD-STT}
 	\begin{center}
 		\begin{tabular}{l p{3cm} | p{8cm}}
 			\toprule
@@ -5448,7 +5486,7 @@
 		\end{tabular}
 	\end{center}
 
-	\subsection{AIM-54 PHOENIX - TWS / MULTI}
+	\subsection{AIM-54 - TWS / MULTI}
 	\begin{center}
 		\begin{tabular}{l p{3cm} | p{8cm}}
 			\toprule
