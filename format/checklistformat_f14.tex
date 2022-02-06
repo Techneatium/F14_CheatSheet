@@ -12,25 +12,34 @@
 % ]{Jost}
 % \newfontfamily\tightfont{Jost}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 
-% \setmainfont[
-% 	Ligatures=TeX,
-% 	Scale=0.85,
-% 	UprightFont=*-Medium,
-% 	ItalicFont=Jost-Italic,
-% 	ItalicFeatures={Scale=1.0},
-% 	BoldFont=*-Bold,
-% 	BoldFeatures={LetterSpace=2.5}
-% ]{Spartan}
-% \newfontfamily\tightfont{Spartan}[Ligatures=TeX, Scale=0.85, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
-
 \setmainfont[
 	Ligatures=TeX,
-	UprightFont=*-Regular,
-	ItalicFont=*-Italic,
-	BoldFont=*-SemiBold,
-	BoldFeatures={LetterSpace=3.0}
-]{Montserrat}
-\newfontfamily\tightfont{Montserrat}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+	Scale=0.85,
+	UprightFont=*-Medium,
+	ItalicFont=Jost-Italic,
+	ItalicFeatures={Scale=1.0},
+	BoldFont=*-Bold,
+	BoldFeatures={LetterSpace=2.5}
+]{Spartan}
+\newfontfamily\tightfont{Spartan}[Ligatures=TeX, Scale=0.85, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+
+% \setmainfont[
+% 	Ligatures=TeX,
+% 	UprightFont=*-Regular,
+% 	ItalicFont=*-Regular Italic,
+% 	BoldFont=*-Semi Bold,
+% 	BoldFeatures={LetterSpace=3.0}
+% ]{Montserrat}
+% \newfontfamily\tightfont{Montserrat}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+
+% \setmainfont[
+% 	Ligatures=TeX,
+% 	UprightFont=*-Regular,
+% 	ItalicFont=*-Regular Italic,
+% 	BoldFont=*-Semi Bold,
+% 	BoldFeatures={LetterSpace=3.0}
+% ]{Metropolis}
+% \newfontfamily\tightfont{Metropolis}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 
 %\usepackage[T1]{fontenc}
 %\usepackage{helvet}
@@ -63,7 +72,8 @@
 \usepackage{multirow} % more fancy tables
 \usepackage{longtable} % multi page tables
 \usepackage{tocloft} % TOC formatting
-\usepackage{minitoc}
+\usepackage{minitoc} % chapter tocs
+\usepackage[auto]{chappg}
 
 %-----------------------------------------------------------------
 % BOOLEANS
@@ -269,7 +279,7 @@
 % required for Spartan font: 3.3em w/ chapters
 % \setlength{\cftsecnumwidth}{2.325em}
 % \setlength{\cftsubsecnumwidth}{3.50em}
-% \tocloftpagestyle{empty}
+\tocloftpagestyle{empty}
 %-----------------------------------------------------------------
 % TITLE FORMATTING
 %-----------------------------------------------------------------
@@ -394,7 +404,7 @@
 		\end{tikzpicture}
 	}{}
 	% create label for hyperlinks on front page
-	\hypertarget{sec:#2}{}
+	\label{thumbtab:#2}
 	% create node on back of page
 	\AtBeginShipoutNext{\thumbback{#1}{#2}}
 }
@@ -493,23 +503,6 @@
 %-----------------------------------------------------------------
 % FRONT PAGE
 %-----------------------------------------------------------------
-% creates node option to create hyperlink
-\tikzset{
-	hyperlink node/.style={
-		alias=sourcenode,
-		append after command={
-			let     \p1 = (sourcenode.north west),
-			\p2=(sourcenode.south east),
-			\n1={\x2-\x1},
-			\n2={\y1-\y2} in
-			node [inner sep=0pt, outer sep=0pt,anchor=north west,at=(\p1)] {\hyperlink{#1}{\XeTeXLinkBox{\phantom{\rule{\n1}{\n2}}}}}
-			%xelatex needs \XeTeXLinkBox, won't create a link unless it
-			%finds text --- rules don't work without \XeTeXLinkBox.
-			%Still builds correctly with pdflatex and lualatex
-		}
-	}
-}
-% titlepage chevron indentation
 
 \newlength{\chevout} % sets for right side of chevron
 \newlength{\chevpoint} % sets point of chevron
@@ -540,14 +533,14 @@
 		]current page text area.north east) --
 		cycle;
 	% hyperlinked node for each section
-	% uses a number (sec:#2) as label
+	% uses a number (thumbtab:#2) as label
 	\node[
 		rectangle,
 		anchor=west,
 		rotate=0,
 		minimum width=2cm,
 		minimum height=\tabwidth-0.5cm,
-		hyperlink node=sec:#2
+		hyperref node=thumbtab:#2
 	](Procedure) at ([xshift=\chevin, yshift=-(#2+0.5)*\tabwidth]current page text area.north east) {
 		\textbf{#1}
 	};

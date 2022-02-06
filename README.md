@@ -1,4 +1,16 @@
 ***
+### Changelog - 2022.02.06
+
+- Changed back to font `Spartan`
+  - Also tried `Metropolis` and `Montserrat` (don't require rescaling), but both caused weird bug with minitoc where hatching didn't render on chapter 2 heading page because minitoc rolled over to next page...
+- Reworked `hyperref` links and targets for thumbtabs
+  - Changed ref name from `sec:i` to `thumbtabtab:i` to reflect change in level
+  - replaced `\hypertarget{tab:i}{}` with `\label{tab:i}` for each target
+  - This allows links from titlepage to be to underlying object (the chapter) rather than the node itself.
+  - Commented out code for `hyperlink node` tikz style from format file
+  - Commented out code to make `hypertarget` for thumbtabs
+
+***
 ### Changelog - 2022.02.05
 
 - Changed to `\chapter` organization
