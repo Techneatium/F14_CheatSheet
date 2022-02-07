@@ -1,4 +1,10 @@
 ***
+### Changelog - 2022.02.07
+
+- Began experimenting with `tcolorbox` to draw boxes around subsections
+  - Requires redefining `subsection` definitions to reduce spacing, remove black box, and make subsection label white with `titlesec` tools
+
+***
 ### Changelog - 2022.02.06
 
 - Changed back to font `Spartan`

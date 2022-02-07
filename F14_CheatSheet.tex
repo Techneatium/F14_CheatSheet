@@ -5,6 +5,23 @@
 % all formatting and packages are in this file
 \input{./format/checklistformat_f14}
 
+\usepackage{tcolorbox} % for rounded boxes
+\tcbuselibrary{skins, breakable}
+
+\newtcolorbox{mandatory}[1]{
+	enhanced,
+	colback=white,
+	colframe=color1,
+	colbacktitle=color1,
+	breakable,
+	left=0pt, bottom=0pt, right=0pt, top=0pt,
+	% lefttitle=1mm, bottomtitle=1mm, righttitle=1mm, toptitle=1mm,
+	lefttitle=1mm, bottomtitle=-0.25mm, righttitle=0mm, toptitle=-0.75mm,
+	boxsep=0pt,
+	title=\textbf{#1},
+	subtitle style={colback=color1, colframe=color1}
+}
+
 %-----------------------------------------------------------------
 % BEGIN DOCUMENT
 %-----------------------------------------------------------------
@@ -32,6 +49,7 @@
 
 	\section{START-UP}
 	\thumbnar
+
 	\subsection{PILOT - PRE-START}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -172,6 +190,8 @@
 			\bottomrule
 		\end{longtable}
 	\end{center}
+
+	\clearpage
 
 	\subsection{PILOT - POST-START}
 	\begin{center}
@@ -5529,7 +5549,6 @@
 			\bottomrule
 		\end{tabular}
 	\end{center}
-	\hyperref[ch:0]{test hyperref}
 
   %fills rest of page with blanks
   \cleardoublepage

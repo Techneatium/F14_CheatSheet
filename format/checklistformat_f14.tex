@@ -249,9 +249,9 @@
 %-----------------------------------------------------------------
 % Defines 2 colors throughout rest of formatting
 \colorlet{color1}{black} % Red, RedOrange
-\colorlet{color2}{ProcessBlue} % CornflowerBlue, Cerulean, ProcessBlue
+\colorlet{color2}{black} % CornflowerBlue, Cerulean, ProcessBlue
 \definecolor{color3}{RGB}{255, 255, 0}
-\colorlet{color4}{NavyBlue} % NavyBlue
+\colorlet{color4}{black} % NavyBlue
 \definecolor{color5}{HTML}{FFE534} % bf2042yellow
 
 %-----------------------------------------------------------------
@@ -283,17 +283,26 @@
 %-----------------------------------------------------------------
 % TITLE FORMATTING
 %-----------------------------------------------------------------
+% \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before-code>}[<after-code>]
 % formatting of section
-\titleformat{\section}
-{\color{color1}\normalfont\large\bfseries}
-{\color{color1}\thesection}{1em}{#1}[{\titlerule[1pt]}]
+\titleformat{\section} % command
+{\color{color1}\normalfont\large\bfseries} % format
+{\color{color1}\thesection} % label
+{1em} % sep
+{#1} % before-code
+[{\titlerule[1pt]}] % after-code
+
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after section title
 \titlespacing{\section}{0pt}{5pt}{2pt}
 
 % formatting of subsection
-\titleformat{\subsection}
-{\color{white}\normalfont\bfseries} % color1
-{\color{color1}\thesubsection}{1em}{\colorbox{color1}{#1}}[]
+\titleformat{\subsection} % format
+{\color{white}\normalfont\bfseries} % format
+{\color{color1}\thesubsection} % label
+{1em} % sep
+{\colorbox{color1}{#1}} % before-code
+[] % after-cocde
+
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
 \titlespacing{\subsection}{0pt}{2pt}{2pt}
 
