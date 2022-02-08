@@ -1,8 +1,20 @@
 ***
+### Changelog - 2022.02.08
+
+- Further experimentation with tcolorbox
+  - Added `warningbox` which produces WARNING in box with drop shadow
+- Implemented `changebar` package to indicate mandatory steps from procedures with changebars in margin
+- created `Xperimental.tex` to try out new code with shorter run time
+  - not included in git
+
+***
 ### Changelog - 2022.02.07
 
 - Began experimenting with `tcolorbox` to draw boxes around subsections
   - Requires redefining `subsection` definitions to reduce spacing, remove black box, and make subsection label white with `titlesec` tools
+- Began reading into moving hatching into header/footer formatting
+  - `fancyhdr` manual has section on thumb index!
+  - Indicates that you can have images integrated into header/footer w/o tikz
 
 ***
 ### Changelog - 2022.02.06

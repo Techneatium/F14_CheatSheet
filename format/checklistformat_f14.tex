@@ -74,6 +74,11 @@
 \usepackage{tocloft} % TOC formatting
 \usepackage{minitoc} % chapter tocs
 \usepackage[auto]{chappg}
+\usepackage{tcolorbox} % for rounded boxes
+\tcbuselibrary{skins, breakable}
+\usepackage{luatex85} % required to make changebar work with lualatex
+\usepackage[pdftex, color, outerbars]{changebar} % what it says
+
 
 %-----------------------------------------------------------------
 % BOOLEANS
@@ -209,8 +214,8 @@
 	% clear defaults
 	\fancyhf{}
 	% page number in footer
-	% \fancyfoot[C]{\textbf{--- \thepage \ ---}}% LE,RO
-	\fancyfoot[C]{{\tightfont \textbf{--- \thepage \ ---}}}% LE,RO
+	% \fancyfoot[C]{{\tightfont \textbf{--- \thepage \ ---}}}% LE,RO
+	\fancyfoot[C]{{\tightfont \textbf{\thepage}}}% LE,RO
 	% date in top right
 	\fancyhead[RE,RO]{\colorbox{color1}{
 			\textcolor{white}{\Large\textbf{REV: \today}}
@@ -264,11 +269,38 @@
 		\textbf{\textcolor{white}{#1}}
 	}
 }
+
 \newcommand{\yellow}[1]{
 	\colorbox{color5}{
 		\textbf{\textcolor{black}{#1}}
 	}
 }
+
+\newcommand{\warningbox}[1]{
+	\begin{tcolorbox}[
+		enhanced,
+		colback=white,
+		colframe=color1,
+		sharp corners,
+		frame hidden,
+		colbacktitle=white,
+		coltitle=color1,
+		attach boxed title to top center,
+		boxed title style={
+		sharp corners,
+		drop shadow=color1!100
+		},
+		title=\large\textbf{WARNING}
+	]
+		{#1}
+	\end{tcolorbox}
+}
+
+%-----------------------------------------------------------------
+% CHANGEBAR SETTINGS
+%-----------------------------------------------------------------
+\cbcolor{color1}
+\setlength{\changebarwidth}{2mm}
 %-----------------------------------------------------------------
 % TABLE OF CONTENTS FORMATTING
 %-----------------------------------------------------------------
@@ -305,6 +337,15 @@
 
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
 \titlespacing{\subsection}{0pt}{2pt}{2pt}
+
+% % Alternate formatting of subsection (white text)
+% \titleformat{\subsection} % format
+% {\color{white}\normalfont\bfseries} % format
+% {\color{white}\thesubsection} % label
+% {1em} % sep
+% {#1} % before-code
+% [] % after-cocde
+% \titlespacing{\subsection}{0pt}{0pt}{0pt}
 
 %-----------------------------------------------------------------
 % HATCHING

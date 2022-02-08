@@ -5,23 +5,6 @@
 % all formatting and packages are in this file
 \input{./format/checklistformat_f14}
 
-\usepackage{tcolorbox} % for rounded boxes
-\tcbuselibrary{skins, breakable}
-
-\newtcolorbox{mandatory}[1]{
-	enhanced,
-	colback=white,
-	colframe=color1,
-	colbacktitle=color1,
-	breakable,
-	left=0pt, bottom=0pt, right=0pt, top=0pt,
-	% lefttitle=1mm, bottomtitle=1mm, righttitle=1mm, toptitle=1mm,
-	lefttitle=1mm, bottomtitle=-0.25mm, righttitle=0mm, toptitle=-0.75mm,
-	boxsep=0pt,
-	title=\textbf{#1},
-	subtitle style={colback=color1, colframe=color1}
-}
-
 %-----------------------------------------------------------------
 % BEGIN DOCUMENT
 %-----------------------------------------------------------------
@@ -54,17 +37,17 @@
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
-			1. & \blue{Parking Brake} & \textbf{ENGAGED} \\
+			1. & \blue{Parking Brake}\cbstart & \textbf{ENGAGED} \\
 			\midrule
 			2. & \blue{Ground Power} & connected \\
 			\midrule
-			3. & \blue{Compressed Air} & connected \\
+			3. & \blue{Compressed Air}\cbend & connected \\
 			\midrule
 			4. & \blue{ICS} & \textbf{HOT MIC} \\
 			\midrule
-			5. & \dblue{TO RIO} & \emph{``Begin Start-Up''} \\
+			5. & \dblue{TO RIO}\cbstart & \emph{``Begin Start-Up''} \\
 			\midrule
-			6. & \blue{ICS} & \textbf{Comm Check} \\
+			6. & \blue{ICS}\cbend & \textbf{Comm Check} \\
 			\midrule
 			7. & \blue{MASTER TEST \break Selector} &
 			\begin{minipage}[t]{\linewidth}
@@ -97,13 +80,13 @@
 				\end{enumerate}
 			\end{minipage} \\
 			\midrule
-			8. & \blue{Ejection Seat} & Armed \\
+			8. & \blue{Ejection Seat}\cbstart & Armed \\
 			\midrule
 			9. & \dblue{RIO} & Canopy Closed \\
 			\midrule
 			10. & \blue{Oxygen} & \textbf{ON (FWD)} \\
 			\midrule
-			11 & \blue{Emergency Wing Sweep} & \textbf{OVERSWEEP} \\
+			11 & \blue{Emergency Wing Sweep} \cbend & \textbf{OVERSWEEP} \\
 			\bottomrule
 		\end{longtable}
 	\end{center}
@@ -126,7 +109,7 @@
 			\midrule
 			3. & \blue{L\&R MASTER GEN} & \textbf{NORM} \\
 			\midrule
-			4. & \dblue{RIO} & \emph{``Ready to Start''} \\
+			4. & \cbstart\dblue{RIO} & \emph{``Ready to Start''} \\
 			\midrule
 			5. & \blue{Right Engine \break Start-Up} &
 			\begin{minipage}[t]{\linewidth}
@@ -138,7 +121,7 @@
 					\item \textbf{TIT} \dotfill < 890 C during start
 					\item \textbf{R GEN CAUTION} \dotfill extinguished
 				\end{enumerate}
-			\end{minipage} \\
+			\end{minipage}\cbend \\
 			\midrule
 			6. & \blue{Stabilized \break Parameters} &
 			\begin{minipage}[t]{\linewidth}
@@ -153,7 +136,7 @@
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			7. & \blue{Left Engine \break Start-Up} &
+			7. & \cbstart\blue{Left Engine \break Start-Up} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -163,7 +146,7 @@
 					\item \textbf{TIT} \dotfill < 890 C during start
 					\item \textbf{L GEN Caution} \dotfill extinguished
 				\end{enumerate}
-			\end{minipage} \\
+			\end{minipage}\cbend \\
 			\midrule
 			8. & \blue{Stabilized \break Parameters} &
 			\begin{minipage}[t]{\linewidth}
@@ -182,11 +165,11 @@
 			\midrule
 			10. & \blue{HYD PRESSURE} & 3000 psi \\
 			\midrule
-			11. & \blue{AIR SOURCE} & \textbf{BOTH ENG} \\
+			11. & \cbstart\blue{AIR SOURCE} & \textbf{BOTH ENG} \\
 			\midrule
 			12. & \blue{Ground Power} & disconnected \\
 			\midrule
-			13. & \blue{Compressed Air} & disconnected \\
+			13. & \blue{Compressed Air}\cbend & disconnected \\
 			\bottomrule
 		\end{longtable}
 	\end{center}
@@ -199,7 +182,7 @@
 			\toprule
 			1. & \dblue{TO RIO} & \emph{``Both Engines Running''} \thumbnar \\
 			\midrule
-			2. & \blue{Displays Control Panel} &
+			2. & \cbstart\blue{Displays Control Panel} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
@@ -208,7 +191,7 @@
 					\item \textbf{HSD} \dotfill \textbf{ON}
 					\item \textbf{HDS MODE} \dotfill \textbf{TID}\\
 					\hfill (monitor INS)
-				\end{itemize}
+				\end{itemize}\cbend
 			\end{minipage} \\
 			\midrule
 			3. & \dblue{RIO} & \textbf{Select Align Quality}
@@ -237,7 +220,7 @@
 			\midrule
 			6. & \blue{ANTI-SKID SPOILER BK} & \textbf{OFF} \\
 			\midrule
-			7. & \blue{Emergency Wing Sweep} &
+			7. & \cbstart\blue{Emergency Wing Sweep} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -253,18 +236,18 @@
 					\item \textbf{PITCH} \dotfill \textbf{ON}
 					\item \textbf{ROLL} \dotfill \textbf{ON}
 					\item \textbf{YAW} \dotfill \textbf{ON}
-				\end{itemize}
+				\end{itemize}\cbend
 			\end{minipage} \\
 			\midrule
 			9. & \blue{WING/EXT TRANS} & \textbf{AUTO} \\
 			\midrule
-			10. & \blue{UHF 1 Function Selector} & \textbf{BOTH} \\
+			10. & \cbstart\blue{UHF 1 Function Selector} & \textbf{BOTH} \\
 			\midrule
 			11. & \blue{TACAN Function Selector} & \textbf{T/R} \\
 			\midrule
-			12. & \blue{ARA-63 ICLS \break RECEIVER} & \textbf{ON} \\
+			12. & \blue{ARA-63 ICLS \break RECEIVER}\cbend & \textbf{ON} \\
 			\midrule
-			13. & \blue{Radar Altimeter} &
+			13. & \cbstart\blue{Radar Altimeter} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -274,16 +257,23 @@
 				\end{enumerate}
 			\end{minipage} \\
 			\midrule
-			14. & \blue{Standby ADI} & erect at least 2 min before T/O \\
+			14. & \blue{Standby ADI} \cbend& erect at least 2 min before T/O \\
 			\midrule
 			15. & \blue{KY-28 Crypt. Key} & \textbf{Set} (refer to GROUND SETTINGS kb) \\
 			\midrule
-			16. & \dblue{RIO} & set D/L frequency \\
+			16. & \cbstart\dblue{RIO} & set D/L frequency \cbend\\
 			\midrule
 			17. & \blue{Lights} & As desired \\
 			\bottomrule
 		\end{longtable}
 	\end{center}
+
+	\warningbox{
+	\begin{itemize}
+		\item \textbf{PARKING BRAKE MUST BE ENGAGED DURING ALIGNMENT.} \\
+		Lack of parking brake engagement inhibits INS alignment
+	\end{itemize}
+	}
 
 	\cleardoublepage
 
@@ -291,7 +281,7 @@
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
-			1. & \blue{Oxygen} & \textbf{ON (FWD)} \thumbnar \\
+			1. & \cbstart\blue{Oxygen} & \textbf{ON (FWD)} \thumbnar \\
 			\midrule
 			2. & \dblue{PILOT} &
 			\begin{minipage}[t]{\linewidth}
@@ -302,17 +292,17 @@
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			3. & \blue{ICS} & Comm Check \\
+			3. & \blue{ICS}\cbend & Comm Check \\
 			\midrule
 			4. & \blue{Lights} & As required \\
 			\midrule
 			5. & \blue{LTS Test} & Coordinate with Pilot \\
 			\midrule
-			6. & \blue{Ejection Seats} & \textbf{ARMED} \\
+			6. & \cbstart\blue{Ejection Seats} & \textbf{ARMED} \\
 			\midrule
 			7. & \blue{Canopy} & \textbf{CLOSED} \\
 			\midrule
-			8. & \dblue{TO PILOT} & \emph{``Ready to Start''} \\
+			8. & \dblue{TO PILOT}\cbend & \emph{``Ready to Start''} \\
 			\bottomrule
 		\end{longtable}
 	\end{center}
@@ -330,7 +320,7 @@
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			2. & \blue{INS STARTUP} &
+			2. & \cbstart\blue{INS STARTUP} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -338,14 +328,14 @@
 					\item \textbf{WCS Switch} \dotfill \textbf{STANDBY}
 					\item \textbf{IR/TV Power} \dotfill \textbf{STBY/IR/TV}
 					\item \textbf{TID/DDD} \dotfill illuminated after 40 s
-				\end{enumerate}
+				\end{enumerate}\cbend
 			\end{minipage} \\
 			\midrule
 			3. & \blue{Kneeboard} & Retrieve Coordinates, Elevation, Magnetic Variation from GROUND SETTINGS Page \\
 			\midrule
 			\multicolumn{3}{l}{\blue{WARNING} Input Coords \textbf{BEFORE} selecting \textbf{GND ALIGN} if using ASH} \\
 			\midrule
-			4. & \blue{Start INS Align} &
+			4. & \cbstart\blue{Start INS Align} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -367,9 +357,9 @@
 				\end{enumerate}
 			\end{minipage} \\
 			\midrule
-			5. & \blue{U/VHF Mode} & \textbf{T/R G} \\
+			5. & \blue{U/VHF Mode} & \textbf{T/R G}\cbend \\
 			\midrule
-			6. & \blue{Datalink} &
+			6. & \cbstart\blue{Datalink} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -404,11 +394,11 @@
 				\end{enumerate}
 			\end{minipage} \\
 			\midrule
-			11. & \blue{Altimeter} & Reset \\
+			11. & \blue{Altimeter}\cbend & Reset \\
 			\midrule
 			12. & \blue{CAP} & Enter Data (WP, FP, \emph{etc.}) \\
 			\midrule
-			13. & \blue{Displays} &
+			13. & \cbstart\blue{Displays} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
@@ -446,16 +436,18 @@
 			\midrule
 			18. & \blue{Standby ADI} & Erect at least 2 min before T/O \\
 			\midrule
-			19. & \dblue{TO PILOT} & \emph{``Ready to Taxi''} \\
+			19. & \dblue{TO PILOT} & \emph{``Ready to Taxi''}\cbend \\
 			\midrule
 			\multicolumn{3}{l}{\textbf{Once Airborne}} \\
 			\midrule
-			20. & \blue{IR/TV Power} & \textbf{ON} \\
+			20. & \cbstart\blue{IR/TV Power} & \textbf{ON} \\
 			\midrule
-			21. & \blue{WCS Switch} & \textbf{WCS XMT} \\
+			21. & \blue{WCS Switch} & \textbf{WCS XMT}\cbend \\
 			\bottomrule
 		\end{longtable}
 	\end{center}
+
+
 
 	\clearpage
 
@@ -472,7 +464,7 @@
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			2. & \blue{INS STARTUP} &
+			2. & \cbstart\blue{INS STARTUP} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -528,11 +520,11 @@
 				\end{enumerate}
 			\end{minipage} \\
 			\midrule
-			10. & \blue{Altimeter} & Reset \\
+			10. & \blue{Altimeter} & Reset\cbend \\
 			\midrule
 			11. & \blue{CAP} & Enter Data (WP, FP, \emph{etc.}) \\
 			\midrule
-			12. & \blue{Displays} &
+			12. & \cbstart\blue{Displays} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
@@ -553,9 +545,9 @@
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			15. & \blue{Flare Mode} & \textbf{PILOT} \\
+			15. & \blue{Flare Mode} & \textbf{PILOT}\cbend \\
 			\midrule
-			16. & \blue{Complete INS Align} &
+			16. & \cbstart\blue{Complete INS Align} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
@@ -565,10 +557,10 @@
 				\begin{enumerate}
 					\item \textbf{Align Complete} \dotfill Caret $\to$ Diamond
 					\item \textbf{NAV Mode} \dotfill \textbf{INS NAV}
-				\end{enumerate}
+				\end{enumerate}\cbend
 			\end{minipage} \\
 			\midrule
-			17. & \blue{Datalink} &
+			17. & \cbstart\blue{Datalink} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -579,16 +571,23 @@
 			\midrule
 			18. & \blue{Standby ADI} & Erect at least 2 min before T/O \\
 			\midrule
-			19. & \dblue{TO PILOT} & \emph{``Ready to Taxi''} \\
+			19. & \dblue{TO PILOT} & \emph{``Ready to Taxi''}\cbend \\
 			\midrule
 			\multicolumn{3}{l}{\textbf{Once Airborne}} \\
 			\midrule
-			20. & \blue{IR/TV Power} & \textbf{ON} \\
+			20. & \cbstart\blue{IR/TV Power} & \textbf{ON} \\
 			\midrule
-			21. & \blue{WCS Switch} & \textbf{WCS XMT} \\
+			21. & \blue{WCS Switch} & \textbf{WCS XMT}\cbend \\
 			\bottomrule
 		\end{longtable}
 	\end{center}
+
+	\warningbox{
+	\begin{itemize}
+		\item Input Coords \textbf{BEFORE} selecting \textbf{GND ALIGN} if using ASH. Else alignment can progress too far to correct coordinates by the time they are input.
+		\item \textbf{PARKING BRAKE MUST BE ENGAGED DURING ALIGNMENT.}
+	\end{itemize}
+	}
 
 	\cleardoublepage
 
