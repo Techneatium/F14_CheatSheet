@@ -1,18 +1,49 @@
-\documentclass[10pt,usenames,dvipsnames,twoside]{report}
-%-----------------------------------------------------------------
-% FORMATTING
-%-----------------------------------------------------------------
-% all formatting and packages are in this file
-\input{./format/checklistformat_f14}
+%=================================================================
+% MIT LICENSE
+%=================================================================
+% Copyright (c) 2022 Techneatium
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+%=================================================================
 
 %-----------------------------------------------------------------
 % BEGIN DOCUMENT
 %-----------------------------------------------------------------
+\documentclass[b/w]{TechCheck}
 \title{F14_Cheatsheet}
-% apply hatching to all pages
-\AtBeginShipout{\AtBeginShipoutAddToBox{\Hatch}}
+\author{Techneatium}
+
 \begin{document}
 	\include{./sections/F14_00_titlepage}
+	\clearpage
+	\null\vspace{0cm}
+
+	\begin{tcolorbox}[
+		enhanced, colback=white, colframe=color1, colbacktitle=white, coltitle=color1, sharp corners, attach boxed title to top center={yshift=2mm},
+		boxed title style={
+			sharp corners,
+			drop shadow=color1!100
+		}, title=\LARGE\textbf{DISCLAIMER}
+	]
+		\textbf{This document represents a personal project and is intended for entertainment purposes only. Do not use for training purposes or in real life scenarios.}
+	\end{tcolorbox}
+
 	\cleardoublepage
 
 	\thumbnar
@@ -446,8 +477,6 @@
 			\bottomrule
 		\end{longtable}
 	\end{center}
-
-
 
 	\clearpage
 

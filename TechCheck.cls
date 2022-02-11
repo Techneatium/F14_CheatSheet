@@ -1,75 +1,114 @@
-%-----------------------------------------------------------------
-% PACKAGES
-%-----------------------------------------------------------------
-\usepackage[utf8]{inputenc} % more charecter inpus (ü,ö,ä)
-\usepackage{fontspec}
-\setmainfont[
-	Ligatures=TeX,
-	UprightFont=*-Regular,
-	ItalicFont=*-Italic,
-	BoldFont=*-Bold,
-	BoldFeatures={LetterSpace=2.5}
-]{Jost}
-%\usepackage[T1]{fontenc}
-%\usepackage{helvet}
-%\renewcommand{\familydefault}{\sfdefault}
-\usepackage[yyyymmdd]{datetime} % change date format
-\renewcommand{\dateseparator}{} % select date separator character
-\usepackage[shortlabels]{enumitem} % pause/resume lists
-\usepackage{multicol} % multi column format
-\usepackage{graphicx} % used for figures
-\graphicspath{{images/}} % put figures inside folder 'images'  in same folder as .tex
-\usepackage[dvipsnames]{xcolor} %colors, dvips -> extra premade colors
-\usepackage[explicit]{titlesec} % formating of titles
-\usepackage{siunitx} % SI units
-\usepackage{amsmath}  % math stuff
-\usepackage{amsfonts} % more math stuff
-\usepackage{mathtools} % even more math stuff
-\usepackage{breqn} % honestly I don't even remember
-\usepackage{empheq} % Fancy boxed equations
-\usepackage{tikz} % shapes, figures
-\usepackage{tikzpagenodes} % points for tikz
-\usetikzlibrary{calc} % used for hyperlinked nodes
-\usepackage[hidelinks]{hyperref} % used for hyperlinked nodes
-\usepackage{lipsum} % lorem ipsum
-\usepackage[document]{ragged2e} % left ragged text
-\usepackage{atbegshi}  % special commands that apply tikz to all pages
-\usepackage{fancyhdr} % custom header/footer
-\usepackage{etoolbox} % Boolean and if/else
-\usepackage{calc} % math inside other commands
-\usepackage{booktabs} % fancy tables
-\usepackage{multirow} % more fancy tables
-\usepackage{longtable} % multi page tables
+%=================================================================
+% MIT LICENSE
+%=================================================================
+% Copyright (c) 2022 Techneatium
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+%=================================================================
+
+\NeedsTeXFormat{LaTeX2e}
+\LoadClass[10pt,usenames,dvipsnames,twoside]{report}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{TechCheck}[2022/02/11]
 
 %-----------------------------------------------------------------
-% BOOLEANS
+% GENERAL PACKAGES
 %-----------------------------------------------------------------
-% creates a boolean for if this is print version
+\RequirePackage[yyyymmdd]{datetime} % change date format
+\renewcommand{\dateseparator}{} % select date separator character
+\RequirePackage[shortlabels]{enumitem} % pause/resume lists
+\RequirePackage{multicol} % multi column format
+\RequirePackage{graphicx} % used for figures
+\graphicspath{{images/}} % put figures inside folder 'images'  in same folder as .tex
+\RequirePackage[dvipsnames]{xcolor} %colors, dvips -> extra premade colors
+\RequirePackage[explicit]{titlesec} % formating of titles
+\RequirePackage{siunitx} % SI units
+\RequirePackage{amsmath}  % math stuff
+\RequirePackage{amsfonts} % more math stuff
+\RequirePackage{mathtools} % even more math stuff
+\RequirePackage{breqn} % honestly I don't even remember
+\RequirePackage{empheq} % Fancy boxed equations
+\RequirePackage{tikz} % shapes, figures
+\RequirePackage{tikzpagenodes} % points for tikz
+\usetikzlibrary{calc} % used for hyperlinked nodes
+\RequirePackage[hidelinks]{hyperref} % used for hyperlinked nodes
+\RequirePackage{lipsum} % lorem ipsum
+\RequirePackage[document]{ragged2e} % left ragged text
+\RequirePackage{atbegshi}  % special commands that apply tikz to all pages
+\RequirePackage{fancyhdr} % custom header/footer
+\RequirePackage{etoolbox} % Boolean and if/else
+\RequirePackage{calc} % math inside other commands
+\RequirePackage{booktabs} % fancy tables
+\RequirePackage{multirow} % more fancy tables
+\RequirePackage{longtable} % multi page tables
+\RequirePackage{tocloft} % TOC formatting
+\RequirePackage{minitoc} % chapter tocs
+\RequirePackage[auto]{chappg}
+\RequirePackage{tcolorbox} % for rounded boxes
+\tcbuselibrary{skins, breakable}
+\RequirePackage{luatex85} % required to make changebar work with lualatex
+\RequirePackage[pdftex, color, outerbars]{changebar} % what it says
+
+%=================================================================
+% O P T I O N S   S T A R T
+%=================================================================
+
+%-----------------------------------------------------------------
+% FONT OPTIONS
+%-----------------------------------------------------------------
+\newtoggle{fontHelvet}
+\newtoggle{loadfontspec}
+\newtoggle{fontJost}
+\newtoggle{fontSpartan}
+\newtoggle{fontMontserrat}
+\newtoggle{fontMetropolis}
+
+\DeclareOption{fontHelvet}{
+  \toggletrue{fontHelvet}
+}
+
+\DeclareOption{fontJost}{
+  \toggletrue{loadfontspec}
+  \toggletrue{fontJost}
+}
+
+\DeclareOption{fontSpartan}{
+  \toggletrue{loadfontspec}
+  \toggletrue{fontSpartan}
+}
+
+\DeclareOption{fontMontserrat}{
+  \toggletrue{loadfontspec}
+  \toggletrue{fontMontserrat}
+}
+
+\DeclareOption{fontMetropolis}{
+  \toggletrue{loadfontspec}
+  \toggletrue{fontMetropolis}
+}
+
+%-----------------------------------------------------------------
+% GEOMETRY OPTIONS
+%-----------------------------------------------------------------
 % if print will add corner rounding and tabs
 \newtoggle{print}
-\togglefalse{print}
-%\toggletrue{print}
 
-% PAPER SIZE -> ONLY SET ONE TRUE!
-\newtoggle{a5}
-\togglefalse{a5}
-%\toggletrue{a5}
-
-\newtoggle{a5print}
-\togglefalse{a5print}
-\toggletrue{a5print}
-
-\newtoggle{a4}
-\togglefalse{a4}
-%\toggletrue{a4}
-
-\newtoggle{a4print}
-\togglefalse{a4print}
-%\toggletrue{a4print}
-
-%-----------------------------------------------------------------
-% GEOMETRY
-%-----------------------------------------------------------------
 \newlength{\paperh}
 \newlength{\paperw}
 % margins, input here as variable for ROUNDING
@@ -81,69 +120,176 @@
 \setlength\botmar{0.8cm}
 % indendtation for chevrons on front page
 \newlength{\chevin}
+% tab dimensions
+\newlength{\tabwidth}
+\newlength{\tabdepth}
+% Number of sections
+\newcounter{tabnumber}
+\setcounter{tabnumber}{6}
 
+% must manually tell how many sections in total
+\setlength\tabwidth{\textheight/\thetabnumber}
 
-\iftoggle{a5}{
+\DeclareOption{a5}{
 	\setlength\paperh{21cm}
 	\setlength\paperw{14.8cm}
-	%	\setlength\inmar{1.6cm}
-	%	\setlength\outmar{0.4cm}
 	\setlength\inmar{1cm}
 	\setlength\outmar{1cm}
 	\setlength{\chevin}{\outmar-3.3cm}
-}{}
+	\setlength\tabdepth{0.8cm}
+}
 
-\iftoggle{a5print}{ % a5 paper with 8mm extra for tabs
+\DeclareOption{a5print}{ % a5 paper with 8mm extra for tabs
 	\setlength\paperh{21cm}
 	\setlength\paperw{15.6cm}
 	\setlength\inmar{1.6cm}
 	\setlength\outmar{1.2cm}
 	\setlength\chevin{\outmar-3.5cm}
+	\setlength\tabdepth{0.8cm}
 	\toggletrue{print}
-}{}
+}
 
-\iftoggle{a4}{
+\DeclareOption{4x3print}{ % a5 paper height with 9.5mm extra for 4x3 aspect
+	\setlength\paperh{21cm}
+	\setlength\paperw{15.75cm}
+	\setlength\inmar{1.6cm}
+	\setlength\outmar{1.35cm}
+	\setlength\chevin{\outmar-3.65cm}
+	\setlength\tabdepth{0.95cm}
+	\toggletrue{print}
+}
+
+\DeclareOption{a4}{
 	\setlength\paperh{29.7cm}
 	\setlength\paperw{21cm}
 	\setlength\inmar{1.4cm}
 	\setlength\outmar{1.4cm}
 	\setlength{\chevin}{\outmar-3.1cm}
-}{}
+	\setlength\tabdepth{0.8cm}
+}
 
-\iftoggle{a4print}{
+\DeclareOption{a4print}{
 	\setlength\paperh{29.7cm}
 	\setlength\paperw{21cm}
 	\setlength\inmar{1.6cm}
 	\setlength\outmar{1.2cm}
 	\setlength{\chevin}{\outmar-2.9cm}
+	\setlength\tabdepth{0.8cm}
 	\toggletrue{print}
+}
+
+%-----------------------------------------------------------------
+% COLOR OPTIONS
+%-----------------------------------------------------------------
+% color1 - main color
+% color2 - highlight color
+% color3 - alternate highlight color
+
+\DeclareOption{colorful}{
+  \colorlet{color1}{black}
+  \colorlet{color2}{ProcessBlue}
+  \colorlet{color3}{NavyBlue}
+  \definecolor{color4}{HTML}{FFE534} % bf2042yellow
+}
+
+\DeclareOption{b/w}{
+  \colorlet{color1}{black}
+  \colorlet{color2}{black}
+  \colorlet{color3}{black}
+  \definecolor{color4}{HTML}{FFE534} % bf2042yellow
+}
+
+
+%-----------------------------------------------------------------
+% PROCESS OPTIONS
+%-----------------------------------------------------------------
+\ExecuteOptions{fontSpartan, a5print, colorful}
+\ProcessOptions\relax
+%=================================================================
+% O P T I O N S   E N D
+%=================================================================
+
+%-----------------------------------------------------------------
+% OPTIONAL PACKAGES
+%-----------------------------------------------------------------
+\iftoggle{fontHelvet}{
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
 }{}
 
-%\usepackage[paperheight=9in, paperwidth=6in,
-%\usepackage[paperheight=23cm, paperwidth=15cm,
-\usepackage[
-paperheight=\paperh,
-paperwidth=\paperw,
-margin=0.1cm,
-top=\topmar,
-bottom=\botmar,
-headsep=0.5cm,
-headheight=0.5cm,
-footskip=0.5cm,
-inner=\inmar,
-outer=\outmar,
-centering
+\iftoggle{loadfontspec}{
+  \RequirePackage{fontspec}
+}{}
+
+\iftoggle{fontJost}{
+  \setmainfont[
+  	Ligatures=TeX,
+  	UprightFont=*-Regular,
+  	ItalicFont=*-Italic,
+  	BoldFont=*-Bold,
+  	BoldFeatures={LetterSpace=2.5}
+  ]{Jost}
+  \newfontfamily\tightfont{Jost}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+}{}
+
+\iftoggle{fontSpartan}{
+  \setmainfont[
+  	Ligatures=TeX,
+  	Scale=0.85,
+  	UprightFont=*-Medium,
+  	ItalicFont=Jost-Italic,
+  	ItalicFeatures={Scale=1.0},
+  	BoldFont=*-Bold,
+  	BoldFeatures={LetterSpace=2.5}
+  ]{Spartan}
+  \newfontfamily\tightfont{Spartan}[Ligatures=TeX, Scale=0.85, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+}{}
+
+\iftoggle{fontMontserrat}{
+  \setmainfont[
+  	Ligatures=TeX,
+  	UprightFont=*-Regular,
+  	ItalicFont=*-Regular Italic,
+  	BoldFont=*-Semi Bold,
+  	BoldFeatures={LetterSpace=3.0}
+  ]{Montserrat}
+  \newfontfamily\tightfont{Montserrat}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+}{}
+
+\iftoggle{fontMetropolis}{
+  \setmainfont[
+  	Ligatures=TeX,
+  	UprightFont=*-Regular,
+  	ItalicFont=*-Regular Italic,
+  	BoldFont=*-Semi Bold,
+  	BoldFeatures={LetterSpace=3.0}
+  ]{Metropolis}
+  \newfontfamily\tightfont{Metropolis}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+}{}
+
+\RequirePackage[
+	paperheight=\paperh,
+	paperwidth=\paperw,
+	margin=0.1cm,
+	top=\topmar,
+	bottom=\botmar,
+	headsep=0.5cm,
+	headheight=0.5cm,
+	footskip=0.5cm,
+	inner=\inmar,
+	outer=\outmar,
+	centering
 ]{geometry}
 
 %-----------------------------------------------------------------
 % HEADER/FOOT FORMATTING
 %-----------------------------------------------------------------
-
 % remove header and foot
 \pagestyle{empty}
 % fancy header with section title in hatching
 \pagestyle{fancy}
-\renewcommand{\sectionmark}[1]{\markboth{\colorbox{color1}{
+\renewcommand{\chaptermark}[1]{\markboth{\colorbox{color1}{
 	% code formatting section titles in header
 	\textcolor{white}{\Large\textbf{#1}}
 }}{}}
@@ -151,7 +297,8 @@ centering
 	% clear defaults
 	\fancyhf{}
 	% page number in footer
-	\fancyfoot[C]{\textbf{--- \thepage \ ---}}% LE,RO
+	% \fancyfoot[C]{{\tightfont \textbf{--- \thepage \ ---}}}% LE,RO
+	\fancyfoot[C]{{\tightfont \textbf{\thepage}}}% LE,RO
 	% date in top right
 	\fancyhead[RE,RO]{\colorbox{color1}{
 			\textcolor{white}{\Large\textbf{REV: \today}}
@@ -177,23 +324,14 @@ centering
 \setlength{\columnsep}{0.2cm}
 % create lines between columns and define color of columns
 \setlength{\columnseprule}{0pt} %set thickness default 1pt
-\def\columnseprulecolor{\color{black}}
+\def\columnseprulecolor{\color{color1}}
 
 % spacing within lists
-\setlist[enumerate, 1]{itemsep=1pt, parsep=0pt}
+\setlist[enumerate, 1]{itemsep=1pt, parsep=0pt, label=(\alph*)}
 \setlist[enumerate, 2]{itemsep=1pt, parsep=0pt}
-\setlist[itemize, 1]{itemsep=1pt, parsep=0pt}
+\setlist[itemize, 1]{itemsep=1pt, parsep=0pt, label=\textbf{\textbullet}}
 \setlist[itemize, 2]{itemsep=1pt, parsep=0pt}
 
-%-----------------------------------------------------------------
-% COLORS
-%-----------------------------------------------------------------
-% Defines 2 colors throughout rest of formatting
-\colorlet{color1}{black} % Red, RedOrange
-\colorlet{color2}{ProcessBlue} % CornflowerBlue, Cerulean, ProcessBlue
-\definecolor{color3}{RGB}{255, 255, 0}
-\colorlet{color4}{NavyBlue}
-\definecolor{color5}{HTML}{FFE534} % bf2042yellow
 
 %-----------------------------------------------------------------
 % COMMANDS
@@ -201,39 +339,94 @@ centering
 % command to create blue, bold mini-titles
 \newcommand{\blue}[1]{\textbf{\textcolor{color2}{#1}}}
 \newcommand{\dblue}[1]{
-	\colorbox{color4}{
+	\colorbox{color3}{
 		\textbf{\textcolor{white}{#1}}
 	}
 }
+
 \newcommand{\yellow}[1]{
-	\colorbox{color5}{
+	\colorbox{color4}{
 		\textbf{\textcolor{black}{#1}}
 	}
 }
 
+\newcommand{\warningbox}[1]{
+	\begin{tcolorbox}[
+		enhanced,
+		colback=white,
+		colframe=color1,
+		sharp corners,
+		frame hidden,
+		colbacktitle=white,
+		coltitle=color1,
+		attach boxed title to top center,
+		boxed title style={
+		sharp corners,
+		drop shadow=color1!100
+		},
+		title=\large\textbf{WARNING}
+	]
+		{#1}
+	\end{tcolorbox}
+}
+
+%-----------------------------------------------------------------
+% CHANGEBAR SETTINGS
+%-----------------------------------------------------------------
+\cbcolor{color1}
+\setlength{\changebarwidth}{2mm}
+
+%-----------------------------------------------------------------
+% TABLE OF CONTENTS FORMATTING
+%-----------------------------------------------------------------
+% relevant package: tocloft
+% change distance between section number and title
+% default: 1.55em
+% required for Spartan font: 3.1em w/o chapters
+% required for Spartan font: 3.3em w/ chapters
+% \setlength{\cftsecnumwidth}{2.325em}
+% \setlength{\cftsubsecnumwidth}{3.50em}
+\tocloftpagestyle{empty}
+
 %-----------------------------------------------------------------
 % TITLE FORMATTING
 %-----------------------------------------------------------------
+% \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before-code>}[<after-code>]
+
 % formatting of section
-\titleformat{\section}
-{\color{black}\normalfont\large\bfseries}
-{\color{black}\thesection}{1em}{#1}[{\titlerule[1pt]}]
+\titleformat{\section} % command
+{\color{color1}\normalfont\large\bfseries} % format
+{\color{color1}\thesection} % label
+{1em} % sep
+{#1} % before-code
+[{\titlerule[1pt]}] % after-code
+
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after section title
 \titlespacing{\section}{0pt}{5pt}{2pt}
 
 % formatting of subsection
-\titleformat{\subsection}
-{\color{white}\normalfont\bfseries} % color1
-{\color{color1}\thesubsection}{1em}{\colorbox{color1}{#1}}[]
+\titleformat{\subsection} % format
+{\color{white}\normalfont\bfseries} % format
+{\color{color1}\thesubsection} % label
+{1em} % sep
+{\colorbox{color1}{#1}} % before-code
+[] % after-cocde
+
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
 \titlespacing{\subsection}{0pt}{2pt}{2pt}
+
+% % Alternate formatting of subsection (white text)
+% \titleformat{\subsection} % format
+% {\color{white}\normalfont\bfseries} % format
+% {\color{white}\thesubsection} % label
+% {1em} % sep
+% {#1} % before-code
+% [] % after-cocde
+% \titlespacing{\subsection}{0pt}{0pt}{0pt}
 
 %-----------------------------------------------------------------
 % HATCHING
 %-----------------------------------------------------------------
-
-% Copied from hyperlink node below. Lualatex won't link to front page if hyperlink. Here converted to hyperref. In pdftex can remove and use hyperlink node.
-
 % creates node option to create hyperref
 \tikzset{
 	hyperref node/.style={
@@ -254,7 +447,7 @@ centering
 
 % individual parallelogram
 \newcommand{\single}[1]{
-	\fill[black]
+	\fill[color1]
 	([xshift=#1*2*0.5cm,yshift = 0.2cm]current page text area.north west) --
 	([xshift=#1*2*0.5cm+2cm,yshift=2cm+0.2cm]current page text area.north west) --
 	([xshift=#1*2*0.5cm+2.5cm,yshift=2cm+0.2cm]current page text area.north west) --
@@ -282,16 +475,12 @@ centering
 	\end{tikzpicture}
 }
 
+% apply hatching to all pages
+\AtBeginShipout{\AtBeginShipoutAddToBox{\Hatch}}
+
 %-----------------------------------------------------------------
 % ROUNDING
 %-----------------------------------------------------------------
-% tab dimensions
-\newlength{\tabwidth}
-\newlength{\tabdepth}
-% must manually tell how many sections in total
-\setlength\tabwidth{\textheight/6}
-\setlength\tabdepth{0.8cm}
-
 % thumbtab for Section page
 \newcommand{\thumbtab}[2]{
 	\iftoggle{print}{
@@ -318,7 +507,7 @@ centering
 			[sharp corners]--
 			([xshift=\outmar, yshift=\topmar]current page text area.north east)--
 			cycle;
-		\draw[black, rounded corners = 1cm,]
+		\draw[color1, rounded corners = 1cm,]
 			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
 			([xshift=-\inmar, yshift=-\botmar]current page text area.south west) --
 			([xshift=\outmar, yshift=-\botmar]current page text area.south east)
@@ -342,7 +531,7 @@ centering
 		\end{tikzpicture}
 	}{}
 	% create label for hyperlinks on front page
-	\hypertarget{sec:#2}{}
+	\label{thumbtab:#2}
 	% create node on back of page
 	\AtBeginShipoutNext{\thumbback{#1}{#2}}
 }
@@ -395,7 +584,7 @@ centering
 				[sharp corners] --
 				cycle;
 			% frame
-			\draw[black, rounded corners = 1cm,]
+			\draw[color1, rounded corners = 1cm,]
 				([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
 				([xshift=-\inmar, yshift=-\botmar]current page text area.south west) --
 				([xshift=\outmar, yshift=-\botmar]current page text area.south east) --
@@ -428,7 +617,7 @@ centering
 			[sharp corners] --
 			cycle;
 		 % frame
-		\draw[black, rounded corners = 1cm,]
+		\draw[color1, rounded corners = 1cm,]
 			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
 			([xshift=-\inmar, yshift=-\botmar]current page text area.south west) --
 			([xshift=\outmar-\tabdepth, yshift=-\botmar]current page text area.south east) --
@@ -441,23 +630,6 @@ centering
 %-----------------------------------------------------------------
 % FRONT PAGE
 %-----------------------------------------------------------------
-% creates node option to create hyperlink
-\tikzset{
-	hyperlink node/.style={
-		alias=sourcenode,
-		append after command={
-			let     \p1 = (sourcenode.north west),
-			\p2=(sourcenode.south east),
-			\n1={\x2-\x1},
-			\n2={\y1-\y2} in
-			node [inner sep=0pt, outer sep=0pt,anchor=north west,at=(\p1)] {\hyperlink{#1}{\XeTeXLinkBox{\phantom{\rule{\n1}{\n2}}}}}
-			%xelatex needs \XeTeXLinkBox, won't create a link unless it
-			%finds text --- rules don't work without \XeTeXLinkBox.
-			%Still builds correctly with pdflatex and lualatex
-		}
-	}
-}
-% titlepage chevron indentation
 
 \newlength{\chevout} % sets for right side of chevron
 \newlength{\chevpoint} % sets point of chevron
@@ -488,14 +660,14 @@ centering
 		]current page text area.north east) --
 		cycle;
 	% hyperlinked node for each section
-	% uses a number (sec:#2) as label
+	% uses a number (thumbtab:#2) as label
 	\node[
 		rectangle,
 		anchor=west,
 		rotate=0,
 		minimum width=2cm,
 		minimum height=\tabwidth-0.5cm,
-		hyperlink node=sec:#2
+		hyperref node=thumbtab:#2
 	](Procedure) at ([xshift=\chevin, yshift=-(#2+0.5)*\tabwidth]current page text area.north east) {
 		\textbf{#1}
 	};

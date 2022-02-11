@@ -1,4 +1,36 @@
 ***
+### Changelog - 2022.02.11 - `v1.0.0 "class is out"`
+
+- **MOVED ALL FORMATTING TO CLASS FILE**
+  - There now exist options to quickly (and hopefully robustly) change formatting. Including:
+    - Paper geometry via (mutually exclusive) options
+      - `a5print` [default]
+      - `a5`
+      - `a4print`
+      - `a4`
+      - `4x3print`
+    - Font options, for all fonts besides Helvet these also load the `fontspec` package
+      - `fontHelvet`
+      - `fontJost`
+      - `fontSpartan` [default]
+      - `fontMontserrat`
+      - `fontMetropolis`
+    - Color options
+      - `colorful` [default], uses `Processblue` and `NavyBlue` for highlights
+      - `b/w`, replaces highlight colors with `black` for cheaper printing
+  - Notes on Option implementation
+    - Options which modify packages are implemented via `toggle` from the `etoolbox` package. This is necessary because packages cannot be loaded in the option section of a class.
+  - Additional options/enduser commands planned:
+    - changebars on/off
+    - number of thumbtabs
+    - more robust font choices (separate letterspacing for heading text)
+    - Hatching on/off for faster compilation
+- Currently the old format file is still in git, this will be archived in future updates
+- Added Disclaimer to back of titlepage that this document is not for training purposes
+- Added MIT OPEN LICENSE to all code
+
+
+***
 ### Changelog - 2022.02.08
 
 - Further experimentation with tcolorbox
