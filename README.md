@@ -1,5 +1,5 @@
 ***
-### Changelog - 2022.02.12
+### Changelog - 2022.02.12 `v1.0.1`
 #### `TechCheck.cls`
 - Added additional options
   - `nohatch` disables hatching to potentially speed up compilation time during development
