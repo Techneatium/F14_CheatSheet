@@ -25,9 +25,11 @@
 %-----------------------------------------------------------------
 % BEGIN DOCUMENT
 %-----------------------------------------------------------------
-\documentclass[b/w]{TechCheck}
+\documentclass[b/w, widesubsec]{TechCheck}
 \title{F14_Cheatsheet}
 \author{Techneatium}
+
+\settabnumber{6} % sets number of tabs for document
 
 \begin{document}
 	\include{./sections/F14_00_titlepage}
@@ -140,7 +142,7 @@
 			\midrule
 			3. & \blue{L\&R MASTER GEN} & \textbf{NORM} \\
 			\midrule
-			4. & \cbstart\dblue{RIO} & \emph{``Ready to Start''} \\
+			4. & \dblue{RIO}\cbstart & \emph{``Ready to Start''} \\
 			\midrule
 			5. & \blue{Right Engine \break Start-Up} &
 			\begin{minipage}[t]{\linewidth}
@@ -167,7 +169,7 @@
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			7. & \cbstart\blue{Left Engine \break Start-Up} &
+			7. & \blue{Left Engine\cbstart \break Start-Up} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -196,7 +198,7 @@
 			\midrule
 			10. & \blue{HYD PRESSURE} & 3000 psi \\
 			\midrule
-			11. & \cbstart\blue{AIR SOURCE} & \textbf{BOTH ENG} \\
+			11. & \blue{AIR SOURCE}\cbstart & \textbf{BOTH ENG} \\
 			\midrule
 			12. & \blue{Ground Power} & disconnected \\
 			\midrule
@@ -213,7 +215,7 @@
 			\toprule
 			1. & \dblue{TO RIO} & \emph{``Both Engines Running''} \thumbnar \\
 			\midrule
-			2. & \cbstart\blue{Displays Control Panel} &
+			2. & \blue{Displays \cbstart Control Panel} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
@@ -251,7 +253,7 @@
 			\midrule
 			6. & \blue{ANTI-SKID SPOILER BK} & \textbf{OFF} \\
 			\midrule
-			7. & \cbstart\blue{Emergency Wing Sweep} &
+			7. & \blue{Emergency \cbstart Wing Sweep} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -272,13 +274,13 @@
 			\midrule
 			9. & \blue{WING/EXT TRANS} & \textbf{AUTO} \\
 			\midrule
-			10. & \cbstart\blue{UHF 1 Function Selector} & \textbf{BOTH} \\
+			10. & \blue{UHF 1 \cbstart Function Selector} & \textbf{BOTH} \\
 			\midrule
 			11. & \blue{TACAN Function Selector} & \textbf{T/R} \\
 			\midrule
 			12. & \blue{ARA-63 ICLS \break RECEIVER}\cbend & \textbf{ON} \\
 			\midrule
-			13. & \cbstart\blue{Radar Altimeter} &
+			13. & \blue{Radar Altimeter}\cbstart &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -292,7 +294,7 @@
 			\midrule
 			15. & \blue{KY-28 Crypt. Key} & \textbf{Set} (refer to GROUND SETTINGS kb) \\
 			\midrule
-			16. & \cbstart\dblue{RIO} & set D/L frequency \cbend\\
+			16. & \dblue{RIO}\cbstart & set D/L frequency \cbend\\
 			\midrule
 			17. & \blue{Lights} & As desired \\
 			\bottomrule
@@ -312,7 +314,7 @@
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
-			1. & \cbstart\blue{Oxygen} & \textbf{ON (FWD)} \thumbnar \\
+			1. & \blue{Oxygen}\cbstart & \textbf{ON (FWD)} \thumbnar \\
 			\midrule
 			2. & \dblue{PILOT} &
 			\begin{minipage}[t]{\linewidth}
@@ -329,7 +331,7 @@
 			\midrule
 			5. & \blue{LTS Test} & Coordinate with Pilot \\
 			\midrule
-			6. & \cbstart\blue{Ejection Seats} & \textbf{ARMED} \\
+			6. & \blue{Ejection Seats}\cbstart & \textbf{ARMED} \\
 			\midrule
 			7. & \blue{Canopy} & \textbf{CLOSED} \\
 			\midrule
@@ -351,7 +353,7 @@
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			2. & \cbstart\blue{INS STARTUP} &
+			2. & \blue{INS STARTUP}\cbstart &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -366,7 +368,7 @@
 			\midrule
 			\multicolumn{3}{l}{\blue{WARNING} Input Coords \textbf{BEFORE} selecting \textbf{GND ALIGN} if using ASH} \\
 			\midrule
-			4. & \cbstart\blue{Start INS Align} &
+			4. & \blue{Start INS Align}\cbstart &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -390,7 +392,7 @@
 			\midrule
 			5. & \blue{U/VHF Mode} & \textbf{T/R G}\cbend \\
 			\midrule
-			6. & \cbstart\blue{Datalink} &
+			6. & \blue{Datalink}\cbstart &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -429,7 +431,7 @@
 			\midrule
 			12. & \blue{CAP} & Enter Data (WP, FP, \emph{etc.}) \\
 			\midrule
-			13. & \cbstart\blue{Displays} &
+			13. & \blue{Displays}\cbstart &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
@@ -437,11 +439,11 @@
 					\item \textbf{TID} \dotfill Set
 					\item \textbf{Multiple Display Indicator} \dotfill Set
 				\end{itemize}
-			\end{minipage} \\
+			\end{minipage}\cbend \\
 			\midrule
 			14. & \blue{Hand Control Panel} & Set \\
 			\midrule
-			15. & \blue{AN/ALE-39} & Set (as required)
+			15. & \blue{AN/ALE-39}\cbstart & Set (as required)
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
@@ -471,7 +473,7 @@
 			\midrule
 			\multicolumn{3}{l}{\textbf{Once Airborne}} \\
 			\midrule
-			20. & \cbstart\blue{IR/TV Power} & \textbf{ON} \\
+			20. & \blue{IR/TV Power}\cbstart & \textbf{ON} \\
 			\midrule
 			21. & \blue{WCS Switch} & \textbf{WCS XMT}\cbend \\
 			\bottomrule
@@ -493,7 +495,7 @@
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			2. & \cbstart\blue{INS STARTUP} &
+			2. & \blue{INS STARTUP}\cbstart &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -553,19 +555,19 @@
 			\midrule
 			11. & \blue{CAP} & Enter Data (WP, FP, \emph{etc.}) \\
 			\midrule
-			12. & \cbstart\blue{Displays} &
+			12. & \blue{Displays}\cbstart &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
 					\item \textbf{DDD} \dotfill Set
 					\item \textbf{TID} \dotfill Set
 					\item \textbf{Multiple Display Indicator} \dotfill Set
-				\end{itemize}
+				\end{itemize}\cbend
 			\end{minipage} \\
 			\midrule
 			13. & \blue{Hand Control Panel} & Set \\
 			\midrule
-			14. & \blue{AN/ALE-39} & Set (as required)
+			14. & \blue{AN/ALE-39}\cbstart & Set (as required)
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
@@ -576,7 +578,7 @@
 			\midrule
 			15. & \blue{Flare Mode} & \textbf{PILOT}\cbend \\
 			\midrule
-			16. & \cbstart\blue{Complete INS Align} &
+			16. & \blue{Complete \cbstart INS Align} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
@@ -586,10 +588,10 @@
 				\begin{enumerate}
 					\item \textbf{Align Complete} \dotfill Caret $\to$ Diamond
 					\item \textbf{NAV Mode} \dotfill \textbf{INS NAV}
-				\end{enumerate}\cbend
+				\end{enumerate}
 			\end{minipage} \\
 			\midrule
-			17. & \cbstart\blue{Datalink} &
+			17. & \blue{Datalink} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{enumerate}
@@ -604,7 +606,7 @@
 			\midrule
 			\multicolumn{3}{l}{\textbf{Once Airborne}} \\
 			\midrule
-			20. & \cbstart\blue{IR/TV Power} & \textbf{ON} \\
+			20. & \blue{IR/TV Power}\cbstart & \textbf{ON} \\
 			\midrule
 			21. & \blue{WCS Switch} & \textbf{WCS XMT}\cbend \\
 			\bottomrule
@@ -614,7 +616,8 @@
 	\warningbox{
 	\begin{itemize}
 		\item Input Coords \textbf{BEFORE} selecting \textbf{GND ALIGN} if using ASH. Else alignment can progress too far to correct coordinates by the time they are input.
-		\item \textbf{PARKING BRAKE MUST BE ENGAGED DURING ALIGNMENT.}
+		\item \textbf{PARKING BRAKE MUST BE ENGAGED DURING ALIGNMENT.} \\
+		Lack of parking brake engagement inhibits INS alignment
 	\end{itemize}
 	}
 
@@ -4974,6 +4977,8 @@
 			\bottomrule
 		\end{longtable}
 	\end{center}
+
+	\clearpage
 
 	\subsection{M61 GUN - MANUAL}
 	\begin{center}

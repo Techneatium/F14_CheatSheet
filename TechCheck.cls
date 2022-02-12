@@ -116,8 +116,10 @@
 \newlength{\outmar}
 \newlength{\topmar}
 \newlength{\botmar}
+\newlength{\footmar}
 \setlength\topmar{1.2cm}
 \setlength\botmar{0.8cm}
+\setlength\footmar{0.5cm}
 % indendtation for chevrons on front page
 \newlength{\chevin}
 % tab dimensions
@@ -127,8 +129,14 @@
 \newcounter{tabnumber}
 \setcounter{tabnumber}{6}
 
-% must manually tell how many sections in total
+% determines width of tab based on number of tabs
 \setlength\tabwidth{\textheight/\thetabnumber}
+
+% Allows to manually set number of tabs in preable
+\newcommand{\settabnumber}[1]{
+  \setcounter{tabnumber}{#1}
+  \setlength\tabwidth{\textheight/\thetabnumber}
+}
 
 \DeclareOption{a5}{
 	\setlength\paperh{21cm}
@@ -199,6 +207,27 @@
   \definecolor{color4}{HTML}{FFE534} % bf2042yellow
 }
 
+%-----------------------------------------------------------------
+% TITLE FORMATTING OPTIONS
+%-----------------------------------------------------------------
+\newtoggle{widesubsec}
+\DeclareOption{widesubsec}{
+  \toggletrue{widesubsec}
+}
+%-----------------------------------------------------------------
+% DEV OPTIONS
+%-----------------------------------------------------------------
+% Turn hatching off
+\newtoggle{hatch}
+\toggletrue{hatch}
+\DeclareOption{nohatch}{
+  \togglefalse{hatch}
+}
+
+% Geometry showframe
+\DeclareOption{showframe}{
+  \PassOptionsToClass{showframe}{geometry}
+}
 
 %-----------------------------------------------------------------
 % PROCESS OPTIONS
@@ -244,6 +273,7 @@
   	BoldFeatures={LetterSpace=2.5}
   ]{Spartan}
   \newfontfamily\tightfont{Spartan}[Ligatures=TeX, Scale=0.85, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+  \newfontfamily\titlefont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=4.0]
 }{}
 
 \iftoggle{fontMontserrat}{
@@ -276,7 +306,7 @@
 	bottom=\botmar,
 	headsep=0.5cm,
 	headheight=0.5cm,
-	footskip=0.5cm,
+	footskip=\footmar,
 	inner=\inmar,
 	outer=\outmar,
 	centering
@@ -337,7 +367,11 @@
 % COMMANDS
 %-----------------------------------------------------------------
 % command to create blue, bold mini-titles
-\newcommand{\blue}[1]{\textbf{\textcolor{color2}{#1}}}
+\newcommand{\blue}[1]{
+  \textbf{\textcolor{color2}{#1}}
+}
+
+% command to create bold, white-on-blue, mini titles
 \newcommand{\dblue}[1]{
 	\colorbox{color3}{
 		\textbf{\textcolor{white}{#1}}
@@ -395,7 +429,7 @@
 
 % formatting of section
 \titleformat{\section} % command
-{\color{color1}\normalfont\large\bfseries} % format
+{\color{color1}\titlefont\large\bfseries} % format
 {\color{color1}\thesection} % label
 {1em} % sep
 {#1} % before-code
@@ -405,8 +439,8 @@
 \titlespacing{\section}{0pt}{5pt}{2pt}
 
 % formatting of subsection
-\titleformat{\subsection} % format
-{\color{white}\normalfont\bfseries} % format
+\titleformat{\subsection} % command
+{\color{white}\titlefont\bfseries} % format
 {\color{color1}\thesubsection} % label
 {1em} % sep
 {\colorbox{color1}{#1}} % before-code
@@ -414,6 +448,29 @@
 
 % 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
 \titlespacing{\subsection}{0pt}{2pt}{2pt}
+
+% formatting of subsection [full width]
+\iftoggle{widesubsec}{
+  \titleformat{\subsection} % command
+  {\normalfont\bfseries} % format
+  {} % label
+  {0em} % sep
+  {\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsection\quad#1}}}} % before-code
+
+  \titleformat{name=\subsection,numberless} % command
+  {\normalfont\bfseries} % format
+  {} % label
+  {0em} % sep
+  {\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
+
+  \titlespacing{\subsection}{0pt}{2pt}{2pt}
+}{}
+
+% \titleformat{\subsection}
+% {\normalfont\bfseries}{}{0em}{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\thesubsection\quad#1}}}}
+% \titleformat{name=\section,numberless}
+% {\normalfont\bfseries}{}{0em}{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}}
+% \titlespacing{\subsection}{0pt}{2pt}{2pt}
 
 % % Alternate formatting of subsection (white text)
 % \titleformat{\subsection} % format
@@ -476,7 +533,9 @@
 }
 
 % apply hatching to all pages
-\AtBeginShipout{\AtBeginShipoutAddToBox{\Hatch}}
+\iftoggle{hatch}{
+  \AtBeginShipout{\AtBeginShipoutAddToBox{\Hatch}}
+}{}
 
 %-----------------------------------------------------------------
 % ROUNDING

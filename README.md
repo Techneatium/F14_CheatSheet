@@ -1,4 +1,25 @@
 ***
+### Changelog - 2022.02.12
+#### `TechCheck.cls`
+- Added additional options
+  - `nohatch` disables hatching to potentially speed up compilation time during development
+  - `showframe`, passes the `showframe` option to `geometry` package to show text area and margins
+  - `widesubsec` lets the white-on-black subsection titles to cover the entire text width. This will probably become the default in the future.
+- Adjusted font options
+  - `\titlefont` with `letterspace=4.0` for all caps text
+- New commands:
+  - `\settabnumber` sets number of thumbtabs / their width within the document rather than in the class
+
+#### `F14_Cheatsheet.tex`
+- `\cbstart` was causing indentations, fixed by moving away from line starts
+
+#### Known bugs
+  - Hatching for `SYSTEMS` chapter page breaks under weird conditions
+    - If bottom margins increased
+    - If font changed to montserrat or metropolis
+    - Potential fix could be moving hatching commands into header/footer code direclty rather than with `AtBeginShipout`
+
+***
 ### Changelog - 2022.02.11 - `v1.0.0 "class is out"`
 
 - **MOVED ALL FORMATTING TO CLASS FILE**
