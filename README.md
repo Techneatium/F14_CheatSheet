@@ -1,4 +1,17 @@
 ***
+### Changelog - 2022.02.14 `v1.0.2`
+#### `TechCheck.cls`
+- New commands:
+  - `\setaircraftlong` sets long label used on the title page
+  - `\setaircraftshort` sets short label used in the center of header
+
+#### `F14_Cheatsheet.tex`
+- Updated to use new commands
+
+#### `F14_00_titlepage.tex`
+- Updated to use new commands
+
+***
 ### Changelog - 2022.02.12 `v1.0.1`
 #### `TechCheck.cls`
 - Added additional options

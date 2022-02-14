@@ -132,12 +132,6 @@
 % determines width of tab based on number of tabs
 \setlength\tabwidth{\textheight/\thetabnumber}
 
-% Allows to manually set number of tabs in preable
-\newcommand{\settabnumber}[1]{
-  \setcounter{tabnumber}{#1}
-  \setlength\tabwidth{\textheight/\thetabnumber}
-}
-
 \DeclareOption{a5}{
 	\setlength\paperh{21cm}
 	\setlength\paperw{14.8cm}
@@ -208,12 +202,14 @@
 }
 
 %-----------------------------------------------------------------
-% TITLE FORMATTING OPTIONS
+% OTHER FORMATTING OPTIONS
 %-----------------------------------------------------------------
+% activates white-on-black subsections which span \textwidth
 \newtoggle{widesubsec}
 \DeclareOption{widesubsec}{
   \toggletrue{widesubsec}
 }
+
 %-----------------------------------------------------------------
 % DEV OPTIONS
 %-----------------------------------------------------------------
@@ -313,6 +309,23 @@
 ]{geometry}
 
 %-----------------------------------------------------------------
+% GLOBAL PARAMETER COMMANDS
+%-----------------------------------------------------------------
+
+% Set label for title page
+\newcommand*\aircraftlong{F-14A/B AIRCRAFT}
+\newcommand*{\setaircraftlong}[1]{\renewcommand*\aircraftlong{#1}}
+% Set label for header
+\newcommand*\aircraftshort{F-14A/B}
+\newcommand*{\setaircraftshort}[1]{\renewcommand*\aircraftshort{#1}}
+
+% Set number of tabs in preable
+\newcommand{\settabnumber}[1]{
+  \setcounter{tabnumber}{#1}
+  \setlength\tabwidth{\textheight/\thetabnumber}
+}
+
+%-----------------------------------------------------------------
 % HEADER/FOOT FORMATTING
 %-----------------------------------------------------------------
 % remove header and foot
@@ -335,7 +348,7 @@
 	}}
 	% extra thing in middle
 	\fancyhead[C]{\colorbox{color1}{
-			\textcolor{white}{\Large\textbf{F-14A/B}}
+			\textcolor{white}{\Large\textbf{\aircraftshort}}
 	}}
 	\fancyhead[LE,LO]{\textbf{\leftmark}}
 	\renewcommand{\headrulewidth}{0pt} % and the line
@@ -403,6 +416,8 @@
 		{#1}
 	\end{tcolorbox}
 }
+
+
 
 %-----------------------------------------------------------------
 % CHANGEBAR SETTINGS
