@@ -262,6 +262,7 @@
   	BoldFeatures={LetterSpace=2.5}
   ]{Jost}
   \newfontfamily\tightfont{Jost}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+  \newfontfamily\titlefont{Jost-Bold}[Ligatures=TeX, LetterSpace=4.0]
 }{}
 
 \iftoggle{fontSpartan}{
@@ -287,6 +288,7 @@
   	BoldFeatures={LetterSpace=3.0}
   ]{Montserrat}
   \newfontfamily\tightfont{Montserrat}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+  \newfontfamily\titlefont{Montserrat-Bold}[Ligatures=TeX, LetterSpace=4.0]
 }{}
 
 \iftoggle{fontMetropolis}{
@@ -298,6 +300,7 @@
   	BoldFeatures={LetterSpace=3.0}
   ]{Metropolis}
   \newfontfamily\tightfont{Metropolis}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
+  \newfontfamily\titlefont{Metropolis-Bold}[Ligatures=TeX, LetterSpace=4.0]
 }{}
 
 \iftoggle{fontHelvetica}{
@@ -341,6 +344,57 @@
 }
 
 %-----------------------------------------------------------------
+% HATCHING
+%-----------------------------------------------------------------
+% creates node option to create hyperref
+\tikzset{
+	hyperref node/.style={
+		alias=sourcenode,
+		append after command={
+			let     \p1 = (sourcenode.north west),
+			\p2=(sourcenode.south east),
+			\n1={\x2-\x1},
+			\n2={\y1-\y2} in
+			node [inner sep=0pt, outer sep=0pt,anchor=north west,at=(\p1)] {\hyperref[#1]{\XeTeXLinkBox{\phantom{\rule{\n1}{\n2}}}}}
+			%xelatex needs \XeTeXLinkBox, won't create a link unless it
+			%finds text --- rules don't work without \XeTeXLinkBox.
+			%Still builds correctly with pdflatex and lualatex
+		}
+	}
+}
+% titlepage chevron indentation
+
+% individual parallelogram
+\newcommand{\single}[1]{
+	\fill[color1]
+	([xshift=#1*2*0.5cm,yshift = 0.2cm]current page text area.north west) --
+	([xshift=#1*2*0.5cm+2cm,yshift=2cm+0.2cm]current page text area.north west) --
+	([xshift=#1*2*0.5cm+2.5cm,yshift=2cm+0.2cm]current page text area.north west) --
+	([xshift=#1*2*0.5cm+0.5cm,yshift=0.2cm]current page text area.north west) --
+	cycle;
+}
+% while loop to make many parallelograms
+\newcommand\Hatch{
+	\begin{tikzpicture}[remember picture,overlay]
+	\newcount\foo
+	\foo=-3
+	\loop
+	\single{\the\foo}
+	\advance \foo +1
+	\ifnum \foo<21
+	\repeat
+	% makes hatched area hyperlink to front page
+	\node[
+		rectangle,
+		hyperref node=frontpage,
+		anchor=north,
+		minimum width=\paperwidth,
+		minimum height=1cm
+	]()at ([yshift=\paperheight/2]current page.center) {};
+	\end{tikzpicture}
+}
+
+%-----------------------------------------------------------------
 % HEADER/FOOT FORMATTING
 %-----------------------------------------------------------------
 % remove header and foot
@@ -351,6 +405,16 @@
 	% code formatting section titles in header
 	\textcolor{white}{\Large\textbf{#1}}
 }}{}}
+\fancypagestyle{empty}{
+	% clear defaults
+	\fancyhf{}
+	\fancyhead[LE,LO]{
+    \iftoggle{hatch}{
+      \Hatch
+    }{}
+  }
+	% \renewcommand{\headrulewidth}{0pt} % and the line
+}
 \fancypagestyle{plain}{
 	% clear defaults
 	\fancyhf{}
@@ -365,7 +429,12 @@
 	\fancyhead[C]{\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\aircraftshort}}
 	}}
-	\fancyhead[LE,LO]{\titlefont\textbf{\leftmark}}
+	\fancyhead[LE,LO]{
+  \iftoggle{hatch}{
+    \Hatch
+  }{}
+  \titlefont\textbf{\leftmark}
+  }
 	\renewcommand{\headrulewidth}{0pt} % and the line
 }
 \pagestyle{plain}
@@ -514,61 +583,61 @@
   \titlespacing{\subsection}{0pt}{2pt}{2pt}
 }{}
 
-%-----------------------------------------------------------------
-% HATCHING
-%-----------------------------------------------------------------
-% creates node option to create hyperref
-\tikzset{
-	hyperref node/.style={
-		alias=sourcenode,
-		append after command={
-			let     \p1 = (sourcenode.north west),
-			\p2=(sourcenode.south east),
-			\n1={\x2-\x1},
-			\n2={\y1-\y2} in
-			node [inner sep=0pt, outer sep=0pt,anchor=north west,at=(\p1)] {\hyperref[#1]{\XeTeXLinkBox{\phantom{\rule{\n1}{\n2}}}}}
-			%xelatex needs \XeTeXLinkBox, won't create a link unless it
-			%finds text --- rules don't work without \XeTeXLinkBox.
-			%Still builds correctly with pdflatex and lualatex
-		}
-	}
-}
-% titlepage chevron indentation
-
-% individual parallelogram
-\newcommand{\single}[1]{
-	\fill[color1]
-	([xshift=#1*2*0.5cm,yshift = 0.2cm]current page text area.north west) --
-	([xshift=#1*2*0.5cm+2cm,yshift=2cm+0.2cm]current page text area.north west) --
-	([xshift=#1*2*0.5cm+2.5cm,yshift=2cm+0.2cm]current page text area.north west) --
-	([xshift=#1*2*0.5cm+0.5cm,yshift=0.2cm]current page text area.north west) --
-	cycle;
-}
-% while loop to make many parallelograms
-\newcommand\Hatch{
-	\begin{tikzpicture}[remember picture,overlay]
-	\newcount\foo
-	\foo=-3
-	\loop
-	\single{\the\foo}
-	\advance \foo +1
-	\ifnum \foo<21
-	\repeat
-	% makes hatched area hyperlink to front page
-	\node[
-		rectangle,
-		hyperref node=frontpage,
-		anchor=north,
-		minimum width=\paperwidth,
-		minimum height=1cm
-	]()at ([yshift=\paperheight/2]current page.center) {};
-	\end{tikzpicture}
-}
-
-% apply hatching to all pages
-\iftoggle{hatch}{
-  \AtBeginShipout{\AtBeginShipoutAddToBox{\Hatch}}
-}{}
+% %-----------------------------------------------------------------
+% % HATCHING
+% %-----------------------------------------------------------------
+% % creates node option to create hyperref
+% \tikzset{
+% 	hyperref node/.style={
+% 		alias=sourcenode,
+% 		append after command={
+% 			let     \p1 = (sourcenode.north west),
+% 			\p2=(sourcenode.south east),
+% 			\n1={\x2-\x1},
+% 			\n2={\y1-\y2} in
+% 			node [inner sep=0pt, outer sep=0pt,anchor=north west,at=(\p1)] {\hyperref[#1]{\XeTeXLinkBox{\phantom{\rule{\n1}{\n2}}}}}
+% 			%xelatex needs \XeTeXLinkBox, won't create a link unless it
+% 			%finds text --- rules don't work without \XeTeXLinkBox.
+% 			%Still builds correctly with pdflatex and lualatex
+% 		}
+% 	}
+% }
+% % titlepage chevron indentation
+%
+% % individual parallelogram
+% \newcommand{\single}[1]{
+% 	\fill[color1]
+% 	([xshift=#1*2*0.5cm,yshift = 0.2cm]current page text area.north west) --
+% 	([xshift=#1*2*0.5cm+2cm,yshift=2cm+0.2cm]current page text area.north west) --
+% 	([xshift=#1*2*0.5cm+2.5cm,yshift=2cm+0.2cm]current page text area.north west) --
+% 	([xshift=#1*2*0.5cm+0.5cm,yshift=0.2cm]current page text area.north west) --
+% 	cycle;
+% }
+% % while loop to make many parallelograms
+% \newcommand\Hatch{
+% 	\begin{tikzpicture}[remember picture,overlay]
+% 	\newcount\foo
+% 	\foo=-3
+% 	\loop
+% 	\single{\the\foo}
+% 	\advance \foo +1
+% 	\ifnum \foo<21
+% 	\repeat
+% 	% makes hatched area hyperlink to front page
+% 	\node[
+% 		rectangle,
+% 		hyperref node=frontpage,
+% 		anchor=north,
+% 		minimum width=\paperwidth,
+% 		minimum height=1cm
+% 	]()at ([yshift=\paperheight/2]current page.center) {};
+% 	\end{tikzpicture}
+% }
+%
+% % apply hatching to all pages
+% \iftoggle{hatch}{
+%   \AtBeginShipout{\AtBeginShipoutAddToBox{\Hatch}}
+% }{}
 
 %-----------------------------------------------------------------
 % ROUNDING

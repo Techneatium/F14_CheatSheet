@@ -17,10 +17,18 @@
   - Phoenix active launch explanation
   - Phoenix maddog launch subsection
 
-#### Known bugs
-  - Hatching on `chapter` pages break if minitoc is too long
-    - Affected by font choice, i.e if whole document in metropols or montserrat
-    - Potential fix could be moving hatching commands into header/footer code direclty rather than with `AtBeginShipout`
+***
+### Changelog - 2022.02.22 - 2 `v1.0.4`
+#### `TechCheck.cls`
+- Fixed bug with hatching not applying to all pages when minitoc overflowed to next page
+  - `\Hatch` is now called inside of header formatting
+  - position of `\Hatch` command is critical to prevent hatching from covering other header elements
+  - Could potentially move `\thumbnar` commands into header in the future
+- Changed `fontHelvetica` to now use Spartan
+- Added `titlefont` to remaining font options
+
+#### `F14_Cheatsheet`
+- Added `titlefont` to titlepage title elements
 
 ***
 ### Changelog - 2022.02.22 `v1.0.3`
@@ -30,7 +38,7 @@
 - New Command
   - `notebox` like `warningbox`, for writing out notes... in a box
 - New option
-  - `fontHelvetica` uses Helvetica Neue font with Spartan (Futura) Titles
+  - `fontHelvetica` uses Helvetica Neue font with Metropolis (Futura) Titles
 
 ***
 ### Changelog - 2022.02.14 `v1.0.2`
