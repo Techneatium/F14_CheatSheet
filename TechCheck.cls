@@ -78,6 +78,7 @@
 \newtoggle{fontSpartan}
 \newtoggle{fontMontserrat}
 \newtoggle{fontMetropolis}
+\newtoggle{fontHelvetica}
 
 \DeclareOption{fontHelvet}{
   \toggletrue{fontHelvet}
@@ -101,6 +102,11 @@
 \DeclareOption{fontMetropolis}{
   \toggletrue{loadfontspec}
   \toggletrue{fontMetropolis}
+}
+
+\DeclareOption{fontHelvetica}{
+  \toggletrue{loadfontspec}
+  \toggletrue{fontHelvetica}
 }
 
 %-----------------------------------------------------------------
@@ -189,7 +195,7 @@
 
 \DeclareOption{colorful}{
   \colorlet{color1}{black}
-  \colorlet{color2}{ProcessBlue}
+  \colorlet{color2}{NavyBlue}
   \colorlet{color3}{NavyBlue}
   \definecolor{color4}{HTML}{FFE534} % bf2042yellow
 }
@@ -294,6 +300,15 @@
   \newfontfamily\tightfont{Metropolis}[Ligatures=TeX, BoldFeatures={LetterSpace=0.0}] % used for `---` in page numbering
 }{}
 
+\iftoggle{fontHelvetica}{
+  \setmainfont[
+    Ligatures=TeX,
+    BoldFont=*-Bold,
+  ]{Helvetica Neue}
+  \newfontfamily\tightfont{Metropolis-Semi Bold}[Ligatures=TeX, LetterSpace=0.0] % used for `---` in page numbering
+  \newfontfamily\titlefont{Metropolis-Semi Bold}[Ligatures=TeX, LetterSpace=4.0]
+}
+
 \RequirePackage[
 	paperheight=\paperh,
 	paperwidth=\paperw,
@@ -344,13 +359,13 @@
 	\fancyfoot[C]{{\tightfont \textbf{\thepage}}}% LE,RO
 	% date in top right
 	\fancyhead[RE,RO]{\colorbox{color1}{
-			\textcolor{white}{\Large\textbf{REV: \today}}
+			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
 	}}
 	% extra thing in middle
 	\fancyhead[C]{\colorbox{color1}{
-			\textcolor{white}{\Large\textbf{\aircraftshort}}
+			\textcolor{white}{\titlefont\Large\textbf{\aircraftshort}}
 	}}
-	\fancyhead[LE,LO]{\textbf{\leftmark}}
+	\fancyhead[LE,LO]{\titlefont\textbf{\leftmark}}
 	\renewcommand{\headrulewidth}{0pt} % and the line
 }
 \pagestyle{plain}
@@ -397,6 +412,26 @@
 	}
 }
 
+\newcommand{\notebox}[1]{
+	\begin{tcolorbox}[
+		enhanced,
+		colback=white,
+		colframe=color1,
+		sharp corners,
+		frame hidden,
+		colbacktitle=white,
+		coltitle=color1,
+		attach boxed title to top center,
+		boxed title style={
+		sharp corners,
+		% drop shadow=color1!100
+		},
+		title=\large\textbf{NOTE}
+	]
+		{#1}
+	\end{tcolorbox}
+}
+
 \newcommand{\warningbox}[1]{
 	\begin{tcolorbox}[
 		enhanced,
@@ -416,6 +451,8 @@
 		{#1}
 	\end{tcolorbox}
 }
+
+
 
 
 
@@ -555,6 +592,16 @@
 %-----------------------------------------------------------------
 % ROUNDING
 %-----------------------------------------------------------------
+% variables for controlling rounding diameters in each corner
+\newlength{\nwround}
+\newlength{\neround}
+\newlength{\seround}
+\newlength{\swround}
+\setlength\nwround{1cm}
+\setlength\neround{1cm}
+\setlength\seround{1cm}
+\setlength\swround{1cm}
+
 % thumbtab for Section page
 \newcommand{\thumbtab}[2]{
 	\iftoggle{print}{
@@ -563,7 +610,7 @@
 		\fill[white]
 			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
 			([xshift=-\inmar, yshift=\topmar-1cm]current page text area.north west)
-			[rounded corners=1cm] --
+			[rounded corners=\nwround] --
 			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
 			([xshift=-\inmar+1cm, yshift=\topmar]current page text area.north west)
 			[sharp corners] --
@@ -575,22 +622,25 @@
 			([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
 			[rounded corners=0.3cm] --
 			([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
-			[rounded corners=1cm] --
+			[rounded corners=\neround] --
 			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --
 			([xshift=\outmar-\tabdepth-1cm, yshift=\topmar]current page text area.north east)
 			[sharp corners]--
 			([xshift=\outmar, yshift=\topmar]current page text area.north east)--
 			cycle;
-		\draw[color1, rounded corners = 1cm,]
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar, yshift=-\botmar]current page text area.south west) --
+		\draw[color1]
+			([xshift=-\inmar, yshift=\topmar]current page text area.north west)
+      [rounded corners=\swround] --
+			([xshift=-\inmar, yshift=-\botmar]current page text area.south west)
+      [rounded corners=\seround] --
 			([xshift=\outmar, yshift=-\botmar]current page text area.south east)
 			[rounded corners=0.4cm] --
 			([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
 			[rounded corners=0.3cm] --
 			([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
-			[rounded corners=1cm] --
-			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --
+			[rounded corners=\neround] --
+			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east)
+      [rounded corners=\nwround]--
 			cycle;
 		\node[
 			rectangle,
@@ -634,7 +684,7 @@
 			\fill[white]
 				([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
 				([xshift=-\inmar, yshift=\topmar-1cm]current page text area.north west)
-				[rounded corners=1cm] --
+				[rounded corners=\nwround] --
 				([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
 				([xshift=-\inmar+1cm, yshift=\topmar]current page text area.north west)
 				[sharp corners] --
@@ -643,7 +693,7 @@
 			\fill[white]
 				([xshift=\outmar, yshift=\topmar]current page text area.north east) --
 				([xshift=\outmar, yshift=\topmar-1cm]current page text area.north east)
-				[rounded corners=1cm] --
+				[rounded corners=\neround] --
 				([xshift=\outmar, yshift=\topmar]current page text area.north east) --
 				([xshift=\outmar-1cm, yshift=\topmar]current page text area.north east)
 				[sharp corners] --
@@ -652,17 +702,21 @@
 			\fill[white]
 				([xshift=\outmar, yshift=-\botmar]current page text area.south east) --
 				([xshift=\outmar, yshift=-\botmar+1cm]current page text area.south east)
-				[rounded corners=1cm] --
+				[rounded corners=\seround] --
 				([xshift=\outmar, yshift=-\botmar]current page text area.south east) --
 				([xshift=\outmar-1cm, yshift=-\botmar]current page text area.south east)
 				[sharp corners] --
 				cycle;
 			% frame
-			\draw[color1, rounded corners = 1cm,]
-				([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-				([xshift=-\inmar, yshift=-\botmar]current page text area.south west) --
-				([xshift=\outmar, yshift=-\botmar]current page text area.south east) --
-				([xshift=\outmar, yshift=\topmar]current page text area.north east) --
+			\draw[color1]
+				([xshift=-\inmar, yshift=\topmar]current page text area.north west)
+        [rounded corners=\swround] --
+				([xshift=-\inmar, yshift=-\botmar]current page text area.south west)
+        [rounded corners=\seround] --
+				([xshift=\outmar, yshift=-\botmar]current page text area.south east)
+        [rounded corners=\neround] --
+				([xshift=\outmar, yshift=\topmar]current page text area.north east)
+        [rounded corners=\nwround] --
 				cycle;
 		\end{tikzpicture}
 	}{}
@@ -675,7 +729,7 @@
 		\fill[white]
 			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
 			([xshift=-\inmar, yshift=\topmar-1cm]current page text area.north west)
-			[rounded corners=1cm] --
+			[rounded corners=\nwround] --
 			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
 			([xshift=-\inmar+1cm, yshift=\topmar]current page text area.north west)
 			[sharp corners] --
@@ -685,17 +739,17 @@
 			([xshift=\outmar, yshift=\topmar]current page text area.north east) --
 			([xshift=\outmar, yshift=\topmar-1cm]current page text area.north east) --
 			([xshift=\outmar-\tabdepth, yshift=\topmar-1cm]current page text area.north east)
-			[rounded corners=1cm] --
+			[rounded corners=\neround] --
 			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --
 			([xshift=\outmar-\tabdepth-1cm, yshift=\topmar]current page text area.north east)
 			[sharp corners] --
 			cycle;
 		 % frame
-		\draw[color1, rounded corners = 1cm,]
-			([xshift=-\inmar, yshift=\topmar]current page text area.north west) --
-			([xshift=-\inmar, yshift=-\botmar]current page text area.south west) --
-			([xshift=\outmar-\tabdepth, yshift=-\botmar]current page text area.south east) --
-			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) --
+		\draw[color1]
+			([xshift=-\inmar, yshift=\topmar]current page text area.north west) [rounded corners = \swround] --
+			([xshift=-\inmar, yshift=-\botmar]current page text area.south west) [rounded corners = \seround] --
+			([xshift=\outmar-\tabdepth, yshift=-\botmar]current page text area.south east) [rounded corners = \neround] --
+			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east) [rounded corners = \nwround]--
 			cycle;
 		\end{tikzpicture}
 	}{}

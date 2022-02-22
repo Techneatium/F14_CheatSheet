@@ -1,4 +1,38 @@
 ***
+### TO-DO
+#### `F14_Cheatsheet`
+- Start-up
+  - Overhaul pre-start?
+- Landing section
+  - CASE II/III
+- In-flight procedures
+  - AAR
+- Navigation section (waiting on sources)
+  - Overview
+  - Alignment
+  - TACAN/VOR/ADF
+- Defensive Systems section
+  - DECM
+- A/A Weapons section
+  - Phoenix active launch explanation
+  - Phoenix maddog launch subsection
+
+#### Known bugs
+  - Hatching on `chapter` pages break if minitoc is too long
+    - Affected by font choice, i.e if whole document in metropols or montserrat
+    - Potential fix could be moving hatching commands into header/footer code direclty rather than with `AtBeginShipout`
+
+***
+### Changelog - 2022.02.22 `v1.0.3`
+#### `TechCheck.cls`
+- New Variables
+  - `nwround`, `neround`, `seround`, `swround` sets rounding diameter for relevant corners, default length is 1cm
+- New Command
+  - `notebox` like `warningbox`, for writing out notes... in a box
+- New option
+  - `fontHelvetica` uses Helvetica Neue font with Metropolis (Futura) Titles. Currently not all titles in Metropolis.
+
+***
 ### Changelog - 2022.02.14 `v1.0.2`
 #### `TechCheck.cls`
 - New commands:
@@ -26,11 +60,7 @@
 #### `F14_Cheatsheet.tex`
 - `\cbstart` was causing indentations, fixed by moving away from line starts
 
-#### Known bugs
-  - Hatching for `SYSTEMS` chapter page breaks under weird conditions
-    - If bottom margins increased
-    - If font changed to montserrat or metropolis
-    - Potential fix could be moving hatching commands into header/footer code direclty rather than with `AtBeginShipout`
+
 
 ***
 ### Changelog - 2022.02.11 - `v1.0.0 "class is out"`

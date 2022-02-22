@@ -25,13 +25,15 @@
 %-----------------------------------------------------------------
 % BEGIN DOCUMENT
 %-----------------------------------------------------------------
-\documentclass[b/w, widesubsec]{TechCheck}
+\documentclass[fontHelvetica, widesubsec]{TechCheck}
 \title{F14_Cheatsheet}
 \author{Techneatium}
 
 \setaircraftlong{F-14A/B AIRCRAFT} % sets long label for title page
 \setaircraftshort{F-14A/B} % sets short label for header
 \settabnumber{6} % sets number of tabs for document
+
+
 
 \begin{document}
 	\include{./sections/F14_00_titlepage}
@@ -625,6 +627,8 @@
 
 	\cleardoublepage
 
+	\section{TAKEOFF \& LANDING}
+
 	\subsection{PRE-TAXI}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -646,7 +650,6 @@
 		\end{longtable}
 	\end{center}
 
-	\section{TAKEOFF \& LANDING}
 	\subsection{TAKEOFF - SHORE}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -793,7 +796,7 @@
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			2. & \blue{ Initial Break} &
+			2. & \blue{Initial Break} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
@@ -3130,8 +3133,8 @@
 
 	\section{TACTICAL INFORMATION DISPLAY}
 
-	\hypertarget{subsec:tidsymb}{}
 	\subsection{TID SYMBOLOGY}
+	\label{subsec:tidsymb}
 	\begin{center}
 		\begin{longtable}{p{3.5cm} | p{1cm} |  p{6cm}}
 			\toprule
@@ -5462,7 +5465,8 @@
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			\textbf{\textbullet} & \blue{TWS Symbology} & \hyperlink{subsec:tidsymb}{\textbf{Refer to TID Symbology Section}}
+			\textbf{\textbullet} & \blue{TWS Symbology} &
+			\hyperref[subsec:tidsymb]{\textbf{Refer to TID Symbology Section}}
 
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
