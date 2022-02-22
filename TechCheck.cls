@@ -305,8 +305,8 @@
     Ligatures=TeX,
     BoldFont=*-Bold,
   ]{Helvetica Neue}
-  \newfontfamily\tightfont{Metropolis-Semi Bold}[Ligatures=TeX, LetterSpace=0.0] % used for `---` in page numbering
-  \newfontfamily\titlefont{Metropolis-Semi Bold}[Ligatures=TeX, LetterSpace=4.0]
+  \newfontfamily\tightfont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=0.0] % used for `---` in page numbering
+  \newfontfamily\titlefont{Spartan-Bold}[Ligatures=TeX, Scale=0.85, LetterSpace=4.0]
 }
 
 \RequirePackage[
@@ -452,10 +452,6 @@
 	\end{tcolorbox}
 }
 
-
-
-
-
 %-----------------------------------------------------------------
 % CHANGEBAR SETTINGS
 %-----------------------------------------------------------------
@@ -517,21 +513,6 @@
 
   \titlespacing{\subsection}{0pt}{2pt}{2pt}
 }{}
-
-% \titleformat{\subsection}
-% {\normalfont\bfseries}{}{0em}{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\thesubsection\quad#1}}}}
-% \titleformat{name=\section,numberless}
-% {\normalfont\bfseries}{}{0em}{\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}}
-% \titlespacing{\subsection}{0pt}{2pt}{2pt}
-
-% % Alternate formatting of subsection (white text)
-% \titleformat{\subsection} % format
-% {\color{white}\normalfont\bfseries} % format
-% {\color{white}\thesubsection} % label
-% {1em} % sep
-% {#1} % before-code
-% [] % after-cocde
-% \titlespacing{\subsection}{0pt}{0pt}{0pt}
 
 %-----------------------------------------------------------------
 % HATCHING

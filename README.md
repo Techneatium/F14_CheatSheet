@@ -30,7 +30,7 @@
 - New Command
   - `notebox` like `warningbox`, for writing out notes... in a box
 - New option
-  - `fontHelvetica` uses Helvetica Neue font with Metropolis (Futura) Titles. Currently not all titles in Metropolis.
+  - `fontHelvetica` uses Helvetica Neue font with Spartan (Futura) Titles
 
 ***
 ### Changelog - 2022.02.14 `v1.0.2`
