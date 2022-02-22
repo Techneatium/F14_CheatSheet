@@ -24,6 +24,7 @@
   - `\Hatch` is now called inside of header formatting
   - position of `\Hatch` command is critical to prevent hatching from covering other header elements
   - Could potentially move `\thumbnar` commands into header in the future
+  - **[EDIT] nvm the bug is still there**
 - Changed `fontHelvetica` to now use Spartan
 - Added `titlefont` to remaining font options
 
