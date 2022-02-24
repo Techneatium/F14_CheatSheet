@@ -413,9 +413,20 @@
       \Hatch
     }{}
   }
-	% \renewcommand{\headrulewidth}{0pt} % and the line
 }
 \fancypagestyle{plain}{
+	% clear defaults
+	\fancyhf{}
+	% page number in footer
+	% \fancyfoot[C]{{\tightfont \textbf{--- \thepage \ ---}}}% LE,RO
+	\fancyfoot[C]{{\tightfont \textbf{\thepage}}}% LE,RO
+	\fancyhead[LE,LO]{
+    \iftoggle{hatch}{
+      \Hatch
+    }{}
+  }
+}
+\fancypagestyle{body}{
 	% clear defaults
 	\fancyhf{}
 	% page number in footer
@@ -430,14 +441,14 @@
 			\textcolor{white}{\titlefont\Large\textbf{\aircraftshort}}
 	}}
 	\fancyhead[LE,LO]{
-  \iftoggle{hatch}{
-    \Hatch
-  }{}
-  \titlefont\textbf{\leftmark}
+    \iftoggle{hatch}{
+      \Hatch
+    }{}
+    \titlefont\textbf{\leftmark}
   }
 	\renewcommand{\headrulewidth}{0pt} % and the line
 }
-\pagestyle{plain}
+\pagestyle{body}
 
 %-----------------------------------------------------------------
 % OTHER FORMATTING
@@ -544,44 +555,49 @@
 %-----------------------------------------------------------------
 % \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before-code>}[<after-code>]
 
+% formatting of chapter
+\titleformat{\chapter}[display] % command
+  {\titlefont\huge\bfseries} % format
+  {\chaptertitlename\ \thechapter} % label
+  {20pt} % sep
+  {\Hatch\Huge #1} % before-code
+  [] % after code
+
 % formatting of section
 \titleformat{\section} % command
-{\color{color1}\titlefont\large\bfseries} % format
-{\color{color1}\thesection} % label
-{1em} % sep
-{#1} % before-code
-[{\titlerule[1pt]}] % after-code
-
-% 1st number is weird, 2nd is spacing before, 3rd is spacing after section title
-\titlespacing{\section}{0pt}{5pt}{2pt}
+  {\color{color1}\titlefont\large\bfseries} % format
+  {\color{color1}\thesection} % label
+  {1em} % sep
+  {#1} % before-code
+  [{\titlerule[1pt]}] % after-code
 
 % formatting of subsection
 \titleformat{\subsection} % command
-{\color{white}\titlefont\bfseries} % format
-{\color{color1}\thesubsection} % label
-{1em} % sep
-{\colorbox{color1}{#1}} % before-code
-[] % after-cocde
-
-% 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
-\titlespacing{\subsection}{0pt}{2pt}{2pt}
+  {\color{white}\titlefont\bfseries} % format
+  {\color{color1}\thesubsection} % label
+  {1em} % sep
+  {\colorbox{color1}{#1}} % before-code
+  [] % after-cocde
 
 % formatting of subsection [full width]
 \iftoggle{widesubsec}{
   \titleformat{\subsection} % command
-  {\normalfont\bfseries} % format
-  {} % label
-  {0em} % sep
-  {\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsection\quad#1}}}} % before-code
+    {\normalfont\bfseries} % format
+    {} % label
+    {0em} % sep
+    {\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsection\quad#1}}}} % before-code
 
   \titleformat{name=\subsection,numberless} % command
-  {\normalfont\bfseries} % format
-  {} % label
-  {0em} % sep
-  {\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
-
-  \titlespacing{\subsection}{0pt}{2pt}{2pt}
+    {\normalfont\bfseries} % format
+    {} % label
+    {0em} % sep
+    {\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
 }{}
+
+% 1st number is weird, 2nd is spacing before, 3rd is spacing after subsection title
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+\titlespacing{\section}{0pt}{5pt}{2pt}
+\titlespacing{\subsection}{0pt}{2pt}{2pt}
 
 % %-----------------------------------------------------------------
 % % HATCHING

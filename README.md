@@ -18,6 +18,25 @@
   - Phoenix maddog launch subsection
 
 ***
+### Changelog - 2022.02.24 `v1.0.5`
+#### `TechCheck.cls`
+- Temporary, hacky fix to hatching bug
+  - **Bug Description:**
+    - When a `minitoc` extends too far beyond the chapter page it causes the hatching not to appear at the top of the page
+    - An initial attempt to fix this involved moving the `\Hatch` command into the header code (as this is obviously executed)
+    - For some unknown reason this does not fix the problem. The header text appears, but the hatching is not generated on the chapter page
+    - In both cases the hatching is generated correctly on all other pages
+    - Original creator of `minitoc` package is deceased and can therefore not be contacted
+  - **Fix:**
+    - changed default pagestyle to `body` and moved all formatting from the previous default `plain` to `body`
+    - created new `plain` pagestyle which omits header text
+    - Added `\Hatch` command to before-code of chapter title to brute force creation of hatching on Chapter pages
+  - **Flaws:**
+    - Still does not work if minitoc extends over an additional page
+- Added `titlesec` formatting section for `chapter`
+  - used `titlefont` for chapters as well, otherwise defaults
+
+***
 ### Changelog - 2022.02.22 - 2 `v1.0.4`
 #### `TechCheck.cls`
 - Fixed bug with hatching not applying to all pages when minitoc overflowed to next page
