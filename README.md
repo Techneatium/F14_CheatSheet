@@ -9,13 +9,24 @@
   - AAR
 - Navigation section (waiting on sources)
   - Overview
-  - Alignment
   - TACAN/VOR/ADF
 - Defensive Systems section
   - DECM
 - A/A Weapons section
   - Phoenix active launch explanation
   - Phoenix maddog launch subsection
+
+***
+### Changelog - 2022.02.25 `v1.0.6`
+#### `TechCheck.cls`
+- `minitoc` formatting changed
+  - fixed interaction which caused only page numbers of sections to become bold in minitocs
+  - removed lines
+
+#### `F14_Cheatsheet.tex`
+- Began reworked `NAVIGATION` section
+  - Completely rewrote INS alignment subsections
+
 
 ***
 ### Changelog - 2022.02.24 `v1.0.5`

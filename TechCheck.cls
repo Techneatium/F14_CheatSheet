@@ -501,12 +501,13 @@
 		frame hidden,
 		colbacktitle=white,
 		coltitle=color1,
+    fonttitle=\titlefont\bfseries,
 		attach boxed title to top center,
 		boxed title style={
 		sharp corners,
 		% drop shadow=color1!100
 		},
-		title=\large\textbf{NOTE}
+		title=\large NOTE
 	]
 		{#1}
 	\end{tcolorbox}
@@ -521,12 +522,13 @@
 		frame hidden,
 		colbacktitle=white,
 		coltitle=color1,
+    fonttitle=\titlefont\bfseries,
 		attach boxed title to top center,
 		boxed title style={
 		sharp corners,
 		drop shadow=color1!100
 		},
-		title=\large\textbf{WARNING}
+		title=\large WARNING
 	]
 		{#1}
 	\end{tcolorbox}
@@ -539,9 +541,8 @@
 \setlength{\changebarwidth}{2mm}
 
 %-----------------------------------------------------------------
-% TABLE OF CONTENTS FORMATTING
+% TOCLOFT FORMATTING
 %-----------------------------------------------------------------
-% relevant package: tocloft
 % change distance between section number and title
 % default: 1.55em
 % required for Spartan font: 3.1em w/o chapters
@@ -549,6 +550,12 @@
 % \setlength{\cftsecnumwidth}{2.325em}
 % \setlength{\cftsubsecnumwidth}{3.50em}
 \tocloftpagestyle{empty}
+
+%-----------------------------------------------------------------
+% MINITOC FORMATTING
+%-----------------------------------------------------------------
+\mtcsetfont{minitoc}{section}{\normalfont\small}
+\mtcsetrules{minitoc}{off}
 
 %-----------------------------------------------------------------
 % TITLE FORMATTING
@@ -560,7 +567,7 @@
   {\titlefont\huge\bfseries} % format
   {\chaptertitlename\ \thechapter} % label
   {20pt} % sep
-  {\Hatch\Huge #1} % before-code
+  {\iftoggle{hatch}{\Hatch}{}\Huge #1} % before-code
   [] % after code
 
 % formatting of section
@@ -598,62 +605,6 @@
 \titlespacing*{\chapter}{0pt}{50pt}{40pt}
 \titlespacing{\section}{0pt}{5pt}{2pt}
 \titlespacing{\subsection}{0pt}{2pt}{2pt}
-
-% %-----------------------------------------------------------------
-% % HATCHING
-% %-----------------------------------------------------------------
-% % creates node option to create hyperref
-% \tikzset{
-% 	hyperref node/.style={
-% 		alias=sourcenode,
-% 		append after command={
-% 			let     \p1 = (sourcenode.north west),
-% 			\p2=(sourcenode.south east),
-% 			\n1={\x2-\x1},
-% 			\n2={\y1-\y2} in
-% 			node [inner sep=0pt, outer sep=0pt,anchor=north west,at=(\p1)] {\hyperref[#1]{\XeTeXLinkBox{\phantom{\rule{\n1}{\n2}}}}}
-% 			%xelatex needs \XeTeXLinkBox, won't create a link unless it
-% 			%finds text --- rules don't work without \XeTeXLinkBox.
-% 			%Still builds correctly with pdflatex and lualatex
-% 		}
-% 	}
-% }
-% % titlepage chevron indentation
-%
-% % individual parallelogram
-% \newcommand{\single}[1]{
-% 	\fill[color1]
-% 	([xshift=#1*2*0.5cm,yshift = 0.2cm]current page text area.north west) --
-% 	([xshift=#1*2*0.5cm+2cm,yshift=2cm+0.2cm]current page text area.north west) --
-% 	([xshift=#1*2*0.5cm+2.5cm,yshift=2cm+0.2cm]current page text area.north west) --
-% 	([xshift=#1*2*0.5cm+0.5cm,yshift=0.2cm]current page text area.north west) --
-% 	cycle;
-% }
-% % while loop to make many parallelograms
-% \newcommand\Hatch{
-% 	\begin{tikzpicture}[remember picture,overlay]
-% 	\newcount\foo
-% 	\foo=-3
-% 	\loop
-% 	\single{\the\foo}
-% 	\advance \foo +1
-% 	\ifnum \foo<21
-% 	\repeat
-% 	% makes hatched area hyperlink to front page
-% 	\node[
-% 		rectangle,
-% 		hyperref node=frontpage,
-% 		anchor=north,
-% 		minimum width=\paperwidth,
-% 		minimum height=1cm
-% 	]()at ([yshift=\paperheight/2]current page.center) {};
-% 	\end{tikzpicture}
-% }
-%
-% % apply hatching to all pages
-% \iftoggle{hatch}{
-%   \AtBeginShipout{\AtBeginShipoutAddToBox{\Hatch}}
-% }{}
 
 %-----------------------------------------------------------------
 % ROUNDING

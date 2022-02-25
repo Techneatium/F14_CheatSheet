@@ -34,7 +34,6 @@
 \settabnumber{6} % sets number of tabs for document
 
 
-
 \begin{document}
 	\include{./sections/F14_00_titlepage}
 	\clearpage
@@ -89,7 +88,6 @@
 			7. & \blue{MASTER TEST \break Selector} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
-				% \vspace{-0.7em}
 				\begin{enumerate}
 					\item \textbf{LTS}
 					\begin{itemize}
@@ -1335,7 +1333,265 @@
 	\clearpage
 
 	\section{NAVIGATION}
-	\subsection{NAV - OVERVIEW}
+
+	\subsection{OVERVIEW}
+
+	\subsection{IMU / INS}
+
+	\subsection{ALIGNMENT - OVERVIEW}
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+			\textbf{\textbullet} & \blue{Main Phases} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{enumerate}
+					\item \textbf{Coarse Alignment}
+					\begin{itemize}
+						\item Warm-up of IMU elements
+						\item Gimbals caged to Airframe
+						\item Gyros brought up to speed
+						\item Coarse IMU platform leveling performed with accellerometer outputs
+						\item Begins upon completion of initializatin sequence
+						\item Computes Initial coarse estimates of IMU wander angle
+					\end{itemize}
+					\item \textbf{Fine Alignment}
+				\end{enumerate}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{Primary Align Modes} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{SAT} -- \textbf{NOT IMPLEMENTED}
+					\begin{itemize}
+						\item Ground
+						\item Carrier
+					\end{itemize}
+					\item \textbf{NON-SAT}
+					\begin{itemize}
+						\item Ground
+						\item Carrier
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{Align Submodes} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{CAT ALIGN} -- overrides parking brake requirement
+					\item \textbf{STORED HEADING} -- uses previous aligment as reference for rapid aligment
+					\item \textbf{HANDSET} -- for \textbf{CVA ALIGN} when SINS data not available
+				\end{itemize}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
+
+	\notebox{
+		\begin{itemize}
+			\item Initialization requires Aircraft or Homebase data
+			\begin{itemize}
+				\item Lat/Long
+				\item Pressure Altitude
+			\end{itemize}
+			If \textbf{HANDSET Alignment} used requires Carrier parameters
+			\begin{itemize}
+				\item Speed
+				\item True heading
+			\end{itemize}
+			\item \textbf{Parking brake must be on during initialization of any mode}
+			\begin{itemize}
+				\item If released during coarse align, \textbf{STBY} and \textbf{READY} lights flash, align program reinitializes
+				\item If released during fine align, suspend align discrete sent to CSDC, \textbf{STBY} or \textbf{READY} light blinks, time-to-align clock on \textbf{TID} stops
+			\end{itemize}
+		\end{itemize}
+	}
+
+	\subsection{ALIGNMENT - NON-SAT}
+	\label{subsec:align-nonsat}
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+			\textbf{\textbullet} & \blue{Enter GND Align} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{GND ALIGN} requires own-aircraft or Homebase parameters
+					\begin{itemize}
+						\item Latitude / Longitude
+						\item Altitude
+					\end{itemize}
+					\item Can be entered into \textbf{CAP} before or within 90-120 s after selecting \textbf{GND ALIGN}
+				\end{itemize}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
+
+	\notebox{
+		\begin{itemize}
+			\item Whatever has been hooked when \textbf{ALIGN} is selected is injected as own-aircraft coordinates
+			\item If fine align complete not yet achieved, own-aircraft latitude entry will reinitialize the alignment
+		\end{itemize}
+	}
+
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+			\textbf{\textbullet} & \blue{Enter CVA Align} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{CVA ALIGN} requires \textbf{DL CAINS Mode} to align aircraft IMU to ship's INS
+					\begin{enumerate}
+						\item \textbf{Datalink} \dotfill \textbf{ON}
+						\item \textbf{WCS} \dotfill \textbf{STBY}
+						\item \textbf{D/L Mode} \dotfill \textbf{CAINS/WAYPT}
+						\item \textbf{NAV MODE Switch} \dotfill \textbf{CVA ALIGN}
+					\end{enumerate}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{Initialization} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item After approx. 20 s \textbf{STBY/READY Lights} illuminate
+					\item \textbf{TID} displays alignment time of \textbf{0.7} during initialization
+					\item After  42-45 s \textbf{NAV COMP} and \textbf{READY} lights extinguish, indicating IMU is ready
+					\item Upon completion of initialization the \textbf{Alignment Status Indicator (CARET)} appears,
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{Coarse Alignment} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{CARET} before coarse-align complete marker (first tick)
+					\item Upon completion of coarse alignment phase the \textbf{CARET} is directly above the first tick and changes to a \textbf{DIAMOND}
+				\end{itemize}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
+
+	\notebox{
+		\begin{itemize}
+			\item Parking brake can be released for taxi after coarse align is complete. Will suspend align
+			\item Suspend align indicated by flashing \textbf{STBY} and/or \textbf{READY Lights}
+			\item During suspend align taxiing more than 4000 ft will render the \textbf{INS} performance unreliable
+		\end{itemize}
+	}
+
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+			\textbf{\textbullet} & \blue{Fine Alignment} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{DIAMOND} between first and third ticks
+					\item \textbf{Second Tick} -- minimum weapon launch criteria met
+					\begin{itemize}
+						\item \textbf{STBY Light} -- extinguishes
+						\item \textbf{READY Light} -- light illuminates
+						\item \textbf{INS Mode} -- may be selected
+					\end{itemize}
+					\item \textbf{Third Tick} -- fine alignment complete
+					\begin{itemize}
+						\item Dot appears in Diamond
+						\item Can be left in align for progressively more accurate alignment
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{Exit Alignment} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Select INS Mode}
+					\begin{itemize}
+						\item \textbf{READY Light} -- extinguishes
+						\item Tactical tape appears
+						\item Normal navigation display available
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
+
+	\notebox{
+		\begin{itemize}
+			\item You will get \textbf{Erroneous Heading Readings on a Carrier} even with fine align complete (up to 30 deg) due to ship's magnetic field
+			\item Deviation goes away shortly after takeoff
+		\end{itemize}
+	}
+
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+			\textbf{\textbullet} & \blue{Stored Heading Alignment} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Reference alignment stored prior to powering-down the aircraft
+					\item \textbf{ASH} --  Automatic Stored Heading displayed on TID when align selected and reference align available
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{Handset Alignment} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Reference alignment stored prior to powering-down the aircraft
+					\item \textbf{ASH} --  Automatic Stored Heading displayed on TID when align selected and reference align available
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{Catapult Alignment} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Reference alignment stored prior to powering-down the aircraft
+					\item \textbf{ASH} --  Automatic Stored Heading displayed on TID when align selected and reference align available
+				\end{itemize}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
+
+
+
+	\clearpage
+
+	\subsection{WAYPOINT}
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+			\textbf{\textbullet} & \blue{Reference Point} \blue{ Types} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Navigation Waypoint} -- Used for navigation. Maximum of 3 stored simultaneously
+					\item \textbf{Fixed Point (FP)} -- Arbitrary point to establish current position relative to external references
+					\item \textbf{Initial Point (IP)} -- Starting point for A/G attack run
+					\item \textbf{Surface Target (ST)} -- Enemy surface target
+					\item \textbf{Defended Point (DP)} -- Area to protect (i.e friendly forces)
+					\item \textbf{Hostile Area (HA)} -- Area with known ground or air hostiles
+					\item \textbf{Home Base (HB)} -- Airfield / CV
+				\end{itemize}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
+
+	\subsection{NAV - TACAN}
+	\subsection{NAV - VOR/ADF}
+
+	\subsection{NAV - DISPLAYS}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -1418,101 +1674,6 @@
 			\bottomrule
 		\end{longtable}
 	\end{center}
-
-	\subsection{NAV - INS}
-	\begin{center}
-		\begin{longtable}{l p{3cm} | p{8cm}}
-			\toprule
-			\textbf{\textbullet} & \blue{Contributing Subsystems} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{IMU} -- \textbf{I}nertial \textbf{M}easurement \textbf{U}nit
-					\begin{itemize}
-						\item \textbf{4 Gimbals} -- No gimbal-lock, corrects platform attitude errors
-						\item \textbf{2 Gyros} -- Source for aircraft attitude data
-						\item \textbf{3 Accelerometers} -- Source for aircraft acceleration data
-					\end{itemize}
-					\item \textbf{CSDC} -- \textbf{C}omputer \textbf{S}ignal \textbf{D}ata \textbf{C}onverter
-					\begin{itemize}
-						\item Processes sensor signals including IMU data
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{\textbullet} & \blue{CSDC Data Modes} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{enumerate}
-					\item \textbf{INS} -- Primary nav mode
-					\begin{itemize}
-						\item \textbf{Velocity Data} -- IMU
-						\item \textbf{Pitch/Roll Data} -- IMU
-					\end{itemize}
-					\item \textbf{IMU/AM} -- Backup mode selected by RIO or automatically when CSDC determines IMU velocity data unreliable.
-					\begin{itemize}
-						\item \textbf{Velocity Data} -- Calculated from true airspeed \&  stored wind
-						\item \textbf{Pitch/Roll Data} -- IMU
-					\end{itemize}
-					\item \textbf{AHRS/AM} -- Further degraded mode selected by RIO or automatically when CSDC detects total INS failure
-					\begin{itemize}
-						\item \textbf{Heading} -- Mag heading \& MAG VAR
-						\item \textbf{Velocity Data} -- Calculated from true airspeed \& stored wind
-						\item \textbf{Pitch/Roll Data} -- AHRS
-					\end{itemize}
-				\end{enumerate}
-			\end{minipage} \\
-			\bottomrule
-		\end{longtable}
-	\end{center}
-
-	\subsection{NAV - ALIGNMENT}
-	\begin{center}
-		\begin{longtable}{l p{3cm} | p{8cm}}
-			\toprule
-			\textbf{\textbullet} & \blue{Ground} \blue{Align} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{enumerate}
-					\item
-				\end{enumerate}
-			\end{minipage} \\
-			\midrule
-			\textbf{\textbullet} & \blue{Carrier} \blue{Align} \blue{D/L} & \\
-			\midrule
-			\textbf{\textbullet} & \blue{Carrier} \blue{Align} \blue{Handset}  & \\
-			\midrule
-			\textbf{\textbullet} & \blue{Reinitialization} & \\
-			\midrule
-			\textbf{\textbullet} & \blue{Automatic} \blue{Stored} \blue{Heading} & \\
-			\midrule
-			\textbf{\textbullet} & \blue{Catapult} \blue{Align} & \\
-		\end{longtable}
-	\end{center}
-
-	\subsection{NAV - WAYPOINT}
-	\begin{center}
-		\begin{longtable}{l p{3cm} | p{8cm}}
-			\toprule
-			\textbf{\textbullet} & \blue{Reference Point} \blue{ Types} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Navigation Waypoint} -- Used for navigation. Maximum of 3 stored simultaneously
-					\item \textbf{Fixed Point (FP)} -- Arbitrary point to establish current position relative to external references
-					\item \textbf{Initial Point (IP)} -- Starting point for A/G attack run
-					\item \textbf{Surface Target (ST)} -- Enemy surface target
-					\item \textbf{Defended Point (DP)} -- Area to protect (i.e friendly forces)
-					\item \textbf{Hostile Area (HA)} -- Area with known ground or air hostiles
-					\item \textbf{Home Base (HB)} -- Airfield / CV
-				\end{itemize}
-			\end{minipage} \\
-			\bottomrule
-		\end{longtable}
-	\end{center}
-
-	\subsection{NAV - TACAN}
-	\subsection{NAV - VOR/ADF}
 
 
 
@@ -3819,7 +3980,7 @@
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			\multicolumn{2}{c}{\blue{ATTACK DISPLAY SYMBOLOGY}} & \thumbnar \\
+			\multicolumn{2}{c}{\blue{ATTACK DISPLAY SYMBOLOGY}} & \\
 			\midrule
 			\textbf{Artificial Horizon} &
 			\begin{minipage}[t]{\linewidth}
