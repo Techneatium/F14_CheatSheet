@@ -17,6 +17,14 @@
   - Phoenix maddog launch subsection
 
 ***
+### Changelog - 2022.02.26 `v1.0.7`
+#### `TechCheck.cls`
+- Added alternative `color1` as HTML {222222}
+
+#### `F14_Cheatsheet.tex`
+- Continued work on NAVIGATION section
+
+***
 ### Changelog - 2022.02.25 `v1.0.6`
 #### `TechCheck.cls`
 - `minitoc` formatting changed

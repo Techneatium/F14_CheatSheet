@@ -195,6 +195,7 @@
 
 \DeclareOption{colorful}{
   \colorlet{color1}{black}
+  % \definecolor{color1}{HTML}{222222}
   \colorlet{color2}{NavyBlue}
   \colorlet{color3}{NavyBlue}
   \definecolor{color4}{HTML}{FFE534} % bf2042yellow
@@ -234,7 +235,7 @@
 %-----------------------------------------------------------------
 % PROCESS OPTIONS
 %-----------------------------------------------------------------
-\ExecuteOptions{fontSpartan, a5print, colorful}
+\ExecuteOptions{fontSpartan, widesubsec, a5print, colorful}
 \ProcessOptions\relax
 %=================================================================
 % O P T I O N S   E N D
@@ -590,13 +591,13 @@
 \iftoggle{widesubsec}{
   \titleformat{\subsection} % command
     {\normalfont\bfseries} % format
-    {} % label
+    {\color{color1}} % label
     {0em} % sep
     {\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\titlefont\thesubsection\quad#1}}}} % before-code
 
   \titleformat{name=\subsection,numberless} % command
     {\normalfont\bfseries} % format
-    {} % label
+    {\color{color1}} % label
     {0em} % sep
     {\colorbox{black}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}} % before-code
 }{}

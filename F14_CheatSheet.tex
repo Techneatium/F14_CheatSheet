@@ -25,7 +25,7 @@
 %-----------------------------------------------------------------
 % BEGIN DOCUMENT
 %-----------------------------------------------------------------
-\documentclass[fontHelvetica, widesubsec]{TechCheck}
+\documentclass[fontHelvetica]{TechCheck}
 \title{F14_Cheatsheet}
 \author{Techneatium}
 
@@ -1289,8 +1289,6 @@
 					\begin{enumerate}
 						\item \textbf{Em. Wing-Sweep} \dotfill \textbf{68 deg} \\
 						\hfill Wait for wing-seal airbags to deflate
-%						\end{enumerate}
-%						\begin{enumerate}[label=(\alph*), resume]
 						\item \textbf{HZ TAIL AUTH} \dotfill \textbf{Illuminated}
 						\item \textbf{Em. Wing-Sweep} \dotfill \textbf{75 deg}
 					\end{enumerate}
@@ -1330,13 +1328,59 @@
 		\end{tabular}
 	\end{center}
 
+	\notebox{
+		\begin{itemize}
+			\item Indicates \textbf{Max} forward selectable wing sweep position
+		\end{itemize}
+	}
+
 	\clearpage
 
 	\section{NAVIGATION}
 
 	\subsection{OVERVIEW}
-
-	\subsection{IMU / INS}
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+			\textbf{\textbullet} & \blue{CAINS} & \textbf{C}arrier \textbf{A}ircraft \textbf{I}nertial \textbf{N}avigation \textbf{S}ystem
+			\begin{minipage}[t]{\linewidth}
+				\begin{itemize}
+					\item \textbf{Primary navigation system of F-14}
+					\item Additionally provides information for tactical systems
+					\begin{itemize}
+						\item Own position for long-range AIM-7 \& AIM-54 modes
+						\item Accurate Datalink sharing/receiving
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\multicolumn{3}{c}{\blue{Main Components}} \\
+			\midrule
+			\textbf{\textbullet} & \blue{IMU} & \textbf{I}nertial \textbf{M}easurement \textbf{U}nit
+			\begin{minipage}[t]{\linewidth}
+				\begin{itemize}
+					\item 3-Axis, 4-Gimbal system prevents gimbal-lock
+					\item 2 gyros provide aircraft attitude and stabilize the platform
+					\item 3 accelerometers measure accelerations in all orthogonal axes
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{CSDC} & \textbf{C}omputer \textbf{S}ignal \textbf{D}ata \textbf{C}onverter
+			\begin{minipage}[t]{\linewidth}
+				\begin{itemize}
+					\item Handles data interface between sensors and \textbf{WCS}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{WCS} & \textbf{AWG-9 Computer}
+			\begin{minipage}[t]{\linewidth}
+				\begin{itemize}
+					\item Performs general navigation computations and provides them to PILOT \& RIO through displays
+				\end{itemize}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
 
 	\subsection{ALIGNMENT - OVERVIEW}
 	\begin{center}
@@ -1530,6 +1574,7 @@
 		\end{itemize}
 	}
 
+	\subsection{ALIGNMENT - NON-SAT - SUBMODES}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -1546,8 +1591,13 @@
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
-					\item Reference alignment stored prior to powering-down the aircraft
-					\item \textbf{ASH} --  Automatic Stored Heading displayed on TID when align selected and reference align available
+					\item For use when SINS data not available (indicated by flashing \textbf{HS} on \textbf{TID})
+					\item Similar to \textbf{GND ALIGN} but requires additional parameters for the ship movement
+					\begin{itemize}
+						\item Latitude / Longitude
+						\item Ship's Speed
+						\item Ship's True Heading
+					\end{itemize}
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
@@ -1555,8 +1605,67 @@
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
-					\item Reference alignment stored prior to powering-down the aircraft
-					\item \textbf{ASH} --  Automatic Stored Heading displayed on TID when align selected and reference align available
+					\item Inhibits suspend align while positioned on the catapult when parking brake released
+				\end{itemize}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
+
+	\subsection{ALIGNMENT - NON-SAT - FAILURES}
+
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+			\textbf{\textbullet} & \blue{TID Status Indicators} & Appear between first and second ticks
+			\begin{minipage}[t]{\linewidth}
+				\begin{itemize}
+					\item \textbf{C} -- \textbf{Cal Data Fail}
+					\item \textbf{T} -- \textbf{Temp} (cold IMU)
+					\item \textbf{S} -- \textbf{SINS Data Invalid}
+					\item \textbf{O} -- \textbf{Observable} (alignment data bad)
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{STBY / READY Lights} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{STBY ON / READY ON}
+					\begin{itemize}
+						\item Normal during align initialization
+						\item Else indicates IMU, NAV COMP, NPS or AHRS Failure
+					\end{itemize}
+					\item \textbf{STBY ON / READY OFF}
+					\begin{itemize}
+						\item Normal during align after initialization
+						\item Normal when \textbf{IMU/AM} selected prior to completion of coarse align
+					\end{itemize}
+					\item \textbf{STBY FLASHING / READY FLASHING}
+					\begin{itemize}
+						\item Alignment not initiated due to suspended alignment (check parking brake)
+					\end{itemize}
+					\item \textbf{STBY FLASHING / READY OFF}
+					\begin{itemize}
+						\item Align suspended (check parking brake)
+					\end{itemize}
+					\item \textbf{STBY OFF / READY ON}
+					\begin{itemize}
+						\item Min weapon launch requirements met
+					\end{itemize}
+					\item \textbf{STBY OFF / READY OFF}
+					\begin{itemize}
+						\item System operating normally
+					\end{itemize}
+					\item \textbf{STBY OFF / READY FLASHING} \\
+					(After 5 s both off)
+					\begin{itemize}
+						\item Occurs when \textbf{IMU/AM} selected and IMU is aligned. If another mode not selected within 5 s, alignment lost, INS not available
+					\end{itemize}
+					\item \textbf{STBY OFF / READY FLASHING}
+					\begin{itemize}
+						\item Alignment suspended past mission alert criteria with parking brake off
+					\end{itemize}
 				\end{itemize}
 			\end{minipage} \\
 			\bottomrule
