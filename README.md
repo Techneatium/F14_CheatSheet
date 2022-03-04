@@ -5,16 +5,35 @@
   - Overhaul pre-start?
 - Landing section
   - CASE II/III
-- In-flight procedures
-  - AAR
-- Navigation section (waiting on sources)
-  - Overview
-  - TACAN/VOR/ADF
-- Defensive Systems section
-  - DECM
 - A/A Weapons section
   - Phoenix active launch explanation
   - Phoenix maddog launch subsection
+
+***
+### Changelog - 2022.03.04
+#### `TechCheck.cls`
+- Fonts
+  - Removed `fontMontserrat`
+  - Choosing a font now forces all other fonts to be toggled false to prevent defining fonts twice
+
+#### `F14_Cheatsheet.tex`
+- Continued work on NAVIGATION section
+  - Finished DISPLAYS
+  - Wrote VOR/ADF
+- Added initial Aerial refueling subsection
+- Added DECM subsection
+- Added AIM-54 -- ACM Section
+
+
+***
+### Changelog - 2022.02.28
+#### `TechCheck.cls`
+- Added `fontInter` option which uses a open-source alternative to Helvetica
+
+#### `F14_Cheatsheet.tex`
+- Continued work on NAVIGATION section
+- Added initial Aerial refueling subsection
+- Added DECM subsection
 
 ***
 ### Changelog - 2022.02.26 `v1.0.7`

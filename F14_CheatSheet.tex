@@ -902,6 +902,36 @@
 
 	\section{IN-FLIGHT}
 	\subsection{AERIAL REFUELING}
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+			1. & \blue{REFUELING CHECKLIST} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{enumerate}
+					\item \textbf{WCS} \dotfill \textbf{STBY}
+					\item \textbf{ARMING} \dotfill \textbf{SAFE}
+					\item \textbf{DUMP Switch} \dotfill \textbf{OFF}
+					\item \textbf{AIR SOURCE} \dotfill \textbf{L ENG}
+					\item \textbf{REFUEL PROBE} \dotfill \textbf{As desired} \\
+					\hfill (transition light off)
+					\item \textbf{WING SWEEP} \dotfill \textbf{As desired}
+				\end{enumerate}
+			\end{minipage} \\
+			\midrule
+			2. & \blue{DISENGAGEMENT} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{enumerate}
+					\item \textbf{REFUEL PROBE} \dotfill \textbf{RET} \\
+					\hfill (transition light off)
+					\item \textbf{AIR SOURCE} \dotfill \textbf{BOTH}
+					\item \textbf{WING SWEEP} \dotfill \textbf{AUTO}
+				\end{enumerate}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
 
 	\clearpage
 
@@ -915,15 +945,15 @@
 				\begin{enumerate}
 					\item \textbf{Non-Running ENG} \dotfill \textbf{IDLE} or above
 				\end{enumerate}
-				\vspace{7pt}
+				\vspace{1em}
 				\emph{If no relight occurs}
-				\begin{enumerate}[label=(\alph*), resume]
+				\begin{enumerate}[resume]
 					\vspace{-7pt}
 					\item \textbf{Non-Running ENG} \dotfill \textbf{OFF} then \textbf{IDLE}
 				\end{enumerate}
-				\vspace{-7pt}
+				% \vspace{-7pt}
 				\emph{If still no relight occurs}
-				\begin{enumerate}[label=(\alph*), resume]
+				\begin{enumerate}[resume]
 					\vspace{-7pt}
 					\item \textbf{ENG MODE} \dotfill \textbf{SEC}
 					\item \textbf{Non-Running ENG} \dotfill \textbf{OFF} then \textbf{IDLE}
@@ -942,15 +972,15 @@
 					\item \textbf{ENG CRANK} \dotfill non-running eng
 					\item \textbf{Non-Running ENG} \dotfill \textbf{IDLE}
 				\end{enumerate}
-				\vspace{-7pt}
+				% \vspace{-7pt}
 				\emph{If no start occurs}
-				\begin{enumerate}[label=(\alph*), resume]
+				\begin{enumerate}[resume]
 					\vspace{-7pt}
 					\item \textbf{Non-Running ENG} \dotfill \textbf{OFF} then \textbf{IDLE}
 				\end{enumerate}
-				\vspace{-7pt}
+				% \vspace{-7pt}
 				\emph{If still no start}
-				\begin{enumerate}[label=(\alph*), resume]
+				\begin{enumerate}[resume]
 					\vspace{-7pt}
 					\item \textbf{ENG MODE} \dotfill \textbf{SEC}
 					\item \textbf{Non-Running ENG} \dotfill \textbf{OFF} then \textbf{IDLE}
@@ -965,15 +995,15 @@
 					\item \textbf{Throttle} \dotfill IDLE or above
 					\item \textbf{BACK UP IGNITION} \dotfill ON
 				\end{enumerate}
-				\vspace{-7pt}
+				% \vspace{-7pt}
 				\emph{If no relight occurs}
-				\begin{enumerate}[label=(\alph*), resume]
+				\begin{enumerate}[resume]
 					\vspace{-7pt}
 					\item \textbf{Throttle} \dotfill OFF then IDLE
 				\end{enumerate}
-				\vspace{-7pt}
+				% \vspace{-7pt}
 				\emph{If still no relight}
-				\begin{enumerate}[label=(\alph*), resume]
+				\begin{enumerate}[resume]
 					\vspace{-7pt}
 					\item \textbf{ENG MODE} \dotfill SEC
 					\item \textbf{Throttle} \dotfill OFF then IDLE
@@ -999,7 +1029,7 @@
 	\minitoc
 	\cleardoublepage
 
-	\section{FLIGHT CONTROL}
+	\section{FLIGHT CONTROL SYSTEMS}
 	\thumbnar
 	\subsection{AFCS - SAS}
 	\begin{center}
@@ -1218,12 +1248,6 @@
 			\end{minipage} \\
 			\midrule
 			\textbf{\textbullet} & \blue{Disengage} & \textbf{Cage/Seam Button} \\
-%				\begin{minipage}[t]{\linewidth}
-%					\vspace{-7pt}
-%					\begin{itemize}
-%						\item \textbf{Cage/Seam Button}
-%					\end{itemize}
-%				\end{minipage} \\
 			\bottomrule
 		\end{tabular}
 	\end{center}
@@ -1336,7 +1360,7 @@
 
 	\clearpage
 
-	\section{NAVIGATION}
+	\section{NAVIGATION SYSTEMS}
 
 	\subsection{OVERVIEW}
 	\begin{center}
@@ -1375,12 +1399,87 @@
 			\textbf{\textbullet} & \blue{WCS} & \textbf{AWG-9 Computer}
 			\begin{minipage}[t]{\linewidth}
 				\begin{itemize}
-					\item Performs general navigation computations and provides them to PILOT \& RIO through displays
+					\item \textbf{WCS} performs general navigation computations and provides them to PILOT \& RIO through displays
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{NPS} & \textbf{N}avigation \textbf{P}ower \textbf{S}upply
+			\begin{minipage}[t]{\linewidth}
+				\begin{itemize}
+					\item Provides power to \textbf{IMU} \& \textbf{CSDC}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{Subsystems} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Radar Altimeter
+					\item TACAN
+					\item AHRS
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\multicolumn{3}{c}{\blue{Controls}} \\
+			\midrule
+			\textbf{\textbullet} & \blue{CAP} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Used for Data Entry
+					\item \textbf{CATEGORY} -- \textbf{NAV}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{NAV MODE Selector} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{OFF} -- Turns off power to IMU
+					\item \textbf{ALIGN} -- Three align modes \\
+					\hfill \hyperref[subsec:align-nonsat]{\textbf{See Alignment Section}}
+					\item \textbf{INS} -- Selects normal INS navigation mode
+					\item \textbf{IMU/AM} -- Selects backup mode. Uses IMU for aircraft attitude, TAS from CADC, and stored/entered winds for navigation
+					\item \textbf{AHRS/AM} -- Selects further degraded backup mode. Uses magnetic heading from AHRS, TAS and AoA from CADC, and stored wind and mag var for navigation
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\multicolumn{3}{c}{\blue{Failure Indicators}} \\
+			\midrule
+			\textbf{\textbullet} & \blue{NAV COMP Light} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item If illuminates while \textbf{NAV MODE} is in \textbf{INS} indicates failure in \textbf{INS} or \textbf{CSDC}
+					\item Navigation system automatically switches to \textbf{IMU/AM}
+					\item Remains illuminated until \textbf{NAV MODE} is set to \textbf{IMU/AM}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{IMU Light} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Indicates failure of \textbf{IMU}
+					\item Navigation system automatically switches to \textbf{AHRS/AM}
+					\item Remains illuminated until \textbf{NAV MODE Switch} is set to \textbf{AHRS/AM}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{AHRS Light} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Indicates \textbf{AHRS} self-test detected a failure
+					\item Magnetic heading now commanded by WCS computer using last known mag var values
+					\item Heading values will degrade over time
 				\end{itemize}
 			\end{minipage} \\
 			\bottomrule
 		\end{longtable}
 	\end{center}
+
+	\clearpage
 
 	\subsection{ALIGNMENT - OVERVIEW}
 	\begin{center}
@@ -1400,6 +1499,9 @@
 						\item Computes Initial coarse estimates of IMU wander angle
 					\end{itemize}
 					\item \textbf{Fine Alignment}
+					\begin{itemize}
+						\item Uses gryoscopic drift to calculate true heading
+					\end{itemize}
 				\end{enumerate}
 			\end{minipage} \\
 			\midrule
@@ -1563,6 +1665,26 @@
 					\end{itemize}
 				\end{itemize}
 			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{Reinitialization} & If observable acronym (\textbf{O}) or stalled align noticed during fine align. RIO can apply any of following methods
+
+			\begin{minipage}[t]{\linewidth}
+				\begin{enumerate}
+					\item \textbf{NAV MODE SWITCH} \dotfill \textbf{OFF}
+					\item \textbf{WCS} \dotfill \textbf{OFF}
+					\item Proceed with normal start sequence
+				\end{enumerate}
+				\begin{enumerate}
+					\item \textbf{NAV MODE SWITCH} \dotfill \textbf{OFF}
+					\item \textbf{NAV MODE SWITCH} \dotfill \textbf{Desired Align Mode}
+				\end{enumerate}
+				\begin{enumerate}
+					\item \textbf{NAV MODE SWITCH} \dotfill \textbf{INS} \\
+					\hfill Verify \textbf{IN} on \textbf{TID}
+					\item \textbf{NAV MODE SWITCH} \dotfill \textbf{OFF}
+					\item \textbf{NAV MODE SWITCH} \dotfill \textbf{Desired Align Mode}
+				\end{enumerate}
+			\end{minipage} \\
 			\bottomrule
 		\end{longtable}
 	\end{center}
@@ -1612,7 +1734,7 @@
 		\end{longtable}
 	\end{center}
 
-	\subsection{ALIGNMENT - NON-SAT - FAILURES}
+	\subsection{ALIGNMENT - FAILURES}
 
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -1627,7 +1749,7 @@
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			\textbf{\textbullet} & \blue{STBY / READY Lights} &
+			\textbf{\textbullet} & \blue{INS Status Indicators} &
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
@@ -1672,8 +1794,6 @@
 		\end{longtable}
 	\end{center}
 
-
-
 	\clearpage
 
 	\subsection{WAYPOINT}
@@ -1697,10 +1817,95 @@
 		\end{longtable}
 	\end{center}
 
-	\subsection{NAV - TACAN}
-	\subsection{NAV - VOR/ADF}
+	\subsection{TACAN}
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+			\textbf{\textbullet} & \blue{Overview} & \textbf{Tac}tical \textbf{A}ir \textbf{N}avigation System
+			\begin{minipage}[t]{\linewidth}
+				\begin{itemize}
+					\item Indicates Position relative to station
+					\begin{itemize}
+						\item \textbf{Slant Range} within 0.1 nm
+						\item \textbf{Bearing} within 0.5 deg
+					\end{itemize}
+					\item \textbf{Operating Range} -- approx 300 nm
+					\item 126 channels, 2 modes of operation
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{Operating Modes} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{REC} -- Receive only
+					\item \textbf{T/R} -- Transmit \& Receive, enables ranging
+					\item \textbf{A/A} -- Air to air mode
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{Typical Operation} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\textbf{TACAN Setup}
+				\begin{enumerate}
+					\item \textbf{Mode} \dotfill \textbf{As Desired}
+					\item \textbf{Frequency} \dotfill \textbf{As Desired}
+					\item \textbf{TACAN CMD} \dotfill \textbf{As Required} \\
+					\hfill (Corresponding Crewmember)
+				\end{enumerate}
+				\textbf{Pilot Setup}
+				\begin{enumerate}
+					\item \textbf{STEER CMD} \dotfill \textbf{TACAN}
+					\item \textbf{HSD MODE} \dotfill \textbf{NAV}
+					\item \textbf{Desired Course} \dotfill \textbf{Set} via \textbf{CRS Knob}
+				\end{enumerate}
+				\textbf{Consult BDHI and HSD to track TACAN station}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
 
-	\subsection{NAV - DISPLAYS}
+	\subsection{VOR/ADF}
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+			\textbf{\textbullet} & \blue{Overview} & \textbf{A}utomatic \textbf{D}irection \textbf{F}inder
+
+			\begin{minipage}[t]{\linewidth}
+				\begin{itemize}
+					\item Used with \textbf{ARC-182 Radio}
+					\item \textbf{BDHI} -- Displays \textbf{Relative Bearing} to transmitting ground station
+					\item \textbf{Range} -- Line of sight
+					\item \textbf{Frequency Range} -- 108-399.975 MHz
+					\item Only operable for RIO
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \blue{Typical Operation} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\textbf{RIO Setup}
+				\begin{enumerate}
+					\item \textbf{V/UHF 2 Mode} \dotfill \textbf{T/R} \\
+					\hfill (warm-up, at least 5 min)
+					\item \textbf{V/UHF 2 Frequency Mode} \dotfill \textbf{MAN}
+					\item \textbf{V/UHF 2 Frequency} \dotfill \textbf{As desired}
+					\item \textbf{V/UHF 2 Mode} \dotfill \textbf{DF}
+				\end{enumerate}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
+	\notebox{
+		\begin{itemize}
+			\item \textbf{UHF 1 ADF} is not functional despite controls in \textbf{PILOT} cockpit
+		\end{itemize}
+	}
+
+	\clearpage
+
+	\subsection{DISPLAYS}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -1711,7 +1916,7 @@
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
-					\item Displays WRITE ME information
+					\item Displays flight \& combat information onto front canopy
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
@@ -1720,7 +1925,14 @@
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
-					\item placeholder
+					\item \textbf{TV Mode}
+					\begin{itemize}
+						\item Displays \textbf{TCS} imagery
+					\end{itemize}
+					\item \textbf{NORM Mode}
+					\begin{itemize}
+						\item Displays similar flight \& combat information as HUD
+					\end{itemize}
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
@@ -1743,53 +1955,33 @@
 					\end{itemize}
 					\item \textbf{TID Mode} Information
 					\begin{itemize}
+						\item \textbf{Repeat of TID Symbology}
 						\item Overhead View
 						\item Waypoint Coordinates
 					\end{itemize}
 				\end{itemize}
 			\end{minipage} \\
 			\midrule
-			\textbf{\textbullet} & \blue{BDHI} &
+			\textbf{\textbullet} & \blue{BDHI} & \textbf{B}earing \textbf{D}istance \textbf{H}eading \textbf{I}ndicator
 			\begin{minipage}[t]{\linewidth}
 				\vspace{-7pt}
 				\begin{itemize}
-					\item placeholder
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{\textbullet} & \blue{Standby Magnetic Compass} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item placeholder
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{\textbullet} & \blue{Tacan Control Panel} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item placeholder
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{\textbullet} & \blue{STEER CMD Selectors} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item placeholder
+					\item Displays A/C magnetic heading with nav bearing \& range data
+					\item 2 Servo driven needles
+					\begin{itemize}
+						\item \textbf{No.1} (single bar) -- \textbf{UHF (ADF)} system
+						\item \textbf{No.2} (double bar) -- \textbf{TACAN} System
+					\end{itemize}
 				\end{itemize}
 			\end{minipage} \\
 			\bottomrule
 		\end{longtable}
 	\end{center}
 
-
-
 	\cleardoublepage
 
-	\section{COMMUNICATION}
-	\subsection{COMMS - OVERVIEW}
+	\section{COMMUNICATION SYSTEMS}
+	\subsection{OVERVIEW}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -1850,7 +2042,7 @@
 		\end{longtable}
 	\end{center}
 
-	\subsection{COMMS - ARC-159 UHF 1}
+	\subsection{ARC-159 UHF 1}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -1956,7 +2148,7 @@
 		\end{longtable}
 	\end{center}
 
-	\subsection{COMMS - ARC-182 V/UHF 2}
+	\subsection{ARC-182 V/UHF 2}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -2045,7 +2237,7 @@
 		\end{longtable}
 	\end{center}
 
-	\subsection{COMMS - KY-28 VOICE SECURITY EQUIPMENT}
+	\subsection{KY-28 VOICE SECURITY EQUIPMENT}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -2597,9 +2789,19 @@
 					\end{itemize}
 				\end{itemize}
 			\end{minipage} \\
-			\midrule
-			\multicolumn{3}{l}{\blue{WARNING} \textbf{R} \& \textbf{C} burst settings have special \textbf{INTV} behavior} \\
-			\midrule
+			\bottomrule
+		\end{longtable}
+	\end{center}
+
+	\notebox{
+		\begin{itemize}
+			\item \textbf{R} \& \textbf{C} burst settings have special \textbf{INTV} behavior
+		\end{itemize}
+	}
+
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
 			\textbf{\textbullet} & \dblue{JAMMER} \dblue{Section} & Jammer cartridges not implemented in DCS \\
 			\midrule
 			\textbf{\textbullet} & \dblue{FLARE Section} &
@@ -2632,7 +2834,62 @@
 		\end{longtable}
 	\end{center}
 
+	\clearpage
+
 	\subsection{ALQ-100 / ALQ-126 DECM}
+	\begin{center}
+		\begin{longtable}{l p{3cm} | p{8cm}}
+			\toprule
+			\textbf{\textbullet} & \blue{DECM OVERVIEW} & \textbf{D}efensive \textbf{E}lectronic \textbf{C}ounter \textbf{M}easures
+			\begin{minipage}[t]{\linewidth}
+				\begin{itemize}
+					\item Modelled as simple noise jammers in DCS
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \dblue{Controls} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{AUDIO Knob} -- Controls volume of audio played to RIO. Audio is generated directly from received PRF signals
+					\item \textbf{Mode Selector}
+					\begin{itemize}
+						\item \textbf{OFF} -- Turns off power to the system
+						\item \textbf{STBY} -- Begins pre-warming systemm
+						\item \textbf{HOLD 3 SEC} -- Prepares system for BIT
+						\item \textbf{ACT} -- BIT of system, takes approx 30 s
+						\item \textbf{REC} -- Receive only mode
+						\item \textbf{RPT} -- Full system functionality
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{\textbullet} & \dblue{STANDBY Light} & Indicates system warmup not yet complete or system has a fault \\
+			\midrule
+			\textbf{\textbullet} & \dblue{Threat Advisory} \dblue{Indicator} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{IFF} -- Friendly IFF signal received but no reply generated
+					\item \textbf{RCV} -- ALQ-126 is receiving a signal
+					\item \textbf{XMIT} -- ALQ-126 is transmitting
+					\item \textbf{SAM}
+					\begin{itemize}
+						\item \textbf{Steady} -- Lockon from SAM detected
+						\item \textbf{Flashing} -- SAM launch detected
+					\end{itemize}
+					\item \textbf{AAA}
+					\begin{itemize}
+						\item \textbf{Steady} -- Lockon from AAA detected
+						\item \textbf{Flashing} -- AAA engagement detected
+					\end{itemize}
+					\item \textbf{CW} -- CW emitter detected
+					\item \textbf{AI} -- Airborne Intercepter lockon detected
+				\end{itemize}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
 
 	\cleardoublepage
 
@@ -5858,6 +6115,57 @@
 			\bottomrule
 		\end{tabular}
 	\end{center}
+
+	\subsection{AIM-54 - ACM}
+	\begin{center}
+		\begin{tabular}{l p{3cm} | p{8cm}}
+			\toprule
+			1. & \blue{Pilot Conditions} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{MASTER ARM} \dotfill \textbf{ON}
+					\item \textbf{HUD} \dotfill \textbf{A/A}
+					\item \textbf{MSL PREP} \dotfill \textbf{ON}
+					\item \textbf{ACM COVER} \dotfill \textbf{UP}
+					\item \textbf{WEAPON SELECTOR} \dotfill \textbf{PH}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			2. & \dblue{RIO Conditions} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{LIQUID COOLING} \dotfill \textbf{ON (FWD)}
+					\item \textbf{MSL SPD GATE} \dotfill \textbf{NOSE QTR}
+					\item \textbf{MSL OPTIONS} \dotfill \textbf{As Desired}
+					\item \textbf{TGTS Switch} \dotfill \textbf{As Desired}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			4. & \blue{Employment} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{enumerate}
+					\item \textbf{Steering}
+					\begin{itemize}
+						\item \textbf{Range} < 10 nm for immediate tracking
+						\item \textbf{Azimuth} near ADL
+					\end{itemize}
+					\item \textbf{Trigger} \dotfill \textbf{Press and Hold} \\
+					\hfill (until weapon release)
+					\item \textbf{Repeat} \dotfill Can fire additional missiles \\
+					\hfill (no guarantee good missile distribution to targets)
+				\end{enumerate}
+			\end{minipage} \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\warningbox{
+	\begin{itemize}
+		\item \textbf{MISSILE IS PITBULL OFF THE RAIL} -- No IFF capabilities
+	\end{itemize}
+	}
 
   %fills rest of page with blanks
   \cleardoublepage
