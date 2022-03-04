@@ -10,7 +10,7 @@
   - Phoenix maddog launch subsection
 
 ***
-### Changelog - 2022.03.04
+### Changelog - 2022.03.04 `v1.1.0`
 #### `TechCheck.cls`
 - Fonts
   - Removed `fontMontserrat`
