@@ -1,6 +1,6 @@
 # F-14 CHEATSHEET
 
-## CHANGELOG 
+## CHANGELOG
 
 ### Changelog - 2022.05.29
 
@@ -195,7 +195,6 @@
 - Added Disclaimer to back of titlepage that this document is not for training purposes
 - Added MIT OPEN LICENSE to all code
 
-
 ***
 
 ### Changelog - 2022.02.08
@@ -246,7 +245,6 @@
 - Maybe change header `\leftmark` formatting to use chapter and section information?
 - Maybe add seperate font families for the allcaps titles and normal bold (i.e for `\blue`)
   - use command `\MakeUppercase{}` to force uppercase
-
 
 ***
 

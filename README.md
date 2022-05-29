@@ -41,5 +41,3 @@
 ## REPOSITORY - `TECHS CHECKS`
 
 [**Check out my other Cheatsheets**](https://github.com/Techneatium/Techs-Checks) (Precompiled PDFs for various aircraft)
-
-***
