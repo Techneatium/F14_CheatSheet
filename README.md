@@ -10,8 +10,26 @@
 - A/A Weapons section
   - Phoenix active launch explanation
   - Phoenix maddog launch subsection
+- NAVGRID Explanation?
 
+***
 
+### Changelog - 2022.05.29
+
+- `TechCheck.cls`
+  - Changed `geometry` to be loaded as a class per default, with the actual settings loaded via the `\geometry{}` command.
+  - Removed unnecessary math packages
+  - Removed `widesubsec` option -> now the default
+  - Reorganized and Recommented code to make more legible
+  - Added custom environments
+    - `listtabular` encapsulates a `center` environment and a `tabular` environement with a default column spacing of `l p{3cm} | p{8cm}`
+    - `listlongtable` encapsulates a `center` environment and a `longtable` environement with a default column spacing of `l p{3cm} | p{8cm}`
+  - Switched from `cm` to `mm` (mostly)
+
+- `F14_Cheatsheet.tex`
+  - Updated to use new environments
+  - Changed font to `Inter` (open source)
+  
 ***
 
 ### Changelog - 2022.03.15
@@ -25,152 +43,134 @@
 
 ### Changelog - 2022.03.04 `v1.1.0`
 
-#### `TechCheck.cls`
-- Fonts
-  - Removed `fontMontserrat`
-  - Choosing a font now forces all other fonts to be toggled false to prevent defining fonts twice
+- `TechCheck.cls`
+  - Fonts
+    - Removed `fontMontserrat`
+    - Choosing a font now forces all other fonts to be toggled false to prevent defining fonts twice
 
-#### `F14_Cheatsheet.tex`
-
-- Continued work on NAVIGATION section
-  - Finished DISPLAYS
-  - Wrote VOR/ADF
-- Added initial Aerial refueling subsection
-- Added DECM subsection
-- Added AIM-54 -- ACM Section
-
+- `F14_Cheatsheet.tex`
+  - Continued work on NAVIGATION section
+    - Finished DISPLAYS
+    - Wrote VOR/ADF
+  - Added initial Aerial refueling subsection
+  - Added DECM subsection
+  - Added AIM-54 -- ACM Section
 
 ***
 
 ### Changelog - 2022.02.28
 
-#### `TechCheck.cls`
+- `TechCheck.cls`
+  - Added `fontInter` option which uses a open-source alternative to Helvetica
 
-- Added `fontInter` option which uses a open-source alternative to Helvetica
-
-#### `F14_Cheatsheet.tex`
-
-- Continued work on NAVIGATION section
-- Added initial Aerial refueling subsection
-- Added DECM subsection
+- `F14_Cheatsheet.tex`
+  - Continued work on NAVIGATION section
+  - Added initial Aerial refueling subsection
+  - Added DECM subsection
 
 ***
 
 ### Changelog - 2022.02.26 `v1.0.7`
 
-#### `TechCheck.cls`
+- `TechCheck.cls`
+  - Added alternative `color1` as HTML {222222}
 
-- Added alternative `color1` as HTML {222222}
-
-#### `F14_Cheatsheet.tex`
-
-- Continued work on NAVIGATION section
+- `F14_Cheatsheet.tex`
+  - Continued work on NAVIGATION section
 
 ***
 
 ### Changelog - 2022.02.25 `v1.0.6`
 
-#### `TechCheck.cls`
+- `TechCheck.cls`
+  - `minitoc` formatting changed
+    - fixed interaction which caused only page numbers of sections to become bold in minitocs
+    - removed lines
 
-- `minitoc` formatting changed
-  - fixed interaction which caused only page numbers of sections to become bold in minitocs
-  - removed lines
-
-#### `F14_Cheatsheet.tex`
-
-- Began reworked `NAVIGATION` section
-  - Completely rewrote INS alignment subsections
-
+- `F14_Cheatsheet.tex`
+  - Began reworked `NAVIGATION` section
+    - Completely rewrote INS alignment subsections
 
 ***
 
 ### Changelog - 2022.02.24 `v1.0.5`
 
-#### `TechCheck.cls`
-
-- Temporary, hacky fix to hatching bug
-  - **Bug Description:**
-    - When a `minitoc` extends too far beyond the chapter page it causes the hatching not to appear at the top of the page
-    - An initial attempt to fix this involved moving the `\Hatch` command into the header code (as this is obviously executed)
-    - For some unknown reason this does not fix the problem. The header text appears, but the hatching is not generated on the chapter page
-    - In both cases the hatching is generated correctly on all other pages
-    - Original creator of `minitoc` package is deceased and can therefore not be contacted
-  - **Fix:**
-    - changed default pagestyle to `body` and moved all formatting from the previous default `plain` to `body`
-    - created new `plain` pagestyle which omits header text
-    - Added `\Hatch` command to before-code of chapter title to brute force creation of hatching on Chapter pages
-  - **Flaws:**
-    - Still does not work if minitoc extends over an additional page
-- Added `titlesec` formatting section for `chapter`
-  - used `titlefont` for chapters as well, otherwise defaults
+- `TechCheck.cls`
+  - Temporary, hacky fix to hatching bug
+    - **Bug Description:**
+      - When a `minitoc` extends too far beyond the chapter page it causes the hatching not to appear at the top of the page
+      - An initial attempt to fix this involved moving the `\Hatch` command into the header code (as this is obviously executed)
+      - For some unknown reason this does not fix the problem. The header text appears, but the hatching is not generated on the chapter page
+      - In both cases the hatching is generated correctly on all other pages
+      - Original creator of `minitoc` package is deceased and can therefore not be contacted
+    - **Fix:**
+      - changed default pagestyle to `body` and moved all formatting from the previous default `plain` to `body`
+      - created new `plain` pagestyle which omits header text
+      - Added `\Hatch` command to before-code of chapter title to brute force creation of hatching on Chapter pages
+    - **Flaws:**
+      - Still does not work if minitoc extends over an additional page
+  - Added `titlesec` formatting section for `chapter`
+    - used `titlefont` for chapters as well, otherwise defaults
 
 ***
 
 ### Changelog - 2022.02.22 - 2 `v1.0.4`
 
-#### `TechCheck.cls`
+- `TechCheck.cls`
+  - Fixed bug with hatching not applying to all pages when minitoc overflowed to next page
+    - `\Hatch` is now called inside of header formatting
+    - position of `\Hatch` command is critical to prevent hatching from covering other header elements
+    - Could potentially move `\thumbnar` commands into header in the future
+    - **[EDIT] nvm the bug is still there**
+  - Changed `fontHelvetica` to now use Spartan
+  - Added `titlefont` to remaining font options
 
-- Fixed bug with hatching not applying to all pages when minitoc overflowed to next page
-  - `\Hatch` is now called inside of header formatting
-  - position of `\Hatch` command is critical to prevent hatching from covering other header elements
-  - Could potentially move `\thumbnar` commands into header in the future
-  - **[EDIT] nvm the bug is still there**
-- Changed `fontHelvetica` to now use Spartan
-- Added `titlefont` to remaining font options
-
-#### `F14_Cheatsheet`
-
-- Added `titlefont` to titlepage title elements
+- `F14_Cheatsheet`
+  - Added `titlefont` to titlepage title elements
 
 ***
 
 ### Changelog - 2022.02.22 `v1.0.3`
 
-#### `TechCheck.cls`
-
-- New Variables
-  - `nwround`, `neround`, `seround`, `swround` sets rounding diameter for relevant corners, default length is 1cm
-- New Command
-  - `notebox` like `warningbox`, for writing out notes... in a box
-- New option
-  - `fontHelvetica` uses Helvetica Neue font with Metropolis (Futura) Titles
+- `TechCheck.cls`
+  - New Variables
+    - `nwround`, `neround`, `seround`, `swround` sets rounding diameter for relevant corners, default length is 1cm
+  - New Command
+    - `notebox` like `warningbox`, for writing out notes... in a box
+  - New option
+    - `fontHelvetica` uses Helvetica Neue font with Metropolis (Futura) Titles
 
 ***
 
 ### Changelog - 2022.02.14 `v1.0.2`
 
-#### `TechCheck.cls`
+- `TechCheck.cls`
+  - New commands:
+    - `\setaircraftlong` sets long label used on the title page
+    - `\setaircraftshort` sets short label used in the center of header
 
-- New commands:
-  - `\setaircraftlong` sets long label used on the title page
-  - `\setaircraftshort` sets short label used in the center of header
+- `F14_Cheatsheet.tex`
+  - Updated to use new commands
 
-#### `F14_Cheatsheet.tex`
-
-- Updated to use new commands
-
-#### `F14_00_titlepage.tex`
-
+- `F14_00_titlepage.tex`
 - Updated to use new commands
 
 ***
 
 ### Changelog - 2022.02.12 `v1.0.1`
 
-#### `TechCheck.cls`
+- `TechCheck.cls`
+  - Added additional options
+    - `nohatch` disables hatching to potentially speed up compilation time during development
+    - `showframe`, passes the `showframe` option to `geometry` package to show text area and margins
+    - `widesubsec` lets the white-on-black subsection titles to cover the entire text width. This will probably become the default in the future.
+  - Adjusted font options
+    - `\titlefont` with `letterspace=4.0` for all caps text
+  - New commands:
+    - `\settabnumber` sets number of thumbtabs / their width within the document rather than in the class
 
-- Added additional options
-  - `nohatch` disables hatching to potentially speed up compilation time during development
-  - `showframe`, passes the `showframe` option to `geometry` package to show text area and margins
-  - `widesubsec` lets the white-on-black subsection titles to cover the entire text width. This will probably become the default in the future.
-- Adjusted font options
-  - `\titlefont` with `letterspace=4.0` for all caps text
-- New commands:
-  - `\settabnumber` sets number of thumbtabs / their width within the document rather than in the class
-
-#### `F14_Cheatsheet.tex`
-
-- `\cbstart` was causing indentations, fixed by moving away from line starts
+- `F14_Cheatsheet.tex`
+  - `\cbstart` was causing indentations, fixed by moving away from line starts
 
 ***
 
