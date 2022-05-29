@@ -1,6 +1,8 @@
 ***
 ### TO-DO
+
 #### `F14_Cheatsheet`
+
 - Start-up
   - Overhaul pre-start?
 - Landing section
@@ -9,14 +11,27 @@
   - Phoenix active launch explanation
   - Phoenix maddog launch subsection
 
+
 ***
+
+### Changelog - 2022.03.15
+
+- Experimented with changing enumitem parameters
+  - `leftmargin=1.5em` would reduce horizontal indent of enumerate and itemize
+- `\vspace{-7pt}` only seems to be required for enumerate? otherwise it seems to just work within minipage without spacing issues?
+- **Look into `listliketab` package**
+
+***
+
 ### Changelog - 2022.03.04 `v1.1.0`
+
 #### `TechCheck.cls`
 - Fonts
   - Removed `fontMontserrat`
   - Choosing a font now forces all other fonts to be toggled false to prevent defining fonts twice
 
 #### `F14_Cheatsheet.tex`
+
 - Continued work on NAVIGATION section
   - Finished DISPLAYS
   - Wrote VOR/ADF
@@ -26,38 +41,53 @@
 
 
 ***
+
 ### Changelog - 2022.02.28
+
 #### `TechCheck.cls`
+
 - Added `fontInter` option which uses a open-source alternative to Helvetica
 
 #### `F14_Cheatsheet.tex`
+
 - Continued work on NAVIGATION section
 - Added initial Aerial refueling subsection
 - Added DECM subsection
 
 ***
+
 ### Changelog - 2022.02.26 `v1.0.7`
+
 #### `TechCheck.cls`
+
 - Added alternative `color1` as HTML {222222}
 
 #### `F14_Cheatsheet.tex`
+
 - Continued work on NAVIGATION section
 
 ***
+
 ### Changelog - 2022.02.25 `v1.0.6`
+
 #### `TechCheck.cls`
+
 - `minitoc` formatting changed
   - fixed interaction which caused only page numbers of sections to become bold in minitocs
   - removed lines
 
 #### `F14_Cheatsheet.tex`
+
 - Began reworked `NAVIGATION` section
   - Completely rewrote INS alignment subsections
 
 
 ***
+
 ### Changelog - 2022.02.24 `v1.0.5`
+
 #### `TechCheck.cls`
+
 - Temporary, hacky fix to hatching bug
   - **Bug Description:**
     - When a `minitoc` extends too far beyond the chapter page it causes the hatching not to appear at the top of the page
@@ -75,8 +105,11 @@
   - used `titlefont` for chapters as well, otherwise defaults
 
 ***
+
 ### Changelog - 2022.02.22 - 2 `v1.0.4`
+
 #### `TechCheck.cls`
+
 - Fixed bug with hatching not applying to all pages when minitoc overflowed to next page
   - `\Hatch` is now called inside of header formatting
   - position of `\Hatch` command is critical to prevent hatching from covering other header elements
@@ -86,11 +119,15 @@
 - Added `titlefont` to remaining font options
 
 #### `F14_Cheatsheet`
+
 - Added `titlefont` to titlepage title elements
 
 ***
+
 ### Changelog - 2022.02.22 `v1.0.3`
+
 #### `TechCheck.cls`
+
 - New Variables
   - `nwround`, `neround`, `seround`, `swround` sets rounding diameter for relevant corners, default length is 1cm
 - New Command
@@ -99,21 +136,29 @@
   - `fontHelvetica` uses Helvetica Neue font with Metropolis (Futura) Titles
 
 ***
+
 ### Changelog - 2022.02.14 `v1.0.2`
+
 #### `TechCheck.cls`
+
 - New commands:
   - `\setaircraftlong` sets long label used on the title page
   - `\setaircraftshort` sets short label used in the center of header
 
 #### `F14_Cheatsheet.tex`
+
 - Updated to use new commands
 
 #### `F14_00_titlepage.tex`
+
 - Updated to use new commands
 
 ***
+
 ### Changelog - 2022.02.12 `v1.0.1`
+
 #### `TechCheck.cls`
+
 - Added additional options
   - `nohatch` disables hatching to potentially speed up compilation time during development
   - `showframe`, passes the `showframe` option to `geometry` package to show text area and margins
@@ -124,11 +169,11 @@
   - `\settabnumber` sets number of thumbtabs / their width within the document rather than in the class
 
 #### `F14_Cheatsheet.tex`
+
 - `\cbstart` was causing indentations, fixed by moving away from line starts
 
-
-
 ***
+
 ### Changelog - 2022.02.11 - `v1.0.0 "class is out"`
 
 - **MOVED ALL FORMATTING TO CLASS FILE**
@@ -161,6 +206,7 @@
 
 
 ***
+
 ### Changelog - 2022.02.08
 
 - Further experimentation with tcolorbox
@@ -170,6 +216,7 @@
   - not included in git
 
 ***
+
 ### Changelog - 2022.02.07
 
 - Began experimenting with `tcolorbox` to draw boxes around subsections
@@ -179,6 +226,7 @@
   - Indicates that you can have images integrated into header/footer w/o tikz
 
 ***
+
 ### Changelog - 2022.02.06
 
 - Changed back to font `Spartan`
@@ -191,6 +239,7 @@
   - Commented out code to make `hypertarget` for thumbtabs
 
 ***
+
 ### Changelog - 2022.02.05
 
 - Changed to `\chapter` organization
@@ -209,6 +258,7 @@
 
 
 ***
+
 ### Changelog - 2022.01.25
 
 - Renamed format file to `checklistformat_f14`
@@ -234,6 +284,7 @@
   - Would require moving from `article` to `report` or `book`
 
 ***
+
 ### Changelog - 2022.01.16
 
 - Previous Changes
@@ -246,6 +297,7 @@
   - Inmar was inceased from 16 to 17.5
 
 ***
+
 ### Changelog - 2021.12.12
 
 - Changed font
