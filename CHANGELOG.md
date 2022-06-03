@@ -2,6 +2,19 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.06.03
+
+- `TechCheck.cls`
+  - Renamed `listtabular` to `listtable`
+  - **Added new environments:**
+    - `tableminipage` - encapsulates `\minipage[]{}` and `\vspace{-7pt}` to prevent repetition
+    - `longtablenumerate` - uses `listlongtable` and adds `enumerate` like behavior, includes `\blueitem` and `\dblueitem` which take 2 arguments for middle and right column (left most column is the counter)
+    - `longtableitemize` - identical to `longtablenumerate` but implements `itemize` instead
+    - `tablenumerate`,`tableitemize` - same as long version but with using `listtable` instead
+
+- `F14_Cheatsheet.tex`
+  - Implemented `longtablenumerate`, `longtableitemize`
+
 ### Changelog - 2022.05.29
 
 - `TechCheck.cls`

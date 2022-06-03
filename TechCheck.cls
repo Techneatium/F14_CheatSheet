@@ -581,31 +581,174 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-----------------------------------------------------------------
-% CUSTOM ENVIRONMENTS
+% CUSTOM MINIPAGE ENVIRONMENTS
 %-----------------------------------------------------------------
 
-\newenvironment{listtabular}{
-	% begdef
+\newenvironment{tableminipage}{% begdef
+	\begin{minipage}[t]{\linewidth}
+	\vspace{-7pt}
+}{% enddef
+	\end{minipage}
+}
+
+%-----------------------------------------------------------------
+% CUSTOM TABLE ENVIRONMENTS
+%-----------------------------------------------------------------
+
+\newenvironment{listtable}{% begdef
 	\begin{center}
 		\begin{tabular}{l p{3cm} | p{8cm}}
 			\toprule
-}{
-	% enddef
+}{% enddef
 			\bottomrule
 		\end{tabular}
 	\end{center}
 }
 
-\newenvironment{listlongtable}{
-	% begdef
+\newenvironment{listlongtable}{% begdef
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
-}{
-	% enddef
+}{% enddef
 			\bottomrule
 		\end{longtable}
 	\end{center}
+}
+
+%-----------------------------------------------------------------
+% TABLE ENVIRONMENTS WITH ENUMITEM-LIKE BEHAVIOR
+%-----------------------------------------------------------------
+
+% Counter for use in tablenumitems
+\newcounter{tablenumi}
+% longtablenumerate -- creates table that behaves like enumerate
+\newenvironment{longtablenumerate}{% begdef
+	\setcounter{tablenumi}{1} 
+	% Define command equiv to `item`
+	% arg 1 - typeset in blue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\blueitem}[2]{
+		% Create midrule unless first row
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\arabic{tablenumi}. & \blue{##1} & ##2 
+		\stepcounter{tablenumi} \\
+	}
+	% Define command equiv to `item`
+	% arg 1 - typeset in dblue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\dblueitem}[2]{
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\arabic{tablenumi}. & \dblue{##1} & ##2 
+		\stepcounter{tablenumi} \\
+	}
+	% Uses custom longtable style
+	\begin{listlongtable}
+}{% enddef
+	\end{listlongtable}
+}
+
+% longtableitemize -- creates table that behaves like itemize
+\newenvironment{longtableitemize}{% begdef
+	\setcounter{tablenumi}{1}
+	% Define command equiv to `item`
+	% arg 1 - typeset in blue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\blueitem}[2]{
+		% Create midrule unless first row
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\textbf{\textbullet} & \blue{##1} & ##2
+		\stepcounter{tablenumi} \\
+	}
+	% Define command equiv to `item`
+	% arg 1 - typeset in dblue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\dblueitem}[2]{
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\textbf{\textbullet} & \dblue{##1} & ##2
+		\stepcounter{tablenumi} \\
+	}
+	% Uses custom longtable style
+	\begin{listlongtable}
+}{% enddef
+	\end{listlongtable}
+}
+
+% SHORT VERSIONS
+
+% tablenumerate -- creates table that behaves like enumerate
+\newenvironment{tablenumerate}{% begdef
+	\setcounter{tablenumi}{1} 
+	% Define command equiv to `item`
+	% arg 1 - typeset in blue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\blueitem}[2]{
+		% Create midrule unless first row
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\arabic{tablenumi}. & \blue{##1} & ##2 
+		\stepcounter{tablenumi} \\
+	}
+	% Define command equiv to `item`
+	% arg 1 - typeset in dblue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\dblueitem}[2]{
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\arabic{tablenumi}. & \dblue{##1} & ##2 
+		\stepcounter{tablenumi} \\
+	}
+	% Uses custom table style
+	\begin{listtable}
+}{% enddef
+	\end{listtable}
+}
+
+% tableitemize -- creates table that behaves like itemize
+\newenvironment{tableitemize}{% begdef
+	\setcounter{tablenumi}{1}
+	% Define command equiv to `item`
+	% arg 1 - typeset in blue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\blueitem}[2]{
+		% Create midrule unless first row
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\textbf{\textbullet} & \blue{##1} & ##2
+		\stepcounter{tablenumi} \\
+	}
+	% Define command equiv to `item`
+	% arg 1 - typeset in dblue in 2. column
+	% arg 2 - typeset normally in 3. column
+	\newcommand{\dblueitem}[2]{
+		\ifnum\value{tablenumi}>1
+			\midrule
+		\else
+		\fi
+		\textbf{\textbullet} & \dblue{##1} & ##2
+		\stepcounter{tablenumi} \\
+	}
+	% Uses custom table style
+	\begin{listtable}
+}{% enddef
+	\end{listtable}
 }
 
 
