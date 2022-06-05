@@ -2,6 +2,16 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.06.05
+
+- `TechCheck.cls`
+  - Added `subenumerate` & `subitemize` environments to `listlongtable`, `listtable` environments
+    - encapsulates both `tableminipage` and `enumerate` (or `itemize`)
+    - Enables further OOP: if decide not to use tables could redefine `subenumerate`, `subitemize` in new fashion 
+
+- `F14_Cheatsheet.tex`
+  - Implemented `subenumerate`, `subitemize`
+
 ### Changelog - 2022.06.03
 
 - `TechCheck.cls`

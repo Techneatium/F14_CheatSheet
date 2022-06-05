@@ -581,9 +581,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-----------------------------------------------------------------
+% CUSTOM ENUMITEM ENVIRONMENTS
+%-----------------------------------------------------------------
+\newenvironment{myenumerateouter}{
+	\begin{enumerate}[leftmargin=0.1\textwidth, rightmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\arabic*.}]
+}{
+	\end{enumerate}
+}
+
+\newenvironment{myenumerateinner}{
+	\begin{enumerate}[itemsep=4pt]
+}{
+	\end{enumerate}
+}
+
+%-----------------------------------------------------------------
 % CUSTOM MINIPAGE ENVIRONMENTS
 %-----------------------------------------------------------------
-
 \newenvironment{tableminipage}{% begdef
 	\begin{minipage}[t]{\linewidth}
 	\vspace{-7pt}
@@ -594,8 +608,22 @@
 %-----------------------------------------------------------------
 % CUSTOM TABLE ENVIRONMENTS
 %-----------------------------------------------------------------
-
 \newenvironment{listtable}{% begdef
+	\newenvironment{subenumerate}[1][]{% begdef
+	\begin{tableminipage}
+	\begin{enumerate}[##1]
+	}{% enddef
+	\end{enumerate}
+	\end{tableminipage}
+	}
+
+	\newenvironment{subitemize}[1][]{% begdef
+	\begin{tableminipage}
+	\begin{itemize}[##1]
+	}{% enddef
+	\end{itemize}
+	\end{tableminipage}
+	}
 	\begin{center}
 		\begin{tabular}{l p{3cm} | p{8cm}}
 			\toprule
@@ -606,6 +634,21 @@
 }
 
 \newenvironment{listlongtable}{% begdef
+	\newenvironment{subenumerate}[1][]{% begdef
+	\begin{tableminipage}
+		\begin{enumerate}[##1]
+	}{% enddef
+		\end{enumerate}
+	\end{tableminipage}
+	}
+
+	\newenvironment{subitemize}[1][]{% begdef
+	\begin{tableminipage}
+		\begin{itemize}[##1]
+	}{% enddef
+		\end{itemize}
+	\end{tableminipage}
+	}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
 			\toprule
@@ -750,8 +793,6 @@
 }{% enddef
 	\end{listtable}
 }
-
-
 
 %-----------------------------------------------------------------
 % CUSTOM COMMANDS
