@@ -7,7 +7,11 @@
 - `TechCheck.cls`
   - Added `subenumerate` & `subitemize` environments to `listlongtable`, `listtable` environments
     - encapsulates both `tableminipage` and `enumerate` (or `itemize`)
-    - Enables further OOP: if decide not to use tables could redefine `subenumerate`, `subitemize` in new fashion 
+    - Enables further OOP: if decide not to use tables could redefine `subenumerate`, `subitemize` in new fashion
+  - Added `checklistenumerate`, `checklistitemize` (and `long-` versions)
+    - Function as drag-and-drop replacement for `tablenumitem` environments
+    - Changes outermost environment from `tabular` to `enumitem` (when compared with `tablenumitem`)
+    - Built off of custom low-level `enumitem` environments: `innerchecklistenumitem` and `outerchecklistenumitem`
 
 - `F14_Cheatsheet.tex`
   - Implemented `subenumerate`, `subitemize`

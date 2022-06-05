@@ -581,19 +581,33 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-----------------------------------------------------------------
-% CUSTOM ENUMITEM ENVIRONMENTS
+% LOW LEVEL CUSTOM ENUMITEM ENVIRONMENTS
 %-----------------------------------------------------------------
-\newenvironment{myenumerateouter}{
-	\begin{enumerate}[leftmargin=0.1\textwidth, rightmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\arabic*.}]
-}{
+
+\newenvironment{innerchecklistenumerate}[1][]{% begdef
+	\begin{enumerate}[itemsep=4pt, #1]
+}{% enddef
 	\end{enumerate}
 }
 
-\newenvironment{myenumerateinner}{
-	\begin{enumerate}[itemsep=4pt]
-}{
+\newenvironment{innerchecklistitemize}[1][]{% begdef
+	\begin{itemize}[#1]
+}{% enddef
+	\end{itemize}
+}
+
+\newenvironment{outerchecklistenumerate}{% begdef
+	\begin{enumerate}[leftmargin=0.1\textwidth, rightmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\arabic*.}]
+}{% begdef
 	\end{enumerate}
 }
+
+\newenvironment{outerchecklistitemize}{% begdef
+	\begin{itemize}[leftmargin=0.1\textwidth, rightmargin=0.1\textwidth, itemsep=4pt, label=\textbf{\textbullet}]
+}{% begdef
+	\end{itemize}
+}
+
 
 %-----------------------------------------------------------------
 % CUSTOM MINIPAGE ENVIRONMENTS
@@ -610,19 +624,19 @@
 %-----------------------------------------------------------------
 \newenvironment{listtable}{% begdef
 	\newenvironment{subenumerate}[1][]{% begdef
-	\begin{tableminipage}
-	\begin{enumerate}[##1]
+		\begin{tableminipage}
+			\begin{enumerate}[##1]
 	}{% enddef
-	\end{enumerate}
-	\end{tableminipage}
+			\end{enumerate}
+		\end{tableminipage}
 	}
 
 	\newenvironment{subitemize}[1][]{% begdef
-	\begin{tableminipage}
-	\begin{itemize}[##1]
+		\begin{tableminipage}
+			\begin{itemize}[##1]
 	}{% enddef
-	\end{itemize}
-	\end{tableminipage}
+			\end{itemize}
+		\end{tableminipage}
 	}
 	\begin{center}
 		\begin{tabular}{l p{3cm} | p{8cm}}
@@ -635,19 +649,19 @@
 
 \newenvironment{listlongtable}{% begdef
 	\newenvironment{subenumerate}[1][]{% begdef
-	\begin{tableminipage}
-		\begin{enumerate}[##1]
+		\begin{tableminipage}
+			\begin{enumerate}[##1]
 	}{% enddef
-		\end{enumerate}
-	\end{tableminipage}
+			\end{enumerate}
+		\end{tableminipage}
 	}
 
 	\newenvironment{subitemize}[1][]{% begdef
-	\begin{tableminipage}
-		\begin{itemize}[##1]
+		\begin{tableminipage}
+			\begin{itemize}[##1]
 	}{% enddef
-		\end{itemize}
-	\end{tableminipage}
+			\end{itemize}
+		\end{tableminipage}
 	}
 	\begin{center}
 		\begin{longtable}{l p{3cm} | p{8cm}}
@@ -792,6 +806,68 @@
 	\begin{listtable}
 }{% enddef
 	\end{listtable}
+}
+
+%-----------------------------------------------------------------
+% HIGH-LEVEL CUSTOM ENUMITEM ENVIRONMENTS
+%-----------------------------------------------------------------
+% SHORT VERSIONS
+\newenvironment{checklistenumerate}{% begdef
+	\newenvironment{subenumerate}[1][]{% begdef
+		\begin{innerchecklistenumerate}[##1]
+	}{% enddef
+		\end{innerchecklistenumerate}
+	}
+	\newenvironment{subitemize}[1][]{% begdef
+		\begin{innerchecklistitemize}[##1]
+	}{% enddef
+		\end{innerchecklistitemize}
+	}
+	\newcommand{\blueitem}[2]{
+		\item \blue{##1} {##2}
+	}
+	\newcommand{\dblueitem}[2]{
+		\item \dblue{##1} {##2}
+	}
+	\begin{outerchecklistenumerate}
+}{% enddef
+	\end{outerchecklistenumerate}
+}
+
+\newenvironment{checklistitemize}{% begdef
+	\newenvironment{subenumerate}[1][]{% begdef
+		\begin{innerchecklistenumerate}[##1]
+	}{% enddef
+		\end{innerchecklistenumerate}
+	}
+	\newenvironment{subitemize}[1][]{% begdef
+		\begin{innerchecklistitemize}[##1]
+	}{% enddef
+		\end{innerchecklistitemize}
+	}
+	\newcommand{\blueitem}[2]{
+		\item \blue{##1} ##2
+	}
+	\newcommand{\dblueitem}[2]{
+		\item \dblue{##1} ##2
+	}
+	\begin{outerchecklistitemize}
+}{% enddef
+	\end{outerchecklistitemize}
+}
+
+% LONG VERSIONS -- No difference to short versions
+% Just to keep track if switching from longtablenumitem
+\newenvironment{longchecklistenumerate}{% begdef
+	\begin{checklistenumerate}
+}{% enddef
+	\end{checklistenumerate}
+}
+
+\newenvironment{longchecklistitemize}{% begdef
+	\begin{checklistitemize}
+}{% enddef
+	\end{checklistitemize}
 }
 
 %-----------------------------------------------------------------
