@@ -2,6 +2,16 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.06.06
+
+- `TechCheck.cls`
+  - Renamed `tablenumitem` to `shortablenumitem`
+  - Renamed `longtablenumitem` to `tablenumitem`
+
+- `F14_Cheatsheet.tex`
+  - Adapted to new `tablenumitem` names
+  - Various formatting fine tuning
+
 ### Changelog - 2022.06.05
 
 - `TechCheck.cls`

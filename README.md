@@ -4,37 +4,48 @@
 
 - A kneeboard-style `cheatsheet` for the DCS F-14 A/B
 - Intended to allow someone already knowledgeable about the tomcat's systems to quickly find necessary information
-- For ease of maintenance, only the PDF is available here. To convert this to a format directly suitable as an in-game kneeboard please use [DCS Kneeboard Builder](https://dcskneeboardbuilder.com/).
 
 ## HOW TO USE
 
 - Just download the PDF and use as desired
 - The remaining files are the LaTeX source code
+- For ease of maintenance, only the PDF is available here. To convert this to a format directly suitable as an in-game kneeboard please use [DCS Kneeboard Builder](https://dcskneeboardbuilder.com/)
 
 ***
 
 ## WORK IN PROGRESS
 
-- Please note that this guide is still in progress and updates will come as I have time
+- This guide is still in progress and updates will come as I have time
   
 ### TO-DO
 
-- Start-up
-  - Overhaul pre-start?
-- Landing section
-  - CASE II/III
-- A/A Weapons section
-  - Phoenix active launch explanation
-  - Phoenix maddog launch subsection
-- NAVGRID Explanation?
+- PROCEDURES
+  - START-UP
+    - Overhaul pre-start?
+  - TAKEOFF & LANDING
+    - CASE II/III
+
+- SYSTEMS
+  - NAVIGATION
+    - Navgrid explanation (maybe more suitable in radar/TID section)
+  - more "how-to" checklists (how to add waypoint, etc.)
+
+- RADAR
+  - Add Notes for each mode on which weapons will guide (and with what logic)
+
+- TCS-LANTIRN
+  - TCS
+
+- A/A WEAPONS
+  - Add Notes for each weapon on which radar modes should be used to get desired guidance
 
 ***
 
 ## THANKS / SOURCES
 
-- A huge thanks to [Chuck's Guides](https://www.mudspike.com/chucks-guides-dcs/), this served as the original basis for this guide.
-- Heatblur's excellent [Documentation](http://heatblur.se/F-14Manual/) was also an invaluable source.
-- The official NATOPS was also referenced when necessary.
+- A huge thanks to [Chuck's Guides](https://www.mudspike.com/chucks-guides-dcs/), this served as the original basis for this guide
+- Heatblur's excellent [Documentation](http://heatblur.se/F-14Manual/) was also an invaluable source
+- The official NATOPS was also referenced when necessary
 
 ***
 
