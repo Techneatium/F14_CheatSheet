@@ -7,6 +7,7 @@
 - `TechCheck.cls`
   - Renamed `tablenumitem` to `shortablenumitem`
   - Renamed `longtablenumitem` to `tablenumitem`
+  - Added `cleveref` package
 
 - `F14_Cheatsheet.tex`
   - Adapted to new `tablenumitem` names
