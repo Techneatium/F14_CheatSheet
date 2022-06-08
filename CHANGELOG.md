@@ -2,6 +2,23 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.06.08
+
+- `TechCheck.cls`
+  - Added automatic `\thumbnar` to header on odd pages
+    - Also added option `manthumbnar` to disable automatic thumbnar-ing
+    - Necessitated creating new `superempty` pagestyle for titlepage (else would be thumbnar'd as it is an odd page)
+  - Moved `\hatch` definition to below header/footer (with rest of tikz)
+    - Class files do not seem to care if command is used before defined
+
+- `F14_Cheatsheet.tex`
+  - Various minor formatting tweaks
+  - `AWG-9 RADAR` Chapter
+    - Moved STT Acquisition into own subsections
+    - Added numerous note/warningboxes regarding weapon employment in various modes
+  - `A/A WEAPONS` Chapter
+    - Added numerous note/warningboxes regarding weapon employment in various modes
+
 ### Changelog - 2022.06.06
 
 - `TechCheck.cls`

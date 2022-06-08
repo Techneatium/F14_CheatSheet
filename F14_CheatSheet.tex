@@ -52,7 +52,7 @@
 
 	\cleardoublepage
 
-	\thumbnar
+	\pagestyle{empty}
 	\dominitoc
 	\tableofcontents
 	\cleardoublepage
@@ -68,17 +68,21 @@
 	\cleardoublepage
 
 	\section{START-UP}
-	\thumbnar
 
 	\subsection{PILOT - PRE-START}
 	\begin{tablenumerate}
 		\blueitem{Parking Brake}{\textbf{ENGAGED}\cbstart}
-		\blueitem{Ground Power}{connected}
-		\blueitem{Compressed Air}{connected\cbend}
+		% \blueitem{Ground Power}{connected}
+		% \blueitem{Compressed Air}{connected\cbend}
+		\blueitem{Ground Crew}{
+		\begin{subenumerate}
+			\item Ground Power \dotfill connected
+			\item Compressed Air \dotfill connected
+		\end{subenumerate}\cbend}
 		\blueitem{ICS}{\textbf{HOT MIC}}
 		\dblueitem{TO RIO}{\emph{``Begin Start-Up''}\cbstart}
 		\blueitem{ICS}{\textbf{Comm Check}\cbend}
-		\blueitem{MASTER TEST Selector}{
+		\blueitem{MASTER TEST \break Selector}{
 		\begin{subenumerate}
 			\item \textbf{LTS}
 			\begin{itemize}
@@ -167,7 +171,7 @@
 
 	\subsection{PILOT - POST-START}
 	\begin{tablenumerate}
-		\dblueitem{TO RIO}{\emph{``Both Engines Running''}\thumbnar}
+		\dblueitem{TO RIO}{\emph{``Both Engines Running''}}
 		\blueitem{Displays \cbstart Control Panel}{
 		\begin{subitemize}
 			\item \textbf{VDI} \dotfill \textbf{ON}
@@ -206,7 +210,7 @@
 		\blueitem{WING/EXT TRANS}{\textbf{AUTO}}
 		\blueitem{UHF 1 \cbstart Function Selector}{\textbf{BOTH}}
 		\blueitem{TACAN Function Selector}{\textbf{T/R}}
-		\blueitem{ARA-63 ICLS \break RECEIVER}{\textbf{ON}\cbend}
+		\blueitem{ARA-63 ICLS \break RECEIVER\cbend}{\textbf{ON}}
 		\blueitem{Radar Altimeter\cbstart}{
 		\begin{subenumerate}
 			\item \textbf{Control Knob} \dotfill one click CW to turn on
@@ -230,7 +234,7 @@
 
 	\subsection{RIO - PRE-START}
 	\begin{tablenumerate}
-		\blueitem{Oxygen\cbstart}{\textbf{ON (FWD)} \thumbnar}
+		\blueitem{Oxygen\cbstart}{\textbf{ON (FWD)}}
 		\dblueitem{PILOT}{
 		\begin{subitemize}
 			\item \textbf{Ground Power} \dotfill connected
@@ -338,7 +342,7 @@
 
 	\subsection{RIO - POST-START - CARRIER}
 	\begin{tablenumerate}
-		\dblueitem{PILOT\thumbnar}{
+		\dblueitem{PILOT}{
 		\begin{subitemize}
 			\item \textbf{Engines} \dotfill started
 			\item \textbf{AIR SOURCE} \dotfill BOTH ENG
@@ -428,7 +432,7 @@
 
 	\subsection{PRE-TAXI}
 	\begin{tablenumerate}
-		\blueitem{ANTI-SKID SPOILER BK}{\textbf{OFF} \thumbnar }
+		\blueitem{ANTI-SKID SPOILER BK}{\textbf{OFF}  }
 		\blueitem{HOOK BYPASS}{As Required}
 		\blueitem{Nose Strut}{\textbf{RETRACTED}}
 		\blueitem{HUD MODE}{\textbf{TO}}
@@ -440,6 +444,7 @@
 	\subsection{TAKEOFF - SHORE}
 	\begin{tablenumerate}
 		\multicolumn{3}{c}{\textbf{After Lining Up On Runway}} \\
+		\midrule
 		\blueitem{Wing Sweep}{
 		\begin{subenumerate}
 			\item \textbf{EM WING SWEEP} \dotfill \textbf{FWD}, then \textbf{IN}
@@ -525,7 +530,7 @@
 	\end{center}
 
 	\begin{tablenumerate}
-		\blueitem{Initial Approach\thumbnar}{
+		\blueitem{Initial Approach}{
 		\begin{subitemize}
 			\item \textbf{WING SWEEP} \dotfill \textbf{68 deg}
 			\item \textbf{HOOK} \dotfill \textbf{DOWN}
@@ -691,7 +696,6 @@
 	\cleardoublepage
 
 	\section{FLIGHT CONTROL SYSTEMS}
-	\thumbnar
 	\subsection{AFCS - SAS}
 	\begin{tableitemize}
 		\blueitem{SAS}{
@@ -1184,12 +1188,12 @@
 
 	\subsection{ALIGNMENT - NON-SAT - SUBMODES}
 	\begin{tableitemize}
-		\blueitem{Stored Heading Alignment}{
+		\blueitem{Stored Heading \break Alignment}{
 		\begin{subitemize}
 			\item Reference alignment stored prior to powering-down the aircraft
 			\item \textbf{ASH} --  Automatic Stored Heading displayed on TID when align selected and reference align available
 		\end{subitemize}}
-		\blueitem{Handset Alignment}{
+		\blueitem{Handset \break Alignment}{
 		\begin{subitemize}
 			\item For use when SINS data not available (indicated by flashing \textbf{HS} on \textbf{TID})
 			\item Similar to \textbf{GND ALIGN} but requires additional parameters for the ship movement
@@ -1199,14 +1203,15 @@
 				\item Ship's True Heading
 			\end{itemize}
 		\end{subitemize}}
-		\blueitem{Catapult Alignment}{
+		\blueitem{Catapult \break Alignment}{
 		\begin{subitemize}
 			\item Inhibits suspend align while positioned on the catapult when parking brake released
 		\end{subitemize}}
 	\end{tableitemize}
 
-	\subsection{ALIGNMENT - FAILURES}
+	\clearpage
 
+	\subsection{ALIGNMENT - FAILURES}
 	\begin{tableitemize}
 		\blueitem{TID Status Indicators}{ Appear between first and second ticks
 		\begin{subitemize}
@@ -2142,9 +2147,9 @@
 
 	\section{PULSE MODES}
 
-	\subsection{PULSE - PULSE SEARCH}
+	\subsection{PULSE SEARCH}
 	\begin{center}
-		\resizebox{0.70\linewidth}{!}{
+		\resizebox{0.80\linewidth}{!}{
 			\includegraphics{PSEARCH.png}
 		}
 	\end{center}
@@ -2160,14 +2165,14 @@
 			\end{itemize}
 			\item \textbf{Disadvantages}
 			\begin{itemize}
-				\item Cannot discern ground returns and targets
+    			\item No ground return filtering 
 				\item Lower range
 			\end{itemize}
 		\end{subitemize}}
 		\blueitem{DDD}{
 		\begin{subitemize}
 			\item \textbf{Range/Azimuth}
-			\item Visual representation of radar and erase sweeps
+			\item Visualization of radar and erase sweeps
 		\end{subitemize}}
 		\blueitem{TID}{
 		\begin{subitemize}
@@ -2179,9 +2184,9 @@
 
 	\clearpage
 
-	\subsection{PULSE - PSTT}
+	\subsection{PSTT}
 	\begin{center}
-		\resizebox{0.70\linewidth}{!}{
+		\resizebox{0.90\linewidth}{!}{
 			\includegraphics{PSTT.png}
 		}
 	\end{center}
@@ -2197,7 +2202,33 @@
 				\item Susceptible to ground clutter
 			\end{itemize}
 		\end{subitemize}}
-		\blueitem{Lock Target}{
+		\blueitem{DDD}{
+		\begin{subitemize}
+			\item \textbf{Track Indications}
+			\begin{itemize}
+				\item ANT TRK \& RDROT lights
+				\item Tracking gates
+				\item Closure rate
+				\item Attack Symbology
+			\end{itemize}
+		\end{subitemize}}
+	\end{tableitemize}
+
+	\notebox{
+		\begin{itemize}
+			\item \textbf{PSTT Lock Affects Missile Logic}
+			\begin{itemize}
+				\item AIM-54 launched in \textbf{Active Launch Mode}
+				\item AIM-7 launched in \textbf{CW Mode}
+			\end{itemize}
+		\end{itemize}
+	}
+
+	\clearpage
+
+	\subsection{PSTT ACQUISITION}
+	\begin{tableitemize}
+		\blueitem{Pulse To PSTT}{
 		\begin{subitemize}
 			\item \textbf{Conditions}
 			\begin{itemize}
@@ -2207,33 +2238,66 @@
 			\item \textbf{Lock Target}
 			\begin{enumerate}
 				\item Hold HCU Half-action
-				\item Slew to desired Target
+				\item Slew acquisition gates over desired Target on DDD
 				\item HCU Full-Action to lock
 			\end{enumerate}
 			\item \textbf{Unlock Target}
-			\begin{enumerate}[label=(\alph*), resume]
+			\begin{enumerate}[resume]
 				\item HCU Half-action
 			\end{enumerate}
 		\end{subitemize}}
-		\blueitem{DDD}{
+		\blueitem{TWS to PSTT}{
 		\begin{subitemize}
-			\item \textbf{Track Indications}
+			\item \textbf{Conditions}
 			\begin{itemize}
-				\item ANT TRK light
-				\item RDROT light
-				\item Tracking gates
-				\item Closure rate
-				\item Attack Symbology
+				\item TWS Mode selected
+				\item RDR HCU Mode selected
 			\end{itemize}
+			\item \textbf{Lock Target}
+			\begin{enumerate}
+				\item Hook Target on TID
+				\item Press PSTT button on DDD Panel
+			\end{enumerate}
+			\item \textbf{Unlock Target}
+			\begin{enumerate}[resume]
+				\item HCU Half-action
+			\end{enumerate}
+		\end{subitemize}}
+		\blueitem{ACM to PSTT}{
+		\begin{subitemize}
+			\item \textbf{Lock Target}
+			\begin{enumerate}
+				\item Select desired ACM Mode (Pilot or RIO)
+				\item Place target in search volume through maneuvering
+			\end{enumerate}
+			\item \textbf{Unlock Target}
+			\begin{enumerate}[resume]
+				\item HCU Half-action
+			\end{enumerate}
+		\end{subitemize}}
+		\blueitem{PDSTT to PSTT}{
+		\begin{subitemize}
+			\item \textbf{Conditions}
+			\begin{itemize}
+				\item Target PDSTT Locked
+			\end{itemize}
+			\item \textbf{Lock Target}
+			\begin{enumerate}
+				\item Press PSTT button on DDD Panel
+			\end{enumerate}
+			\item \textbf{Unlock Target}
+			\begin{enumerate}[resume]
+				\item HCU Half-action
+			\end{enumerate}
 		\end{subitemize}}
 	\end{tableitemize}
 
 	\clearpage
 
 	\section{PULSE DOPPLER MODES}
-	\subsection{PD - PULSE DOPPLER SEARCH}
+	\subsection{PULSE DOPPLER SEARCH}
 	\begin{center}
-		\resizebox{0.70\linewidth}{!}{
+		\resizebox{0.90\linewidth}{!}{
 			\includegraphics{PDSEARCH.png}
 		}
 	\end{center}
@@ -2256,17 +2320,17 @@
 		\blueitem{DDD}{
 		\begin{subitemize}
 			\item \textbf{Closure Rate/Azimuth}
-			\item Visual representation of radar and erase sweeps
+			\item Visualization of radar and erase sweeps
 		\end{subitemize}}
 		\blueitem{Doppler Filters}{
 		\begin{subitemize}
-			\item \textbf{Main Lobe Clutter (MLC) Filter}
+			\item \textbf{MLC -- Main Lobe Clutter Filter}
 			\begin{itemize}
 				\item \textbf{Own GS +/- 133 knots}
 				\item Removes main ground return
 				\item Source of notching
 			\end{itemize}
-			\item \textbf{Zero Doppler Filter}
+			\item \textbf{ZD -- Zero Doppler Filter}
 			\begin{itemize}
 				\item \textbf{Negative own GS +/- 100 knots}
 				\item Removes Radar reflection from ground directly beneath own AC
@@ -2295,7 +2359,7 @@
 	\clearpage
 
 	\begin{center}
-		\resizebox{0.40\linewidth}{!}{
+		\resizebox{0.50\linewidth}{!}{
 			\includegraphics{PD.png}
 		}
 	\end{center}
@@ -2320,11 +2384,17 @@
 			\bottomrule
 		\end{longtable}
 	\end{center}
+
+	\notebox{
+		\begin{itemize}
+			\item Target \textbf{4} is \emph{notching} and thus shows no radar return
+		\end{itemize}
+	}
 	
 	\clearpage
 
 
-	\subsection{PD - RWS}
+	\subsection{RWS}
 	\label{sec:awg9-rws}
 	\begin{tableitemize}
 		\blueitem{Range While Search}{\textbf{FM Ranging}, used for getting good A/A picture before selecting TWS
@@ -2359,12 +2429,25 @@
 			\item Max concurrent tracks: 48
 			\item \textbf{Cannot lock targets from TID}
 		\end{subitemize}}
-		\blueitem{Filtering}{\textbf{Same as Pulse Doppler Search}} 
+		\blueitem{Doppler Filters}{
+		\begin{subitemize}
+			\item \textbf{MLC -- Main Lobe Clutter Filter}
+			\begin{itemize}
+				\item \textbf{Own GS +/- 133 knots}
+				\item Removes main ground return
+				\item Source of notching
+			\end{itemize}
+			\item \textbf{ZD -- Zero Doppler Filter}
+			\begin{itemize}
+				\item \textbf{Negative own GS +/- 100 knots}
+				\item Removes Radar reflection from ground directly beneath own AC
+			\end{itemize}
+		\end{subitemize}}
 	\end{tableitemize}
 
 	\clearpage
 
-	\subsection{PD - TWS}
+	\subsection{TWS}
 	\label{sec:awg9-tws}
 	
 	\begin{tableitemize}
@@ -2398,7 +2481,7 @@
 		\blueitem{DDD}{
 		\begin{subitemize}
 			\item \textbf{Closure Rate/Azimuth}
-			\item Visual representation of radar and erase sweeps
+			\item Visualization of radar and erase sweeps
 		\end{subitemize}}
 		\blueitem{TID}{
 		\begin{subitemize}
@@ -2406,7 +2489,20 @@
 			\item Max concurrent tracks: 24
 			\item Max displayed tracks: 18
 		\end{subitemize}}
-		\blueitem{Filtering}{\textbf{Same as Pulse Doppler Search}}
+		\blueitem{Doppler Filters}{
+		\begin{subitemize}
+			\item \textbf{MLC -- Main Lobe Clutter Filter}
+			\begin{itemize}
+				\item \textbf{Own GS +/- 133 knots}
+				\item Removes main ground return
+				\item Source of notching
+			\end{itemize}
+			\item \textbf{ZD -- Zero Doppler Filter}
+			\begin{itemize}
+				\item \textbf{Negative own GS +/- 100 knots}
+				\item Removes Radar reflection from ground directly beneath own AC
+			\end{itemize}
+		\end{subitemize}}
 		\blueitem{Scan Volume}{Trackfiles require update every 2.5 s -->
 		\begin{subitemize}
 			\item 20 deg 4 bar (if selected)
@@ -2454,8 +2550,7 @@
 
 	\clearpage
 
-	\subsection{PD - TWS MAN}
-	
+	\subsection{TWS MAN}
 	\begin{tableitemize}
 		\blueitem{TWS MAN}{
 		\begin{subitemize}
@@ -2500,7 +2595,7 @@
 
 	\clearpage
 
-	\subsection{PD - TWS AUTO}
+	\subsection{TWS AUTO}
 	\begin{tableitemize}
 		\blueitem{TWS AUTO}{
 		\begin{subitemize}
@@ -2538,14 +2633,14 @@
 
 	\clearpage
 
-	\subsection{PD - PDSTT}
+	\subsection{PDSTT}
 	\begin{center}
-		\resizebox{0.70\linewidth}{!}{
+		\resizebox{0.90\linewidth}{!}{
 			\includegraphics{PDSTT.png}
 		}
 	\end{center}
 	\begin{tableitemize}
-		\blueitem{Pulse Doppler STT}{Lock Target with doppler filtering 
+		\blueitem{Pulse Doppler STT}{
 		\begin{subitemize}
 			\item \textbf{Advantages}
 			\begin{itemize}
@@ -2556,30 +2651,11 @@
 				\item Susceptible to notching
 			\end{itemize}
 		\end{subitemize}}
-		\blueitem{Lock Target}{
-		\begin{subitemize}
-			\item \textbf{Conditions}
-			\begin{itemize}
-				\item Pulse Doppler Mode selected (PD Search, RWS, TWS)
-				\item RDR HCU Mode selected
-			\end{itemize}
-			\item \textbf{Lock Target}
-			\begin{enumerate}
-				\item Hold HCU Half-action
-				\item Slew to desired Target
-				\item HCU Full-Action to lock
-			\end{enumerate}
-			\item \textbf{Unlock Target}
-			\begin{enumerate}[label=(\alph*), resume]
-				\item HCU Half-action
-			\end{enumerate}
-		\end{subitemize}}
 		\blueitem{DDD}{
 		\begin{subitemize}
 			\item \textbf{Track Indications}
 			\begin{itemize}
-				\item ANT TRK light
-				\item RDROT light
+				\item ANT TRK \& RDROT lights
 				\item Tracking gates
 				\item Closure rate
 				\item Attack Symbology
@@ -2587,8 +2663,76 @@
 		\end{subitemize}}
 	\end{tableitemize}
 
-	\section{ACM}
-	\subsection{ACM MODES - OVERVIEW}
+	\notebox{
+		\begin{itemize}
+			\item \textbf{PDSTT Lock Affects Missile Logic}
+			\begin{itemize}
+				\item Enables launch of AIM-54/AIM-7 in \textbf{PD Mode}
+    			\item AIM-7 PD launch requires \textbf{MSL OPTIONS Switch} to be in \textbf{SP PD}  
+			\end{itemize}
+		\end{itemize}
+	}
+
+	\clearpage
+
+	\subsection{PDSTT ACQUISITION}
+	\begin{tableitemize}
+		\blueitem{PD To PDSTT}{
+		\begin{subitemize}
+			\item \textbf{Conditions}
+			\begin{itemize}
+				\item PD Search Mode selected
+				\item RDR HCU Mode selected
+			\end{itemize}
+			\item \textbf{Lock Target}
+			\begin{enumerate}
+				\item Hold HCU Half-action
+				\item Slew acquisition gates over desired Target on DDD
+				\item HCU Full-Action to lock
+			\end{enumerate}
+			\item \textbf{Unlock Target}
+			\begin{enumerate}[resume]
+				\item HCU Half-action
+			\end{enumerate}
+		\end{subitemize}}
+		\blueitem{TWS to PDSTT}{
+		\begin{subitemize}
+			\item \textbf{Conditions}
+			\begin{itemize}
+				\item TWS Mode selected
+				\item RDR HCU Mode selected
+			\end{itemize}
+			\item \textbf{Lock Target}
+			\begin{enumerate}
+				\item Hook Target on TID
+				\item Press PDSTT button on DDD Panel
+			\end{enumerate}
+			\item \textbf{Unlock Target}
+			\begin{enumerate}[resume]
+				\item HCU Half-action
+			\end{enumerate}
+		\end{subitemize}}
+		\blueitem{PSTT to PDSTT}{
+		\begin{subitemize}
+			\item \textbf{Conditions}
+			\begin{itemize}
+				\item Target PSTT Locked
+			\end{itemize}
+			\item \textbf{Lock Target}
+			\begin{enumerate}
+				\item Press PDSTT button on DDD Panel
+			\end{enumerate}
+			\item \textbf{Unlock Target}
+			\begin{enumerate}[resume]
+				\item HCU Half-action
+			\end{enumerate}
+		\end{subitemize}}
+	\end{tableitemize}
+
+	\clearpage
+
+	\section{ACM MODES}
+	\subsection{OVERVIEW}
 	\begin{center}
 		\begin{tabular}{p{3cm} | p{2cm}  | p{2cm} | p{2cm} | p{2cm}}
 			\toprule
@@ -2602,6 +2746,7 @@
 			\bottomrule
 		\end{tabular}
 	\end{center}
+
 	\begin{tableitemize}
 		\blueitem{PLM}{
 		\begin{minipage}[t]{0.53\linewidth}
@@ -2660,10 +2805,43 @@
 		\end{subitemize}}
 	\end{tableitemize}
 
+	\notebox{
+		\begin{itemize}
+			\item \textbf{ACM MODES RESULT IN PSTT LOCK} -- affects missile logic
+			\begin{itemize}
+				\item AIM-54 launched in \textbf{Active Launch Mode}
+				\item AIM-7 launched in \textbf{CW Mode}
+			\end{itemize}
+		\end{itemize}
+	}
+	\warningbox{
+		\begin{itemize}
+			\item \textbf{Active Launch Mode Phoenixes Have Limited IFF Capability} 
+			\begin{itemize}
+				\item Employ with caution when friendlies airborne
+			\end{itemize}
+		\end{itemize}
+	}
+
+	\subsection{VISUALIZATION}
+	\begin{minipage}[c]{0.55\linewidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{PLM.png} \\
+		\textbf{PLM }
+		\includegraphics[width=\linewidth]{mrl.png}
+		\textbf{MRL}
+	\end{minipage}
+	\begin{minipage}[c]{0.43\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{vsl.png}
+		\textbf{VSL LO/HI}
+	\end{minipage}
+
 	\clearpage 
 
-	\section{IFF}
-	\subsection{APX-76 IFF}
+	\section{APX-76 IFF}
+	\subsection{OVERVIEW}
+	\subsection{INTEROGATION}
 
 
 	\clearpage
@@ -4311,7 +4489,7 @@
 			\end{itemize}
 			\item \textbf{Boresight}
 			\begin{itemize}
-				\item Uses CS flood antenna of AWG-9
+				\item Uses CW flood antenna of AWG-9
 				\item Missile will \textbf{track strongest return} in Flood area
 				\item Automatically activated if STT broken
 				\item Selected if \textbf{MODE/STP} set to \textbf{BRSIT}
@@ -4391,6 +4569,41 @@
 
 	\clearpage
 
+	\subsection{AIM-7 - PDSTT -VS- PSTT}
+	\begin{tableitemize}
+		\blueitem{PSTT}{
+		\begin{subitemize}
+			\item \textbf{AIM-7 Guided in CW Mode}
+			\item \textbf{PSTT Advantages / Disadvantages}
+			\begin{itemize}
+				\item Susceptable to ground clutter 
+				\item In close range scenarios (<20 NM) extremely hard to break lock
+			\end{itemize}
+		\end{subitemize}}
+		\blueitem{PDSTT}{
+		\begin{subitemize}
+			\item \textbf{AIM-7 Guided in SP PD Mode}
+			\begin{itemize}
+				\item Requires \textbf{MSL OPTIONS} switch to be in \textbf{SP PD}
+			\end{itemize}
+			\item \textbf{PDSTT Advantages / Disadvantages}
+    		\begin{itemize}
+				\item Susceptable to notching
+				\item Enables longest range Sparrow shots
+			\end{itemize}
+			\item \textbf{Only Available on AIM-7F and Newer}
+		\end{subitemize}}
+	\end{tableitemize}
+
+	\notebox{
+		\begin{itemize}
+			\item what happens if launch in pdstt without SP PD set?
+			\item unsure on this section. seems as though cw is used regardless of pdstt or pstt and that sp pd is a hole other option
+		\end{itemize}
+	}
+
+	\clearpage
+
 	\section{AIM-54 PHOENIX}
 	\subsection{AIM-54 - OVERVIEW}
 	\begin{tableitemize}
@@ -4418,28 +4631,22 @@
 			\end{itemize}
 			\item \textbf{TWS SARH/ARH}
 			\begin{itemize}
-				\item Allows \textbf{6 AIM-54 launches at 6 targets}
-				\item Missile is initially SARH guided
+				\item Allows \textbf{6 launches at 6 targets}
+				\item Missile initially SARH guided
 				\item When within AIM-54 seeker range AWG-9 sends activation command
 				\item \textbf{Not Fire and Forget:} Requires automatic activation command
 			\end{itemize}
 			\item \textbf{ACM Active}
 			\begin{itemize}
 				\item Activated when \textbf{BRSIT} selected
-				\item Or when \textbf{ACM} active with no radar track
+				\item Or \textbf{ACM} active with no radar track
 				\item Missile commanded active \textbf{before launch}
 			\end{itemize}
 		\end{subitemize}}
 		\blueitem{MSL SPD  \break  GATE Switch}{
 		\begin{subitemize}
-			\item \textbf{NOSE QTR}
-			\begin{itemize}
-				\item Standard setting in DCS
-			\end{itemize}
-			\item \textbf{All Others}
-			\begin{itemize}
-				\item Not simulated
-			\end{itemize}
+			\item \textbf{NOSE QTR} -- Standard setting in DCS
+			\item \textbf{All Others} -- Not simulated
 		\end{subitemize}}
 		\blueitem{MSL OPTIONS  \break  Switch}{
 		\begin{subitemize}
@@ -4466,10 +4673,7 @@
 		\end{subitemize}}
 		\blueitem{MODE/STP \break Switch}{
 		\begin{subitemize}
-			\item \textbf{NORM}
-			\begin{itemize}
-				\item Normal operation
-			\end{itemize}
+			\item \textbf{NORM} -- Normal operation
 			\item \textbf{BRSIT}
 			\begin{itemize}
 				\item Commanded active \textbf{before launch}
@@ -4498,6 +4702,8 @@
 			\item \textbf{When in ACM} -- 1 second
 		\end{subitemize}}
 	\end{tableitemize}
+
+	\clearpage
 
 	\subsection{AIM-54 - PD-STT}
 	\begin{tablenumerate}
@@ -4531,6 +4737,23 @@
 		\end{subenumerate}}
 	\end{tablenumerate}
 
+	\notebox{
+		\begin{itemize}
+			\item \textbf{Missile SARH until impact} -- must maintain radar lock
+		\end{itemize}
+	}
+
+	\warningbox{
+		\begin{itemize}
+			\item \textbf{ACM Radar Modes Result in P\emph{S}TT Lock}
+			\begin{itemize}
+				\item Missile is active off the rail 
+    			\item Employ with caution when friendlies airborne
+			\end{itemize}
+		\end{itemize}
+	}
+	\clearpage
+
 	\subsection{AIM-54 - TWS / MULTI}
 	\begin{tablenumerate}
 		\blueitem{Pilot Conditions}{		
@@ -4559,6 +4782,27 @@
 			\hfill (until active)
 		\end{subenumerate}}
 	\end{tablenumerate}
+
+	\notebox{
+		\begin{itemize}
+			\item \textbf{AWG-9 Responsible for Sending Activation Command}
+			\begin{itemize}
+				\item Must maintain track until this point
+    			\item AWG-9 continues to send guidance information after missile activation
+			\end{itemize}
+		\end{itemize}
+	}
+
+	\warningbox{
+		\begin{itemize}
+			\item \textbf{AIM-54 has NO IFF Capability}
+			\begin{itemize}
+				\item Employ with caution when friendlies airborne
+			\end{itemize}
+		\end{itemize}
+	}
+
+	\clearpage
 
 	\subsection{AIM-54 - ACM}
 	\begin{tablenumerate}
