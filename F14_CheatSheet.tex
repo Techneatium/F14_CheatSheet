@@ -108,7 +108,7 @@
 			\end{itemize}
 			\item \textbf{OFF}
 		\end{subenumerate}}
-		\blueitem{Ejection Seat}{Armed\cbstart}
+		\blueitem{Ejection Seat}{\textbf{Armed}\cbstart}
 		\dblueitem{RIO}{Canopy Closed}
 		\blueitem{Oxygen}{\textbf{ON (FWD)}}
 		\blueitem{Emergency Wing Sweep\cbend}{\textbf{OVERSWEEP}}
@@ -182,10 +182,10 @@
 		\end{subitemize}}
 		\dblueitem{RIO}{\textbf{Select Align Quality}
 		\begin{subitemize}
-			\item \textbf{INS GO NOW:} shortest but least precise alignment
-			\item \textbf{INS GO COARSE:} does not meet Launch Criteria for AIM-7 / AIM-54
-			\item \textbf{INS GO MIN WPN LAUNCH:} allows AIM-7 / AIM-54 launch
-			\item \textbf{INS GO FINE} fine align (8 min)
+			\item \textbf{INS GO NOW} -- shortest but least precise alignment
+			\item \textbf{INS GO COARSE} -- does not meet Launch Criteria for AIM-7 / AIM-54
+			\item \textbf{INS GO MIN WPN LAUNCH} -- allows AIM-7 / AIM-54 launch
+			\item \textbf{INS GO FINE} -- fine align (8 min)
 		\end{subitemize}}
 		\blueitem{ACM Panel}{
 		\begin{subitemize}
@@ -263,8 +263,8 @@
 			\item \textbf{TID/DDD} \dotfill illuminated after 40 s
 		\end{subenumerate}\cbend}
 		\blueitem{Kneeboard}{Retrieve Coordinates, Elevation, Magnetic Variation from GROUND SETTINGS Page}
-		\midrule
-		\multicolumn{3}{l}{\blue{WARNING} Input Coords \textbf{BEFORE} selecting \textbf{GND ALIGN} if using ASH} \\
+		% \midrule
+		% \multicolumn{3}{l}{\blue{WARNING} Input Coords \textbf{BEFORE} selecting \textbf{GND ALIGN} if using ASH} \\
 		\blueitem{Start INS Align\cbstart}{
 		\begin{subenumerate}
 			\item \textbf{Nav Mode} \dotfill \textbf{GND ALIGN}
@@ -1041,15 +1041,7 @@
 		\blueitem{Primary Align Modes}{
 		\begin{subitemize}
 			\item \textbf{SAT} -- \textbf{NOT IMPLEMENTED}
-			\begin{itemize}
-				\item Ground
-				\item Carrier
-			\end{itemize}
-			\item \textbf{NON-SAT}
-			\begin{itemize}
-				\item Ground
-				\item Carrier
-			\end{itemize}
+			\item \textbf{NON-SAT} -- Ground / Carrier
 		\end{subitemize}}
 		\blueitem{Align Submodes}{
 		\begin{subitemize}
@@ -1160,17 +1152,20 @@
 		\end{subitemize}}
 		\blueitem{Reinitialization}{If observable acronym (\textbf{O}) or stalled align noticed during fine align. RIO can apply any of following methods
 
+		Method 1
 		\begin{subenumerate}
 			\item \textbf{NAV MODE SWITCH} \dotfill \textbf{OFF}
 			\item \textbf{WCS} \dotfill \textbf{OFF}
 			\item Proceed with normal start sequence
 		\end{subenumerate}
 
+		Method 2
 		\begin{subenumerate}
 			\item \textbf{NAV MODE SWITCH} \dotfill \textbf{OFF}
 			\item \textbf{NAV MODE SWITCH} \dotfill \textbf{Desired Align Mode}
 		\end{subenumerate}
 
+		Method 3
 		\begin{subenumerate}
 			\item \textbf{NAV MODE SWITCH} \dotfill \textbf{INS} \\
 			\hfill Verify \textbf{IN} on \textbf{TID}
@@ -2421,7 +2416,7 @@
 		\blueitem{DDD}{
 		\begin{subitemize}
 			\item \textbf{Closure Rate/Azimuth}
-			\item Visual representation of radar and erase sweeps
+			\item Visualization of radar and erase sweeps
 		\end{subitemize}}
 		\blueitem{TID}{
 		\begin{subitemize}
@@ -2807,7 +2802,7 @@
 
 	\notebox{
 		\begin{itemize}
-			\item \textbf{ACM MODES RESULT IN PSTT LOCK} -- affects missile logic
+			\item \textbf{ACM Modes Result in PSTT Lock} -- affects missile logic
 			\begin{itemize}
 				\item AIM-54 launched in \textbf{Active Launch Mode}
 				\item AIM-7 launched in \textbf{CW Mode}
@@ -2841,7 +2836,29 @@
 
 	\section{APX-76 IFF}
 	\subsection{OVERVIEW}
-	\subsection{INTEROGATION}
+	\subsection{INTERROGATION}
+	\begin{tableitemize}
+		\blueitem{Activation}{\textbf{IFF Switch} -- \textbf{Press \& Hold} (up to 10 sec)}
+		\blueitem{Search Modes}{
+			\begin{subitemize}
+				\item \textbf{DDD} -- 2 horizontal bars above \& below all friendly returns
+			\end{subitemize}
+		}
+		\blueitem{TWS / STT Modes}{
+			\begin{subitemize}
+				\item \textbf{DDD} -- 2 horizontal bars above \& below hooked / locked friendly 
+				\item \textbf{DDD Range} -- shows \textbf{10 EXP}
+			\end{subitemize}
+		}
+	\end{tableitemize}
+
+	\notebox{
+		\begin{itemize}
+			\item \textbf{APX-76 Data is Not Correlated with TWS Tracks} -- RIO must manually enter bogey status (HOST, UNKN, FRIEND) via the \textbf{CAP}
+			\item \textbf{Lack of IFF Return does NOT necessarily mean Hostile} 
+		\end{itemize}
+	}
+
 
 
 	\clearpage

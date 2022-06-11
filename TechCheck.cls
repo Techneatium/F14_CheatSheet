@@ -444,24 +444,31 @@
 	% \fancyfoot[C]{{\tightfont \textbf{--- \thepage \ ---}}}% LE,RO
 	\fancyfoot[C]{{\tightfont \textbf{\thepage}}}% LE,RO
 	% date in top right
-	\fancyhead[RE,RO]{\colorbox{color1}{
-		\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
-	}}
+	\fancyhead[RE]{
+		\colorbox{color1}{
+			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
+		}
+	}
+	\fancyhead[RO]{
+		\colorbox{color1}{
+			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
+		}
+		\iftoggle{autothumbnar}{
+			\thumbnar
+		}{}
+	}
 	% extra thing in middle
-	\fancyhead[C]{\colorbox{color1}{
-		\textcolor{white}{\titlefont\Large\textbf{\aircraftshort}}
-	}}
+	\fancyhead[C]{
+		\colorbox{color1}{
+			\textcolor{white}{\titlefont\Large\textbf{\aircraftshort}}
+		}
+	}
 	\fancyhead[LE,LO]{
 		\iftoggle{hatch}{
 			\Hatch
 		}{}
 		\titlefont\textbf{\leftmark}
   	}
-	\fancyhead[RO]{
-		\iftoggle{autothumbnar}{
-			\thumbnar
-		}{}
-	}
 	\renewcommand{\headrulewidth}{0pt} % and the line
 }
 \pagestyle{body}
@@ -625,8 +632,8 @@
 % Counter for use in tablenumitems
 \newcounter{tablenumi}
 % tablenumerate -- creates table that behaves like enumerate
-\newenvironment{tablenumerate}{% begdef
-	\setcounter{tablenumi}{1} 
+\newenvironment{tablenumerate}[1][0]{% begdef
+	\setcounter{tablenumi}{1}
 	% Define command equiv to `item`
 	% arg 1 - typeset in blue in 2. column
 	% arg 2 - typeset normally in 3. column

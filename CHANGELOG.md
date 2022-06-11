@@ -2,6 +2,17 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.06.11
+
+- `TechCheck.cls`
+  - Fixed bug with automatic `thumbnar` that prevented revision number on odd pages
+
+### Changelog - 2022.06.09
+
+- `F14_Cheatsheet.tex`
+  - Added `APX-76 IFF` subsection
+  - Minor tweaks to nav section
+
 ### Changelog - 2022.06.08
 
 - `TechCheck.cls`
