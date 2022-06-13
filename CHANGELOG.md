@@ -49,6 +49,17 @@
     - Added `ICLS / ACLS CASE III` procedures
   - Compact-ified `IFF` section
   - Other minor tweaks
+### Changelog - 2022.06.12
+
+- Added various files to manage idempotent PDF builds for the purpose of GitHub
+  actions or external contributors
+  - Added `scripts` folder
+  - Added `Makefile`
+  - Added `CONTRIBUTING.md` to guide external contributors
+  - Updated `README.md` to reflect addition of `CONTRIBUTING.md`
+  - Updated `.gitignore` to reject build files and fonts
+  - Updated `TechCheck.cls` to allow for the build version to be managed
+    externally
 
 ### Changelog - 2022.06.11
 
