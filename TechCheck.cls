@@ -374,6 +374,11 @@
   \setlength\tabwidth{\textheight/\thetabnumber}
 }
 
+% Preset build info will be overriden by Make scripts
+% Lines commited to this file will always be incorrect
+\newcommand{\buildversion}{1655091467}
+\newcommand{\versionprefix}{DRT:}
+
 %-----------------------------------------------------------------
 % HEADER/FOOT FORMATTING
 %-----------------------------------------------------------------
@@ -429,12 +434,12 @@
 	% date in top right
 	\fancyhead[RE]{
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
+			\textcolor{white}{\titlefont\Large\textbf{\versionprefix \space \buildversion}}
 		}
 	}
 	\fancyhead[RO]{
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
+			\textcolor{white}{\titlefont\Large\textbf{\versionprefix \space \buildversion}}
 		}
 		\iftoggle{autothumbnar}{
 			\thumbnar
