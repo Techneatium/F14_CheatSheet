@@ -1,8 +1,17 @@
 *.aux
+*.cb
+*.cb2
+*.DS_Store
+*.fdb_latexmk
+*.fls
 *.log
+*.maf
+*.mtc*
+*.otf
 *.out
 *.synctex.gz
 *.toc
+<<<<<<< HEAD
 *.DS_Store
 *.fls
 *.fdb_latexmk
@@ -11,3 +20,7 @@
 *.maf
 *.mtc*
 *.pdf
+=======
+*.ttf
+build/
+>>>>>>> b768d84 (Update gitignore for more build files)
