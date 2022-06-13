@@ -21,8 +21,7 @@ build_pdf:
 		cd /source &&\
 		scripts/set_build_info.sh &&\
 		cp -v /fonts/* /source/. &&\
-		lualatex --output-format=pdf --output-folder=/source/build ${TARGET}
-	"
+		lualatex --output-format=pdf --output-folder=/source/build ${TARGET}"
 
 .PHONY: build
 build: clean build_pdf
