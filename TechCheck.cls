@@ -37,6 +37,7 @@
 \RequirePackage{multicol} % multi column format
 \RequirePackage{graphicx} % used for figures
 \graphicspath{{images/}} % put figures inside folder 'images'  in same folder as .tex
+\RequirePackage{subcaption} % used for subfigures
 \RequirePackage[dvipsnames]{xcolor} %colors, dvips -> extra premade colors
 \RequirePackage[explicit]{titlesec} % formating of titles
 \RequirePackage{siunitx} % SI units

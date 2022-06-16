@@ -57,6 +57,10 @@ For ease of maintenance, only the PDF and source files are available here. To co
     - Nav fix subsections
     - Maybe split into separate "Systems", "*Actual navigation*", and "Nav fix" sections?
   - More "how-to" checklists (how to add waypoint, etc.)
+  - Apply `[desired effect] -> [necessary switchology]` structure to systems descriptions
+    - see `UHF 1` and `V/UHF 2` for examples
+  - DEFENSIVE SYSTEMS
+    - Own THREAT ADVISORY INDICATOR Section? (maybe in appendix?)
 
 - `RADAR`
   - Add Notes for each mode on which weapons will guide (and with what logic)
@@ -65,16 +69,11 @@ For ease of maintenance, only the PDF and source files are available here. To co
   - TCS
 
 - `A/A WEAPONS`
-  - Add Notes for each weapon on which radar modes should be used to get desired guidance
-  - What happens if Sparrow launched from PDSTT without MSL OPTIONS set to SP PD?
-  - People have complained that jester tries switching from one STT to the other and loses lock
+  - People have complained that jester tries switching from one STT to the other and loses lock -> add explanation
   - Add more advanced RIO explanation of Phoenix employment (including diagrams of TUOR etc.)
   - Maybe add example Timelines
-  - AIM-7 SPARROW
-    - Clarify differences between PDSTT/PSTT/CW/SP PD launch behavior
 
 - `GENERAL`
-  - Change all figures to actually use figure environment?
   - Move RWR and TID reference tables to an appendix?
 
 ***

@@ -4,8 +4,15 @@
 
 ### Changelog - 2022.06.16
 
+- `TechCheck.cls`
+  - Added `subcaption` package which allows creation of subfigures
+
 - `F14_Cheatsheet.tex`
-  - Minor tweaks 
+  - Changed standalone diagrams to be of type `figure`, this is more in line with standard `LaTeX` best-practices
+  - Reworked `UHF 1`, `V/UHF 2`, `LINK 4 DATALINK`, `RWR` subsections
+  - Removed `DISPLAYS` section
+  - Compact-ified `IFF` section
+  - Other minor tweaks
 
 ### Changelog - 2022.06.11
 
