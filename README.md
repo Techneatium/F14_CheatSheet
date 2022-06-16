@@ -46,21 +46,22 @@ For ease of maintenance, only the PDF and source files are available here. To co
 ### TO-DO
 
 - `PROCEDURES`
-  - START-UP
+  - `START-UP`
     - Overhaul pre-start?
-  - TAKEOFF & LANDING
+  - `TAKEOFF & LANDING`
     - CASE II/III
 
 - `SYSTEMS`
-  - NAVIGATION
-    - Navgrid explanation (maybe more suitable in radar/TID section)
-    - Nav fix subsections
-    - Maybe split into separate "Systems", "*Actual navigation*", and "Nav fix" sections?
-  - More "how-to" checklists (how to add waypoint, etc.)
+  - `FLIGHT CONTROL`
+    - ACLS
   - Apply `[desired effect] -> [necessary switchology]` structure to systems descriptions
     - see `UHF 1` and `V/UHF 2` for examples
-  - DEFENSIVE SYSTEMS
+  - `DEFENSIVE SYSTEMS`
     - Own THREAT ADVISORY INDICATOR Section? (maybe in appendix?)
+    - Rework ALE-39 CMS, DECM subsections
+
+- `RADAR`
+  - Navgrid explanation
 
 - `TCS-LANTIRN`
   - TCS

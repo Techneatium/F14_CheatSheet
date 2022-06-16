@@ -31,7 +31,7 @@
 
 \setaircraftlong{F-14A/B AIRCRAFT} % sets long label for title page
 \setaircraftshort{F-14A/B} % sets short label for header
-\settabnumber{6} % sets number of tabs for document
+\settabnumber{8} % sets number of tabs for document
 
 % Begin Document
 
@@ -948,56 +948,203 @@
 		\blueitem{CAINS}{\textbf{C}arrier \textbf{A}ircraft \textbf{I}nertial \textbf{N}avigation \textbf{S}ystem
 		\begin{subitemize}
 			\item \textbf{Primary navigation system of F-14}
-			\item Additionally provides information for tactical systems
+			\item Additionally provides own position for tactical systems (long range missiles \& D/L)
+		\end{subitemize}}
+		\blueitem{Main \break Components}{
+		\begin{subitemize}
+			\item \textbf{IMU} -- \textbf{I}nertial \textbf{M}easurement \textbf{U}nit
 			\begin{itemize}
-				\item Own position for long-range AIM-7 \& AIM-54 modes
-				\item Accurate Datalink sharing/receiving
+				\item 3-Axis, 4-Gimbal system prevents gimbal-lock
+				\item 2 gyros provide aircraft attitude and stabilize the platform
+				\item 3 accelerometers measure accelerations in all orthogonal axes
+			\end{itemize}
+			\item \textbf{CSDC} -- \textbf{C}omputer \textbf{S}ignal \textbf{D}ata \textbf{C}onverter
+			\begin{itemize}
+				\item Handles data interface between sensors and \textbf{WCS}
+			\end{itemize}
+			\item \textbf{WCS} -- \textbf{AWG-9 Computer}
+			\begin{itemize}
+				\item performs general navigation computations and provides them to PILOT \& RIO through displays
+			\end{itemize}
+			\item \textbf{NPS} -- \textbf{N}avigation \textbf{P}ower \textbf{S}upply
+			\begin{itemize}
+				\item Provides power to \textbf{IMU} \& \textbf{CSDC}
+			\end{itemize}
+			\item \textbf{Subsytems}
+			\begin{itemize}
+				\item Radar Altimeter
+				\item TACAN
+				\item AHRS
 			\end{itemize}
 		\end{subitemize}}
-		\midrule
-		\multicolumn{3}{c}{\blue{Main Components}} \\
-		\blueitem{IMU}{\textbf{I}nertial \textbf{M}easurement \textbf{U}nit
+		\blueitem{Controls}{
 		\begin{subitemize}
-			\item 3-Axis, 4-Gimbal system prevents gimbal-lock
-			\item 2 gyros provide aircraft attitude and stabilize the platform
-			\item 3 accelerometers measure accelerations in all orthogonal axes
+			\item \textbf{CAP} -- Used for Data Entry
+			\item \textbf{NAV MODE Selector} -- Used to select alignment/operation mode
 		\end{subitemize}}
-		\blueitem{CSDC}{\textbf{C}omputer \textbf{S}ignal \textbf{D}ata \textbf{C}onverter
+	\end{tableitemize}
+
+	\clearpage
+
+	\subsection{ALIGNMENT}
+	\label{subsec:align}
+	\begin{tableitemize}
+		\blueitem{Enter GND Align}{
+		\begin{subenumerate}
+			\item \textbf{NAV MODE Switch} \dotfill \textbf{GND ALIGN}
+			\begin{itemize}
+				\item Requires A/C or Homebase Lat, Long, Alt
+				\item Can be entered before or within 90-120 s after selecting \textbf{GND ALIGN}
+			\end{itemize}
+		\end{subenumerate}}
+		\blueitem{Enter CVA Align}{
+		\begin{subenumerate}
+			\item \textbf{Datalink} \dotfill \textbf{ON}
+			\item \textbf{WCS} \dotfill \textbf{STBY}
+			\item \textbf{D/L Mode} \dotfill \textbf{CAINS/WAYPT}
+			\item \textbf{NAV MODE Switch} \dotfill \textbf{CVA ALIGN}
+		\end{subenumerate}}
+		\blueitem{Indicators \& \break Symbology}{\emph{Initialization}
 		\begin{subitemize}
-			\item Handles data interface between sensors and \textbf{WCS}
-		\end{subitemize}}
-		\blueitem{WCS}{\textbf{AWG-9 Computer}
+			\item After ~ 20 s \textbf{STBY/READY Lights} illuminate
+			\item \textbf{TID} displays alignment time of \textbf{0.7} during initialization
+			\item After 42-45 s \textbf{NAV COMP} and \textbf{READY} lights extinguish, indicating IMU is ready
+		\end{subitemize}
+
+		\emph{Coarse Alignment}
 		\begin{subitemize}
-			\item \textbf{WCS} performs general navigation computations and provides them to PILOT \& RIO through displays
-		\end{subitemize}}
-		\blueitem{NPS}{ \textbf{N}avigation \textbf{P}ower \textbf{S}upply
+			\item \textbf{CARET} before coarse-align complete marker (first tick)
+		\end{subitemize}
+
+		\emph{Fine Alignment}
 		\begin{subitemize}
-			\item Provides power to \textbf{IMU} \& \textbf{CSDC}
+			\item \textbf{DIAMOND} between 1st and 3rd ticks
+			\item \textbf{2nd Tick} -- min weapon launch criteria met
+			\begin{itemize}
+				\item \textbf{STBY Light} -- extinguishes
+				\item \textbf{READY Light} -- light illuminates
+				\item \textbf{INS Mode} -- may be selected
+			\end{itemize}
+			\item \textbf{3rd Tick} -- fine alignment complete
+			\begin{itemize}
+				\item Dot appears in Diamond
+			\end{itemize}
 		\end{subitemize}}
-		\blueitem{Subsystems}{
+		\blueitem{Exit Alignment}{
+		\begin{subenumerate}
+			\item \textbf{NAV Mode} \dotfill \textbf{INS}
+			\begin{itemize}
+				\item \textbf{READY Light} -- extinguishes
+				\item Tactical tape appears
+				\item Normal navigation display available
+			\end{itemize}
+		\end{subenumerate}}
+		\blueitem{Automatic Stored Heading}{
 		\begin{subitemize}
-			\item Radar Altimeter
-			\item TACAN
-			\item AHRS
+			\item Reference alignment stored prior to powering-down the aircraft
+			\item Allows for fine alignment in < 2min
+			\item \textbf{ASH} acronym shown on TID during align
 		\end{subitemize}}
-		\midrule
-		\multicolumn{3}{c}{\blue{Controls}} \\
-		\blueitem{CAP}{
+		\blueitem{Handset Align}{
 		\begin{subitemize}
-			\item Used for Data Entry
-			\item \textbf{CATEGORY} -- \textbf{NAV}
-		\end{subitemize}}
-		\blueitem{NAV MODE Selector}{
-		\begin{subitemize}
-			\item \textbf{OFF} -- Turns off power to IMU
-			\item \textbf{ALIGN} -- Three align modes \\
-			\hfill \hyperref[subsec:align-nonsat]{\textbf{See Alignment Section}}
-			\item \textbf{INS} -- Selects normal INS navigation mode
-			\item \textbf{IMU/AM} -- Selects backup mode. Uses IMU for aircraft attitude, TAS from CADC, and stored/entered winds for navigation
-			\item \textbf{AHRS/AM} -- Selects further degraded backup mode. Uses magnetic heading from AHRS, TAS and AoA from CADC, and stored wind and mag var for navigation
-		\end{subitemize}}
-		\midrule
-		\multicolumn{3}{c}{\blue{Failure Indicators}} \\
+			\item Allows for carrier alignment even when SINS data not available
+			\item Indicated by flashing \textbf{HS} acronym on TID on setting \textbf{NAV MODE} to \textbf{CVA ALIGN}
+			\item Total align duration slightly longer due to ship's motion
+		\end{subitemize}
+
+		\textbf{RIO must enter following data (in order)}
+		\begin{subenumerate}
+			\item Ship's speed, true heading
+			\item Lat/Long
+			\item Corrected pressure altitude
+		\end{subenumerate}}
+	\end{tableitemize}
+
+	\notebox{
+		\begin{itemize}
+			\item \textbf{Parking brake must be on during initialization of any mode}
+			\begin{itemize}
+				\item If released during coarse align, \textbf{STBY} and \textbf{READY} lights flash, align program reinitializes
+				\item If released during fine align, suspend align discrete sent to CSDC, \textbf{STBY} or \textbf{READY} light blinks, time-to-align clock on \textbf{TID} stops
+				\item During suspend align taxiing more than 4000 ft will render the \textbf{INS} performance unreliable
+			\end{itemize}
+			\item \textbf{GND Align}
+			\begin{itemize}
+				\item Whatever has been hooked when \textbf{ALIGN} is selected is injected as own-aircraft coordinates
+			\item If fine align complete not yet achieved, own-aircraft latitude entry will reinitialize the alignment
+			\end{itemize}
+			\item \textbf{CVA Align}
+			\begin{itemize}
+				\item You will get \textbf{Erroneous Heading Readings on a Carrier} (up to 30 deg) due to ship's magnetic field
+				\item Deviation goes away shortly after takeoff
+			\end{itemize}
+		\end{itemize}
+	}
+
+	\clearpage
+
+	\subsection{NAVIGATION UPDATE}
+	\begin{tableitemize}
+		\blueitem{Radar Update}{Prestored update point must be easily recognizable through pulse ground returns
+
+		\begin{subenumerate}
+			\item \textbf{Desired Update Point} \dotfill  \textbf{Hooked}
+			\item \textbf{Radar Mode} \dotfill \textbf{PULSE SRCH}
+			\item \textbf{Sensor Control Panel} \dotfill Set
+			\begin{itemize}
+				\item \textbf{STAB Switch} -- \textbf{IN}
+				\item \textbf{EL BARS} -- \textbf{1}
+				\item \textbf{AZ SCAN} -- As Desired 
+			\end{itemize}
+			\item \textbf{RDR FIX Button} \dotfill \textbf{Depress}
+			\item \textbf{HCU Mode} \dotfill \textbf{DDD}
+			\item \textbf{HCU} \dotfill \textbf{Half-Action}
+			\begin{itemize}
+				\item HCU cursor visible on DDD
+				\item Position cursor over desired point
+			\end{itemize}
+			\item \textbf{HCU} \dotfill \textbf{Full-Action}
+			\begin{itemize}
+				\item \textbf{TID} -- observe lat/long delta 
+				\item If results unsatisfactory deselect \textbf{RDR FIX}, repeat from (d)
+			\end{itemize}
+			\item \textbf{FIX ENABLE Button} \dotfill \textbf{Depress}
+		\end{subenumerate}}
+		\blueitem{TACAN Update}{Prestored update point must be colocated with TACAN station
+
+		\begin{subenumerate}
+			\item \textbf{TACAN} \dotfill \textbf{On \& Tuned}
+			\item \textbf{Desired Update Point} \dotfill \textbf{Hooked}
+			\item \textbf{TACAN FIX Button} \dotfill \textbf{Depress}
+			\begin{itemize}
+				\item \textbf{TID} -- observe lat/long delta 
+				\item If results unsatisfactory deselect \textbf{TACAN FIX}, repeat from (b)
+			\end{itemize}
+			\item \textbf{FIX ENABLE Button} \dotfill \textbf{Depress}
+		\end{subenumerate}}
+		\blueitem{Visual Update}{
+		\begin{subenumerate}
+			\item \textbf{Desired Update Point} \dotfill \textbf{Hooked}
+			\item \textbf{VIS FIX Button} \dotfill \textbf{Depress} \\
+			\hfill (As overflying waypoint)
+			\begin{itemize}
+				\item \textbf{TID} -- observe lat/long delta 
+				\item If results unsatisfactory, press \textbf{VIS FIX} to clear data and try again
+			\end{itemize}
+			\item \textbf{FIX ENABLE Button} \dotfill \textbf{Depress}
+		\end{subenumerate}}
+	\end{tableitemize}
+
+	\warningbox{
+		\begin{itemize}
+			\item \textbf{Can easily lead to an increase in Navigation Error rather than reduction}
+		\end{itemize}
+	}
+
+	\clearpage
+
+	\subsection{INS FAILURE INDICATORS}
+	\begin{tableitemize}
 		\blueitem{NAV COMP Light}{
 		\begin{subitemize}
 			\item If illuminates while \textbf{NAV MODE} is in \textbf{INS} indicates failure in \textbf{INS} or \textbf{CSDC}
@@ -1007,7 +1154,7 @@
 		\blueitem{IMU Light}{
 		\begin{subitemize}
 			\item Indicates failure of \textbf{IMU}
-			\item Navigation system automatically switches to \textbf{AHRS/AM}
+			\item Nav system automatically switches to \textbf{AHRS/AM}
 			\item Remains illuminated until \textbf{NAV MODE Switch} is set to \textbf{AHRS/AM}
 		\end{subitemize}}
 		\blueitem{AHRS Light}{
@@ -1016,248 +1163,144 @@
 			\item Magnetic heading now commanded by WCS computer using last known mag var values
 			\item Heading values will degrade over time
 		\end{subitemize}}
-	\end{tableitemize}
-
-	\clearpage
-
-	\subsection{ALIGNMENT - OVERVIEW}
-	\begin{tableitemize}
-		\blueitem{Main Phases}{
-		\begin{subenumerate}
-			\item \textbf{Coarse Alignment}
-			\begin{itemize}
-				\item Warm-up of IMU elements
-				\item Gimbals caged to Airframe
-				\item Gyros brought up to speed
-				\item Coarse IMU platform leveling performed with accellerometer outputs
-				\item Begins upon completion of initializatin sequence
-				\item Computes Initial coarse estimates of IMU wander angle
-			\end{itemize}
-			\item \textbf{Fine Alignment}
-			\begin{itemize}
-				\item Uses gryoscopic drift to calculate true heading
-			\end{itemize}
-		\end{subenumerate}}
-		\blueitem{Primary Align Modes}{
-		\begin{subitemize}
-			\item \textbf{SAT} -- \textbf{NOT IMPLEMENTED}
-			\item \textbf{NON-SAT} -- Ground / Carrier
-		\end{subitemize}}
-		\blueitem{Align Submodes}{
-		\begin{subitemize}
-			\item \textbf{CAT ALIGN} -- overrides parking brake requirement
-			\item \textbf{STORED HEADING} -- uses previous aligment as reference for rapid aligment
-			\item \textbf{HANDSET} -- for \textbf{CVA ALIGN} when SINS data not available
-		\end{subitemize}}
-	\end{tableitemize}
-
-	\notebox{
-		\begin{itemize}
-			\item Initialization requires Aircraft or Homebase data
-			\begin{itemize}
-				\item Lat/Long
-				\item Pressure Altitude
-			\end{itemize}
-			If \textbf{HANDSET Alignment} used requires Carrier parameters
-			\begin{itemize}
-				\item Speed
-				\item True heading
-			\end{itemize}
-			\item \textbf{Parking brake must be on during initialization of any mode}
-			\begin{itemize}
-				\item If released during coarse align, \textbf{STBY} and \textbf{READY} lights flash, align program reinitializes
-				\item If released during fine align, suspend align discrete sent to CSDC, \textbf{STBY} or \textbf{READY} light blinks, time-to-align clock on \textbf{TID} stops
-			\end{itemize}
-		\end{itemize}
-	}
-
-	\subsection{ALIGNMENT - NON-SAT}
-	\label{subsec:align-nonsat}
-	\begin{tableitemize}
-		\blueitem{Enter GND Align}{
-		\begin{subitemize}
-			\item \textbf{GND ALIGN} requires own-aircraft or Homebase parameters
-			\begin{itemize}
-				\item Latitude / Longitude
-				\item Altitude
-			\end{itemize}
-			\item Can be entered into \textbf{CAP} before or within 90-120 s after selecting \textbf{GND ALIGN}
-		\end{subitemize}}
-	\end{tableitemize}
-
-	\notebox{
-		\begin{itemize}
-			\item Whatever has been hooked when \textbf{ALIGN} is selected is injected as own-aircraft coordinates
-			\item If fine align complete not yet achieved, own-aircraft latitude entry will reinitialize the alignment
-		\end{itemize}
-	}
-
-	\begin{tableitemize}
-		\blueitem{Enter CVA Align}{
-		\begin{subitemize}
-			\item \textbf{CVA ALIGN} requires \textbf{DL CAINS Mode} to align aircraft IMU to ship's INS
-			\begin{enumerate}
-				\item \textbf{Datalink} \dotfill \textbf{ON}
-				\item \textbf{WCS} \dotfill \textbf{STBY}
-				\item \textbf{D/L Mode} \dotfill \textbf{CAINS/WAYPT}
-				\item \textbf{NAV MODE Switch} \dotfill \textbf{CVA ALIGN}
-			\end{enumerate}
-		\end{subitemize}}
-		\blueitem{Initialization}{
-		\begin{subitemize}
-			\item After approx. 20 s \textbf{STBY/READY Lights} illuminate
-			\item \textbf{TID} displays alignment time of \textbf{0.7} during initialization
-			\item After  42-45 s \textbf{NAV COMP} and \textbf{READY} lights extinguish, indicating IMU is ready
-			\item Upon completion of initialization the \textbf{Alignment Status Indicator (CARET)} appears,
-		\end{subitemize}}
-		\blueitem{Coarse Alignment}{
-		\begin{subitemize}
-			\item \textbf{CARET} before coarse-align complete marker (first tick)
-			\item Upon completion of coarse alignment phase the \textbf{CARET} is directly above the first tick and changes to a \textbf{DIAMOND}
-		\end{subitemize}}
-	\end{tableitemize}
-
-	\notebox{
-		\begin{itemize}
-			\item Parking brake can be released for taxi after coarse align is complete. Will suspend align
-			\item Suspend align indicated by flashing \textbf{STBY} and/or \textbf{READY Lights}
-			\item During suspend align taxiing more than 4000 ft will render the \textbf{INS} performance unreliable
-		\end{itemize}
-	}
-
-	\begin{tableitemize}
-		\blueitem{Fine Alignment}{
-		\begin{subitemize}
-			\item \textbf{DIAMOND} between first and third ticks
-			\item \textbf{Second Tick} -- minimum weapon launch criteria met
-			\begin{itemize}
-				\item \textbf{STBY Light} -- extinguishes
-				\item \textbf{READY Light} -- light illuminates
-				\item \textbf{INS Mode} -- may be selected
-			\end{itemize}
-			\item \textbf{Third Tick} -- fine alignment complete
-			\begin{itemize}
-				\item Dot appears in Diamond
-				\item Can be left in align for progressively more accurate alignment
-			\end{itemize}
-		\end{subitemize}}
-		\blueitem{Exit Alignment}{
-		\begin{subitemize}
-			\item \textbf{Select INS Mode}
-			\begin{itemize}
-				\item \textbf{READY Light} -- extinguishes
-				\item Tactical tape appears
-				\item Normal navigation display available
-			\end{itemize}
-		\end{subitemize}}
-		\blueitem{Reinitialization}{If observable acronym (\textbf{O}) or stalled align noticed during fine align. RIO can apply any of following methods
-
-		Method 1
-		\begin{subenumerate}
-			\item \textbf{NAV MODE SWITCH} \dotfill \textbf{OFF}
-			\item \textbf{WCS} \dotfill \textbf{OFF}
-			\item Proceed with normal start sequence
-		\end{subenumerate}
-
-		Method 2
-		\begin{subenumerate}
-			\item \textbf{NAV MODE SWITCH} \dotfill \textbf{OFF}
-			\item \textbf{NAV MODE SWITCH} \dotfill \textbf{Desired Align Mode}
-		\end{subenumerate}
-
-		Method 3
-		\begin{subenumerate}
-			\item \textbf{NAV MODE SWITCH} \dotfill \textbf{INS} \\
-			\hfill Verify \textbf{IN} on \textbf{TID}
-			\item \textbf{NAV MODE SWITCH} \dotfill \textbf{OFF}
-			\item \textbf{NAV MODE SWITCH} \dotfill \textbf{Desired Align Mode}
-		\end{subenumerate}}
-	\end{tableitemize}
-
-	\notebox{
-		\begin{itemize}
-			\item You will get \textbf{Erroneous Heading Readings on a Carrier} even with fine align complete (up to 30 deg) due to ship's magnetic field
-			\item Deviation goes away shortly after takeoff
-		\end{itemize}
-	}
-
-	\subsection{ALIGNMENT - NON-SAT - SUBMODES}
-	\begin{tableitemize}
-		\blueitem{Stored Heading \break Alignment}{
-		\begin{subitemize}
-			\item Reference alignment stored prior to powering-down the aircraft
-			\item \textbf{ASH} --  Automatic Stored Heading displayed on TID when align selected and reference align available
-		\end{subitemize}}
-		\blueitem{Handset \break Alignment}{
-		\begin{subitemize}
-			\item For use when SINS data not available (indicated by flashing \textbf{HS} on \textbf{TID})
-			\item Similar to \textbf{GND ALIGN} but requires additional parameters for the ship movement
-			\begin{itemize}
-				\item Latitude / Longitude
-				\item Ship's Speed
-				\item Ship's True Heading
-			\end{itemize}
-		\end{subitemize}}
-		\blueitem{Catapult \break Alignment}{
-		\begin{subitemize}
-			\item Inhibits suspend align while positioned on the catapult when parking brake released
-		\end{subitemize}}
-	\end{tableitemize}
-
-	\clearpage
-
-	\subsection{ALIGNMENT - FAILURES}
-	\begin{tableitemize}
-		\blueitem{TID Status Indicators}{ Appear between first and second ticks
+		\blueitem{TID Acronyms}{Appear between first and second ticks
 		\begin{subitemize}
 			\item \textbf{C} -- \textbf{Cal Data Fail}
 			\item \textbf{T} -- \textbf{Temp} (cold IMU)
 			\item \textbf{S} -- \textbf{SINS Data Invalid}
 			\item \textbf{O} -- \textbf{Observable} (alignment data bad)
 		\end{subitemize}}
-		\blueitem{INS Status Indicators}{
+		\blueitem{INS Indicators}{\hyperref[tab:insstatusind]{\textbf{See INS Status Indicators}}}
+	\end{tableitemize}
+
+	\begin{table}[h]
+		\caption{\textbf{INS Status Indicators}}
+		\label{tab:insstatusind}
+		\begin{tabular}{p{1.5cm} p{1.5cm} | p{8cm}}
+			\toprule
+			\blue{STBY} & \blue{READY} & \blue{Description} \\
+			\midrule
+			\textbf{ON} & \textbf{ON} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Normal during align initialization
+					\item Else indicates IMU, NAV COMP, NPS or AHRS Failure
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{ON} & \textbf{OFF} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Normal during align after initialization
+					\item Normal when \textbf{IMU/AM} selected prior to completion of coarse align
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{FLASH} & \textbf{FLASH} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Alignment not initiated due to suspended alignment (check parking brake)
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{FLASH} & \textbf{OFF} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Align suspended (check parking brake)
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{OFF} & \textbf{ON} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Min weapon launch requirements met
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{OFF} & \textbf{OFF} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item System operating normally
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{OFF} & \textbf{FLASH} & (after 5s both off)
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Occurs when \textbf{IMU/AM} selected and IMU is aligned. If another mode not selected within 5 s, alignment lost, INS not available
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{OFF} & \textbf{FLASH} & 
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Alignment suspended past mission alert criteria with parking brake off
+				\end{itemize}
+			\end{minipage} \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	\clearpage
+
+	\subsection{ALIGNMENT REINITIALIZATION}
+	\begin{tableitemize}
+		\blueitem{Reinitialization}{If observable acronym (\textbf{O}) or align stalls during fine align. RIO can apply any of following methods}
+		\blueitem{Method 1}{
+		\begin{subenumerate}
+			\item \textbf{NAV MODE} \dotfill \textbf{OFF}
+			\item \textbf{WCS} \dotfill \textbf{OFF}
+			\item Proceed with normal start sequence
+		\end{subenumerate}}
+		\blueitem{Method 2}{
+		\begin{subenumerate}
+			\item \textbf{NAV MODE} \dotfill \textbf{OFF}
+			\item \textbf{NAV MODE} \dotfill \textbf{Desired Align Mode}
+		\end{subenumerate}}
+		\blueitem{Method 3}{
+		\begin{subenumerate}
+			\item \textbf{NAV MODE} \dotfill \textbf{INS} \\
+			\hfill Verify \textbf{IN} on \textbf{TID}
+			\item \textbf{NAV MODE} \dotfill \textbf{OFF}
+			\item \textbf{NAV MODE} \dotfill \textbf{Desired Align Mode}
+		\end{subenumerate}}
+	\end{tableitemize}
+
+	\subsection{INS (BACKUP) MODES}
+	\begin{tableitemize}
+		\blueitem{INS Mode}{
 		\begin{subitemize}
-			\item \textbf{STBY ON / READY ON}
-			\begin{itemize}
-				\item Normal during align initialization
-				\item Else indicates IMU, NAV COMP, NPS or AHRS Failure
-			\end{itemize}
-			\item \textbf{STBY ON / READY OFF}
-			\begin{itemize}
-				\item Normal during align after initialization
-				\item Normal when \textbf{IMU/AM} selected prior to completion of coarse align
-			\end{itemize}
-			\item \textbf{STBY FLASHING / READY FLASHING}
-			\begin{itemize}
-				\item Alignment not initiated due to suspended alignment (check parking brake)
-			\end{itemize}
-			\item \textbf{STBY FLASHING / READY OFF}
-			\begin{itemize}
-				\item Align suspended (check parking brake)
-			\end{itemize}
-			\item \textbf{STBY OFF / READY ON}
-			\begin{itemize}
-				\item Min weapon launch requirements met
-			\end{itemize}
-			\item \textbf{STBY OFF / READY OFF}
-			\begin{itemize}
-				\item System operating normally
-			\end{itemize}
-			\item \textbf{STBY OFF / READY FLASHING} \\
-			(After 5 s both off)
-			\begin{itemize}
-				\item Occurs when \textbf{IMU/AM} selected and IMU is aligned. If another mode not selected within 5 s, alignment lost, INS not available
-			\end{itemize}
-			\item \textbf{STBY OFF / READY FLASHING}
-			\begin{itemize}
-				\item Alignment suspended past mission alert criteria with parking brake off
-			\end{itemize}
+			\item \textbf{Standard Navigation Mode}
+			\item IMU provides system state 
+		\end{subitemize}}
+		\blueitem{IMU/AM Mode}{
+		\begin{subitemize}
+			\item \textbf{Backup Navigation Mode}
+			\item Automatic activation upon CSDC or select IMU failures 
+			\item \textbf{TID} -- \textbf{IM} replaces \textbf{IN} acronym
+			\item \textbf{STBY}, \textbf{READY} lights flash until RIO sets \textbf{NAV MODE} to \textbf{IMU/AM}
+		\end{subitemize}}
+		\blueitem{IMU/AM Mode}{
+		\begin{subitemize}
+			\item \textbf{Backup Navigation Mode}
+			\item Automatic activation upon IMU failure
+			\item \textbf{TID} -- \textbf{AH} replaces \textbf{IN}/\textbf{IM} acronym
+			\item \textbf{STBY}, \textbf{READY} lights illuminate until RIO sets \textbf{NAV MODE} to \textbf{AHRS/AM}
+			\item Uses dead-reckoning from last known position using stored wind data and velocity measurements
 		\end{subitemize}}
 	\end{tableitemize}
 
 	\clearpage
 
-	\subsection{WAYPOINT}
+	\subsection{WAYPOINT NAVIGATION}
 	\begin{tableitemize}
 		\blueitem{Reference Point \break Types}{
 		\begin{subitemize}
@@ -1269,8 +1312,25 @@
 			\item \textbf{Hostile Area (HA)} -- Area with known ground or air hostiles
 			\item \textbf{Home Base (HB)} -- Airfield / CV
 		\end{subitemize}}
+		\blueitem{CAP Entry}{
+		\begin{subenumerate}
+			\item \textbf{CAP CATEGORY} \dotfill \textbf{TAC DATA}
+			\item \textbf{Desired Point} \dotfill \textbf{Select}
+			\item \textbf{Cap Keyboard} \dotfill \textbf{CLEAR}
+			\item \textbf{LAT} \dotfill Input, \textbf{ENTER}
+			\item \textbf{LONG} \dotfill Input, \textbf{ENTER}
+		\end{subenumerate}}
+		\blueitem{Point Navigation}{
+		\begin{subenumerate}
+			\item \textbf{CAP CATEGORY} \dotfill \textbf{TAC DATA}
+			\item \textbf{Desired Point} \dotfill \textbf{Select}
+			\item \textbf{DEST Mode Selector} \dotfill As Desired
+			\item Monitor steering information on Displays
+		\end{subenumerate}}
 	\end{tableitemize}
 
+	\clearpage 
+	
 	\subsection{TACAN}
 	\begin{tableitemize}
 		\blueitem{Overview}{ \textbf{TAC}tical \textbf{A}ir \textbf{N}avigation System
@@ -1281,61 +1341,35 @@
 				\item \textbf{Bearing} within 0.5 deg
 			\end{itemize}
 			\item \textbf{Operating Range} -- approx 300 nm
-			\item 126 channels, 2 modes of operation
+			\item \textbf{Channels} -- 126 
 		\end{subitemize}}
-		\blueitem{Operating Modes}{
-		\begin{subitemize}
-			\item \textbf{REC} -- Receive only
-			\item \textbf{T/R} -- Transmit \& Receive, enables ranging
-			\item \textbf{A/A} -- Air to air mode
-		\end{subitemize}}
-		\blueitem{Typical \break Operation}{
-		\textbf{TACAN Setup}
+		\blueitem{Power / Tune}{
 		\begin{subenumerate}
 			\item \textbf{Mode} \dotfill \textbf{As Desired}
+			\begin{itemize}
+				\item \textbf{REC} -- Receive only
+				\item \textbf{T/R} -- Transmit \& Receive, enables ranging
+				\item \textbf{A/A} -- Air to air mode
+			\end{itemize}
 			\item \textbf{Frequency} \dotfill \textbf{As Desired}
 			\item \textbf{TACAN CMD} \dotfill \textbf{As Required} \\
 			\hfill (Corresponding Crewmember)
-		\end{subenumerate}
-		\textbf{Pilot Setup}
+		\end{subenumerate}}
+		\blueitem{Pilot Setup}{
 		\begin{subenumerate}
 			\item \textbf{STEER CMD} \dotfill \textbf{TACAN}
 			\item \textbf{HSD MODE} \dotfill \textbf{NAV}
 			\item \textbf{Desired Course} \dotfill \textbf{Set} via \textbf{CRS Knob}
-		\end{subenumerate}
-		\textbf{Consult BDHI and HSD to track TACAN station}}
-	\end{tableitemize}
-
-	\clearpage
-
-	\subsection{VOR/ADF}
-	\begin{tableitemize}
-		\blueitem{Overview}{\textbf{A}utomatic \textbf{D}irection \textbf{F}inder
+			\item Consult BDHI, HSD to track TACAN station
+		\end{subenumerate}}
+		\blueitem{Miscellaneous}{
 		\begin{subitemize}
-			\item Used with \textbf{ARC-182 Radio}
-			\item \textbf{BDHI} -- Displays \textbf{Relative Bearing} to transmitting ground station
-			\item \textbf{Range} -- Line of sight
-			\item \textbf{Frequency Range} -- 108-399.975 MHz
-			\item Only operable for RIO
+			\item \textbf{BIT Button} -- Initiates self test 
+			\item \textbf{GO \& NO-GO Lights} -- Indicate BIT result 
+			\item \textbf{VOL Knob} -- Allows audio monitoring
+			\item \textbf{BCN Mode} -- Beacon Mode (Non-functional)
 		\end{subitemize}}
-		\blueitem{Typical \break Operation}{
-		\begin{tableminipage}
-			\textbf{RIO Setup}
-			\begin{enumerate}
-				\item \textbf{V/UHF 2 Mode} \dotfill \textbf{T/R} \\
-				\hfill (warm-up, at least 5 min)
-				\item \textbf{V/UHF 2 Frequency Mode} \dotfill \textbf{MAN}
-				\item \textbf{V/UHF 2 Frequency} \dotfill \textbf{As desired}
-				\item \textbf{V/UHF 2 Mode} \dotfill \textbf{DF}
-			\end{enumerate}
-		\end{tableminipage}}
 	\end{tableitemize}
-
-	\notebox{
-		\begin{itemize}
-			\item \textbf{UHF 1 ADF} is not functional despite controls in \textbf{PILOT} cockpit
-		\end{itemize}
-	}
 
 	\clearpage
 
@@ -1516,6 +1550,34 @@
 		\end{itemize}
 	}
 
+	\subsection{ARA-50 UHF ADF}
+	\begin{tableitemize}
+		\blueitem{Overview}{\textbf{A}utomatic \textbf{D}irection \textbf{F}inder
+		\begin{subitemize}
+			\item Used with \textbf{ARC-182 Radio}
+			\item \textbf{BDHI} -- Displays \textbf{Relative Bearing} to transmitting ground station
+			\item \textbf{Range} -- Line of sight
+			\item \textbf{Frequency Range} -- 108-399.975 MHz
+			\item Only operable for RIO
+		\end{subitemize}}
+		\blueitem{Power / Tune}{
+		\begin{subenumerate}
+			\item \textbf{V/UHF 2 Mode} \dotfill \textbf{T/R} \\
+			\hfill (warm-up, at least 5 min)
+			\item \textbf{V/UHF 2 Frequency Mode} \dotfill \textbf{MAN}
+			\item \textbf{V/UHF 2 Frequency} \dotfill \textbf{As desired}
+			\item \textbf{V/UHF 2 Mode} \dotfill \textbf{DF}
+		\end{subenumerate}}
+	\end{tableitemize}
+
+	\notebox{
+		\begin{itemize}
+			\item \textbf{UHF 1 ADF} is not functional despite controls in \textbf{PILOT} cockpit
+		\end{itemize}
+	}
+
+	\clearpage
+
 	\subsection{KY-28 VOICE SECURITY EQUIPMENT}
 	\begin{tableitemize}
 		\blueitem{KY-28 Voice Security Equipment}{
@@ -1678,217 +1740,6 @@
 	\end{tableitemize}
 
 	\clearpage
-
-	\subsection{ALR-67 RWR - THREAT SYMBOLOGY}
-	\label{subsec:rwrsymb}
-	\begin{multicols*}{2}
-	\begin{center}
-		\begin{tabular}{c | p{4cm} }
-			\toprule
-			\multicolumn{2}{c}{\blue{SHIPS}} \\
-			\toprule
-			\textbf{AB} & Arleigh Burke \\
-			\midrule
-			\textbf{AK} & Admiral Kuznetsov \\
-			\midrule
-			\textbf{GR} & Grisha 5 (Albatros) \\
-			\midrule
-			\textbf{HP} & Oliver Hazard Perry \\
-			\midrule
-			\textbf{J2} & Type 054A Frigate, ``Jiangkai II class" \\
-			\midrule
-			\textbf{KK} & Krivak 3 (Rezky) \\
-			\midrule
-			\textbf{KV} & Kirov (Pyotr Velikiy) \\
-			\midrule
-			\textbf{L1} & Type 052B Destroyer, ``Luyang I class" \\
-			\midrule
-			\textbf{L2} & Type 052C Destroyer, ``Luyang II class" \\
-			\midrule
-			\textbf{N} & \emph{Ship with Nav Radar} \\
-			\midrule
-			\textbf{NE} & Neustrashimy \\
-			\midrule
-			\textbf{NZ} & Nimitz (Vinson, Stennis) \\
-			\midrule
-			\textbf{SV} & Slava (Moscow) \\
-			\midrule
-			\textbf{TC} & Ticonderoga \\
-			\midrule
-			\textbf{TT} & Tarantul 3 (Molniya) \\
-			\midrule
-			\textbf{TW} & Tarawa \\
-			\midrule
-			\textbf{YU} & Type 071 Amphibious Transport Dock, ``Yuzhao class" \\
-			\midrule
-			\multicolumn{2}{c}{\blue{AIRCRAFT}} \\
-			\toprule
-			\textbf{14} & F-14A/B \\
-			\midrule
-			\textbf{15} & F-15C/E \\
-			\midrule
-			\textbf{16} & F-16C \\
-			\midrule
-			\textbf{17} & JF-17 \\
-			\midrule
-			\textbf{18} & F/A-18C \\
-			\midrule
-			\textbf{19} & MiG-19 \\
-			\midrule
-		\end{tabular}
-	\end{center}
-	\begin{center}
-		\begin{tabular}{c | p{4cm}}
-			\textbf{21} & MiG-21bis \\
-			\midrule
-			\textbf{23} & MiG-23MLD \\
-			\midrule
-			\textbf{24} & Su-24M/MR \\
-			\midrule
-			\textbf{25} & MiG-25PD \\
-			\midrule
-			\textbf{29} & MiG-29A/G/S \\
-			& Su-27 \\
-			& Su-33 \\
-			& J-11A \\
-			\midrule
-			\textbf{30} & Su-30 \\
-			\midrule
-			\textbf{31} & MiG-31 \\
-			\midrule
-			\textbf{34} & Su-34 \\
-			\midrule
-			\textbf{37} & AJS-37 \\
-			\midrule
-			\textbf{39} & Su-25TM \\
-			\midrule
-			\textbf{50} & A-50 \\
-			\midrule
-			\textbf{52} & B-52 \\
-			\midrule
-			\textbf{AN} & AN-26B \\
-			& AN-30M \\
-			\midrule
-			\textbf{AP} & AH-64D \\
-			\midrule
-			\textbf{B1} & B-1B \\
-			\midrule
-			\textbf{BE} & Tu-95 \\
-			& Tu-142M \\
-			\midrule
-			\textbf{BF} & Tu-22M3 \\
-			\midrule
-			\textbf{BJ} & Tu-160 \\
-			\midrule
-			\textbf{E2} & E-2D \\
-			\midrule
-			\textbf{E3} & E-3C \\
-			\midrule
-			\textbf{F4} & F-4E \\
-			\midrule
-			\textbf{F5} & F-5E \\
-			\midrule
-			\textbf{HX} & Ka-27 \\
-			\midrule
-			\textbf{IL} & IL-76MD \\
-			& IL-78M \\
-			\midrule
-			\textbf{KC} & KC-135 \\
-			\midrule
-		\end{tabular}
-	\end{center}
-	\begin{center}
-		\begin{tabular}{c | p{4cm}}
-			\textbf{KJ} & KJ-2000 \\
-			\midrule
-			\textbf{M2} & Mirage 2000-C \\
-			& Mirage 2000-5 \\
-			\midrule
-			\textbf{S3} & S-3B \\
-			\midrule
-			\textbf{SH} & SH-60B \\
-			\midrule
-			\textbf{TO} & Tornado \\
-			\midrule
-			\textbf{TR} & C-130 \\
-			& C-17A \\
-			\toprule
-			\multicolumn{2}{c}{\blue{AIR DEFENSE}} \\
-			\toprule
-			\textbf{2} & S-75 TR SNR (SA-2) ``Fan Song" \\
-			\midrule
-			\textbf{3} & S-125 TR SNR-125 (SA-3) ``Low Blow" \\
-			\midrule
-			\textbf{6} & Kub SA-6 \\
-			\midrule
-			\textbf{7} & HQ-7 TR \\
-			\midrule
-			\textbf{8} & OSA (SA-8) \\
-			\midrule
-			\textbf{10} & S-300PS 30N6 TR (SA-10) \\
-			\midrule
-			\textbf{11} & Buk (SA-11) \\
-			\midrule
-			\textbf{12} & S-300V \\
-			\midrule
-			\textbf{15} & Tor 9A331 (SA-15) \\
-			\midrule
-			\textbf{19} & Tunguska 2C6M (SA-19) \\
-			\midrule
-			\textbf{A} & Gepard \\
-			& M-163 Vulcan \\
-			& ZSU-23-4 Shilka \\
-			\midrule
-			\textbf{BB} & S-300PS 64H6E SR (SA-10/Big Bird) \\
-			\midrule
-			\textbf{BF} & Rapier Blindfire TR \\
-			\midrule
-			\textbf{CS} & S-300PS 5N66M SR (SA-10/Clam Shell) \\
-			\midrule
-			\textbf{DE} & Sborka (Dog Ear) \\
-			\midrule
-			\textbf{FF} & S-125 P-19 SR (SA-3/Flat Face) \\
-			\midrule
-			\textbf{GR} & Roland SR \\
-			\midrule
-		\end{tabular}
-	\end{center}
-	\begin{center}
-		\begin{tabular}{c | p{4cm}}
-			\textbf{HA} & Hawk SR \\
-			\midrule
-			\textbf{HK} & Hawk TR \\
-			\midrule
-			\textbf{HQ} & HQ-7 SR \\
-			\midrule
-			\textbf{PT} & Patriot \\
-			\midrule
-			\textbf{RO} & Roland \\
-			\midrule
-			\textbf{RP} & Rapier SR \\
-			\midrule
-			\textbf{S} & 1L13 55G6 EWR \\
-			\midrule
-			\textbf{SD} & Buk TR (SA-11/Snow Drift) \\
-			\midrule
-			\textbf{SN} & PRW-11 (Side Net) \\
-			\midrule
-			\multicolumn{2}{c}{\blue{MISSILES}} \\
-			\toprule
-			\textbf{M} & AIM-54 \\
-			& AIM-120 \\
-			& MICA-EM \\
-			& R-37 \\
-			& R-77 \\
-			& SD-10 \\
-			\midrule
-			\multicolumn{2}{c}{\blue{ATC}} \\
-			\toprule
-			\textbf{T} & Airport ATC Radar \\
-			\bottomrule
-		\end{tabular}
-	\end{center}
-	\end{multicols*}
 
 	\subsection{ALE-39 CMS DISPENSER}
 	\begin{tableitemize}
@@ -2767,768 +2618,12 @@
 		\end{itemize}
 	}
 
-
-
-	\clearpage
-
-	\section{TACTICAL INFORMATION DISPLAY}
-
-	\subsection{TID SYMBOLOGY}
-	\label{subsec:tidsymb}
-	\begin{center}
-		\begin{longtable}{p{3.5cm} | p{1cm} |  p{6cm}}
-			\toprule
-			\multicolumn{2}{c}{\blue{GENERAL}} &  \\
-			\midrule
-			\textbf{Center Dot} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.05cm]{1.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Basic Component of Symbols}
-					\begin{itemize}
-						\item Marks coordinates of symbol
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Own AC} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{2.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Symbol representing own aircraft}
-					\begin{itemize}
-						\item Ground Stabilized: Moves
-						\item Aircraft Stabilized: Stationary
-						\item Outside TID: line drawn from TID center towards symbol
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{TID Cursor} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{26.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Hook Cursor}
-					\begin{itemize}
-						\item Controlled by \textbf{HCU} in \textbf{TID mode}
-					\end{itemize}
-					\item \textbf{Half-Action}
-					\begin{itemize}
-						\item Enables display of symbol
-						\item Enables HCU stick to move cursor
-					\end{itemize}
-					\item \textbf{Full-Action}
-					\begin{itemize}
-						\item Hooks closest symbol
-						\item If no symbol near, cursor dropped at location
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{TWS Steering Centroid} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{27.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Steering centroid of TWS tracks}
-					\begin{itemize}
-						\item Selected by WCS for weapons engagement
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\multicolumn{2}{c|}{\blue{ONBOARD SENSORS}} & \textbf{Symbol Above Dot} \\
-			\midrule
-			\textbf{Unknown} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{3.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Unknown Sensor Track}
-					\item \textbf{All Returns in RWS}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Hostile} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{4.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Sensor Track designated Hostile by RIO}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Friend} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{5.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Sensor Track designated Friendly by RIO}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Angle-Tracked Radar Target} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.55cm]{6.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Radar Angle Tracking}
-					\begin{itemize}
-						\item Jamming Target
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Angle-Tracked Radar Target with Altitude Difference Ranging} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{7.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Radar Angle Tracking}
-					\begin{itemize}
-						\item Jamming Target
-						\item Alt. diff. ranging
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{TCS-Angle Tracked Target} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.55cm]{10.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{TCS Angle Tracking}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{TCS-Angle Tracked Target with Altitude Difference Ranging} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{11.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{TCS Angle Tracking}
-					\begin{itemize}
-						\item Alt. diff. ranging
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\multicolumn{2}{c|}{\blue{D/L TARGETS}} & \textbf{Symbol Below Dot} \\
-			\midrule
-			\textbf{Unknown} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{12.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{D/L Track designated Unknown by Source}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Hostile} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{13.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{D/L Track designated Hostile by Source}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Friendly} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{14.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{D/L Track designated Friendly by Source}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\multicolumn{2}{c}{\blue{MANUAL REF POINTS}} & \\
-			\midrule
-			\textbf{Home base} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{15.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Waypoint Representing}
-					\begin{itemize}
-						\item Home Base
-						\item Carrier
-						\item Airfield
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Waypoint} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{16.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Nav Waypoint}
-					\item \textbf{Supplanted by Number}
-					\begin{itemize}
-						\item 1, 2, or 3
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Defended Point} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{17.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Waypoint to Defend}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Fixed Point} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{18.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Generic Waypoint}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Hostile Area} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{19.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Waypoint Indicating Hostile Area}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Surface Target} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{20.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Waypoint Indicating Surface Target}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{IP} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{21.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Initial Point}
-					\begin{itemize}
-						\item Waypoint for A/G engagement
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\multicolumn{2}{c}{\blue{D/L REF POINTS}} & \\
-			\midrule
-			\textbf{Home Base} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{22.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{D/L Waypoint Representing Home Base}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Waypoint} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{23.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{D/L Generic Waypoint}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Data Link Fixed Point} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\includegraphics[width=0.8cm]{24.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{D/L Waypoint Representing Fixed Point}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Surface Target} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{25.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{D/L Waypoint Representing a Surface Target}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\multicolumn{2}{c}{\blue{POS SYMB MODIFIERS}} &  \\
-			\midrule
-			\textbf{Mandatory Attack} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{28.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Additional Symbology on TWS Track}
-					\begin{itemize}
-						\item Horizontal bar through center dot
-					\end{itemize}
-					\item \textbf{Selected by RIO}
-					\begin{itemize}
-						\item Only 1 target can be designated
-						\item Guaranteed WCS priority number
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Data Link Destroy }&
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{29.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Additional Symbology on D/L Track}
-					\begin{itemize}
-						\item Horizontal bar through center dot
-					\end{itemize}
-					\item \textbf{Selected by Source}
-					\begin{itemize}
-						\item No effect on WCS prioritization
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Do Not Attack} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{30.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Additional Symbology on TWS or D/L Track}
-					\begin{itemize}
-						\item Vertical bar through center dot
-					\end{itemize}
-					\item \textbf{If Set by RIO}
-					\begin{itemize}
-						\item Removes WCS prioritization
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Multiple Targets} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{31.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Additional Symbology on TWS or D/L Track}
-					\begin{itemize}
-						\item Horizontal bar on left side of symbol
-					\end{itemize}
-					\item \textbf{Indicates Multiple Targets}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Data Link Challenge} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{32.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Additional Symbology on D/L Track}
-					\begin{itemize}
-						\item Small \textbf{V} with center at center dot
-					\end{itemize}
-					\item \textbf{Command to Visually Identify}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Track Extrapolated} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{33.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Additional Symbology on TWS or D/L Track}
-					\begin{itemize}
-						\item Small \textbf{X} with center at center dot
-					\end{itemize}
-					\item \textbf{No Update within 8 seconds}
-					\begin{itemize}
-						\item Track deleted after 14 seconds
-						\item Or after 2 min if track hold
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Altitude Numerics} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=1cm]{34.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Altitude to Nearest Ten Thousand}
-					\begin{itemize}
-						\item example: 35000-45000
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Firing Order Numerics} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=1cm]{35.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Indicates AIM-54 Prioritization}
-					\begin{itemize}
-						\item Numbers 1-6
-						\item Only in TWS
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Time-to-Impact (TTI)} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=1cm]{47.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{After AIM-54 Launch}
-					\begin{itemize}
-						\item Prioritization replaced with estimated TTI
-					\end{itemize}
-					\item \textbf{Flashes after Pitbull}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Velocity Vector} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{36.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Additional Symbology from center Dot}
-					\begin{itemize}
-						\item Direction represents track heading
-						\item Length represents speed
-					\end{itemize}
-					\item \textbf{Varies with Mode}
-					\begin{itemize}
-						\item Ground Stabilized: true heading and ground speed
-						\item Aircraft Stabilized: relative heading and velocity
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Launch Zone Vectors} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{37.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=5cm]{lzv.png}
-			\end{minipage}
-			\begin{minipage}[t]{\linewidth}
-				\begin{itemize}
-					\item \textbf{Additional Symbology for AIM-54}
-					\begin{itemize}
-						\item Selected manually by RIO
-						\item Or 60 seconds from max launch
-					\end{itemize}
-					\item \textbf{TUMR}
-					\begin{itemize}
-						\item Time-Until-Minimum-Range
-						\item Max: 180 seconds, 1.5 inches
-					\end{itemize}
-					\item \textbf{TUOR}
-					\begin{itemize}
-						\item Time-Until-Optimal-Range
-						\item Start of bar is 8 seconds from optimum
-					\end{itemize}
-					\item \textbf{TUIR}
-					\begin{itemize}
-						\item Time-Until-In-Range
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Jamming Strobe} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{38.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Line from own AC towards Jammer}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Radar Antenna Scan Pattern Azimuth Limit}s &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{39.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Limits of Current Scan Azimuth}
-					\item \textbf{Single Line in STT}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Data Link Jamming Strobe} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{40.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Line from D/L point towards Jammer}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Data Link Pointer} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{41.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Additional Symbology on D/L Track}
-					\begin{itemize}
-						\item Circle
-						\item Indicates operator concern
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Data Link Priority Kill} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{42.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Additional Symbology on D/L Track}
-					\begin{itemize}
-						\item Square
-						\item Indicates target must be destroyed
-						\item No effect on WCS prioritization
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\multicolumn{2}{c}{\blue{ATTACK DISPLAY SYMBOLOGY}} & \\
-			\midrule
-			\textbf{Artificial Horizon} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{43.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Represents Pitch and Roll}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Steering Guidance Symbol} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{44.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Represents Steering Error}
-					\begin{itemize}
-						\item Should be placed as near as possible to center of ASE circle
-					\end{itemize}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Allowable Steering Error Circle} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{45.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Indicates Allowable Steering Error for Missile Launch}
-					\item \textbf{Size Varies with Geometry, Mode, Missile}
-				\end{itemize}
-			\end{minipage} \\
-			\midrule
-			\textbf{Breakaway Indication} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\centering
-				\includegraphics[width=0.8cm]{27.png}
-			\end{minipage} &
-			\begin{minipage}[t]{\linewidth}
-				\vspace{-7pt}
-				\begin{itemize}
-					\item \textbf{Appears when Target Range Less than Minimum for Selected Weapon}
-				\end{itemize}
-			\end{minipage} \\
-			\bottomrule
-		\end{longtable}
-	\end{center}
-
-	\cleardoublepage
-
 	\chapter{TCS - LANTIRN}
 	\thumbtab{TCS - LANTIRN}{3}
 	\minitoc
 	\cleardoublepage
 
 	\section{TCS}
-
 
 	\subsection{OVERVIEW}
 
@@ -4454,11 +3549,13 @@
 			\end{itemize}
 		\end{subitemize}}
 	\end{tableitemize}
-	\begin{center}
-		\resizebox{0.75\linewidth}{!}{
-			\includegraphics{cwflood.png}
-		}
-	\end{center}
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.9\linewidth]{cwflood.png}
+		\caption{\textbf{CW Flood Search Pattern}}
+		\label{fig:cwflood}
+	\end{figure}
 
 	\subsection{AIM-7 - STT}
 	\begin{tablenumerate}
@@ -4769,6 +3866,971 @@
 		\end{itemize}
 	\end{itemize}
 	}
+
+	\chapter{APPENDIX}
+	\thumbtab{Appendix}{6}
+	\minitoc
+	\cleardoublepage
+
+	\section{SYMBOLOGY}
+
+	\subsection{ALR-67 RWR - THREAT SYMBOLOGY}
+	\label{subsec:rwrsymb}
+	\begin{multicols*}{2}
+	\begin{center}
+		\begin{tabular}{c | p{4cm} }
+			\toprule
+			\multicolumn{2}{c}{\blue{SHIPS}} \\
+			\toprule
+			\textbf{AB} & Arleigh Burke \\
+			\midrule
+			\textbf{AK} & Admiral Kuznetsov \\
+			\midrule
+			\textbf{GR} & Grisha 5 (Albatros) \\
+			\midrule
+			\textbf{HP} & Oliver Hazard Perry \\
+			\midrule
+			\textbf{J2} & Type 054A Frigate, ``Jiangkai II class" \\
+			\midrule
+			\textbf{KK} & Krivak 3 (Rezky) \\
+			\midrule
+			\textbf{KV} & Kirov (Pyotr Velikiy) \\
+			\midrule
+			\textbf{L1} & Type 052B Destroyer, ``Luyang I class" \\
+			\midrule
+			\textbf{L2} & Type 052C Destroyer, ``Luyang II class" \\
+			\midrule
+			\textbf{N} & \emph{Ship with Nav Radar} \\
+			\midrule
+			\textbf{NE} & Neustrashimy \\
+			\midrule
+			\textbf{NZ} & Nimitz (Vinson, Stennis) \\
+			\midrule
+			\textbf{SV} & Slava (Moscow) \\
+			\midrule
+			\textbf{TC} & Ticonderoga \\
+			\midrule
+			\textbf{TT} & Tarantul 3 (Molniya) \\
+			\midrule
+			\textbf{TW} & Tarawa \\
+			\midrule
+			\textbf{YU} & Type 071 Amphibious Transport Dock, ``Yuzhao class" \\
+			\midrule
+			\multicolumn{2}{c}{\blue{AIRCRAFT}} \\
+			\toprule
+			\textbf{14} & F-14A/B \\
+			\midrule
+			\textbf{15} & F-15C/E \\
+			\midrule
+			\textbf{16} & F-16C \\
+			\midrule
+			\textbf{17} & JF-17 \\
+			\midrule
+			\textbf{18} & F/A-18C \\
+			\midrule
+			\textbf{19} & MiG-19 \\
+			\midrule
+		\end{tabular}
+	\end{center}
+	\begin{center}
+		\begin{tabular}{c | p{4cm}}
+			\textbf{21} & MiG-21bis \\
+			\midrule
+			\textbf{23} & MiG-23MLD \\
+			\midrule
+			\textbf{24} & Su-24M/MR \\
+			\midrule
+			\textbf{25} & MiG-25PD \\
+			\midrule
+			\textbf{29} & MiG-29A/G/S \\
+			& Su-27 \\
+			& Su-33 \\
+			& J-11A \\
+			\midrule
+			\textbf{30} & Su-30 \\
+			\midrule
+			\textbf{31} & MiG-31 \\
+			\midrule
+			\textbf{34} & Su-34 \\
+			\midrule
+			\textbf{37} & AJS-37 \\
+			\midrule
+			\textbf{39} & Su-25TM \\
+			\midrule
+			\textbf{50} & A-50 \\
+			\midrule
+			\textbf{52} & B-52 \\
+			\midrule
+			\textbf{AN} & AN-26B \\
+			& AN-30M \\
+			\midrule
+			\textbf{AP} & AH-64D \\
+			\midrule
+			\textbf{B1} & B-1B \\
+			\midrule
+			\textbf{BE} & Tu-95 \\
+			& Tu-142M \\
+			\midrule
+			\textbf{BF} & Tu-22M3 \\
+			\midrule
+			\textbf{BJ} & Tu-160 \\
+			\midrule
+			\textbf{E2} & E-2D \\
+			\midrule
+			\textbf{E3} & E-3C \\
+			\midrule
+			\textbf{F4} & F-4E \\
+			\midrule
+			\textbf{F5} & F-5E \\
+			\midrule
+			\textbf{HX} & Ka-27 \\
+			\midrule
+			\textbf{IL} & IL-76MD \\
+			& IL-78M \\
+			\midrule
+			\textbf{KC} & KC-135 \\
+			\midrule
+		\end{tabular}
+	\end{center}
+	\begin{center}
+		\begin{tabular}{c | p{4cm}}
+			\textbf{KJ} & KJ-2000 \\
+			\midrule
+			\textbf{M2} & Mirage 2000-C \\
+			& Mirage 2000-5 \\
+			\midrule
+			\textbf{S3} & S-3B \\
+			\midrule
+			\textbf{SH} & SH-60B \\
+			\midrule
+			\textbf{TO} & Tornado \\
+			\midrule
+			\textbf{TR} & C-130 \\
+			& C-17A \\
+			\toprule
+			\multicolumn{2}{c}{\blue{AIR DEFENSE}} \\
+			\toprule
+			\textbf{2} & S-75 TR SNR (SA-2) ``Fan Song" \\
+			\midrule
+			\textbf{3} & S-125 TR SNR-125 (SA-3) ``Low Blow" \\
+			\midrule
+			\textbf{6} & Kub SA-6 \\
+			\midrule
+			\textbf{7} & HQ-7 TR \\
+			\midrule
+			\textbf{8} & OSA (SA-8) \\
+			\midrule
+			\textbf{10} & S-300PS 30N6 TR (SA-10) \\
+			\midrule
+			\textbf{11} & Buk (SA-11) \\
+			\midrule
+			\textbf{12} & S-300V \\
+			\midrule
+			\textbf{15} & Tor 9A331 (SA-15) \\
+			\midrule
+			\textbf{19} & Tunguska 2C6M (SA-19) \\
+			\midrule
+			\textbf{A} & Gepard \\
+			& M-163 Vulcan \\
+			& ZSU-23-4 Shilka \\
+			\midrule
+			\textbf{BB} & S-300PS 64H6E SR (SA-10/Big Bird) \\
+			\midrule
+			\textbf{BF} & Rapier Blindfire TR \\
+			\midrule
+			\textbf{CS} & S-300PS 5N66M SR (SA-10/Clam Shell) \\
+			\midrule
+			\textbf{DE} & Sborka (Dog Ear) \\
+			\midrule
+			\textbf{FF} & S-125 P-19 SR (SA-3/Flat Face) \\
+			\midrule
+			\textbf{GR} & Roland SR \\
+			\midrule
+		\end{tabular}
+	\end{center}
+	\begin{center}
+		\begin{tabular}{c | p{4cm}}
+			\textbf{HA} & Hawk SR \\
+			\midrule
+			\textbf{HK} & Hawk TR \\
+			\midrule
+			\textbf{HQ} & HQ-7 SR \\
+			\midrule
+			\textbf{PT} & Patriot \\
+			\midrule
+			\textbf{RO} & Roland \\
+			\midrule
+			\textbf{RP} & Rapier SR \\
+			\midrule
+			\textbf{S} & 1L13 55G6 EWR \\
+			\midrule
+			\textbf{SD} & Buk TR (SA-11/Snow Drift) \\
+			\midrule
+			\textbf{SN} & PRW-11 (Side Net) \\
+			\midrule
+			\multicolumn{2}{c}{\blue{MISSILES}} \\
+			\toprule
+			\textbf{M} & AIM-54 \\
+			& AIM-120 \\
+			& MICA-EM \\
+			& R-37 \\
+			& R-77 \\
+			& SD-10 \\
+			\midrule
+			\multicolumn{2}{c}{\blue{ATC}} \\
+			\toprule
+			\textbf{T} & Airport ATC Radar \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\end{multicols*}
+
+	\subsection{TID SYMBOLOGY}
+	\label{subsec:tidsymb}
+	\begin{center}
+		\begin{longtable}{p{3.5cm} | p{1cm} |  p{6cm}}
+			\toprule
+			\multicolumn{2}{c}{\blue{GENERAL}} &  \\
+			\midrule
+			\textbf{Center Dot} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.05cm]{1.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Basic Component of Symbols}
+					\begin{itemize}
+						\item Marks coordinates of symbol
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Own AC} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{2.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Symbol representing own aircraft}
+					\begin{itemize}
+						\item Ground Stabilized: Moves
+						\item Aircraft Stabilized: Stationary
+						\item Outside TID: line drawn from TID center towards symbol
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{TID Cursor} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{26.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Hook Cursor}
+					\begin{itemize}
+						\item Controlled by \textbf{HCU} in \textbf{TID mode}
+					\end{itemize}
+					\item \textbf{Half-Action}
+					\begin{itemize}
+						\item Enables display of symbol
+						\item Enables HCU stick to move cursor
+					\end{itemize}
+					\item \textbf{Full-Action}
+					\begin{itemize}
+						\item Hooks closest symbol
+						\item If no symbol near, cursor dropped at location
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{TWS Steering Centroid} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{27.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Steering centroid of TWS tracks}
+					\begin{itemize}
+						\item Selected by WCS for weapons engagement
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\multicolumn{2}{c|}{\blue{ONBOARD SENSORS}} & \textbf{Symbol Above Dot} \\
+			\midrule
+			\textbf{Unknown} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{3.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Unknown Sensor Track}
+					\item \textbf{All Returns in RWS}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Hostile} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{4.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Sensor Track designated Hostile by RIO}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Friend} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{5.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Sensor Track designated Friendly by RIO}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Angle-Tracked Radar Target} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.55cm]{6.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Radar Angle Tracking}
+					\begin{itemize}
+						\item Jamming Target
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Angle-Tracked Radar Target with Altitude Difference Ranging} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{7.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Radar Angle Tracking}
+					\begin{itemize}
+						\item Jamming Target
+						\item Alt. diff. ranging
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{TCS-Angle Tracked Target} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.55cm]{10.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{TCS Angle Tracking}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{TCS-Angle Tracked Target with Altitude Difference Ranging} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{11.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{TCS Angle Tracking}
+					\begin{itemize}
+						\item Alt. diff. ranging
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\multicolumn{2}{c|}{\blue{D/L TARGETS}} & \textbf{Symbol Below Dot} \\
+			\midrule
+			\textbf{Unknown} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{12.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{D/L Track designated Unknown by Source}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Hostile} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{13.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{D/L Track designated Hostile by Source}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Friendly} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{14.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{D/L Track designated Friendly by Source}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\multicolumn{2}{c}{\blue{MANUAL REF POINTS}} & \\
+			\midrule
+			\textbf{Home base} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{15.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Waypoint Representing}
+					\begin{itemize}
+						\item Home Base
+						\item Carrier
+						\item Airfield
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Waypoint} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{16.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Nav Waypoint}
+					\item \textbf{Supplanted by Number}
+					\begin{itemize}
+						\item 1, 2, or 3
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Defended Point} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{17.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Waypoint to Defend}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Fixed Point} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{18.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Generic Waypoint}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Hostile Area} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{19.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Waypoint Indicating Hostile Area}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Surface Target} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{20.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Waypoint Indicating Surface Target}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{IP} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{21.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Initial Point}
+					\begin{itemize}
+						\item Waypoint for A/G engagement
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\multicolumn{2}{c}{\blue{D/L REF POINTS}} & \\
+			\midrule
+			\textbf{Home Base} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{22.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{D/L Waypoint Representing Home Base}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Waypoint} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{23.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{D/L Generic Waypoint}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Data Link Fixed Point} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\includegraphics[width=0.8cm]{24.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{D/L Waypoint Representing Fixed Point}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Surface Target} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{25.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{D/L Waypoint Representing a Surface Target}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\multicolumn{2}{c}{\blue{POS SYMB MODIFIERS}} &  \\
+			\midrule
+			\textbf{Mandatory Attack} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{28.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Additional Symbology on TWS Track}
+					\begin{itemize}
+						\item Horizontal bar through center dot
+					\end{itemize}
+					\item \textbf{Selected by RIO}
+					\begin{itemize}
+						\item Only 1 target can be designated
+						\item Guaranteed WCS priority number
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Data Link Destroy }&
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{29.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Additional Symbology on D/L Track}
+					\begin{itemize}
+						\item Horizontal bar through center dot
+					\end{itemize}
+					\item \textbf{Selected by Source}
+					\begin{itemize}
+						\item No effect on WCS prioritization
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Do Not Attack} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{30.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Additional Symbology on TWS or D/L Track}
+					\begin{itemize}
+						\item Vertical bar through center dot
+					\end{itemize}
+					\item \textbf{If Set by RIO}
+					\begin{itemize}
+						\item Removes WCS prioritization
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Multiple Targets} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{31.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Additional Symbology on TWS or D/L Track}
+					\begin{itemize}
+						\item Horizontal bar on left side of symbol
+					\end{itemize}
+					\item \textbf{Indicates Multiple Targets}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Data Link Challenge} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{32.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Additional Symbology on D/L Track}
+					\begin{itemize}
+						\item Small \textbf{V} with center at center dot
+					\end{itemize}
+					\item \textbf{Command to Visually Identify}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Track Extrapolated} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{33.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Additional Symbology on TWS or D/L Track}
+					\begin{itemize}
+						\item Small \textbf{X} with center at center dot
+					\end{itemize}
+					\item \textbf{No Update within 8 seconds}
+					\begin{itemize}
+						\item Track deleted after 14 seconds
+						\item Or after 2 min if track hold
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Altitude Numerics} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=1cm]{34.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Altitude to Nearest Ten Thousand}
+					\begin{itemize}
+						\item example: 35000-45000
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Firing Order Numerics} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=1cm]{35.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Indicates AIM-54 Prioritization}
+					\begin{itemize}
+						\item Numbers 1-6
+						\item Only in TWS
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Time-to-Impact (TTI)} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=1cm]{47.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{After AIM-54 Launch}
+					\begin{itemize}
+						\item Prioritization replaced with estimated TTI
+					\end{itemize}
+					\item \textbf{Flashes after Pitbull}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Velocity Vector} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{36.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Additional Symbology from center Dot}
+					\begin{itemize}
+						\item Direction represents track heading
+						\item Length represents speed
+					\end{itemize}
+					\item \textbf{Varies with Mode}
+					\begin{itemize}
+						\item Ground Stabilized: true heading and ground speed
+						\item Aircraft Stabilized: relative heading and velocity
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Launch Zone Vectors} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{37.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=5cm]{lzv.png}
+			\end{minipage}
+			\begin{minipage}[t]{\linewidth}
+				\begin{itemize}
+					\item \textbf{Additional Symbology for AIM-54}
+					\begin{itemize}
+						\item Selected manually by RIO
+						\item Or 60 seconds from max launch
+					\end{itemize}
+					\item \textbf{TUMR}
+					\begin{itemize}
+						\item Time-Until-Minimum-Range
+						\item Max: 180 seconds, 1.5 inches
+					\end{itemize}
+					\item \textbf{TUOR}
+					\begin{itemize}
+						\item Time-Until-Optimal-Range
+						\item Start of bar is 8 seconds from optimum
+					\end{itemize}
+					\item \textbf{TUIR}
+					\begin{itemize}
+						\item Time-Until-In-Range
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Jamming Strobe} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{38.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Line from own AC towards Jammer}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Radar Antenna Scan Pattern Azimuth Limit}s &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{39.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Limits of Current Scan Azimuth}
+					\item \textbf{Single Line in STT}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Data Link Jamming Strobe} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{40.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Line from D/L point towards Jammer}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Data Link Pointer} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{41.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Additional Symbology on D/L Track}
+					\begin{itemize}
+						\item Circle
+						\item Indicates operator concern
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Data Link Priority Kill} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{42.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Additional Symbology on D/L Track}
+					\begin{itemize}
+						\item Square
+						\item Indicates target must be destroyed
+						\item No effect on WCS prioritization
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\multicolumn{2}{c}{\blue{ATTACK DISPLAY SYMBOLOGY}} & \\
+			\midrule
+			\textbf{Artificial Horizon} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{43.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Represents Pitch and Roll}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Steering Guidance Symbol} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{44.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Represents Steering Error}
+					\begin{itemize}
+						\item Should be placed as near as possible to center of ASE circle
+					\end{itemize}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Allowable Steering Error Circle} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{45.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Indicates Allowable Steering Error for Missile Launch}
+					\item \textbf{Size Varies with Geometry, Mode, Missile}
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{Breakaway Indication} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\centering
+				\includegraphics[width=0.8cm]{27.png}
+			\end{minipage} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item \textbf{Appears when Target Range Less than Minimum for Selected Weapon}
+				\end{itemize}
+			\end{minipage} \\
+			\bottomrule
+		\end{longtable}
+	\end{center}
 
 	%fills rest of page with blanks
 	\cleardoublepage

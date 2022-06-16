@@ -9,8 +9,20 @@
 
 - `F14_Cheatsheet.tex`
   - Changed standalone diagrams to be of type `figure`, this is more in line with standard `LaTeX` best-practices
-  - Reworked `UHF 1`, `V/UHF 2`, `LINK 4 DATALINK`, `RWR` subsections
-  - Removed `DISPLAYS` section
+  - Large `SYSTEMS` overhaul
+    - Major `COMMUNICATIONS` rework
+      - `UHF 1`, `V/UHF 2`, `LINK 4 DATALINK` subsections were updated to follow a more useful `desired effect - necessary action` formula
+    - Major `DEFENSIVE SYSTEMS` rework
+      - `RWR` was updated similarly to the communication subsections
+    - `NAVIGATION` was almost completely overhauled
+      - Reworked similarly to comms, defensive systems
+      - Also removed many redundant subsections and notes, condensed material into a more essential package
+      - Removed `DISPLAYS` subsection
+      - Added `NAVIGATION FIX` subsection
+      - Fleshed out `WAYPOINT NAVIGATION`
+      - Moved and renamed `VOR` subsection to `COMMUNICATIONS` as `ARA-50 ADF` subsection
+  - Added `APPENDIX` Chapter
+    - Moved `TID SYMBOLOGY` and `RWR THREAT SYMBOLOGY` to the appendix
   - Compact-ified `IFF` section
   - Other minor tweaks
 
