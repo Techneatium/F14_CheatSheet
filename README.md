@@ -62,9 +62,6 @@ For ease of maintenance, only the PDF and source files are available here. To co
   - DEFENSIVE SYSTEMS
     - Own THREAT ADVISORY INDICATOR Section? (maybe in appendix?)
 
-- `RADAR`
-  - Add Notes for each mode on which weapons will guide (and with what logic)
-
 - `TCS-LANTIRN`
   - TCS
 
