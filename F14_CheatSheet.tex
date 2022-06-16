@@ -4599,23 +4599,26 @@
 		\end{subitemize}}
 		\blueitem{PDSTT}{
 		\begin{subitemize}
-			\item \textbf{AIM-7 Guided in SP PD Mode}
+			\item \textbf{AIM-7 CAN be Guided in SP PD Mode}
 			\begin{itemize}
 				\item Requires \textbf{MSL OPTIONS} switch to be in \textbf{SP PD}
+				\item \textbf{Only Available on AIM-7F and Newer}
 			\end{itemize}
 			\item \textbf{PDSTT Advantages / Disadvantages}
     		\begin{itemize}
 				\item Susceptable to notching
 				\item Enables longest range Sparrow shots
 			\end{itemize}
-			\item \textbf{Only Available on AIM-7F and Newer}
 		\end{subitemize}}
 	\end{tableitemize}
 
 	\notebox{
 		\begin{itemize}
-			\item what happens if launch in pdstt without SP PD set?
-			\item unsure on this section. seems as though cw is used regardless of pdstt or pstt and that sp pd is a hole other option
+			\item \textbf{If launch is initiated on a PDSTT target with MSL OPTIONS switch set to NORM}
+			\begin{itemize}
+				\item CW illumination \& guidance will be used
+				\item Lock still based off PDSTT
+			\end{itemize}
 		\end{itemize}
 	}
 
@@ -4858,8 +4861,8 @@
 	\end{itemize}
 	}
 
-  %fills rest of page with blanks
-  \cleardoublepage
+	%fills rest of page with blanks
+	\cleardoublepage
 
 \iftoggle{print}{
 	\pagestyle{empty}

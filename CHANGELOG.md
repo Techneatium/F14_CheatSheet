@@ -2,6 +2,11 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.06.16
+
+- `F14_Cheatsheet.tex`
+  - Minor tweaks 
+
 ### Changelog - 2022.06.11
 
 - `TechCheck.cls`

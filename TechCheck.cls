@@ -1028,7 +1028,7 @@
 			minimum height=\tabdepth,
 			minimum width=\tabwidth
 		]
-		(sectionnode) at ([xshift=1\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east) {
+		(sectionnode) at ([xshift=1\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east){
 			\small\textbf{#1}
 		};
 		\end{tikzpicture}
