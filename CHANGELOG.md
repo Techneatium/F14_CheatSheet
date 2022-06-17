@@ -22,8 +22,12 @@
       - Fleshed out `WAYPOINT NAVIGATION`
       - Moved and renamed `VOR` subsection to `COMMUNICATIONS` as `ARA-50 ADF` subsection
     - `DEFENSIVE SYSTEMS` has also been overhauled
+    - `ACLS` subsection has been added
   - Added `APPENDIX` Chapter
     - Moved `TID SYMBOLOGY` and `RWR THREAT SYMBOLOGY` to the appendix
+    - Added `THREAT ADVISORY`, `INS STATUS`, and `VDI CAUTION` indicator subsections
+  - `PROCEDURES`
+    - Added `ICLS / ACLS CASE III` procedures
   - Compact-ified `IFF` section
   - Other minor tweaks
 

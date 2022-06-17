@@ -48,19 +48,14 @@ For ease of maintenance, only the PDF and source files are available here. To co
 - `PROCEDURES`
   - `START-UP`
     - Overhaul pre-start?
-  - `TAKEOFF & LANDING`
-    - CASE II/III
-
-- `SYSTEMS`
-  - `FLIGHT CONTROL`
-    - ACLS
 
 - `RADAR`
   - `TID`
     - Navgrid explanation
 
 - `TCS-LANTIRN`
-  - `TCS`
+  - `TCS` - Write the whole thing
+  - `LANTIRN` - Probably needs to be overhauled
 
 - `A/A WEAPONS`
   - People have complained that jester tries switching from one STT to the other and loses lock -> add explanation

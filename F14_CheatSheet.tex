@@ -516,16 +516,20 @@
 		\blueitem{Clearing Turn}{}
 	\end{tablenumerate}
 
-	\subsection{LANDING - OVERHEAD PATTERN}
-	\begin{center}
-		\resizebox{0.75\linewidth}{!}{
-			\includegraphics[
+	\clearpage
+
+	\subsection{LANDING -  CASE I / OVERHEAD PATTERN}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[
+			width = 0.8\linewidth,
 			page = {384},
 			trim = {2.5cm, 7.5cm, 2.5cm, 7.5cm},
 			clip
-			]{natops_F14B.pdf}
-		}
-	\end{center}
+		]{natops_F14B.pdf}
+		\caption{\textbf{Case I / Overhead Pattern}}
+		\label{fig:case1}
+	\end{figure}
 
 	\begin{tablenumerate}
 		\blueitem{Initial Approach}{
@@ -556,7 +560,7 @@
 		\begin{subitemize}
 			\item \textbf{DLC} \dotfill \textbf{Selected} once flaps out
 			\item \textbf{AOA} \dotfill \textbf{ON-SPEED}
-			\item \textbf{LANDING CHECKLIST}
+			\item \hyperref[subsec:landchecklist]{\textbf{Landing Checklist}}
 			\item \textbf{Altitude} \dotfill descend to \textbf{600 ft}
 		\end{subitemize}}
 		\blueitem{Final Turn}{\textbf{180 Deg Position}
@@ -568,7 +572,7 @@
 			\item \textbf{AOA} \dotfill \textbf{DONUT}
 			\item \textbf{Altitude} \dotfill \textbf{400-500 ft}
 		\end{subitemize}}
-		\blueitem{Intercept Glideslope}{
+		\blueitem{Intercept \break Glideslope}{
 		\begin{subitemize}
 			\item \textbf{Distance} \dotfill \textbf{3/4 Mile}
 			\item \textbf{Altitude} \dotfill \textbf{360 ft}
@@ -577,6 +581,7 @@
 	\end{tablenumerate}
 
 	\subsection{LANDING - CHECKLIST}
+	\label{subsec:landchecklist}
 	\begin{tablenumerate}
 		\blueitem{Wing Sweep}{\textbf{20 deg AUTO}}
 		\blueitem{Wheels}{
@@ -597,6 +602,268 @@
 		\blueitem{Brakes}{\textbf{Check}}
 		\blueitem{Fuel}{\textbf{Check}}
 	\end{tablenumerate}
+
+	\clearpage
+
+	\subsection{LANDING - CASE III - ICLS}
+	\begin{tablenumerate}
+		\blueitem{Inbound Call}{
+		\begin{subenumerate}
+			\item \textbf{UHF 1 \& V/UHF 2} \dotfill As Required 
+			\item Contact Carrier and note QFE, Pattern Altitude, BRC
+		\end{subenumerate}}
+		\blueitem{Cockpit Check}{
+		\begin{subenumerate}
+			\item \textbf{Altimeter QFE} \dotfill \textbf{Set}
+			\item \textbf{Cockpit Lighting} \dotfill As Desired 
+			\item \textbf{Navigation Lights} \dotfill As Desired 
+		\end{subenumerate}}
+		\blueitem{Nav Systems}{
+		\begin{subenumerate}
+			\item \textbf{ARA-63} \dotfill \textbf{ON} \& tuned
+			\item \textbf{TACAN} \dotfill \textbf{T/R} \& tuned
+		\end{subenumerate}}
+		\blueitem{Approach \break Navigation}{\emph{Use TACAN / ILS steering}
+
+		\begin{subenumerate}
+			\item \textbf{VDI Mode} \dotfill \textbf{NORM}
+			\item \textbf{HSD Mode} \dotfill \textbf{NAV}
+			\item \textbf{HUD Mode} \dotfill \textbf{LDG}
+		\end{subenumerate}
+
+		\emph{If ILS steering is desired must set AWL Mode}
+		\begin{subenumerate}[start=4]
+			\item \textbf{HUD AWL} \dotfill \textbf{ILS}
+			\item \textbf{VDI AWL} \dotfill \textbf{ILS}
+		\end{subenumerate}
+
+		\emph{Set steering command to desired mode}
+		\begin{subenumerate}[start=6]
+			\item \textbf{STEER CMD} \dotfill \textbf{TACAN} or \textbf{AWL/PCD}
+		\end{subenumerate}}
+		\blueitem{Prepare Landing Systems}{
+		\begin{subenumerate}
+			\item \textbf{ANTI-SKID SPOILER BK} \dotfill \textbf{OFF}
+			\item \textbf{HOOK BYPASS} \dotfill \textbf{CARRIER}
+			\item \textbf{HOOK} \dotfill \textbf{DN}
+			\item \textbf{WING SWEEP} \dotfill \textbf{AUTO}
+			\item \textbf{SPEED BRAKE} \dotfill \textbf{OUT}
+		\end{subenumerate}}
+		\midrule
+		\multicolumn{3}{l}{\textbf{25 NM FROM CARRIER}} \\
+		\blueitem{Intercept Marshall Radial}{
+		\begin{subitemize}
+			\item \textbf{Range} -- 25nm 
+			\item \textbf{Radial} -- Marshall Radial
+			\item \textbf{Altitude} -- 10,000ft (descend to 5,000ft)
+			\item \textbf{IAS} -- 250 kts
+		\end{subitemize}}
+		\midrule
+		\multicolumn{3}{l}{\textbf{15 NM FROM CARRIER}} \\
+		\blueitem{Intercept Runway Heading}{
+		\begin{subitemize}
+			\item \textbf{Range} -- Maintain 15nm during turn
+			\item \textbf{Radial} -- Runway Heading
+			\item \textbf{Altitude} -- Maintain 5,000ft
+			\item \textbf{IAS} -- 250 kts
+		\end{subitemize}}
+		\blueitem{ILS Steering}{
+		\begin{subenumerate}
+			\item \textbf{STEER CMD} \dotfill \textbf{AWL/PCD}
+			\item \textbf{HUD AWL} \dotfill \textbf{ILS}
+			\item \textbf{VDI AWL} \dotfill \textbf{ILS}
+		\end{subenumerate}}
+		\midrule
+		\multicolumn{3}{l}{\textbf{10 NM FROM CARRIER}} \\
+		\blueitem{Landing \break Configuration}{
+		\begin{subenumerate}
+			\item \textbf{HOOK} \dotfill \textbf{DN}
+			\item \textbf{SPEED BRAKE} \dotfill \textbf{OUT}
+			\item \textbf{WING SWEEP} \dotfill \textbf{20deg AUTO}
+			\item \textbf{GEAR} \dotfill \textbf{Down}
+			\item \textbf{FLAPS} \dotfill \textbf{Full}
+			\item \textbf{Autothrottle} \dotfill \textbf{AUTO} \\
+			\hfill (if desired)
+			\item \textbf{AOA} \dotfill \textbf{ON-SPEED} \\
+			\hfill (Autothrottle should maintain On-Speed)
+		\end{subenumerate}}
+		\blueitem{FINAL}{
+		\begin{subenumerate}
+			\item \textbf{Follow ICLS Needles}
+			\item \textbf{Transition to flying the ball once visual}
+		\end{subenumerate}}
+	\end{tablenumerate}
+
+	\notebox{
+		\begin{itemize}
+			\item \textbf{APC does NOT advance throttle on touchdown}
+			\item \hyperref[tab:vdicautionind]{\textbf{Refer to VDI Caution Indicator Table for summary}}
+		\end{itemize}
+	}
+
+	\clearpage
+
+	\subsection{LANDING - CASE III - ACLS}
+	\begin{tablenumerate}
+		\blueitem{Inbound Call}{
+		\begin{subenumerate}
+			\item \textbf{UHF 1 \& V/UHF 2} \dotfill As Required 
+			\item Contact Carrier and note QFE, Pattern Altitude, BRC
+		\end{subenumerate}}
+		\blueitem{Cockpit Check}{
+		\begin{subenumerate}
+			\item \textbf{Altimeter QFE} \dotfill \textbf{Set}
+			\item \textbf{Cockpit Lighting} \dotfill As Desired 
+			\item \textbf{Navigation Lights} \dotfill As Desired 
+		\end{subenumerate}}
+		\blueitem{Nav Systems}{
+		\begin{subenumerate}
+			\item \textbf{ARA-63} \dotfill \textbf{ON} \& tuned
+			\item \textbf{TACAN} \dotfill \textbf{T/R} \& tuned
+		\end{subenumerate}}
+		\blueitem{Approach \break Navigation}{\emph{Use TACAN / ILS steering to follow approach pattern before engaging ACLS on final}
+
+		\begin{subenumerate}
+			\item \textbf{VDI Mode} \dotfill \textbf{NORM}
+			\item \textbf{HSD Mode} \dotfill \textbf{NAV}
+			\item \textbf{HUD Mode} \dotfill \textbf{LDG}
+		\end{subenumerate}
+
+		\emph{If ILS steering is desired must set AWL Mode}
+		\begin{subenumerate}[start=4]
+			\item \textbf{HUD AWL} \dotfill \textbf{ILS}
+			\item \textbf{VDI AWL} \dotfill \textbf{ILS}
+		\end{subenumerate}
+
+		\emph{Set steering command to desired mode}
+		\begin{subenumerate}[start=6]
+			\item \textbf{STEER CMD} \dotfill \textbf{TACAN} or \textbf{AWL/PCD}
+		\end{subenumerate}}
+		\dblueitem{ACLS Setup}{
+		\begin{subenumerate}
+			\item \textbf{DL Power} \dotfill \textbf{ON}
+			\item \textbf{DL Mode} \dotfill \textbf{TAC}
+			\item \textbf{DL Freq.} \dotfill As Required
+			\item \textbf{APN-154 Power} \dotfill \textbf{ON}
+			\item \textbf{ACLS TEST Light} \dotfill Verify ON
+		\end{subenumerate}}
+		\blueitem{Prepare Landing Systems}{
+		\begin{subenumerate}
+			\item \textbf{ANTI-SKID SPOILER BK} \dotfill \textbf{OFF}
+			\item \textbf{HOOK BYPASS} \dotfill \textbf{CARRIER}
+			\item \textbf{HOOK} \dotfill \textbf{DN}
+			\item \textbf{WING SWEEP} \dotfill \textbf{AUTO}
+			\item \textbf{SPEED BRAKE} \dotfill \textbf{OUT}
+		\end{subenumerate}}
+		\midrule
+		\multicolumn{3}{l}{\textbf{25 NM FROM CARRIER}} \\
+		\blueitem{Intercept Marshall Radial}{
+		\begin{subitemize}
+			\item \textbf{Range} -- 25nm 
+			\item \textbf{Radial} -- Marshall Radial
+			\item \textbf{Altitude} -- 10,000ft (descend to 5,000ft)
+			\item \textbf{IAS} -- 250 kts
+		\end{subitemize}}
+		\midrule
+		\multicolumn{3}{l}{\textbf{15 NM FROM CARRIER}} \\
+		\blueitem{Intercept Runway Heading}{
+		\begin{subitemize}
+			\item \textbf{Range} -- Maintain 15nm during turn
+			\item \textbf{Radial} -- Runway Heading
+			\item \textbf{Altitude} -- Maintain 5,000ft
+			\item \textbf{IAS} -- 250 kts
+		\end{subitemize}}
+		\blueitem{Autopilot Setup}{
+		\begin{subenumerate}
+			\item \textbf{STEER CMD} \dotfill \textbf{AWL/PCD}
+			\item \textbf{HUD AWL} \dotfill \textbf{ACL}
+			\item \textbf{VDI AWL} \dotfill \textbf{ACL}
+			\item \textbf{Autopilot Selector} \dotfill \textbf{ACL}
+			\item \textbf{Autopilot Switch} \dotfill \textbf{ENGAGE}
+			\item \textbf{A/P REF Light} \dotfill Verify Illuminates \\
+			\hfill (autopilot ready for activation)
+			\item \textbf{Autothrottle} \dotfill \textbf{AUTO}
+		\end{subenumerate}}
+		\midrule
+		\multicolumn{3}{l}{\textbf{10 NM FROM CARRIER}} \\
+		\blueitem{Landing \break Configuration}{
+		\begin{subenumerate}
+			\item \textbf{HOOK} \dotfill \textbf{DN}
+			\item \textbf{SPEED BRAKE} \dotfill \textbf{OUT}
+			\item \textbf{WING SWEEP} \dotfill \textbf{20deg AUTO}
+			\item \textbf{GEAR} \dotfill \textbf{Down}
+			\item \textbf{FLAPS} \dotfill \textbf{Full}
+			\item \textbf{AOA} \dotfill \textbf{ON-SPEED} \\
+			\hfill (Autothrottle should maintain On-Speed)
+		\end{subenumerate}}
+		\blueitem{FINAL}{
+		\begin{subenumerate}
+			\item \textbf{LANDING CHK Caution} \dotfill Illuminates (6nm)
+			\item \textbf{ACL READY Caution} \dotfill Illuminates (4nm)
+			\item \textbf{AP/CPLR Caution} \dotfill Illuminates \\
+			\hfill (Indicates Carrier ready to control A/C)
+			\begin{itemize}
+				\item \textbf{Localizer Needle} -- Verify Centered
+				\item \textbf{Glideslope Needle} -- Verify Centered
+			\end{itemize}
+			\item \textbf{Autopilot Reference} \dotfill \textbf{Depress}
+			\item \textbf{CMD CONTROL Caution} \dotfill Illuminates
+			\item \textbf{10 SECONDS Caution} \dotfill Illuminates \\
+			\hfill Prior to touchdown
+		\end{subenumerate}}
+	\end{tablenumerate}
+
+	\notebox{
+		\begin{itemize}
+			\item \textbf{Pilot should be ready to disengage ACLS at any time}
+			\begin{itemize}
+				\item Can be disengaged with \textbf{PLM Depress}
+			\end{itemize}
+			\item \textbf{APC does NOT advance throttle on touchdown}
+			\item \hyperref[tab:vdicautionind]{\textbf{Refer to VDI Caution Indicator Table for summary}}
+		\end{itemize}
+	}
+
+	\begin{table}[h]
+		\caption{\textbf{VDI Caution Indicators}}
+		\label{tab:vdicautionind}
+		\begin{tabular}{p{2.8cm} | p{9cm}}
+			\toprule
+			\blue{Light} & \blue{Description} \\
+			\midrule
+			\textbf{ADJ A/C} & Indicates other aircraft close to own traffic pattern \\
+			\midrule
+			\textbf{LANDING CHK} & Indicates carrier has channel ready for ACL, crew should prepare for carrier landing, center needles \\
+			\midrule
+			\textbf{ACL READY} & Indicates CATCC has aquired aircraft and is transmitting glidepath information \\
+			\midrule
+			\textbf{A/P CPLR} & Indicates CATCC is ready to control aircraft \\
+			\midrule
+			\textbf{CMD CONTROL} & Indicates aircraft is under data link control for landing \\
+			\midrule
+			\textbf{10 SECONDS} & Indicates that carrier motion is added to data link info and commands during landing \\
+			& Indicates 10 seconds to arrival at the next point in approach pattern in other modes \\
+			\midrule
+			\textbf{TILT} & Caution that data link command received for the last 2 seconds during ACL \\
+			& When not in ACL it indicates no data link messages during last 10 seconds \\
+			\midrule
+			\textbf{VOICE} & Caution that CATCC not ready for ACL, switch to standard voice procedures \\
+			\midrule
+			\textbf{AUTO THRO} & Caution that autothrottle has been disengaged \\
+			\midrule
+			\textbf{A/P REF} & Indicates autopilot selected but not engaged. Exception altitude and heading hold \\
+			\midrule
+			\textbf{WAVEOFF} & Indicates waveoff commanded \\
+			\midrule
+			\textbf{WING SWEEP} & Caution indicating failure in both wing-sweep channels or disengagement of spider detent \\
+			\midrule
+			\textbf{REDUCE SPEED} & Indicates flap retraction failure with greater than 225 knots indicated airspeed \\
+			& Also indicates safe Mach number exceeded \\
+			\midrule
+			\textbf{ALT LOW} & Non functional, refer to radar altimeter \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
 
 	\clearpage
 
@@ -816,9 +1083,9 @@
 		\end{subitemize}}
 		\blueitem{ACL}{
 		\begin{subitemize}
-			\item \textbf{Automatic Carrier Landing}
+			\item \textbf{A}utomatic \textbf{C}arrier \textbf{Landing}
 			\begin{itemize}
-				\item See relevant section
+				\item \hyperref[subsec:acls]{\textbf{See ACLS Section}}
 			\end{itemize}
 		\end{subitemize}}
 		\blueitem{Autopilot Emergency Disengage Paddle}{
@@ -835,7 +1102,7 @@
 	\begin{tableitemize}
 		\blueitem{APC}{
 		\begin{subitemize}
-			\item \textbf{Approach Power Compensator}
+			\item \textbf{A}pproach \textbf{P}ower \textbf{C}ompensator
 			\begin{itemize}
 				\item Automatic throttle control
 				\item \textbf{Maintains ON SPEED AoA}
@@ -852,10 +1119,78 @@
 		\begin{subitemize}
 			\item \textbf{Throttle Mode} \dotfill \textbf{AUTO (FWD)}
 		\end{subitemize}}
-		\blueitem{Disengage}{\textbf{Cage/Seam Button}}
+		\blueitem{Disengage}{\textbf{CAGE/SEAM Button}}
 	\end{tableitemize}
 
+	\notebox{
+		\begin{itemize}
+			\item \textbf{With APC engaged use gentle pitch input to adjust glideslope}
+		\end{itemize}
+	}
+
+	\clearpage
+
 	\subsection{ACLS}
+	\label{subsec:acls}
+	\begin{tableitemize}
+		\blueitem{ACLS}{
+		\begin{subitemize}
+			\item \textbf{A}utomatic \textbf{C}arrier \textbf{L}anding \textbf{S}ystem
+			\item Precision Datalink Landing guidance using APN-154 Radar Beacon
+		\end{subitemize}}
+		\blueitem{ACLS Setup}{
+		\begin{subitemize}
+			\item \textbf{DL Power} \dotfill \textbf{ON}
+			\item \textbf{DL Mode} \dotfill \textbf{TAC}
+			\item \textbf{DL Freq.} \dotfill As Required
+			\item \textbf{APN-154 Power} \dotfill \textbf{ON}
+			\item \textbf{ACLS TEST Light} \dotfill Verify ON
+		\end{subitemize}}
+		\blueitem{Autopilot Setup}{
+		\begin{subitemize}
+			\item \textbf{STEER CMD} \dotfill \textbf{AWL/PCD}
+			\item \textbf{HUD AWL} \dotfill \textbf{ACL}
+			\item \textbf{VDI AWL} \dotfill \textbf{ACL}
+			\item \textbf{Autopilot Selector} \dotfill \textbf{ACL}
+			\item \textbf{Autopilot Switch} \dotfill \textbf{ENGAGE}
+			\item \textbf{A/P REF Light} \dotfill Verify Illuminates \\
+			\hfill (autopilot ready for activation)
+			\item \textbf{Autothrottle} \dotfill \textbf{AUTO}
+		\end{subitemize}}
+		\blueitem{ACLS Engage}{
+		\begin{subenumerate}
+			\item \textbf{LANDING CHK Caution} \dotfill Illuminates (6nm)
+			\item \textbf{ACL READY Caution} \dotfill Illuminates (4nm)
+			\item \textbf{AP/CPLR Caution} \dotfill Illuminates 
+			\begin{itemize}
+				\item \textbf{Localizer Needle} -- Verify Centered
+				\item \textbf{Glideslope Needle} -- Verify Centered
+			\end{itemize}
+			\item \textbf{Autopilot Reference} \dotfill \textbf{Depress}
+			\item \textbf{CMD CONTROL Caution} \dotfill Illuminates
+			\item \textbf{10 SECONDS Caution} \dotfill Illuminates \\
+			\hfill Prior to touchdown
+		\end{subenumerate}}
+		\blueitem{Disengage}{
+		\begin{subitemize}
+			\item \textbf{ACLS} -- \textbf{PLM}
+			\item \textbf{Autothrottle} -- \textbf{CAGE/SEAM Button}
+		\end{subitemize}}
+	\end{tableitemize}
+
+	\notebox{
+		\begin{itemize}
+			\item \textbf{ACLS can not handle large deviations}
+			\begin{itemize}
+				\item \textbf{Must be ON-Localizer \& ON-Glideslope at engagement}
+				\item Pilot should be ready to disengage ACLS at any time
+			\end{itemize}
+			\item \textbf{APC does NOT advance throttle on touchdown}
+			\item \hyperref[tab:vdicautionind]{\textbf{Refer to VDI Caution Indicator Table for summary}}
+		\end{itemize}
+	}
+
+	\clearpage
 
 	\subsection{WING-SWEEP}
 	\begin{tableitemize}
@@ -1085,7 +1420,7 @@
 
 	\subsection{NAVIGATION UPDATE}
 	\begin{tableitemize}
-		\blueitem{Radar Update}{Prestored update point must be easily recognizable through pulse ground returns
+		\blueitem{Radar Update}{\emph{Prestored update point must be easily recognizable through pulse ground returns}
 
 		\begin{subenumerate}
 			\item \textbf{Desired Update Point} \dotfill  \textbf{Hooked}
@@ -1110,7 +1445,7 @@
 			\end{itemize}
 			\item \textbf{FIX ENABLE Button} \dotfill \textbf{Depress}
 		\end{subenumerate}}
-		\blueitem{TACAN Update}{Prestored update point must be colocated with TACAN station
+		\blueitem{TACAN Update}{\emph{Prestored update point must be colocated with TACAN station}
 
 		\begin{subenumerate}
 			\item \textbf{TACAN} \dotfill \textbf{On \& Tuned}
@@ -1137,11 +1472,9 @@
 
 	\warningbox{
 		\begin{itemize}
-			\item \textbf{Can easily lead to an increase in Navigation Error rather than reduction}
+			\item \textbf{Nav update can easily lead to an increase in Navigation Error rather than reduction}
 		\end{itemize}
 	}
-
-	\clearpage
 
 	\subsection{INS FAILURE INDICATORS}
 	\begin{tableitemize}
@@ -1375,47 +1708,6 @@
 	\clearpage
 
 	\section{COMMUNICATION SYSTEMS}
-	\subsection{OVERVIEW}
-	\begin{tableitemize}
-		\blueitem{ARC-159 \break UHF 1}{
-		\begin{subitemize}
-			\item \textbf{Pilot Controlled}
-			\item \textbf{Frequency}
-			\begin{itemize}
-				\item \textbf{Range} -- 225.000 - 399.975 MHz
-				\item \textbf{Steps} -- 25 kHz
-				\item \textbf{Channels} -- 20
-			\end{itemize}
-		\end{subitemize}}
-		\blueitem{ARC-182 \break V/UHF 2}{
-		\begin{subitemize}
-			\item \textbf{RIO Controlled}
-			\item \textbf{Frequency}
-			\begin{itemize}
-				\item \textbf{Band 1} -- 30 - 88 MHz
-				\item \textbf{Band 2} -- 108 - 156 MHz
-				\item \textbf{Band 3} -- 156 - 174 MHz
-				\item \textbf{Band 4} -- 225 - 399.975 MHz
-				\item \textbf{Steps} -- 25 kHz
-				\item \textbf{Channels} -- 30
-			\end{itemize}
-		\end{subitemize}}
-		\blueitem{ARA-50 \break UHF ADF}{
-		\begin{subitemize}
-			\item \textbf{UHF Automatic Direction Finder}
-			\item \textbf{LoS bearing to UHF Transmitter}
-			\item \textbf{Bearing displayed on BDHI, Pilot HSD}
-			\item \textbf{5 min Warmup}
-		\end{subitemize}}
-		\blueitem{KY-28 \break Voice Security Equipment}{
-		\begin{subitemize}
-			\item \textbf{Voice Ciphering}
-			\item \textbf{Integrated with UHF 1 and V/UHF 2}
-			\item \textbf{2 min Warmup}
-		\end{subitemize}}
-	\end{tableitemize}
-
-	\clearpage
 
 	\subsection{ARC-159 UHF 1}
 	\begin{tableitemize}
@@ -1672,6 +1964,61 @@
 			\item \textbf{Antenna} -- Shared with UHF 1, \textbf{Mutually Exclusive}
 		\end{itemize}
 	}
+
+	\clearpage
+
+	\subsection{ARA-63 ICLS}
+	\begin{tableitemize}
+		\blueitem{Overview}{
+		\begin{subitemize}
+			\item \textbf{I}nstrument \textbf{C}arrier \textbf{L}anding \textbf{S}ystem 
+			\item Provides \textbf{Glideslope and Localizer} \emph{Needles} for precision approach
+		\end{subitemize}}
+		\blueitem{Power}{\textbf{ARA-63 POWER} -- \textbf{ON}}
+		\blueitem{Tune}{
+		\begin{subenumerate}
+			\item \textbf{ICLS Channel Selector} \dotfill As Desired
+		\end{subenumerate}}
+		\blueitem{Display}{
+		\begin{subenumerate}
+			\item \textbf{HUD MODE} \dotfill \textbf{LDG}
+			\item \textbf{VDI MODE} \dotfill \textbf{NORM}
+			\item \textbf{HUD AWL} \dotfill \textbf{ILS}
+			\item \textbf{VDI AWL} \dotfill \textbf{ILS}
+			\item \textbf{STEER CMD} \dotfill \textbf{AWL/PCD} 
+			\item \textbf{HUD / VDI} \dotfill Verify needles visible
+		\end{subenumerate}}
+		\blueitem{Miscellaneous}{
+		\begin{subitemize}
+			\item \textbf{BIT Button} -- Displays landing sybology if HUD \& VDI modes set accordingly
+		\end{subitemize}}
+	\end{tableitemize}
+
+	\subsection{APN-154 RADAR BEACON}
+	\begin{tableitemize}
+		\blueitem{Overview}{
+		\begin{subitemize}
+			\item \textbf{Radar Beacon} for ACLS tracking \& \\ guidance
+		\end{subitemize}}
+		\blueitem{Power}{\textbf{PWR Switch} -- \textbf{ON}}
+		\blueitem{Tune}{
+		\begin{subenumerate}
+			\item \textbf{Datalink} \dotfill \textbf{ON} \& \textbf{TAC}
+			\item \textbf{Datalink Host} \dotfill \textbf{CV}
+			\item \textbf{ACLS TEST Light} \dotfill Illuminates
+		\end{subenumerate}}
+		\blueitem{Miscellaneous}{
+		\begin{subitemize}
+			\item \textbf{ACLS TEST Button} -- Illuminates indicating successful test when in ACLS Mode
+			\item \textbf{MODE Selector}
+			\begin{itemize}
+				\item \textbf{ACLS} -- Enables augmentor. Required for CATCC radar lock on for ACLS
+				\item \textbf{SINGLE} -- Beacon responds to single pulses
+				\item \textbf{DOUBLE} -- Beacon responds to double pulses
+			\end{itemize}
+		\end{subitemize}}
+	\end{tableitemize}
+
 
 	\clearpage
 
@@ -4909,8 +5256,6 @@
 		\end{tabular}
 	\end{center}
 
-	% \clearpage 
-
 	\subsection{INS STATUS INDICATORS}
 	\begin{center}
 		\begin{tabular}{p{1.5cm} p{1.5cm} | p{8cm}}
@@ -4982,6 +5327,48 @@
 					\item Alignment suspended past mission alert criteria with parking brake off
 				\end{itemize}
 			\end{minipage} \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+
+	\clearpage
+
+	\subsection{VDI CAUTION INDICATORS}
+	\begin{center}
+		\begin{tabular}{p{2.8cm} | p{9cm}}
+			\toprule
+			\blue{Light} & \blue{Description} \\
+			\midrule
+			\textbf{ADJ A/C} & Indicates other aircraft close to own traffic pattern \\
+			\midrule
+			\textbf{LANDING CHK} & Indicates carrier has channel ready for ACL, crew should prepare for carrier landing, center needles \\
+			\midrule
+			\textbf{ACL READY} & Indicates CATCC has aquired aircraft and is transmitting glidepath information \\
+			\midrule
+			\textbf{A/P CPLR} & Indicates CATCC is ready to control aircraft \\
+			\midrule
+			\textbf{CMD CONTROL} & Indicates aircraft is under data link control for landing \\
+			\midrule
+			\textbf{10 SECONDS} & Indicates that carrier motion is added to data link info and commands during landing \\
+			& Indicates 10 seconds to arrival at the next point in approach pattern in other modes \\
+			\midrule
+			\textbf{TILT} & Caution that data link command received for the last 2 seconds during ACL \\
+			& When not in ACL it indicates no data link messages during last 10 seconds \\
+			\midrule
+			\textbf{VOICE} & Caution that CATCC not ready for ACL, switch to standard voice procedures \\
+			\midrule
+			\textbf{AUTO THRO} & Caution that autothrottle has been disengaged \\
+			\midrule
+			\textbf{A/P REF} & Indicates autopilot selected but not engaged. Exception altitude and heading hold \\
+			\midrule
+			\textbf{WAVEOFF} & Indicates waveoff commanded \\
+			\midrule
+			\textbf{WING SWEEP} & Caution indicating failure in both wing-sweep channels or disengagement of spider detent \\
+			\midrule
+			\textbf{REDUCE SPEED} & Indicates flap retraction failure with greater than 225 knots indicated airspeed \\
+			& Also indicates safe Mach number exceeded \\
+			\midrule
+			\textbf{ALT LOW} & Non functional, refer to radar altimeter \\
 			\bottomrule
 		\end{tabular}
 	\end{center}
