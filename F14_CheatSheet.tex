@@ -1174,6 +1174,7 @@
 	\end{tableitemize}
 
 	\begin{table}[h]
+		\centering
 		\caption{\textbf{INS Status Indicators}}
 		\label{tab:insstatusind}
 		\begin{tabular}{p{1.5cm} p{1.5cm} | p{8cm}}
@@ -1743,99 +1744,143 @@
 
 	\subsection{ALE-39 CMS DISPENSER}
 	\begin{tableitemize}
-		\multicolumn{3}{c}{\dblue{Programmer}} \\
-		\midrule
-		\dblueitem{CHAFF Section}{
+		\blueitem{ALE-39}{
 		\begin{subitemize}
-			\item \textbf{B QTY} -- Number of cartridges to eject in burst
+			\item \textbf{Control} -- Pilot and/or RIO
+			\item \textbf{Operation} -- manual, program, auto-chaff
+			\item \textbf{Capacity} -- 60 cartridges (100 with LAU-138)
+		\end{subitemize}}
+		\blueitem{Power}{
+		\begin{subenumerate}
+			\item \textbf{PWR/MODE Switch} \dotfill \textbf{MAN} \\
+			\hfill (or AUTO(CHAFF) / MAN)
+			\item \textbf{FLARE MODE Switch} \dotfill \textbf{PILOT}
+		\end{subenumerate}}
+		\blueitem{Chaff Setup}{
+		\begin{subitemize}
+			\item \textbf{B QTY} -- Cartridges per burst
 			\begin{itemize}
-				\item \textbf{Options} -- \textbf{1-4} cartridges, \textbf{C} continuous, \textbf{R} random (4-6 cartridges)
+				\item \textbf{1 / 2 / 3 / 4 / C} (continuous) \textbf{/ R} (random, 4-6 cartridges)
 			\end{itemize}
-			\item \textbf{B INTV} -- Time in seconds between each cartridge ejection
+			\item \textbf{B INTV} -- Seconds between cartridges
 			\begin{itemize}
-				\item \textbf{Options} -- \textbf{.1, .2, .5, .7, 1} seconds, \textbf{R} random
+				\item \textbf{.1 / .2 / .5 / .7 / 1 / R} (random)
 			\end{itemize}
-			\item \textbf{S QTY} -- How many salvos of bursts
+			\item \textbf{S QTY} -- Salvos of bursts per program
 			\begin{itemize}
-				\item \textbf{Options} -- \textbf{1, 2, 4, 6, 8, 10, 15} salvos
+				\item \textbf{1 / 2 / 4 / 6 / 8 / 10 / 15}
 			\end{itemize}
-			\item \textbf{S INT} -- Time in seconds between salvos
+			\item \textbf{S INT} -- Seconds between salvos
 			\begin{itemize}
-				\item \textbf{Options} -- \textbf{2, 4, 6, 8, 10} seconds
+				\item \textbf{2 / 4 / 6 / 8 / 10}
 			\end{itemize}
+		\end{subitemize}}
+		\blueitem{Flare Setup}{
+		\begin{subitemize}
+			\item \textbf{QTY} -- Cartridges per burst
+			\begin{itemize}
+				\item \textbf{2 / 3 / 4 / 6 / 8 / 10}
+			\end{itemize}
+			\item \textbf{INTV} -- seconds between cartridges
+			\begin{itemize}
+				\item \textbf{2 / 4 / 6 / 8 / 10}
+			\end{itemize}
+		\end{subitemize}}
+		\blueitem{LAU-138}{
+		\begin{subitemize}
+			\item Hold 20 chaff cartridges (equivalent) each
+			\item When mounted \textbf{R10} controls LAU-138, \\
+			\textbf{R20} controls both R10 R20 buckets
+		\end{subitemize}}
+		\blueitem{Load Cartridges}{
+		\begin{subenumerate}
+			\item \textbf{RESET Switch} \dotfill \textbf{Hold} 5 sec \\
+			\hfill (resets internal counters)
+			\item \textbf{L10/L20/R10/R20} \dotfill \textbf{C} or \textbf{F} \\
+			\hfill (as required)
+		\end{subenumerate}}
+		\blueitem{Miscellaneous}{
+		\begin{subitemize}
+			\item \textbf{Jammer Settings} -- Not implemented in DCS
+			\item \textbf{FLARE MODE Switch}
+			\begin{itemize}
+				\item \textbf{MULT} -- Fires 1 flare from each flare bucket per pulse
+				\item \textbf{NORM} -- Normal behavior per pulse
+				\item \textbf{PILOT} -- 1 Flare  per DLC depress
+			\end{itemize}
+			\item \textbf{SALVO FLARES} -- Rapidly ejects all flares 
 		\end{subitemize}}
 	\end{tableitemize}
 
 	\notebox{
 		\begin{itemize}
-			\item \textbf{R} \& \textbf{C} burst settings have special \textbf{INTV} behavior
+			\item \textbf{Burst settings R \& C have special behavior}
+			\begin{itemize}
+				\item \textbf{C QTY R INTV} -- 1st 3 cartidges at 0.125s intervals, rest at 0.25-4s intervals until all cartridges ejected
+				\item \textbf{R QTY R INTV} -- Each burst has 4-6 cartidges, 1st 3 cartidges of 1st burst at 0.125s intervals, rest at intervals of 0.25-4s
+				\item \textbf{R QTY Number INTV} -- Each burst has 4-6 cartridges, 1st 3 cartridges of 1st burst at 0.125s intervals
+				\item \textbf{Fixed QTY R INTV} -- Each burst ejects 1 cartridge disregarding B QTY
+			\end{itemize}
+			\item \textbf{AUTO (CHAFF) / MAN} 
+			\begin{itemize}
+				\item Automatic chaff ejection (often wasteful)
+			\end{itemize}
 		\end{itemize}
 	}
-
-	\begin{tableitemize}
-		\dblueitem{JAMMER Sect.}{ Jammer cartridges not implemented in DCS }
-		\dblueitem{FLARE Section}{
-		\begin{subitemize}
-			\item \textbf{QTY} -- Number of cartridges to eject in burst
-			\begin{itemize}
-				\item \textbf{Options} -- \textbf{2, 3, 4, 6, 8, 10} cartridges
-			\end{itemize}
-			\item \textbf{INTV} -- Time in seconds between each cartridge ejection
-			\begin{itemize}
-				\item \textbf{Options} -- \textbf{2, 4, 6, 8, 10} seconds
-			\end{itemize}
-		\end{subitemize}}
-		\midrule
-		\multicolumn{3}{c}{\dblue{Control Panel}} \\
-		\blueitem{PWR/MODE  \break  Switch}{
-		\begin{subitemize}
-			\item \textbf{AUTO (CHAFF) / MAN} -- Enables power to system and allows automatic chaff ejection program initiation
-			\item \textbf{MAN} -- Enables power to system
-			\item \textbf{OFF} -- Disables system
-		\end{subitemize}}
-	\end{tableitemize}
 
 	\clearpage
 
 	\subsection{ALQ-100 / ALQ-126 DECM}
 	\begin{tableitemize}
-		\blueitem{DECM OVERVIEW}{\textbf{D}efensive \textbf{E}lectronic \textbf{C}ounter \textbf{M}easures
+		\blueitem{DECM}{
 		\begin{subitemize}
+			\item \textbf{D}efensive \textbf{E}lectronic \textbf{C}ounter \textbf{M}easures
 			\item Modelled as simple noise jammers in DCS
 		\end{subitemize}}
-		\dblueitem{Controls}{
+		\blueitem{Power}{
+		\begin{subenumerate}
+			\item \textbf{Mode Selector} \dotfill \textbf{HOLD 3 SEC}
+			\item \textbf{Mode Selector} \dotfill \textbf{ACT} \\
+			\hfill (BIT, approx 30s)
+			\item\textbf{Mode Selector} \dotfill \textbf{REC} \\
+			\hfill (Receive only mode)
+			\item \textbf{Mode Selector} \dotfill \textbf{RPT} \\
+			\hfill (Full system functionality)
+		\end{subenumerate}}
+		\blueitem{Miscellaneous}{
 		\begin{subitemize}
 			\item \textbf{AUDIO Knob} -- Controls volume of audio played to RIO. Audio is generated directly from received PRF signals
-			\item \textbf{Mode Selector}
-			\begin{itemize}
-				\item \textbf{OFF} -- Turns off power to the system
-				\item \textbf{STBY} -- Begins pre-warming systemm
-				\item \textbf{HOLD 3 SEC} -- Prepares system for BIT
-				\item \textbf{ACT} -- BIT of system, takes approx 30 s
-				\item \textbf{REC} -- Receive only mode
-				\item \textbf{RPT} -- Full system functionality
-			\end{itemize}
+			\item \textbf{STANDBY Light} -- Indicates system warmup not yet complete or system has a fault
 		\end{subitemize}}
-		\dblueitem{STANDBY Light}{Indicates system warmup not yet complete or system has a fault }
-		\blueitem{Threat Advisory  \break  Indicator}{
-		\begin{subitemize}
-			\item \textbf{IFF} -- Friendly IFF signal received but no reply generated
-			\item \textbf{RCV} -- ALQ-126 is receiving a signal
-			\item \textbf{XMIT} -- ALQ-126 is transmitting
-			\item \textbf{SAM}
-			\begin{itemize}
-				\item \textbf{Steady} -- Lockon from SAM detected
-				\item \textbf{Flashing} -- SAM launch detected
-			\end{itemize}
-			\item \textbf{AAA}
-			\begin{itemize}
-				\item \textbf{Steady} -- Lockon from AAA detected
-				\item \textbf{Flashing} -- AAA engagement detected
-			\end{itemize}
-			\item \textbf{CW} -- CW emitter detected
-			\item \textbf{AI} -- Airborne Intercepter lockon detected
-		\end{subitemize}}
+		\blueitem{Threat Advisory  \break  Indicator}{\hyperref[tab:threatadind]{\textbf{See Threat Advisory Indicators for RCV/XMIT Status}}}
 	\end{tableitemize}
+
+	\begin{table}[h]
+		\centering
+		\caption{\textbf{Threat Advisory Indicators}}
+		\label{tab:threatadind}
+		\begin{tabular}{p{1.5cm} | p{8.5cm}}
+			\toprule
+			\blue{Light} & \blue{Description} \\
+			\midrule
+			\textbf{IFF} & Friendly IFF signal received but no reply generated \\
+			\midrule
+			\textbf{RCV} & ALQ-126 DECM is receiving a signal \\
+			\midrule
+			\textbf{XMIT} & ALQ-126 DECM is transmitting \\
+			\midrule
+			\textbf{SAM} & \textbf{Steady} -- Lockon from SAM detected \\
+			& \textbf{Flashing} -- SAM launch detected \\
+			\midrule
+			\textbf{AAA} & \textbf{Steady} -- Lockon from AAA detected \\
+			& \textbf{Flashing} -- AAA engagement detected \\
+			\midrule
+			\textbf{CW} & CW emitter detected \\
+			\midrule
+			\textbf{AI} & Airborne Intercepter lockon detected \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
 
 	\cleardoublepage
 
@@ -1845,22 +1890,25 @@
 	\cleardoublepage
 
 	\section{OVERVIEW}
-	\subsection{MAIN MODES - OVERVIEW}
-	\begin{center}
-		\begin{longtable}{l | p{1.2cm} | p{1.2cm} | p{1.2cm} | p{1cm} | p{1cm} | p{1.5cm}}
+	% \subsection{MAIN MODES - OVERVIEW}
+	\begin{table}[h]
+		\centering
+		\caption{\textbf{Overview of AWG-9 Radar Modes}}
+		\label{tab:awg9overview}
+		\begin{tabular}{p{1.4cm} | p{1.2cm} | p{1.2cm} | p{1.2cm} | p{1cm} | p{1cm} | p{1.5cm}}
 			\toprule
 			& \multicolumn{2}{c |}{\blue{Pulse}} & \multicolumn{4}{c}{\blue{Pulse Doppler}} \\
 			\midrule
 			& \textbf{Pulse Search} & \textbf{P-STT} & \textbf{PD Search} & \textbf{RWS} & \textbf{TWS} & \textbf{PD-STT} \\
 			\midrule
-			\textbf{Range} & 60 nm & 50 nm & 110 nm & 90 nm & 90 nm & 90 nm \\
+			\textbf{Range (approx.)} & 60 nm & 50 nm & 110 nm & 90 nm & 90 nm & 90 nm \\
 			\midrule
 			\textbf{AIM-7} & BRSIT & CW & \multicolumn{2}{c |}{BRSIT} & - & PD \\
 			\midrule
 			\textbf{AIM-54} & BRSIT & ACT & \multicolumn{2}{c |}{BRSIT} & Multi TGT & PD/ACT \\
 			\bottomrule
-		\end{longtable}
-	\end{center}
+		\end{tabular}
+	\end{table}
 
 	\subsection{MAIN MODES}
 	\begin{tableitemize}
@@ -4830,6 +4878,112 @@
 			\end{minipage} \\
 			\bottomrule
 		\end{longtable}
+	\end{center}
+
+	\clearpage
+
+	\section{INDICATORS}
+
+	\subsection{THREAT ADVISORY INDICATORS}
+	\begin{center}
+		\begin{tabular}{p{1.5cm} | p{8.5cm}}
+			\toprule
+			\blue{Light} & \blue{Description} \\
+			\midrule
+			\textbf{IFF} & Friendly IFF signal received but no reply generated \\
+			\midrule
+			\textbf{RCV} & ALQ-126 DECM is receiving a signal \\
+			\midrule
+			\textbf{XMIT} & ALQ-126 DECM is transmitting \\
+			\midrule
+			\textbf{SAM} & \textbf{Steady} -- Lockon from SAM detected \\
+			& \textbf{Flashing} -- SAM launch detected \\
+			\midrule
+			\textbf{AAA} & \textbf{Steady} -- Lockon from AAA detected \\
+			& \textbf{Flashing} -- AAA engagement detected \\
+			\midrule
+			\textbf{CW} & CW emitter detected \\
+			\midrule
+			\textbf{AI} & Airborne Intercepter lockon detected \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+
+	% \clearpage 
+
+	\subsection{INS STATUS INDICATORS}
+	\begin{center}
+		\begin{tabular}{p{1.5cm} p{1.5cm} | p{8cm}}
+			\toprule
+			\blue{STBY} & \blue{READY} & \blue{Description} \\
+			\midrule
+			\textbf{ON} & \textbf{ON} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Normal during align initialization
+					\item Else indicates IMU, NAV COMP, NPS or AHRS Failure
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{ON} & \textbf{OFF} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Normal during align after initialization
+					\item Normal when \textbf{IMU/AM} selected prior to completion of coarse align
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{FLASH} & \textbf{FLASH} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Alignment not initiated due to suspended alignment (check parking brake)
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{FLASH} & \textbf{OFF} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Align suspended (check parking brake)
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{OFF} & \textbf{ON} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Min weapon launch requirements met
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{OFF} & \textbf{OFF} &
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item System operating normally
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{OFF} & \textbf{FLASH} & (after 5s both off)
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Occurs when \textbf{IMU/AM} selected and IMU is aligned. If another mode not selected within 5 s, alignment lost, INS not available
+				\end{itemize}
+			\end{minipage} \\
+			\midrule
+			\textbf{OFF} & \textbf{FLASH} & 
+			\begin{minipage}[t]{\linewidth}
+				\vspace{-7pt}
+				\begin{itemize}
+					\item Alignment suspended past mission alert criteria with parking brake off
+				\end{itemize}
+			\end{minipage} \\
+			\bottomrule
+		\end{tabular}
 	\end{center}
 
 	%fills rest of page with blanks

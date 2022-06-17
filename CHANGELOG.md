@@ -2,7 +2,7 @@
 
 ## CHANGELOG
 
-### Changelog - 2022.06.16
+### Changelog - 2022.06.17
 
 - `TechCheck.cls`
   - Added `subcaption` package which allows creation of subfigures
@@ -21,6 +21,7 @@
       - Added `NAVIGATION FIX` subsection
       - Fleshed out `WAYPOINT NAVIGATION`
       - Moved and renamed `VOR` subsection to `COMMUNICATIONS` as `ARA-50 ADF` subsection
+    - `DEFENSIVE SYSTEMS` has also been overhauled
   - Added `APPENDIX` Chapter
     - Moved `TID SYMBOLOGY` and `RWR THREAT SYMBOLOGY` to the appendix
   - Compact-ified `IFF` section

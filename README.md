@@ -54,17 +54,13 @@ For ease of maintenance, only the PDF and source files are available here. To co
 - `SYSTEMS`
   - `FLIGHT CONTROL`
     - ACLS
-  - Apply `[desired effect] -> [necessary switchology]` structure to systems descriptions
-    - see `UHF 1` and `V/UHF 2` for examples
-  - `DEFENSIVE SYSTEMS`
-    - Own THREAT ADVISORY INDICATOR Section? (maybe in appendix?)
-    - Rework ALE-39 CMS, DECM subsections
 
 - `RADAR`
-  - Navgrid explanation
+  - `TID`
+    - Navgrid explanation
 
 - `TCS-LANTIRN`
-  - TCS
+  - `TCS`
 
 - `A/A WEAPONS`
   - People have complained that jester tries switching from one STT to the other and loses lock -> add explanation
@@ -72,7 +68,8 @@ For ease of maintenance, only the PDF and source files are available here. To co
   - Maybe add example Timelines
 
 - `GENERAL`
-  - Move RWR and TID reference tables to an appendix?
+  - Apply `[desired effect] -> [necessary switchology]` structure
+    - see `UHF 1` and `V/UHF 2` for examples
 
 ***
 
