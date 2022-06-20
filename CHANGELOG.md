@@ -5,6 +5,16 @@
 ### Changelog - 2022.06.17
 
 - `TechCheck.cls`
+  - Added `xkeyvals` package
+    - Allows use of `keys` in custom package options / commands / environments
+  - Added keys to `tablenumerate`
+    - `start=num` - sets starting number for teblenumerate
+    - `resume` - Doesn't reset counter
+    - Additional counter added to prevent midrule doubling
+
+### Changelog - 2022.06.17
+
+- `TechCheck.cls`
   - Added `subcaption` package which allows creation of subfigures
 
 - `F14_Cheatsheet.tex`
