@@ -636,16 +636,19 @@
 \setcounter{tablenumi}{1} % set to one to prevent edge case error
 \newcounter{tablenumistart} % used to check if first line to prevent
 
-% tablenumerate -- creates table that behaves like enumerate
+% Key to start an enumerate at a given number
 \define@key{tablenumitem}{start}{
 	\setcounter{tablenumi}{#1}
 	\setcounter{tablenumistart}{\value{tablenumi}}
 }
+
+% Key to resume an enumerate at previous number
 \define@key{tablenumitem}{resume}[]{
 	\setcounter{tablenumistart}{\value{tablenumi}}
 }
+
+% tablenumerate -- creates table that behaves like enumerate
 \newenvironment{tablenumerate}[1][start=1]{% begdef
-	% \setcounter{tablenumi}{#1}
 	\setkeys{tablenumitem}{#1}
 	% Define command equiv to `item`
 	% arg 1 - typeset in blue in 2. column
@@ -712,13 +715,13 @@
 
 % shortablenumerate -- creates table that behaves like enumerate
 \newenvironment{shortablenumerate}{% begdef
-	\setcounter{tablenumi}{1} 
+	\setkeys{tablenumitem}{#1}
 	% Define command equiv to `item`
 	% arg 1 - typeset in blue in 2. column
 	% arg 2 - typeset normally in 3. column
 	\newcommand{\blueitem}[2]{
 		% Create midrule unless first row
-		\ifnum\value{tablenumi}>1
+		\ifnum\value{tablenumi}>\value{tablenumistart}
 			\midrule
 		\else
 		\fi
