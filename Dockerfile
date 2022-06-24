@@ -7,8 +7,8 @@ RUN apt-get update &&\
     apt-get install -y \
         curl \
         git \
-        fonts-league-spartan \
         unzip
+
 RUN /source/scripts/install_fonts.sh
 RUN /source/scripts/install_packages.sh
 

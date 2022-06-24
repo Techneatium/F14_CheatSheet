@@ -1,4 +1,5 @@
 SHELL := /bin/bash
+.DEFAULT_GOAL := build_pdf
 
 CURRENT_PATH = $(shell pwd)
 REPO = # ghcr.io
@@ -21,8 +22,9 @@ build_pdf:
 		cd /source &&\
 		scripts/set_build_info.sh &&\
 		cp -v /fonts/* /source/. &&\
-		lualatex --output-format=pdf --output-folder=/source/build ${TARGET} ;\
-		lualatex --output-format=pdf --output-folder=/source/build ${TARGET} ;\
+		cp -v /source/LeagueSpartan-Regular.ttf /source/LeagueSpartan.ttf &&\
+		lualatex --output-format=pdf --output-folder=/source/build ${TARGET} &&\
+		lualatex --output-format=pdf --output-folder=/source/build ${TARGET} &&\
 		lualatex --output-format=pdf --output-folder=/source/build ${TARGET}"
 
 .PHONY: build
