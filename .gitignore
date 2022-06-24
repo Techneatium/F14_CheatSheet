@@ -23,4 +23,8 @@
 =======
 *.ttf
 build/
+<<<<<<< HEAD
 >>>>>>> b768d84 (Update gitignore for more build files)
+=======
+F14_CheatSheet.pdf
+>>>>>>> e88379b (Update gitignore to prevent commiting built PDFs)
