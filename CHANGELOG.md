@@ -2,7 +2,16 @@
 
 ## CHANGELOG
 
-### Changelog - 2022.06.21 `v1.2.1`
+### Changelog - 2022.06.24 `v1.2.1`
+
+- `TechCheck.cls`
+  - Moved fonts into the repository
+    - Added `README`  for fonts including license
+  - Adapted font loading to load from within the repository
+  - Replace **Spartan** with **SpartanMB** (the former is no longer available)
+  - Removed true **Helvetica** option (not open source)
+
+### Changelog - 2022.06.21
 
 - `TechCheck.cls`
   - Added `xkeyvals` package
