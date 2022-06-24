@@ -2,7 +2,7 @@
 
 ## CHANGELOG
 
-### Changelog - 2022.06.21
+### Changelog - 2022.06.21 `v1.2.1`
 
 - `TechCheck.cls`
   - Added `xkeyvals` package
@@ -12,7 +12,7 @@
     - `resume` - Doesn't reset counter
     - Additional counter added to prevent midrule doubling
 
-### Changelog - 2022.06.17
+### Changelog - 2022.06.17 `v1.2.0`
 
 - `TechCheck.cls`
   - Added `subcaption` package which allows creation of subfigures
