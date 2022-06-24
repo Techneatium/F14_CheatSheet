@@ -295,13 +295,13 @@
 % OPTIONAL PACKAGES
 %-----------------------------------------------------------------
 \iftoggle{fontHelvet}{
-  \RequirePackage[T1]{fontenc}
-  \RequirePackage{helvet}
-  \renewcommand{\familydefault}{\sfdefault}
+	\RequirePackage[T1]{fontenc}
+	\RequirePackage{helvet}
+	\renewcommand{\familydefault}{\sfdefault}
 }{}
 
 \iftoggle{loadfontspec}{
-  \RequirePackage{fontspec}
+	\RequirePackage{fontspec}
 }{}
 
 \iftoggle{fontJost}{

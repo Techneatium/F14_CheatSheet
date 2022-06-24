@@ -28,3 +28,4 @@ build/
 =======
 F14_CheatSheet.pdf
 >>>>>>> e88379b (Update gitignore to prevent commiting built PDFs)
+fonts/

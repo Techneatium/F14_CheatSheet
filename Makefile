@@ -21,11 +21,9 @@ build_pdf:
 		--entrypoint /bin/bash ${FULL_IMAGE} -c "\
 		cd /source &&\
 		scripts/set_build_info.sh &&\
-		cp -v /fonts/* /source/. &&\
-		cp -v /source/LeagueSpartan-Regular.ttf /source/LeagueSpartan.ttf &&\
-		lualatex --output-format=pdf --output-folder=/source/build ${TARGET} &&\
-		lualatex --output-format=pdf --output-folder=/source/build ${TARGET} &&\
-		lualatex --output-format=pdf --output-folder=/source/build ${TARGET}"
+		mkdir -p fonts &&\
+		cp -v /fonts/* /source/fonts/. &&\
+		cp -v /source/fonts/LeagueSpartan-Regular.ttf /source/fonts/LeagueSpartan.ttf &&\
 
 .PHONY: build
 build: clean build_pdf
