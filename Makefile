@@ -50,9 +50,6 @@ build_pdf:
 		--entrypoint /bin/bash ${FULL_IMAGE} -c "\
 		cd /source &&\
 		scripts/set_build_info.sh &&\
-		mkdir -p fonts &&\
-		cp -v /fonts/* /source/fonts/. &&\
-		cp -v /source/fonts/LeagueSpartan-Regular.ttf /source/fonts/LeagueSpartan.ttf &&\
 		lualatex --output-format=pdf ${TARGET} &&\
 		lualatex --output-format=pdf ${TARGET} &&\
 		lualatex --output-format=pdf ${TARGET}"
@@ -62,12 +59,10 @@ build: clean_before build_pdf clean_after
 
 .PHONY: clean_before
 clean_before:
-	find ${CURRENT_PATH} -iregex '.*[.]\(ttf\|otf\)' -delete
 	find ${CURRENT_PATH} -iregex '.*[.]\(aux\|cb[0-9]?\|log\|maf\|mtc[0-9]?\|out\|toc\)' -delete
 
 .PHONY: clean_after
 clean_after:
-	find ${CURRENT_PATH} -iregex '.*[.]\(ttf\|otf\)' -delete
 	find ${CURRENT_PATH} -iregex '.*[.]\(aux\|cb[0-9]?\|log\|maf\|mtc[0-9]?\|out\|toc\)' -delete
 
 clean: clean_before

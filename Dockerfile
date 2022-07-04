@@ -9,7 +9,6 @@ RUN apt-get update &&\
         git \
         unzip
 
-RUN /source/scripts/install_fonts.sh
 RUN /source/scripts/install_packages.sh
 
 WORKDIR /source
