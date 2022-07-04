@@ -1,8 +1,9 @@
 SHELL := /bin/bash
 .DEFAULT_GOAL := build_pdf
 
+DOCKER_BIN=$(shell which podman || which docker)
+
 CURRENT_PATH = $(shell pwd)
-REPO = # ghcr.io
 IMAGE = techneatium/techs-checks-latex
 TAG = latest
 FULL_IMAGE = ${REPO}${IMAGE}:${TAG}
@@ -10,13 +11,13 @@ TARGET = F14_CheatSheet.tex
 
 .PHONY: build_container
 prepare_image: clean_fonts
-	docker build -t ${FULL_IMAGE} .
+	${DOCKER_BIN} build -t ${FULL_IMAGE} .
 
 .PHONY: build_pdf
 build_pdf:
 	mkdir -p ./build
 	source scripts/set_build_info.sh
-	docker run --rm -it \
+	${DOCKER_BIN} run --rm -it \
 		-v ${CURRENT_PATH}:/source:rw,Z \
 		--entrypoint /bin/bash ${FULL_IMAGE} -c "\
 		cd /source &&\
