@@ -24,6 +24,9 @@ build_pdf:
 		mkdir -p fonts &&\
 		cp -v /fonts/* /source/fonts/. &&\
 		cp -v /source/fonts/LeagueSpartan-Regular.ttf /source/fonts/LeagueSpartan.ttf &&\
+		lualatex --output-format=pdf ${TARGET} &&\
+		lualatex --output-format=pdf ${TARGET} &&\
+		lualatex --output-format=pdf ${TARGET}"
 
 .PHONY: build
 build: clean build_pdf
