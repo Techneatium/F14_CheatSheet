@@ -17,8 +17,12 @@ prepare_image: clean_fonts
 build_pdf:
 	mkdir -p ./build
 	source scripts/set_build_info.sh
-	- ${DOCKER_BIN} run --rm -it \
-		-v ${CURRENT_PATH}:/source:rw,Z \
+	- ${DOCKER_BIN} run \
+		--rm \
+		--interactive \
+		--tty \
+		--security-opt label=disable \
+		--volume ${CURRENT_PATH}:/source:rw \
 		--entrypoint /bin/bash ${FULL_IMAGE} -c "\
 		cd /source &&\
 		scripts/set_build_info.sh &&\
