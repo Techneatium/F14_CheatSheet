@@ -3,7 +3,7 @@ set -o errexit \
     -o pipefail \
     -o nounset
 
-if [ ! -z "$(git status --untracked-files=no --porcelain)" ]; then
+if [[ -n "$(git status --untracked-files=no --porcelain)" ]]; then
     BUILD_TYPE=dirty
 elif git describe --exact-match --tags HEAD > /dev/null; then
     BUILD_TYPE=release
