@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-.DEFAULT_GOAL := build_pdf
+.DEFAULT_GOAL := build
 
 DOCKER_BIN=$(shell which podman || which docker)
 
@@ -17,7 +17,7 @@ prepare_image: clean_fonts
 build_pdf:
 	mkdir -p ./build
 	source scripts/set_build_info.sh
-	${DOCKER_BIN} run --rm -it \
+	- ${DOCKER_BIN} run --rm -it \
 		-v ${CURRENT_PATH}:/source:rw,Z \
 		--entrypoint /bin/bash ${FULL_IMAGE} -c "\
 		cd /source &&\
@@ -30,15 +30,16 @@ build_pdf:
 		lualatex --output-format=pdf ${TARGET}"
 
 .PHONY: build
-build: clean build_pdf
+build: clean_before build_pdf clean_after
 
-.PHONY: clean_fonts
-clean_fonts:
+.PHONY: clean_before
+clean_before:
 	find ${CURRENT_PATH} -iregex '.*[.]\(ttf\|otf\)' -delete
-
-.PHONY: clean_build
-clean_build:
 	find ${CURRENT_PATH} -iregex '.*[.]\(aux\|cb[0-9]?\|log\|maf\|mtc[0-9]?\|out\|toc\)' -delete
 
-.PHONY: clean
-clean: clean_fonts clean_build
+.PHONY: clean_after
+clean_after:
+	find ${CURRENT_PATH} -iregex '.*[.]\(ttf\|otf\)' -delete
+	find ${CURRENT_PATH} -iregex '.*[.]\(aux\|cb[0-9]?\|log\|maf\|mtc[0-9]?\|out\|toc\)' -delete
+
+clean: clean_before
