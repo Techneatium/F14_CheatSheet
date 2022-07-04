@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 set -o errexit \
     -o pipefail \
-    -o nounset \
-    -o verbose \
-    -o xtrace
+    -o nounset
 
 if [ ! -z "$(git status --untracked-files=no --porcelain)" ]; then
     BUILD_TYPE=dirty
