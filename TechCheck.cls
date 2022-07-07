@@ -87,7 +87,7 @@
 
 % Default pdflatex helvetica clone
 \DeclareOption{fontHelvet}{
-  \toggletrue{fontHelvet}
+	\toggletrue{fontHelvet}
 }
 
 % Futura Clone -- pointy 
@@ -226,18 +226,18 @@
 % color3 - alternate highlight color
 
 \DeclareOption{colorful}{
-  \colorlet{color1}{black}
-  % \definecolor{color1}{HTML}{222222}
-  \colorlet{color2}{NavyBlue}
-  \colorlet{color3}{NavyBlue}
-  \definecolor{color4}{HTML}{FFE534} % bf2042yellow
+	\colorlet{color1}{black}
+	% \definecolor{color1}{HTML}{222222}
+	\colorlet{color2}{NavyBlue}
+	\colorlet{color3}{NavyBlue}
+	\definecolor{color4}{HTML}{FFE534} % bf2042yellow
 }
 
 \DeclareOption{b/w}{
-  \colorlet{color1}{black}
-  \colorlet{color2}{black}
-  \colorlet{color3}{black}
-  \definecolor{color4}{HTML}{FFE534} % bf2042yellow
+	\colorlet{color1}{black}
+	\colorlet{color2}{black}
+	\colorlet{color3}{black}
+	\definecolor{color4}{HTML}{FFE534} % bf2042yellow
 }
 
 %-----------------------------------------------------------------
@@ -251,12 +251,12 @@
 \newtoggle{hatch}
 \toggletrue{hatch}
 \DeclareOption{nohatch}{
-  \togglefalse{hatch}
+	\togglefalse{hatch}
 }
 
 % Geometry showframe
 \DeclareOption{showframe}{
-  \PassOptionsToClass{showframe}{geometry}
+	\PassOptionsToClass{showframe}{geometry}
 }
 
 % Thumbnar on/off
@@ -380,6 +380,11 @@
 	\setlength\tabwidth{\textheight/\thetabnumber}
 }
 
+% Preset build info will be overriden by Make scripts
+% Lines commited to this file will always be incorrect
+\newcommand{\buildversion}{1656055642}
+\newcommand{\versionprefix}{DRT:}
+
 %-----------------------------------------------------------------
 % HEADER/FOOT FORMATTING
 %-----------------------------------------------------------------
@@ -435,12 +440,12 @@
 	% date in top right
 	\fancyhead[RE]{
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
+			\textcolor{white}{\titlefont\Large\textbf{\versionprefix \space \buildversion}}
 		}
 	}
 	\fancyhead[RO]{
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
+			\textcolor{white}{\titlefont\Large\textbf{\versionprefix \space \buildversion}}
 		}
 		\iftoggle{autothumbnar}{
 			\thumbnar
@@ -457,7 +462,7 @@
 			\Hatch
 		}{}
 		\titlefont\textbf{\leftmark}
-  	}
+		}
 	\renewcommand{\headrulewidth}{0pt} % and the line
 }
 \pagestyle{body}
@@ -883,7 +888,7 @@
 		frame hidden,
 		colbacktitle=white,
 		coltitle=color1,
-    fonttitle=\titlefont\bfseries,
+		fonttitle=\titlefont\bfseries,
 		attach boxed title to top center,
 		boxed title style={
 		sharp corners,
@@ -904,7 +909,7 @@
 		frame hidden,
 		colbacktitle=white,
 		coltitle=color1,
-    fonttitle=\titlefont\bfseries,
+		fonttitle=\titlefont\bfseries,
 		attach boxed title to top center,
 		boxed title style={
 		sharp corners,
@@ -1012,9 +1017,9 @@
 			cycle;
 		\draw[color1]
 			([xshift=-\inmar, yshift=\topmar]current page text area.north west)
-      [rounded corners=\swround] --
+			[rounded corners=\swround] --
 			([xshift=-\inmar, yshift=-\botmar]current page text area.south west)
-      [rounded corners=\seround] --
+			[rounded corners=\seround] --
 			([xshift=\outmar, yshift=-\botmar]current page text area.south east)
 			[rounded corners=4mm] --
 			([xshift=\outmar, yshift=-#2*\tabwidth]current page text area.north east)
@@ -1022,7 +1027,7 @@
 			([xshift=\outmar-\tabdepth, yshift=-#2*\tabwidth]current page text area.north east)
 			[rounded corners=\neround] --
 			([xshift=\outmar-\tabdepth, yshift=\topmar]current page text area.north east)
-      [rounded corners=\nwround]--
+			[rounded corners=\nwround]--
 			cycle;
 		\node[
 			rectangle,
@@ -1092,13 +1097,13 @@
 			% frame
 			\draw[color1]
 				([xshift=-\inmar, yshift=\topmar]current page text area.north west)
-        [rounded corners=\swround] --
+				[rounded corners=\swround] --
 				([xshift=-\inmar, yshift=-\botmar]current page text area.south west)
-        [rounded corners=\seround] --
+				[rounded corners=\seround] --
 				([xshift=\outmar, yshift=-\botmar]current page text area.south east)
-        [rounded corners=\neround] --
+				[rounded corners=\neround] --
 				([xshift=\outmar, yshift=\topmar]current page text area.north east)
-        [rounded corners=\nwround] --
+				[rounded corners=\nwround] --
 				cycle;
 		\end{tikzpicture}
 	}{}

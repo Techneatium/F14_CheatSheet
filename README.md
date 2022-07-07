@@ -68,6 +68,10 @@ While the styling of this document is in no ways completely representative of ac
 
 ***
 
+## CONTRIBUTING
+
+Check [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+
 ## THANKS / SOURCES
 
 - A huge thanks to [Chuck's Guides](https://www.mudspike.com/chucks-guides-dcs/), this served as the original basis for this guide
