@@ -31,8 +31,14 @@
 % GENERAL PACKAGES
 %-----------------------------------------------------------------
 \RequirePackage{geometry}
-\RequirePackage[yymmdd]{datetime} % change date format
-\renewcommand{\dateseparator}{} % select date separator character
+\RequirePackage[]{datetime2} % change date format
+\DTMnewstyle{yymmdd}{ % create new date style
+	\renewcommand*\DTMdisplaydate[4]{%
+		\DTMtwodigits{##1}\DTMtwodigits{##2}\DTMtwodigits{##3}% 
+	}
+	\renewcommand*{\DTMDisplaydate}{\DTMdisplaydate}%
+}{}{}{}
+\DTMsetstyle{yymmdd} % set new style as default
 \RequirePackage[shortlabels]{enumitem} % pause/resume lists
 \RequirePackage{multicol} % multi column format
 \RequirePackage{graphicx} % used for figures
