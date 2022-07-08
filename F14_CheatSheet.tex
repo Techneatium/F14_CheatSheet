@@ -33,7 +33,17 @@
 \setaircraftshort{F-14A/B} % sets short label for header
 \settabnumber{8} % sets number of tabs for document
 
-% Begin Document
+% Determine which files included in output
+\includeonly{
+	./sections/F14_titlepage,
+	./sections/F14_procedures,
+	./sections/F14_systems,
+	./sections/F14_awg9radar,
+	./sections/F14_tcs-lantirn,
+	./sections/F14_agweapons,
+	./sections/F14_aaweapons,
+	./sections/F14_appendix
+}
 
 \begin{document}
 	\include{./sections/F14_titlepage}
