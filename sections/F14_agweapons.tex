@@ -1,0 +1,338 @@
+\chapter{A/G WEAPONS}
+\thumbtab{A/G}{4}
+\minitoc
+\cleardoublepage
+
+\section{SETTINGS}
+\subsection{A/G WEAPON SETTINGS - OVERVIEW}
+\begin{tableitemize}
+    \dblueitem{WPN TYPE}{
+    \begin{subitemize}
+        \item \textbf{Selects Weapon Type}
+        \begin{itemize}
+            \item Configures WCS for selected weapon
+            \item Refer to Kneeboard for list of mounted weapons
+            \item Mk-81 / 82 / 83 have both \textbf{L} and \textbf{H} option refering to high and low drag
+        \end{itemize}
+    \end{subitemize}}
+    \dblueitem{DLVY MODE}{
+    \begin{subitemize}
+        \item \textbf{STP-SGL} -- Single weapon per press
+        \item \textbf{STP-PRS} Single pair per press
+        \item \textbf{RPL-SGL} -- QTY of weapons per press
+        \item \textbf{RPL-PRS} -- QTY of pairs per press
+    \end{subitemize}}
+    \dblueitem{DLVY OPTNS}{
+    \begin{subitemize}
+        \item \textbf{INTERVAL} -- Interval in ms
+        \item \textbf{QTY} -- Number of stores to be released
+    \end{subitemize}}
+    \dblueitem{MECH FUZE}{
+    \begin{subitemize}
+        \item \textbf{NOSE} -- Arms nose fuze
+        \item \textbf{SAFE} -- Inhibits arming of fuzes
+        \item \textbf{NOSE/TAIL} -- Arms both fuzes
+    \end{subitemize}}
+    \dblueitem{ELEC FUZE}{
+    \begin{subitemize}
+        \item \textbf{SAFE} -- Inhibits electrical bomb fuzing
+        \item \textbf{VT} -- Sets air-burst mode at preset burst height for compatible stores
+        \item \textbf{INST} -- Sets instantaneous burst mode
+        \item \textbf{DLY 1} -- Sets preset time delay 1
+        \item \textbf{DLY 2} -- Sets preset time delay 2
+    \end{subitemize}}
+    \dblueitem{STA SEL}{
+    \begin{subitemize}
+        \item \textbf{Selects Stations for Employment/Jettison}
+        \begin{itemize}
+            \item Set to \textbf{SEL} to activate a pylon
+            \item Stations 1 \& 8 should be set to \textbf{B} for selection
+            \item Station 1 \& 8 \textbf{SW} was used for Sidewinder jettison, is now inoperable
+        \end{itemize}
+    \end{subitemize}}
+    \dblueitem{TANK JETT}{
+    \begin{subitemize}
+        \item \textbf{Allows Drop Tank Jettison}
+    \end{subitemize}}
+    \dblueitem{SEL JETT}{
+    \begin{subitemize}
+        \item \textbf{JETT} -- Selective jettison
+        \item \textbf{SAFE} -- Inhibits jettison
+        \item \textbf{AUX} -- Backup mode
+    \end{subitemize}}
+    \dblueitem{JETT OPTIONS}{
+    \begin{subitemize}
+        \item \textbf{MER TER} -- Jettisons ejector racks
+        \item \textbf{WPNS} -- Jettisons weapons only
+    \end{subitemize}}
+    \dblueitem{ATTK MODE}{
+    \begin{subitemize}
+        \item \textbf{CCMPTR TGT}
+        \begin{itemize}
+            \item \textbf{Computer Target} -- Similar to CCRP
+        \end{itemize}
+        \item \textbf{CMPTR IP}
+        \begin{itemize}
+            \item \textbf{Computer initial point}
+            \item Extended \textbf{CMPTR TGT} mode using known IP
+            \item For use when target hard to spot visually but close to landmark
+        \end{itemize}
+        \item \textbf{CMPTR PLT}
+        \begin{itemize}
+            \item \textbf{Computer Pilot} -- similar to CCIP
+        \end{itemize}
+        \item \textbf{MAN}
+        \begin{itemize}
+            \item \textbf{Manual} -- HUD displays pipper
+            \item Backup mode
+        \end{itemize}
+        \item \textbf{D/L BOMB}
+        \begin{itemize}
+            \item \textbf{Data-Link Bomb} -- Automatic mode steered by D/L cues
+            \item \textbf{Not Implemented in DCS}
+        \end{itemize}
+    \end{subitemize}}
+\end{tableitemize}
+
+
+\subsection{SELECTIVE ORDNANCE JETTISON}
+\begin{tablenumerate}
+    \blueitem{Pilot Conditions}{		
+    \begin{subitemize}
+        \item \textbf{MASTER ARM} \dotfill \textbf{ON}
+    \end{subitemize}}
+    \dblueitem{RIO Conditions}{		
+    \begin{subitemize}
+        \item \textbf{Desired Stations} \dotfill \textbf{Selected}
+        \item \textbf{JETT OPTIONS} \dotfill \textbf{As Desired}
+    \end{subitemize}}
+    \dblueitem{Jettison}{		
+    \begin{subenumerate}
+        \item \textbf{SEL JETT Guard} \dotfill \textbf{Flipped}
+        \item \textbf{SEL JETT Switch} \dotfill \textbf{JETT}
+    \end{subenumerate}}
+\end{tablenumerate}
+
+\clearpage
+
+\section{UNGUIDED ORDNANCE}
+\subsection{M61 GUN}
+\begin{tablenumerate}
+    \blueitem{Pilot Conditions}{		
+    \begin{subitemize}
+        \item \textbf{MASTER ARM} \dotfill \textbf{ON}
+        \item \textbf{HUD} \dotfill \textbf{A/G}
+        \item \textbf{WEAPON SELECTOR} \dotfill \textbf{GUNS}
+        \item \textbf{Wing Sweep} \dotfill \textbf{BOMB}
+    \end{subitemize}}
+    \blueitem{Employment}{		
+    \begin{subenumerate}
+        \item \textbf{Dive} \dotfill 20-30 deg
+        \item \textbf{Pipper} \dotfill on target
+        \item \textbf{TRIGGER} \dotfill \textbf{FIRE}
+    \end{subenumerate}}
+    \blueitem{Note: TCS}{
+    \begin{subitemize}
+        \item TCS slaved to radar impact point
+        \item Rio can select \textbf{NAR} or \textbf{WIDE}
+    \end{subitemize}}
+\end{tablenumerate}
+
+\subsection{FFAR / ZUNI ROCKETS}
+\begin{tablenumerate}
+    \dblueitem{RIO Conditions}{		
+    \begin{subitemize}
+        \item \textbf{WPN TYP} \dotfill \textbf{LAU-10}
+        \item \textbf{Attack Mode} \dotfill \textbf{Pilot Attack}
+        \item \textbf{Deliver Mode} \dotfill \textbf{RPL-SGL}
+        \item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
+        \item \textbf{Electronic Fuze} \dotfill \textbf{INST}
+        \item \textbf{Delivery Options} \dotfill \textbf{As Desired}
+        \item \textbf{Stations} \dotfill \textbf{Armed}
+    \end{subitemize}}
+    \blueitem{Pilot Conditions}{		
+    \begin{subitemize}
+        \item \textbf{MASTER ARM} \dotfill \textbf{ON}
+        \item \textbf{HUD} \dotfill \textbf{A/G}
+        \item \textbf{WEAPON SELECTOR} \dotfill \textbf{OFF}
+        \item \textbf{Stations} \dotfill verify selected
+        \item \textbf{Wing Sweep} \dotfill \textbf{BOMB}
+    \end{subitemize}}
+    \blueitem{Employment}{		
+    \begin{subenumerate}
+        \item \textbf{Dive} \dotfill 20-30 deg
+        \item \textbf{Pipper} \dotfill on target
+        \item \textbf{TRIGGER} \dotfill \textbf{FIRE}
+    \end{subenumerate}}
+\end{tablenumerate}
+
+\clearpage
+
+\subsection{UNGUIDED BOMB - CCIP}
+\begin{tablenumerate}
+    \dblueitem{RIO Conditions}{		
+    \begin{subitemize}
+        \item \textbf{WPN TYP} \dotfill \textbf{MK-8X}
+        \item \textbf{Attack Mode} \dotfill \textbf{Pilot Attack}
+        \item \textbf{Deliver Mode} \dotfill \textbf{STP-PRS}
+        \item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
+        \item \textbf{Electronic Fuze} \dotfill \textbf{INST}
+        \item \textbf{Delivery Options} \dotfill \textbf{As Desired}
+        \item \textbf{Stations} \dotfill \textbf{Armed}
+    \end{subitemize}}
+    \blueitem{Pilot Conditions}{		
+    \begin{subitemize}
+        \item \textbf{MASTER ARM} \dotfill \textbf{ON}
+        \item \textbf{HUD} \dotfill \textbf{A/G}
+        \item \textbf{WEAPON SELECTOR} \dotfill \textbf{OFF}
+        \item \textbf{Stations} \dotfill verify selected
+        \item \textbf{Wing Sweep} \dotfill \textbf{BOMB}
+    \end{subitemize}}
+    \blueitem{Employment}{		
+    \begin{subenumerate}
+        \item \textbf{Dive} \dotfill 40 deg
+        \item \textbf{Pipper} \dotfill on target
+        \item \textbf{STORE RELEASE} \dotfill \textbf{Press and Hold}
+    \end{subenumerate}}
+\end{tablenumerate}
+
+\subsection{UNGUIDED BOMB - CCRP}
+\begin{tablenumerate}
+    \dblueitem{RIO Conditions}{		
+    \begin{subitemize}
+        \item \textbf{WPN TYP} \dotfill \textbf{MK-8X}
+        \item \textbf{Attack Mode} \dotfill \textbf{Target Attack}
+        \item \textbf{Deliver Mode} \dotfill \textbf{STP-PRS}
+        \item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
+        \item \textbf{Electronic Fuze} \dotfill \textbf{INST}
+        \item \textbf{Delivery Options} \dotfill \textbf{As Desired}
+        \item \textbf{Stations} \dotfill \textbf{Armed}
+    \end{subitemize}}
+    \blueitem{Pilot Conditions}{		
+    \begin{subitemize}
+        \item \textbf{MASTER ARM} \dotfill \textbf{ON}
+        \item \textbf{HUD} \dotfill \textbf{A/G}
+        \item \textbf{WEAPON SELECTOR} \dotfill \textbf{OFF}
+        \item \textbf{Stations} \dotfill verify selected
+        \item \textbf{Wing Sweep} \dotfill \textbf{BOMB}
+    \end{subitemize}}
+    \blueitem{Designation}{		
+    \begin{subenumerate}
+        \item \textbf{Slew Diamond} \dotfill \textbf{VSL HI/LO}
+        \item \textbf{Designate} \dotfill \textbf{PAL}
+    \end{subenumerate}}
+    \blueitem{Employment}{		
+    \begin{subenumerate}
+        \item \textbf{Flight Path} \dotfill Straight, Level
+        \item \textbf{Vel Vector} \dotfill on Bomb Fall Line
+    \end{subenumerate}
+
+    When Solution Cue meets Velocity Vector
+    \begin{subenumerate}[start=3]
+        \item \textbf{STORE RELEASE} \dotfill \textbf{Press and Hold}
+    \end{subenumerate}}
+\end{tablenumerate}
+
+\clearpage
+
+\section{GUIDED ORDNANCE}
+\subsection{LASER GUIDED BOMB}
+\begin{tablenumerate}
+    \blueitem{LANTIRN  \break  PREP}{		
+    \begin{subenumerate}
+        \item \textbf{Target Pod Power} \dotfill \textbf{POD}
+        \begin{itemize}
+            \item Warm up takes approx. 8 min
+            \item Automatically switches to \textbf{STANDBY}
+        \end{itemize}
+        \item \textbf{Laser Code} \dotfill as desired
+        \begin{itemize}
+            \item \textbf{MUST BE SET ON THE GROUND}
+            \item \textbf{Default:} 1688
+        \end{itemize}
+        \item \textbf{LANTIRN Mode} \dotfill \textbf{OPERATE}
+        \begin{itemize}
+            \item \textbf{STANDBY} caution will flash for 30 s
+            \item Then switches to \textbf{OPER}
+        \end{itemize}
+        \item \textbf{VIDEO Switch} \dotfill \textbf{FLIR}
+        \item \textbf{TID Mode} \dotfill \textbf{TV}
+    \end{subenumerate}}
+    \dblueitem{RIO Conditions}{		
+    \begin{subitemize}
+        \item \textbf{WPN TYP} \dotfill \textbf{GBU-XX}
+        \item \textbf{Attack Mode} \dotfill \textbf{Manual}
+        \item \textbf{Deliver Mode} \dotfill \textbf{STP-SGL}
+        \item \textbf{Mechanical Fuze} \dotfill \textbf{NOSE}
+        \item \textbf{Electronic Fuze} \dotfill \textbf{INST}
+        \item \textbf{Delivery Options} \dotfill \textbf{As Desired}
+        \item \textbf{Stations} \dotfill \textbf{Armed}
+    \end{subitemize}}
+    \blueitem{Pilot Conditions}{		
+    \begin{subitemize}
+        \item \textbf{MASTER ARM} \dotfill \textbf{ON}
+        \item \textbf{HUD} \dotfill \textbf{A/G}
+        \item \textbf{WEAPON SELECTOR} \dotfill \textbf{OFF}
+        \item \textbf{VDI Mode} \dotfill \textbf{TV}
+        \item \textbf{Stations} \dotfill verify selected
+        \item \textbf{Wing Sweep} \dotfill \textbf{BOMB}
+    \end{subitemize}}
+    \dblueitem{Slew LANTIRN}{\hyperlink{subsec:lantirncontrolsstick}{\textbf{Refer to LANTIRN Control Section}}
+    \begin{subitemize}
+        \item \textbf{Slave to WYPT} \dotfill \textbf{Left-4-Way RIGHT}
+        \item \textbf{QSNO (Snowplow)} \dotfill \textbf{S4 HAT Down}
+        \item \textbf{Toggle FOV} \dotfill \textbf{LANTIRN Toggle FOV}
+        \item \textbf{Slew} \dotfill \textbf{LANTIRN Stick}
+        \item \textbf{Area Track} \dotfill \textbf{Left-4-Way UP}
+        \item \textbf{Point Track} \dotfill \textbf{Left-4-Way Down}
+        \item \textbf{Undesignate} \dotfill \textbf{LANTIRN Undesignate}
+    \end{subitemize}}
+    \dblueitem{Designate}{\hyperlink{subsec:lantirnlasingdesignation}{\textbf{Refer to LANTIRN Designation Section}}
+    \begin{subenumerate}
+        \item \textbf{Designate} \dotfill \textbf{Trigger Full-Action}
+        \begin{itemize}
+            \item Slant Range calculated
+            \item Time-to-Go calculated
+        \end{itemize}
+    \end{subenumerate}
+
+    \textbf{Once Time-to-Realease (TREL) is 0}
+    \begin{subenumerate}[start=2]
+        \item \textbf{Auto-Lase} \dotfill If selected: lases 10s to impact
+        \item \textbf{Manual Lase} \dotfill \textbf{Trigger Full-Action}
+        \item \textbf{While Lasing} \dotfill \textbf{L} blinks
+    \end{subenumerate}}
+    \blueitem{Employment}{\textbf{Once Time-to-Realease (TREL) is 0}
+    \begin{subenumerate}
+        \item \textbf{STORE RELEASE} \dotfill \textbf{Press and Hold}
+        \item \textbf{Flight Path} \dotfill Gentle right-hand turn \\
+        \hfill (to prevent masking)
+    \end{subenumerate}}
+\end{tablenumerate}
+
+\subsection{TALD DECOYS}
+\begin{tablenumerate}
+    \dblueitem{RIO Conditions}{		
+    \begin{subitemize}
+        \item \textbf{WPN TYP} \dotfill \textbf{TALD}
+        \item \textbf{Deliver Mode} \dotfill \textbf{STP-SGL}
+        \item \textbf{Delivery Options} \dotfill \textbf{As Desired}
+        \item \textbf{Stations} \dotfill \textbf{Armed}
+    \end{subitemize}}
+    \blueitem{Pilot Conditions}{		
+    \begin{subitemize}
+        \item \textbf{MASTER ARM} \dotfill \textbf{ON}
+        \item \textbf{HUD} \dotfill \textbf{A/G}
+        \item \textbf{WEAPON SELECTOR} \dotfill \textbf{OFF}
+        \item \textbf{HSD Mode} \dotfill \textbf{TID}
+        \item \textbf{Stations} \dotfill verify selected
+    \end{subitemize}}
+    \blueitem{Employment}{		
+    \begin{subenumerate}
+        \item \textbf{Flight Path} \dotfill High / Fast
+        \item \textbf{RWR} \dotfill Monitor to locate emitters
+        \item \textbf{STORE RELEASE} \dotfill \textbf{Press and Hold}
+    \end{subenumerate}}
+\end{tablenumerate}
+
+\cleardoublepage
