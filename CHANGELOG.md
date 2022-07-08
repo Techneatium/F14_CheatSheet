@@ -2,6 +2,19 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.07.08 `v1.2.2`
+
+- Externalized each of the chapters/sections into own `./sections/F14_nameofchapter.tex`
+  - Reduces file length, yields easier oversight
+  - Allows selective compilation of only certain files via `\includeonly{...}` command
+  - This can greatly accelerate compile times when iterating
+- Updated `.gitignore` to include `*.synctex(busy)`
+
+- `TechCheck.cls`
+  - Change date format from `YYYYMMDD` to `YYMMDD`
+  - Fixed indentation inconsistencies
+  - Fixed font bugs
+
 ### Changelog - 2022.06.24 `v1.2.1`
 
 - `TechCheck.cls`
