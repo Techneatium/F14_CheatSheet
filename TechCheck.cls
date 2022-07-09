@@ -403,6 +403,12 @@
 \fancypagestyle{empty}{
 	% clear defaults
 	\fancyhf{}
+	% page number in footer
+	\fancyfoot[LE, RO]{{\tightfont\quad\textbf{\thepage}\quad}}% LE,RO or C
+	% Version nbumber in footer
+	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
+	% Aircraft name in footer
+	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	\fancyhead[LE,LO]{
 		\iftoggle{hatch}{
 		\Hatch
@@ -418,8 +424,11 @@
 	% clear defaults
 	\fancyhf{}
 	% page number in footer
-	% \fancyfoot[C]{{\tightfont \textbf{--- \thepage \ ---}}}% LE,RO
-	\fancyfoot[C]{{\tightfont\textbf{\thepage}}}% LE,RO
+	\fancyfoot[LE, RO]{{\tightfont\quad\textbf{\thepage}\quad}}% LE,RO or C
+	% Version nbumber in footer
+	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
+	% Aircraft name in footer
+	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
 	\fancyhead[LE,LO]{
 		\iftoggle{hatch}{
 			\Hatch
@@ -430,14 +439,12 @@
 	% clear defaults
 	\fancyhf{}
 	% page number in footer
-	% \fancyfoot[C]{{\tightfont \textbf{--- \thepage \ ---}}}% LE,RO
-	\fancyfoot[C]{{\tightfont \textbf{\thepage}}}% LE,RO
-	% date in top right
-	\fancyhead[RE]{
-		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
-		}
-	}
+	\fancyfoot[LE, RO]{{\tightfont\quad\textbf{\thepage}\quad}}% LE,RO or C
+	% Version nbumber in footer
+	\fancyfoot[RE, LO]{{\titlefont\textbf{REV: \today}}}
+	% Aircraft name in footer
+	\fancyfoot[C]{{\titlefont\textbf{\aircraftshort}}}
+	% Header
 	\fancyhead[RO]{
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
