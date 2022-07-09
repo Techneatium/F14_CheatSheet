@@ -387,10 +387,8 @@
 \pagestyle{empty}
 % fancy header with section title in hatching
 \pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\colorbox{color1}{
-	% code formatting section titles in header
-	\textcolor{white}{\Large\textbf{#1}}
-}}{}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
 \fancypagestyle{superempty}{
 	% clear defaults
 	\fancyhf{}
