@@ -23,7 +23,7 @@
 %=================================================================
 
 \NeedsTeXFormat{LaTeX2e}
-\LoadClass[10pt,usenames,dvipsnames,twoside]{report}
+\LoadClass[10pt,usenames,dvipsnames,twoside]{book}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{TechCheck}[2022/06/24]
 
@@ -490,6 +490,7 @@
 %-----------------------------------------------------------------
 \cbcolor{color1}
 \setlength{\changebarwidth}{2mm}
+\setlength{\changebarsep}{2mm}
 
 %-----------------------------------------------------------------
 % TOCLOFT FORMATTING
