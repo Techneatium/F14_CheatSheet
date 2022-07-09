@@ -87,7 +87,7 @@
 
 % Default pdflatex helvetica clone
 \DeclareOption{fontHelvet}{
-  \toggletrue{fontHelvet}
+  	\toggletrue{fontHelvet}
 }
 
 % Futura Clone -- pointy 
@@ -226,18 +226,18 @@
 % color3 - alternate highlight color
 
 \DeclareOption{colorful}{
-  \colorlet{color1}{black}
-  % \definecolor{color1}{HTML}{222222}
-  \colorlet{color2}{NavyBlue}
-  \colorlet{color3}{NavyBlue}
-  \definecolor{color4}{HTML}{FFE534} % bf2042yellow
+	\colorlet{color1}{black}
+	% \definecolor{color1}{HTML}{222222}
+	\colorlet{color2}{NavyBlue}
+	\colorlet{color3}{NavyBlue}
+	\definecolor{color4}{HTML}{FFE534} % bf2042yellow
 }
 
 \DeclareOption{b/w}{
-  \colorlet{color1}{black}
-  \colorlet{color2}{black}
-  \colorlet{color3}{black}
-  \definecolor{color4}{HTML}{FFE534} % bf2042yellow
+	\colorlet{color1}{black}
+	\colorlet{color2}{black}
+	\colorlet{color3}{black}
+	\definecolor{color4}{HTML}{FFE534} % bf2042yellow
 }
 
 %-----------------------------------------------------------------
@@ -251,12 +251,12 @@
 \newtoggle{hatch}
 \toggletrue{hatch}
 \DeclareOption{nohatch}{
-  \togglefalse{hatch}
+  	\togglefalse{hatch}
 }
 
 % Geometry showframe
 \DeclareOption{showframe}{
-  \PassOptionsToClass{showframe}{geometry}
+  	\PassOptionsToClass{showframe}{geometry}
 }
 
 % Thumbnar on/off
@@ -455,7 +455,7 @@
 		\colorbox{color1}{
 			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
-	}
+  	}
 	\fancyhead[LE,LO]{
 		\iftoggle{hatch}{
 			\Hatch
