@@ -42,12 +42,13 @@
 	./sections/F14_tcs-lantirn,
 	./sections/F14_agweapons,
 	./sections/F14_aaweapons,
-	./sections/F14_appendix
+	./sections/F14_appendix,
 }
 
 \begin{document}
 	\include{./sections/F14_titlepage}
 
+	\frontmatter
 	\pagestyle{empty}
 	\dominitoc
 	\tableofcontents
@@ -55,6 +56,7 @@
 
 	% restart page counter
 	\setcounter{page}{1}
+	\mainmatter
 	% reactivate header and footer
 	\pagestyle{body}
 
