@@ -2,6 +2,21 @@
 
 ## CHANGELOG
 
+### Changelog - 2022.07.09 `v1.2.3`
+
+- `TechCheck.cls`
+  - Changed base class from `report` to `book`
+    - This gives access to `\frontmatter`, `\mainmatter`, `\backmatter` which change chapter numbering styles and pagenumbering styles
+    - `\backmatter` does not play nice with `chappg` package, currently don't recommend using
+    - Should make `\cleardoublepage` unnecessary on chapter end, chapters automatically begin on odd pages and fill until that point.
+  - Reworked header and footer
+    - Header now contains `chapter` name on the left, `section` name on the right
+    - Footer now contains `pagenumber` on the outside, `\aircraftshort` in the center, and `versionnumber` on the inside
+
+- `APPENDIX`
+  - Changed to begin with `\appendix` to actually be styled as appendix
+    - Should split into various chapters to make use of appendix formatting/features
+
 ### Changelog - 2022.07.08 `v1.2.2`
 
 - Externalized each of the chapters/sections into own `./sections/F14_nameofchapter.tex`
