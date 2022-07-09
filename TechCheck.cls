@@ -447,23 +447,24 @@
 	% Header
 	\fancyhead[RO]{
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{REV: \today}}
+			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
 		\iftoggle{autothumbnar}{
 			\thumbnar
 		}{}
 	}
-	% extra thing in middle
-	\fancyhead[C]{
+	\fancyhead[RE]{
 		\colorbox{color1}{
-			\textcolor{white}{\titlefont\Large\textbf{\aircraftshort}}
+			\textcolor{white}{\titlefont\Large\textbf{\rightmark}}
 		}
 	}
 	\fancyhead[LE,LO]{
 		\iftoggle{hatch}{
 			\Hatch
 		}{}
-		\titlefont\textbf{\leftmark}
+		\colorbox{color1}{
+			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
+		}
   	}
 	\renewcommand{\headrulewidth}{0pt} % and the line
 }
