@@ -464,7 +464,8 @@
 			\textcolor{white}{\titlefont\Large\textbf{\leftmark}}
 		}
   	}
-	\renewcommand{\headrulewidth}{0pt} % and the line
+	\renewcommand{\headrulewidth}{0pt} % header rule width
+	\renewcommand{\footrulewidth}{0pt} % footer rule width
 }
 \pagestyle{body}
 
