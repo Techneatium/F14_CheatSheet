@@ -2,6 +2,32 @@
 
 ## CHANGELOG
 
+### Changelog - 2023.01.14 `v1.3.0`
+
+- **Updates imported from `[REDACTED]`-CheatSheet**
+- **Complete Rewrite OF `TechCheck` Class Architecture:** many commands/environments were moved into two new `.sty` files (packages)
+
+  - **`NEW`** `techhatchtabs.sty`
+    - Hatching command `\hatch` along with the internal `\single` command
+    - Thumbtab related commands `\thumbtab`, `\thumbback`, `\thumbwide`, `\thumbnar`
+    - Titlepage tab related commands `\thumbfront`, **`NEW`** `\fronttitleprep`
+    - Thumbtab related `tikz` commponents were moved into package internal commands for easier customization
+    - **`NEW`** Many boolean options available to customize rounding, indentation, thumbtabs etc.
+
+  - **`NEW`** `technumitem.sty`
+    - `tablenumitem` environments
+    - `checklistenumitem` environments
+    - **`NEW`** `tcolorenumitem` environments
+
+  - Updated content to better follow `TeX` class/package writing best practices, *i.e* using `@` symbol and capitalization for class / package internal commands and variables
+
+- `TechCheck.cls`
+  - Updated to use new packages
+  - Updated to better follow class best practices
+
+- `TITLEPAGE`
+  - Changed to use new package commands
+
 ### Changelog - 2022.07.09 `v1.2.3`
 
 - `TechCheck.cls`
